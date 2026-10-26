@@ -1,0 +1,521 @@
+{
+ "_doc": "role-E independent audit of ck002 (no solver code read/imported). g=9.81000 from params (data).",
+ "items": {
+  "1_static": {
+   "Wcr_independent_slot_convention_N": 1.357572614071317,
+   "Wcr_independent_layer_convention_N": 1.3580285493736919,
+   "Wcr_production_N": 1.3575726067259564,
+   "rel_slot": -5.410657588633683e-09,
+   "rel_layer": -0.00033573863225910827,
+   "n_buckle_independent": 7,
+   "n_buckle_production": 7,
+   "ratio_W_over_Wcr": {
+    "5": 0.8086155595442965,
+    "6": 0.9643966760135838,
+    "7": 1.1245048947294278,
+    "8": 1.2889657523401767
+   },
+   "n7_ytop_perfect_independent_mm": 149.38951562236647,
+   "n7_ytop_production_static_mm": 150.31559616132324,
+   "passed": true
+  },
+  "2_quasistatic": {
+   "method": "stress-free curvature kappa0(s) = kappa(t=0) - M(t=0)/EI inferred from the production's own t=0 sample; independent shooting with that imperfection predicts each pre-buckling hold (last sample before the next weight). Dynamic samples are not static, so diff includes the residual sway.",
+   "imperfection_ytop_t0_mm": -0.3462975090479008,
+   "rows": [
+    {
+     "n": 0,
+     "sample": 119,
+     "t": 0.9916666666666667,
+     "ytop_prod_mm": -0.3462974808946013,
+     "ytop_indep_static_mm": -0.34629830357616725,
+     "diff_mm": 8.226815659912942e-07
+    },
+    {
+     "n": 1,
+     "sample": 191,
+     "t": 1.5916666666666666,
+     "ytop_prod_mm": -0.3348981396540334,
+     "ytop_indep_static_mm": -0.4064280319997394,
+     "diff_mm": 0.07152989234570598
+    },
+    {
+     "n": 2,
+     "sample": 263,
+     "t": 2.191666666666667,
+     "ytop_prod_mm": -0.47869015391116576,
+     "ytop_indep_static_mm": -0.49505634507860263,
+     "diff_mm": 0.016366191167436886
+    },
+    {
+     "n": 3,
+     "sample": 335,
+     "t": 2.7916666666666665,
+     "ytop_prod_mm": -0.9050905814549602,
+     "ytop_indep_static_mm": -0.6386650861598822,
+     "diff_mm": -0.2664254952950781
+    },
+    {
+     "n": 4,
+     "sample": 407,
+     "t": 3.3916666666666666,
+     "ytop_prod_mm": -0.8649722659865849,
+     "ytop_indep_static_mm": -0.9113470631419011,
+     "diff_mm": 0.04637479715531611
+    },
+    {
+     "n": 5,
+     "sample": 479,
+     "t": 3.9916666666666667,
+     "ytop_prod_mm": -1.71631864066797,
+     "ytop_indep_static_mm": -1.6291268694350218,
+     "diff_mm": -0.08719177123294808
+    },
+    {
+     "n": 6,
+     "sample": 551,
+     "t": 4.591666666666667,
+     "ytop_prod_mm": -4.221648740328897,
+     "ytop_indep_static_mm": -8.656921586572254,
+     "diff_mm": 4.4352728462433575
+    }
+   ],
+   "n7_static_with_prod_imperfection_indep_mm": -150.33893884494367,
+   "n7_static_production_mm": -150.31559616132324,
+   "n7_rel": -0.00015526705057100632,
+   "criterion": "holds n<=5: |prod - indep static| <= 0.5 mm (residual post-placement sway); n=6 reported only (near-critical, f~0.19 Hz, 0.6 s hold is not quasi-static); static n=7 with the production imperfection within 1 %",
+   "passed": true
+  },
+  "2b_length_energy_clamp": {
+   "C4": {
+    "max_abs_length_err_m": 3.1644817205522813e-07,
+    "rest_vs_param_m": 6.878386749065157e-13,
+    "worst_sample": 821,
+    "passed": true
+   },
+   "C5": {
+    "max_node_motion_in_vise_m": 0.0,
+    "clamp_node_index": 20,
+    "tab_node_index": 288,
+    "tab_segment_max_bend_m": 5.34413797984093e-17,
+    "passed": true
+   },
+   "C6": {
+    "scale_J": 0.19116276804228743,
+    "tol_J": 0.0009558138402114372,
+    "min_dissipation_J": -6.481819224604191e-05,
+    "max_decrease_J": 6.483652391857085e-05,
+    "final_dissipation_J": 0.0011425471599892704,
+    "U_max_J": 0.19116276804228743,
+    "work_end_J": 0.13198721905139815,
+    "passed": true
+   },
+   "passed": true
+  },
+  "2c_pc2_vs_npz": {
+   "signature": "POINTCACHE2\u0000",
+   "points": 6622,
+   "start_frame": 0.0,
+   "sample_rate": 0.20000000298023224,
+   "samples": 1201,
+   "thickness_check_max_err_m": 3.125694311711946e-08,
+   "object_origin_offset_m": [
+    0.0,
+    5.682523482463086e-14,
+    0.07500000298131428
+   ],
+   "max_err_m": 7.451676940248475e-09,
+   "worst_sample": 148,
+   "passed": true
+  },
+  "3_schedule": {
+   "weight_objects": [
+    "RUL_Weight00",
+    "RUL_Weight01",
+    "RUL_Weight02",
+    "RUL_Weight03",
+    "RUL_Weight04",
+    "RUL_Weight05",
+    "RUL_Weight06",
+    "RUL_Weight07",
+    "RUL_Weight08",
+    "RUL_Weight09",
+    "RUL_Weight10",
+    "RUL_Weight11",
+    "RUL_FeedWeight0",
+    "RUL_FeedWeight1",
+    "RUL_FeedWeight2",
+    "RUL_FeedWeight3",
+    "RUL_FeedWeight4",
+    "RUL_FeedWeight5",
+    "RUL_FeedWeight6"
+   ],
+   "max_on_peg": 7,
+   "on_peg_axis_arrival_s": [
+    0.8916666666666666,
+    1.4916666666666665,
+    2.091666666666667,
+    2.6916666666666664,
+    3.2916666666666665,
+    3.891666666666667,
+    4.491666666666666
+   ],
+   "seat_times_s": [
+    0.9916666666666667,
+    1.5916666666666668,
+    2.191666666666667,
+    2.7916666666666665,
+    3.391666666666667,
+    3.9916666666666667,
+    4.591666666666667
+   ],
+   "expected": [
+    1.0,
+    1.6,
+    2.2,
+    2.8,
+    3.4,
+    4.0,
+    4.6
+   ],
+   "stack_visual_vs_physics": [
+    {
+     "slot": 0,
+     "weight": "RUL_FeedWeight0",
+     "visual_bottom_mm": 15.00998876125798,
+     "physics_bottom_mm": 15.0,
+     "err_mm": 0.009988761257979234
+    },
+    {
+     "slot": 1,
+     "weight": "RUL_FeedWeight1",
+     "visual_bottom_mm": 19.51997086784304,
+     "physics_bottom_mm": 19.5,
+     "err_mm": 0.019970867843038115
+    },
+    {
+     "slot": 2,
+     "weight": "RUL_FeedWeight2",
+     "visual_bottom_mm": 24.029979551122157,
+     "physics_bottom_mm": 24.0,
+     "err_mm": 0.02997955112215775
+    },
+    {
+     "slot": 3,
+     "weight": "RUL_FeedWeight3",
+     "visual_bottom_mm": 28.539975143171716,
+     "physics_bottom_mm": 28.499999999999996,
+     "err_mm": 0.03997514317171866
+    },
+    {
+     "slot": 4,
+     "weight": "RUL_FeedWeight4",
+     "visual_bottom_mm": 33.04999731191533,
+     "physics_bottom_mm": 33.0,
+     "err_mm": 0.04999731191532297
+    },
+    {
+     "slot": 5,
+     "weight": "RUL_FeedWeight5",
+     "visual_bottom_mm": 37.55997941850039,
+     "physics_bottom_mm": 37.5,
+     "err_mm": 0.05997941850038879
+    },
+    {
+     "slot": 6,
+     "weight": "RUL_FeedWeight6",
+     "visual_bottom_mm": 42.07000158724401,
+     "physics_bottom_mm": 41.99999999999999,
+     "err_mm": 0.07000158724401045
+    }
+   ],
+   "seat_time_err_s": [
+    -0.008333333333333304,
+    -0.008333333333333304,
+    -0.008333333333333304,
+    -0.008333333333333304,
+    -0.00833333333333286,
+    -0.008333333333333304,
+    -0.00833333333333286
+   ],
+   "bench_count_start": 12,
+   "bench_count_end": 12,
+   "bench_count_monotone": true,
+   "max_weight_speed_m_s": 0.7284232601523813,
+   "weight_peak_speed_by_object": {
+    "RUL_Weight00": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight01": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight02": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight03": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight04": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight05": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight06": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight07": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight08": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight09": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight10": [
+     0.0,
+     0.0
+    ],
+    "RUL_Weight11": [
+     0.0,
+     0.0
+    ],
+    "RUL_FeedWeight0": [
+     0.7002,
+     0.8083
+    ],
+    "RUL_FeedWeight1": [
+     0.7099,
+     1.4083
+    ],
+    "RUL_FeedWeight2": [
+     0.7055,
+     2.0083
+    ],
+    "RUL_FeedWeight3": [
+     0.6869,
+     2.6083
+    ],
+    "RUL_FeedWeight4": [
+     0.7138,
+     3.2083
+    ],
+    "RUL_FeedWeight5": [
+     0.7284,
+     3.8083
+    ],
+    "RUL_FeedWeight6": [
+     0.6771,
+     4.4083
+    ]
+   },
+   "n_at_start_position_begin_end": [
+    19,
+    12
+   ],
+   "at_start_decrements": [
+    -1,
+    0
+   ],
+   "gripper_or_feeder_objects_speed_info": {
+    "RUL_JawInsertFront": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_JawInsertBack": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_ArmBase": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_ArmColumn": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_ArmCarriage": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_ArmLink1": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_ArmLink2": {
+     "peak_m_s": 5.566638261079808,
+     "at_s": 1.2750000000000001,
+     "last_move_s": 5.425
+    },
+    "RUL_ArmQuill": {
+     "peak_m_s": 6.006780266761481,
+     "at_s": 3.0749999999999997,
+     "last_move_s": 5.425
+    },
+    "RUL_ArmWrist": {
+     "peak_m_s": 6.006794124841392,
+     "at_s": 3.0749999999999997,
+     "last_move_s": 5.425
+    },
+    "RUL_ArmGripper": {
+     "peak_m_s": 3.2413811981676397,
+     "at_s": 3.0749999999999997,
+     "last_move_s": 5.425
+    },
+    "RUL_ArmGripperPost": {
+     "peak_m_s": 3.2413811981676397,
+     "at_s": 3.0749999999999997,
+     "last_move_s": 5.425
+    },
+    "RUL_ArmFingerR": {
+     "peak_m_s": 3.807184696197523,
+     "at_s": 3.0666666666666664,
+     "last_move_s": 5.425
+    },
+    "RUL_ArmFingerL": {
+     "peak_m_s": 3.8930381834507126,
+     "at_s": 3.0833333333333335,
+     "last_move_s": 5.425
+    },
+    "RUL_FeederRing": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederBar": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederPost": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederFoot": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederDisc0": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederPin0": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederDisc1": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederPin1": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederDisc2": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederPin2": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederDisc3": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederPin3": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederDisc4": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederPin4": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederDisc5": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederPin5": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederDisc6": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    },
+    "RUL_FeederPin6": {
+     "peak_m_s": 0.0,
+     "at_s": 0.0,
+     "last_move_s": null
+    }
+   },
+   "criteria": "peak weight speed <= 1 m/s (also continuity at 120 Hz sampling); seated within 0.1 mm of meta slot offsets; seat time within 1/24 s of t0; <= 7 on peg; weights leave their start position one at a time (decrements of 1, total 7); no hide_render toggles",
+   "hand_object_present": false,
+   "visibility_toggles": [],
+   "note": "seated = weight centre within 3 mm of the peg axis (from the production tip-body pose); speed limit 2 m/s flags teleport",
+   "passed": true
+  },
+  "3b_blend_strip_vs_npz": {
+   "strip": "RUL_Ruler",
+   "samples": 1201,
+   "max_err_m": 7.45059480776499e-09,
+   "passed": true
+  },
+  "4_negative_controls": {
+   "cases": {
+    "good_static": true,
+    "bad_E_plus1pct": true,
+    "bad_length_plus1pct": true,
+    "bad_stretch_2e-5": true,
+    "good_dynamic_Q50": true,
+    "bad_energy_injection": true
+   },
+   "passed": true
+  }
+ },
+ "summary": {
+  "1_static": true,
+  "2_quasistatic": true,
+  "2b_length_energy_clamp": true,
+  "2c_pc2_vs_npz": true,
+  "3_schedule": true,
+  "3b_blend_strip_vs_npz": true,
+  "4_negative_controls": true
+ }
+}

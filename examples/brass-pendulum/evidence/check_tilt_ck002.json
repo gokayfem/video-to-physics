@@ -1,0 +1,82 @@
+{
+  "blend": "<CASE_ROOT>/verify/out/ck002/ckcopy/pendulum.blend",
+  "blend_sha256": "64c4c5bb8a37ceae3c7a59ecc145b74828ee9df89ffefa520371bbc431ea7c66",
+  "params_sha256": "dc20e99c7119379f640eee4fb22b7cb405cc9495b0b659785e1742b37f093ee7",
+  "level_tilt_rad": 0.012595906923464214,
+  "swing": {
+    "parent": null,
+    "constraints": [],
+    "ancestors": []
+  },
+  "tilt_empty_found": true,
+  "tilt_empty": {
+    "type": "EMPTY",
+    "parent": null,
+    "rotation_mode": "XYZ",
+    "rotation_euler": [
+      0.0,
+      0.012595906853675842,
+      0.0
+    ],
+    "location": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "animated": false,
+    "constraints": []
+  },
+  "objects_under_tilt": [
+    "PND_Arm:MESH",
+    "PND_Base:MESH",
+    "PND_Cam_Locked:CAMERA",
+    "PND_Cam_Overview:CAMERA",
+    "PND_Cam_Reference:CAMERA",
+    "PND_Cam_SideOrtho:CAMERA",
+    "PND_Look_Backdrop:MESH",
+    "PND_Look_BackdropPool:LIGHT",
+    "PND_Look_BackdropWash:LIGHT",
+    "PND_Look_BobProbe:LIGHT_PROBE",
+    "PND_Look_FillFront:LIGHT",
+    "PND_Look_Key:LIGHT",
+    "PND_Look_PinProbe:LIGHT_PROBE",
+    "PND_Look_RimRight:LIGHT",
+    "PND_Look_Softbox:LIGHT",
+    "PND_Look_Table:MESH",
+    "PND_Pin:MESH",
+    "PND_Post:MESH",
+    "PND_PostBolt:MESH",
+    "PND_StandControls:MESH",
+    "PND_WireLoop:MESH"
+  ],
+  "objects_not_under_tilt": [
+    "PND_Bob:MESH",
+    "PND_Swing:EMPTY",
+    "PND_Wire:MESH"
+  ],
+  "cameras_under_tilt": {
+    "PND_Cam_Locked": true,
+    "PND_Cam_Overview": true,
+    "PND_Cam_Reference": true,
+    "PND_Cam_SideOrtho": true
+  },
+  "swing_under_tilt": false,
+  "swing_world_rotation_vs_RotY(-theta)_max_abs": 2.9788237654315708e-08,
+  "swing_world_translation_max_abs_m": 0.0,
+  "bob_angle_from_minusZ_world_vs_theta_max_rad": 1.2179513259047425e-08,
+  "stand_up_axis_angle_in_world_rad": {
+    "min": 0.012595906589335832,
+    "max": 0.012595906589335832,
+    "expected": 0.012595906923464214,
+    "max_err": 3.341283812130502e-10
+  },
+  "tilt_empty_world_origin_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "bob_rest_direction_in_stand_frame_rad": 0.012595906589335834,
+  "bob_rest_minus_stand_down_in_world_angle_rad": -0.012595906589335832,
+  "bob_in_stand_frame_equals_theta_plus_tilt_max_err_rad": 1.1845384881303822e-08,
+  "status": "PASS"
+}

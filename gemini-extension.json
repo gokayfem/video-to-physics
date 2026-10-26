@@ -1,0 +1,5 @@
+{
+  "name": "video-to-physics",
+  "version": "0.1.0",
+  "description": "Turn a reference video, image or idea into a verified physics reconstruction in Blender, with measurement, solver, verification and review tools."
+}

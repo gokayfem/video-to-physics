@@ -1,0 +1,591 @@
+{
+  "schema": "physics/FORMULATION.md s7 (clip 03 v1)",
+  "owner": "physics+dynamics (role B)",
+  "status": "fitted",
+  "status_note": "FITTED with per-mode anchor windows (lead decision CHANGELOG 2026-10-26T03:42:09Z, disclosed rule deviation): twist on 0-7.5 s (hold-out 7.5-10 s), sway/tilt on 0-2.5 s. Rigid disc on an inextensible torsion wire, rigid wire-disc joint (disc stays perpendicular to the wire), projected through the SMOOTHED per-frame orbiting camera of record (params/camera.json 50377461); observable = disc silhouette centre P (lead VR03-05), not the mark rotation centre Q. Scale model-conditioned from the sway period (g assumed); suspension point = A + fitted horizontal offset. Brass density assumed (mass unidentifiable). Q_t = 1000 declared (damping not identified).",
+  "generated_by": "solver/make_params.py (mapping: solver/model_build.py)",
+  "model_id": "disc_on_wire_rigid6_v1",
+  "model_equation": "rigid disc (m, R, t) hung at its top-face centre B from clamp A by an inextensible wire |AB| = ell; V = m g X_z + 1/2 kappa psi^2 + k_A (1 + s_z) + k_B (1 - s.n); Rayleigh D = 1/2 c_t psidot^2 + 1/2 c_x |V|^2 + 1/2 c_r |w_perp|^2 (FORMULATION s3)",
+  "primary": {
+    "Ax": {
+      "value": 0.014357493369985805,
+      "unit": "camera units",
+      "provenance": "fitted",
+      "sigma": 0.004534348785198678
+    },
+    "Ay": {
+      "value": -0.028706606390503018,
+      "unit": "camera units",
+      "provenance": "fitted",
+      "sigma": 0.02032421601053768
+    },
+    "ell": {
+      "value": 0.19144630805989588,
+      "unit": "m",
+      "provenance": "fitted",
+      "sigma": 0.0018103627160553583
+    },
+    "Lcam": {
+      "value": 0.8649539588532827,
+      "unit": "camera units",
+      "provenance": "fitted",
+      "sigma": 0.006423044011605465
+    },
+    "om_t": {
+      "value": 0.17266475413165408,
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "sigma": 0.011064199626889948
+    },
+    "psi0": {
+      "value": 3.86591789234793,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": 0.21462129252948847
+    },
+    "psid0": {
+      "value": -0.40988810826664857,
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "sigma": 0.018659101631674526
+    },
+    "mu": {
+      "value": -6.80029923865803,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": 0.2074987865933864
+    },
+    "phx0": {
+      "value": -0.034611627553626026,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": 0.0009597829468210785
+    },
+    "phy0": {
+      "value": 0.010955794854900681,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": 0.002008044964543387
+    },
+    "phxd0": {
+      "value": -0.0014451986582607668,
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "sigma": 0.011866697319842936
+    },
+    "phyd0": {
+      "value": 0.24939645799343996,
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "sigma": 0.011377444052579254
+    },
+    "thx0": {
+      "value": 0.0,
+      "unit": "rad",
+      "provenance": "fixed (not fitted; see fit flags)",
+      "sigma": null
+    },
+    "thy0": {
+      "value": 0.0,
+      "unit": "rad",
+      "provenance": "fixed (not fitted; see fit flags)",
+      "sigma": null
+    },
+    "thxd0": {
+      "value": 0.0,
+      "unit": "rad/s",
+      "provenance": "fixed (not fitted; see fit flags)",
+      "sigma": null
+    },
+    "thyd0": {
+      "value": 0.0,
+      "unit": "rad/s",
+      "provenance": "fixed (not fitted; see fit flags)",
+      "sigma": null
+    },
+    "Q_t": {
+      "value": 1000.0000000000001,
+      "unit": "-",
+      "provenance": "assumed",
+      "sigma": null
+    },
+    "Q_sw": {
+      "value": 500.0,
+      "unit": "-",
+      "provenance": "assumed",
+      "sigma": null
+    },
+    "Q_tilt": {
+      "value": 500.0,
+      "unit": "-",
+      "provenance": "assumed",
+      "sigma": null
+    },
+    "gamma_t": {
+      "value": 8.633237706582703e-05,
+      "unit": "1/s",
+      "provenance": "fixed (not fitted; see fit flags)",
+      "sigma": null
+    }
+  },
+  "parameters": {
+    "g": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "provenance": "assumed",
+      "source": "CONTRACT v1 standard gravity",
+      "range": [
+        9.78,
+        9.832
+      ]
+    },
+    "ell": {
+      "value": 0.19144630805989588,
+      "unit": "m",
+      "provenance": "model-conditioned",
+      "sigma": 0.0018103627160553583,
+      "definition": "wire length |A B|, clamp exit -> disc top-face centre"
+    },
+    "R": {
+      "value": 0.11066849634037564,
+      "unit": "m",
+      "provenance": "measured ratio (camera units) / model-conditioned scale",
+      "derivation": "R_cam / lam"
+    },
+    "t": {
+      "value": 0.006861446773103289,
+      "unit": "m",
+      "provenance": "measured ratio (camera units) / model-conditioned scale",
+      "derivation": "t_cam / lam"
+    },
+    "m": {
+      "value": 2.244049928899122,
+      "unit": "kg",
+      "provenance": "assumed",
+      "derivation": "rho pi R^2 t, rho = 8500.0 kg/m^3 (brass assumed); unidentifiable from kinematics"
+    },
+    "I_z": {
+      "value": 0.013742018796770466,
+      "unit": "kg m^2",
+      "provenance": "model-conditioned",
+      "derivation": "m R^2 / 2"
+    },
+    "I_perp": {
+      "value": 0.006879813451761031,
+      "unit": "kg m^2",
+      "provenance": "model-conditioned",
+      "derivation": "m (3 R^2 + t^2) / 12"
+    },
+    "omega_torsion": {
+      "value": 0.17266475413165408,
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "sigma": 0.011064199626889948,
+      "definition": "sqrt(kappa / I_z); identified by the twist period (scale- and mass-free)"
+    },
+    "kappa": {
+      "value": 0.00040969241859275596,
+      "unit": "N m/rad",
+      "provenance": "model-conditioned",
+      "derivation": "I_z omega_torsion^2 (scales with the assumed mass)"
+    },
+    "k_A": {
+      "value": 0.046654384405026235,
+      "unit": "N m",
+      "provenance": "model-conditioned",
+      "derivation": "sqrt(E I_w m g), bend_ends = rigid_disc"
+    },
+    "k_B": {
+      "value": 79.29263685388473,
+      "unit": "N m",
+      "provenance": "model-conditioned",
+      "derivation": "sqrt(E I_w m g), bend_ends = rigid_disc"
+    },
+    "damping": {
+      "law": "Rayleigh: torsional dashpot c_t on psidot, linear drag c_x on the CoM velocity, tilt drag c_r on w_perp",
+      "Q_torsion": {
+        "value": 1000.0000000000001,
+        "unit": "-",
+        "provenance": "assumed",
+        "source": "Q_t = 1000 declared (range 300-5000); M1 in the fit window drives gamma_t to the 0 bound (solver/out/fit/prod_permode/fit_projected.json model_selection)",
+        "sigma": null
+      },
+      "Q_swing": {
+        "value": 500.0,
+        "unit": "-",
+        "provenance": "assumed",
+        "source": "air drag; nominal (FORMULATION s4)"
+      },
+      "Q_tilt": {
+        "value": 500.0,
+        "unit": "-",
+        "provenance": "assumed",
+        "source": "face-normal air drag on the disc; nominal (FORMULATION s5); rigid joint: referenced to the swing mode"
+      },
+      "c_t": {
+        "value": 2.3727622968169412e-06,
+        "unit": "N m s",
+        "provenance": "derived",
+        "derivation": "I_z omega_torsion / Q_torsion"
+      },
+      "c_x": {
+        "value": 0.030787149021077962,
+        "unit": "N s/m",
+        "provenance": "derived",
+        "derivation": "m omega_lateral[0] / Q_swing"
+      },
+      "c_r": {
+        "value": 9.438731253207566e-05,
+        "unit": "N m s",
+        "provenance": "derived",
+        "derivation": "I_perp omega_ref / Q_tilt, omega_ref = omega_lateral[0] for the rigid joint (else [1])"
+      },
+      "note": "never negative; no drives"
+    }
+  },
+  "wire": {
+    "d_m": {
+      "value": 0.00031681662291299623,
+      "unit": "m",
+      "provenance": "model-conditioned",
+      "derivation": "(32 ell kappa / (pi G))^(1/4), G = 7.93e+10 Pa (steel assumed)"
+    },
+    "EI_N_m2": {
+      "value": 9.890807185335758e-05,
+      "unit": "N m^2",
+      "provenance": "model-conditioned",
+      "derivation": "E pi d^4 / 64, E = 2e+11 Pa"
+    },
+    "boundary_layer_m": {
+      "value": 0.002120016652554993,
+      "unit": "m",
+      "provenance": "model-conditioned",
+      "derivation": "sqrt(EI / (m g))"
+    },
+    "max_shear_strain": {
+      "value": 0.0031987742765178123,
+      "unit": "-",
+      "provenance": "derived",
+      "derivation": "(d/2) |psi0| / ell (linear-elastic torsion valid: << 2e-3)"
+    }
+  },
+  "geometry_m": {
+    "provenance": {
+      "R_cam": "definition (unit D)",
+      "t_cam": "measured (measurement silhouette pose fit, 0.031 D)",
+      "rho": "assumed (brass 8500 kg/m^3)",
+      "G_shear": "assumed (steel 79.3 GPa)",
+      "E_young": "assumed (steel 200 GPa)"
+    },
+    "scale_mode": "swing",
+    "ell": 0.19144630805989588,
+    "disc_radius": 0.11066849634037564,
+    "disc_thickness": 0.006861446773103289,
+    "wire_diameter": 0.00031681662291299623,
+    "camera_units_per_m": 4.51799759221616,
+    "camera_units": {
+      "unit": "D (disc diameter = 1; camera.json unit)",
+      "R_cam": 0.5,
+      "t_cam": 0.031,
+      "Lcam": 0.8649539588532827
+    },
+    "ratios_source": "R = 0.5 D by definition of the camera unit (params/camera.json scale.unit); thickness 0.031 D from the measurement silhouette pose fit (measurement/analysis.json thickness_D; scene geometry v001 has 0.0243 +- 0.0009 D, weak) ; rho brass, G, E steel assumed",
+    "note": "metric lengths are model-conditioned (scale from the swing frequency with assumed g, or the declared disc radius)"
+  },
+  "camera_scale": {
+    "camera_units_per_m": 4.51799759221616,
+    "provenance": "fitted",
+    "definition": "camera.json length units per metre = Lcam / ell; scene metres = camera units / this"
+  },
+  "pivot_world_m": {
+    "value": [
+      0.003177844404946483,
+      -0.006353833928543974,
+      0.0
+    ],
+    "unit": "m",
+    "provenance": "fitted",
+    "sigma": [
+      0.004534348785198678,
+      0.02032421601053768
+    ],
+    "camera_units": [
+      0.014357493369985805,
+      -0.028706606390503018,
+      0.0
+    ],
+    "definition": "suspension point (wire top end) in world, A = origin; solver state is relative to it; fitted horizontal offset = correction of A's assumed placement (camera role: A placed by assumption vertically above the frame-0 disc centre; reported A miss 0.037/0.010 D)"
+  },
+  "mark": {
+    "mu_body_rad": {
+      "value": -6.80029923865803,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": 0.2074987865933864,
+      "definition": "azimuth of the engraved mark (one end of the diameter line) in TOR_Disc local XY, from local +X toward +Y"
+    }
+  },
+  "initial_state": {
+    "X0": {
+      "value": [
+        -0.006743738964125476,
+        0.0021338628558676257,
+        -0.19474862255070552
+      ],
+      "unit": "m",
+      "provenance": "fitted"
+    },
+    "V0": {
+      "value": [
+        -0.0002630630104373716,
+        0.048572965833917306,
+        0.0005413240108107041
+      ],
+      "unit": "m/s",
+      "provenance": "fitted"
+    },
+    "q0": {
+      "value": [
+        -0.35423856469380444,
+        0.014299216977882025,
+        -0.011296417581141385,
+        0.9349775198513199
+      ],
+      "unit": "-",
+      "provenance": "fitted",
+      "convention": "w,x,y,z body -> world"
+    },
+    "w0": {
+      "value": [
+        0.23601062276522392,
+        0.005909084311290284,
+        -0.41395673751118084
+      ],
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "convention": "WORLD angular velocity"
+    },
+    "tilt_mode": "mode1",
+    "theta0_used": [
+      -0.03475123994117647,
+      0.010999987075414892,
+      -0.0014510281337701712,
+      0.2504024446345808
+    ],
+    "kappa1_tilt_over_swing": 1.0040336845568483
+  },
+  "derived": {
+    "omega_torsion_rad_s": 0.17266475413165408,
+    "T_torsion_s": 36.38950716246791,
+    "gamma_torsion_1_s": 8.633237706582703e-05,
+    "Q_torsion": 1000.0000000000001,
+    "omega_lateral_rad_s": [
+      6.859729060525273,
+      113.67563769509923
+    ],
+    "T_lateral_s": [
+      0.9159524015804876,
+      0.05527292773173039
+    ],
+    "lateral_mode_shapes_phi_theta": [
+      [
+        1.0,
+        1.0040336845568483
+      ],
+      [
+        1.0,
+        -9.958172942395622
+      ]
+    ],
+    "omega_point_pendulum_rad_s": 7.09381747932844,
+    "static_tension_N": 22.006612235238574,
+    "X_eq": [
+      0.0,
+      0.0,
+      -0.19487703144644752
+    ],
+    "B_eq": [
+      0.0,
+      0.0,
+      -0.19144630805989588
+    ]
+  },
+  "integrator": {
+    "solver_id": "rk4-fixed-step-disc-on-wire-v1-projected",
+    "method": "classical RK4, fixed step dividing each output interval exactly",
+    "h_s": 0.0003255208333333333,
+    "t_end_s": 10.0,
+    "output_dt_s": 0.010416666666666666
+  },
+  "fit_provenance": {
+    "fit_json": "solver/out/fit/prod_permode/fit_projected.json",
+    "production_fit": "MQ (Q_t = 1000 declared assumption)",
+    "t_anchor_s": 2.5,
+    "metrics": {
+      "per_channel": {
+        "pt:B": {
+          "t_anchor_s": 2.5,
+          "rms_anchor_px": 1.3369209750170585,
+          "rms_after_px": 14.380848468132152,
+          "median_sigma_px": 0.738537915552805,
+          "rms_anchor_n_mod4_eq0_px": 1.3670991173506688
+        },
+        "psi": {
+          "t_anchor_s": 7.5,
+          "rms_anchor_deg": 1.0407261030580393,
+          "rms_after_deg": 7.395519463516389,
+          "median_sigma_deg": 0.2605,
+          "rms_anchor_n_mod4_eq0_deg": 1.0881083563868643
+        },
+        "nrm": {
+          "t_anchor_s": 2.5,
+          "rms_anchor_deg": 0.9512266629678375,
+          "rms_after_deg": 2.7120959318689426,
+          "median_sigma_deg": 0.2291831180523293,
+          "rms_anchor_n_mod4_eq0_deg": 0.9565435918817741
+        }
+      },
+      "rms_anchor_px": 1.3369209750170585,
+      "rms_after_anchor_px": 14.380848468132152,
+      "median_sigma_px": 0.738537915552805,
+      "R2_anchor_target_px": 2.215613746658415,
+      "R2_anchor_pass": true,
+      "rms_anchor_twist_deg": 1.0407261030580393,
+      "rms_after_twist_deg": 7.395519463516389
+    },
+    "flags": {
+      "Ax": [
+        "STRONGLY_CORRELATED with Ay (-0.990)",
+        "STRONGLY_CORRELATED with Lcam (-0.988)"
+      ],
+      "Ay": [
+        "UNIDENTIFIED (relative sd 0.71)",
+        "STRONGLY_CORRELATED with Ax (-0.990)",
+        "STRONGLY_CORRELATED with Lcam (+0.997)"
+      ],
+      "ell": [],
+      "Lcam": [
+        "STRONGLY_CORRELATED with Ax (-0.988)",
+        "STRONGLY_CORRELATED with Ay (+0.997)"
+      ],
+      "om_t": [
+        "STRONGLY_CORRELATED with psi0 (-0.980)",
+        "STRONGLY_CORRELATED with mu (+0.972)"
+      ],
+      "psi0": [
+        "STRONGLY_CORRELATED with om_t (-0.980)",
+        "STRONGLY_CORRELATED with mu (-0.999)"
+      ],
+      "psid0": [],
+      "mu": [
+        "STRONGLY_CORRELATED with om_t (+0.972)",
+        "STRONGLY_CORRELATED with psi0 (-0.999)"
+      ],
+      "phx0": [],
+      "phy0": [],
+      "phxd0": [
+        "UNIDENTIFIED (relative sd 8.2)"
+      ],
+      "phyd0": []
+    },
+    "model_selection": {
+      "MQ": {
+        "bic": 3536.3098356895616,
+        "chi2": 3463.6847656624686,
+        "Q_t_fixed": 1000.0,
+        "multistart": [
+          {
+            "om_t_start": 0.15,
+            "om_t": 0.17266475413165408,
+            "mu": -6.80029923865803,
+            "chi2": 3463.6847656624686
+          },
+          {
+            "om_t_start": 0.2,
+            "om_t": 0.1726647569910396,
+            "mu": -6.800299182886802,
+            "chi2": 3463.684765663069
+          },
+          {
+            "om_t_start": 0.3,
+            "om_t": 0.6421028842687106,
+            "mu": -4.52948978267277,
+            "chi2": 1450028.1886843015
+          }
+        ]
+      },
+      "M1": {
+        "bic": 3542.1161945051413,
+        "chi2": 3463.439035309124,
+        "gamma_t": 2.9121121141546183e-19,
+        "sd_scaled": 0.024263225434893267,
+        "at_bound": true
+      },
+      "damping_evidence": {
+        "bootstrap_M1_gamma_t": "skipped: M1 fails the BIC / bound / 3-sigma pre-test",
+        "Q_t_M1": 2.965210870674399e+17,
+        "Q_plausible_range": [
+          100.0,
+          20000.0
+        ],
+        "identified_rule": false,
+        "mode": "auto"
+      }
+    },
+    "inputs": {
+      "obs": "solver/out/tracks_for_fit.csv",
+      "obs_sha256": "487c1813708ff0d6634d15bb1728eee3bea9909155f22e63747a6e7ee0ca8794",
+      "channels": [
+        "pt:B",
+        "psi",
+        "nrm"
+      ],
+      "camera": "camera/project.py load_camera(frame, kind='reference') on params/camera.json",
+      "camera_json_sha256": "5037746174b3e892f5e0a237f2173cefa1ce7517867ce15bc9adbafe075a68b2",
+      "geometry": {
+        "unit": "D (disc diameter = 1; camera.json unit)",
+        "R_cam": 0.5,
+        "t_cam": 0.031,
+        "rho": 8500.0,
+        "G_shear": 79300000000.0,
+        "E_young": 200000000000.0,
+        "bend_ends": "rigid_disc",
+        "tilt_mode": "mode1",
+        "scale_mode": "swing",
+        "R_prompt": 0.05,
+        "source": "R = 0.5 D by definition of the camera unit (params/camera.json scale.unit); thickness 0.031 D from the measurement silhouette pose fit (measurement/analysis.json thickness_D; scene geometry v001 has 0.0243 +- 0.0009 D, weak) ; rho brass, G, E steel assumed",
+        "provenance": {
+          "R_cam": "definition (unit D)",
+          "t_cam": "measured (measurement silhouette pose fit, 0.031 D)",
+          "rho": "assumed (brass 8500 kg/m^3)",
+          "G_shear": "assumed (steel 79.3 GPa)",
+          "E_young": "assumed (steel 200 GPa)"
+        }
+      },
+      "h_fit_s": 0.0026041666666666665
+    },
+    "reduced_chi2": 8.386645921700893
+  },
+  "generator": {
+    "script": "solver/make_params.py",
+    "argv": [
+      "--status",
+      "fitted",
+      "--fit-json",
+      "solver/out/fit/prod_permode/fit_projected.json",
+      "--status-note",
+      "FITTED with per-mode anchor windows (lead decision CHANGELOG 2026-10-26T03:42:09Z, disclosed rule deviation): twist on 0-7.5 s (hold-out 7.5-10 s), sway/tilt on 0-2.5 s. Rigid disc on an inextensible torsion wire, rigid wire-disc joint (disc stays perpendicular to the wire), projected through the SMOOTHED per-frame orbiting camera of record (params/camera.json 50377461); observable = disc silhouette centre P (lead VR03-05), not the mark rotation centre Q. Scale model-conditioned from the sway period (g assumed); suspension point = A + fitted horizontal offset. Brass density assumed (mass unidentifiable). Q_t = 1000 declared (damping not identified).",
+      "--prov-damping",
+      "assumed",
+      "--source-damping",
+      "Q_t = 1000 declared (range 300-5000); M1 in the fit window drives gamma_t to the 0 bound (solver/out/fit/prod_permode/fit_projected.json model_selection)"
+    ],
+    "inputs_sha256": {
+      "solver/make_params.py": "5127749baf2121aa4e0c1ba04366843166454cb73c3448ce551a0764a593d2ca",
+      "solver/model_build.py": "36ca4188a4324997233ba92568af0c1e6428b9c08caf6a5634864b42f3fe71f9",
+      "solver/torsion_disc.py": "524436338a98bd10a403915ee66518f613f0fbd11121f6b788443d1edf0d8f42",
+      "solver/out/fit/prod_permode/fit_projected.json": "5bb6fb3119bc1b2f0ae661f6cb0b37715492782f9c6254aa09c101290b74032f"
+    },
+    "note": "byte-reproducible: rerun with this argv from ROOT"
+  }
+}

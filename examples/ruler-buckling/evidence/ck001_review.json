@@ -1,0 +1,327 @@
+{
+ "checkpoint": "ck001",
+ "reviewer": "F (visual + reproducibility)",
+ "date": "2026-10-26",
+ "inputs": {
+  "preview": "review/ck001_preview_cy (Cycles 50%, 960x544)",
+  "reference": "reference/reference.mp4",
+  "frame0": "firstframe/frame0.png"
+ },
+ "verdict": "no blockers; 2 major (pick-and-place kinematics/visibility), 4 minor. Physics-facing visuals pass: no mid-air weights, stack shrinks 1 per transfer, single-sided buckle (no reversal), no edgewise bending, no flicker, camera locked.",
+ "findings": [
+  {
+   "id": "F1",
+   "severity": "major",
+   "title": "Pick-and-place quill moves implausibly fast: strobes/pops in and out within 1-3 frames",
+   "frames": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    29,
+    30,
+    31,
+    44,
+    45,
+    58,
+    59,
+    60,
+    61,
+    72,
+    73,
+    74,
+    87,
+    88,
+    101,
+    102
+   ],
+   "evidence": [
+    "visual_review/visuals/ck001_transfer1_f6-27.jpg",
+    "visual_review/visuals/ck001_stack_and_quill_0-5s.jpg",
+    "visual_review/visuals/ck001_stack_zoom.jpg"
+   ],
+   "detail": "build_anim.py phases (gap g=0.6 s): close->lift (to z_travel 0.52 m) spans ts-0.306..ts-0.258 s = 48 ms, i.e. ~0.45-0.49 m vertical at ~10 m/s mean (smoothstep peak ~15 m/s, accel tens of g) while holding a 20 g disc. Measured in preview: gripper jumps from the stack (y~480 px) to the frame top in ONE frame (f12->f13, ~450 px = ~360 mm). Quill is visible only ~6 frames per cycle; render.use_motion_blur=False, so it reads as popping/teleporting, which the contract's 'visible path, lowered gently, no teleporting' intends to exclude.",
+   "suggested_fix": "spread hover/grip/lift over >=0.25 s of each 0.6 s cycle (peak speed <=1 m/s), lower z_travel to just above the peg-top clearance, and/or enable motion blur for the final render."
+  },
+  {
+   "id": "F2",
+   "severity": "major",
+   "title": "Weight transit is off-screen for ~8 frames per transfer (path not visible)",
+   "frames": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+   ],
+   "evidence": [
+    "visual_review/visuals/ck001_transfer1_f6-27.jpg",
+    "visual_review/visuals/ck001_peg_top_0-5s.jpg"
+   ],
+   "detail": "After the lift the disc exits the top of the frame at the stack x (f13-14) and re-enters above the peg at f22 (same pattern each transfer, e.g. seat 4: in gripper f65-66, seated f67-68, gripper leaves f69). Horizontal transit happens at z_travel=0.52 m, above the frame top. Partly geometric: the peg top sits ~8 px below the frame edge, so a disc clearing the 40 mm peg must touch the edge; but the transit could run at a lower height in-frame up to the peg and only rise over it.",
+   "suggested_fix": "travel at the lowest height that clears the strip/peg (just above the peg tip), approaching the peg in-frame; keep the final lowering (currently ~3 frames, ~0.3 m/s near the seat) at least as slow."
+  },
+  {
+   "id": "F3",
+   "severity": "minor",
+   "title": "Look is more saturated/contrasty than the reference; bench slightly lighter/yellower",
+   "frames": [
+    0
+   ],
+   "evidence": [
+    "visual_review/visuals/ck001_frame0_match.jpg",
+    "visual_review/ck001_quant.json"
+   ],
+   "detail": "Frame 0 full-frame MAD (8-bit): ours vs ref 10.3, ours vs frame0.png 3.28, ref vs frame0.png 9.69, so we match the frame given to the generator; the gap is the generator's softer, hazier grade. Region mean Lab diff (8-bit units) ours-ref: bench_left L+8.2 b+3.7, bench_right L+5.3 b+3.4, pegboard L+1.6..3.1 b+3.2, vise L+2.1, strip L+0.8. Materials read correctly (satin brushed steel, brass slotted weights, teal cast vise, perforated pegboard, wood bench). Expected difference vs reference: 40 mm peg (ref 20 mm) and the quill (disclosed).",
+   "suggested_fix": "optional: a slight contrast/saturation reduction (or a mild bloom/haze) in the final grade if closer reference match is wanted."
+  },
+  {
+   "id": "F4",
+   "severity": "minor",
+   "title": "Intersection check samples only even integer frames; fast gripper contacts fall on odd frames",
+   "frames": [
+    9,
+    11,
+    13,
+    31,
+    45,
+    59,
+    61,
+    73,
+    87
+   ],
+   "evidence": [
+    "checkpoints/ck001/scene/build_anim.py:470 (if f % 2 == 0)",
+    "visual_review/visuals/ck001_stack_zoom.jpg"
+   ],
+   "detail": "Gripper-stack/gripper-peg proximity lasts only 2-4 frames per pick, so half of them are unchecked (gripping pairs are also exempt). No interpenetration is visible in the 50% preview (the gripper bar sits in front of the stack in f10/11/31/45/74/88/102, not resolvable at this resolution).",
+   "suggested_fix": "check every frame plus subframes during the pick/seat windows."
+  },
+  {
+   "id": "F5",
+   "severity": "minor",
+   "title": "Checkpoint checks.json references the mutable working-dir npz, not the checkpoint copy",
+   "frames": [],
+   "evidence": [
+    "checkpoints/ck001/scene/out/ruler_anim_checks.json (deformation/source = ROOT/solver/out/deformation.npz)"
+   ],
+   "detail": "Both files are byte-identical today (sha256 b4d33b67...93b45, also listed in MANIFEST), but provenance should point inside the immutable checkpoint.",
+   "suggested_fix": "build_all.sh in checkpoints should pass --deformation checkpoints/ckNNN/solver/out/deformation.npz."
+  },
+  {
+   "id": "F6",
+   "severity": "minor",
+   "title": "No motion blur on fast strip swings",
+   "frames": [
+    150,
+    153,
+    156,
+    159,
+    162
+   ],
+   "evidence": [
+    "visual_review/visuals/ck001_buckling_4.5-10s.jpg",
+    "visual_review/visuals/ck001_tip_zoom_deep_swing.jpg"
+   ],
+   "detail": "render.use_motion_blur=False; the topple f144-f162 moves the tip ~30-40 px/frame at 50% scale, so it looks slightly steppy at 24 fps. The reference has natural blur.",
+   "suggested_fix": "enable Cycles motion blur (shutter ~0.5) for the final render; the pc2 cache has subframes."
+  },
+  {
+   "id": "P1",
+   "severity": "pass",
+   "title": "Bench stack shrinks by exactly one per transfer",
+   "frames": [
+    0,
+    14,
+    36,
+    50,
+    66,
+    80,
+    96,
+    110,
+    120,
+    240
+   ],
+   "evidence": [
+    "visual_review/visuals/ck001_stack_zoom.jpg"
+   ],
+   "detail": "Stack top y at quiet frames 424,429,432,436,441,445,450,453 px: 7 decrements of 3-5 px (mean 4.1 px), then constant to f240. The top disc is the one lifted (visible in gripper at f12, f60)."
+  },
+  {
+   "id": "P2",
+   "severity": "pass",
+   "title": "No AI defects imitated",
+   "frames": [
+    24,
+    38,
+    53,
+    67,
+    82,
+    96,
+    110,
+    126,
+    164,
+    192,
+    228,
+    240
+   ],
+   "evidence": [
+    "visual_review/visuals/ck001_overview_sheet.jpg",
+    "visual_review/visuals/ck001_buckling_4.5-10s.jpg",
+    "visual_review/visuals/ck001_peg_top_0-5s.jpg"
+   ],
+   "detail": "Weights never appear mid-air without the gripper; the peg count grows 1 at a time (1..7); the buckle stays toward -Y (camera-left) with a damped sway: tip-body tilt 5.2 deg f126, 59.9 f156, max 75.4 deg at f164.2, 18.0 f192, 68.2 f228, 63.1 f240 (never >90, so the weights stay on the peg); weak-axis bending only (no edgewise lean). Disc faces near-white at the deep swing (max luma 241, 0 clipped px), consistent with the reference's brass faces."
+  },
+  {
+   "id": "P3",
+   "severity": "pass",
+   "title": "Temporal stability: no flicker, camera locked",
+   "frames": "0-240",
+   "evidence": [
+    "visual_review/ck001_quant.json"
+   ],
+   "detail": "Static regions, median per-pixel temporal std 0.0-0.43 (8-bit) vs reference 0.82-1.25; max consecutive-frame region MAD 0.45 (bench_right, quill shadow); max pegboard phase-correlation shift 0.51 px (scene check: camera 0.0006 px)."
+  }
+ ],
+ "reproducibility": {
+  "manifest": "shasum -a 256 -c checkpoints/ck001/MANIFEST.sha256: 45/45 OK",
+  "rebuild": "visual_review/rebuild/ruler_anim.blend from scene/build_anim.py + checkpoints/ck001/solver/out/deformation.npz (Blender 5.2.2, factory-startup, under the render lock), exit 0",
+  "pc2_sha256": {
+   "ck001": "b37b36e757b90331e00fd040b4ba2c9e2a82f2f4fdeedcd785128b8f2c0a6dc1",
+   "rebuild": "b37b36e757b90331e00fd040b4ba2c9e2a82f2f4fdeedcd785128b8f2c0a6dc1",
+   "match": true
+  },
+  "anim_keys_sha256": {
+   "ck001": "78f6d4166a2e25066f812bd3d284f6970cef0b66c30b042ff106b46f2e33434a",
+   "rebuild": "78f6d4166a2e25066f812bd3d284f6970cef0b66c30b042ff106b46f2e33434a",
+   "match": true
+  },
+  "all_other_check_values_identical": true,
+  "note": "the rebuild used the working-tree scene/build_anim.py; matching hashes imply it is equivalent to the checkpoint copy for this output"
+ },
+ "quant": {
+  "pegboard_right": {
+   "ours_vs_ref_meanLab_diff": [
+    1.6,
+    -0.3,
+    3.2
+   ],
+   "ours_vs_ref_MAD_L": 5.85,
+   "ours_vs_frame0_MAD_L": 1.77,
+   "ours_L": 61.2,
+   "ref_L": 60.6
+  },
+  "pegboard_left": {
+   "ours_vs_ref_meanLab_diff": [
+    3.1,
+    0.2,
+    3.2
+   ],
+   "ours_vs_ref_MAD_L": 2.92,
+   "ours_vs_frame0_MAD_L": 1.98,
+   "ours_L": 47.7,
+   "ref_L": 46.5
+  },
+  "bench_left": {
+   "ours_vs_ref_meanLab_diff": [
+    8.2,
+    -1.0,
+    3.7
+   ],
+   "ours_vs_ref_MAD_L": 4.51,
+   "ours_vs_frame0_MAD_L": 2.52,
+   "ours_L": 68.8,
+   "ref_L": 65.6
+  },
+  "bench_right": {
+   "ours_vs_ref_meanLab_diff": [
+    5.3,
+    -0.0,
+    3.4
+   ],
+   "ours_vs_ref_MAD_L": 4.19,
+   "ours_vs_frame0_MAD_L": 1.66,
+   "ours_L": 58.8,
+   "ref_L": 56.7
+  },
+  "vise_body": {
+   "ours_vs_ref_meanLab_diff": [
+    2.1,
+    -2.5,
+    1.7
+   ],
+   "ours_vs_ref_MAD_L": 4.74,
+   "ours_vs_frame0_MAD_L": 1.03,
+   "ours_L": 77.4,
+   "ref_L": 76.6
+  },
+  "strip_mid": {
+   "ours_vs_ref_meanLab_diff": [
+    0.8,
+    -1.9,
+    1.3
+   ],
+   "ours_vs_ref_MAD_L": 1.66,
+   "ours_vs_frame0_MAD_L": 0.56,
+   "ours_L": 65.6,
+   "ref_L": 65.3
+  },
+  "stack": {
+   "ours_vs_ref_meanLab_diff": [
+    -3.8,
+    -1.0,
+    1.6
+   ],
+   "ours_vs_ref_MAD_L": 10.67,
+   "ours_vs_frame0_MAD_L": 1.46,
+   "ours_L": 49.1,
+   "ref_L": 50.6
+  },
+  "full_frame_MAD_8bit": {
+   "ours_f0_vs_ref_f0": 10.3,
+   "ours_f0_vs_frame0": 3.28,
+   "ref_f0_vs_frame0": 9.69
+  },
+  "flicker_ours_vs_ref": {
+   "pegboard_right": {
+    "region_mean_luma_std": 0.05,
+    "region_mean_luma_range": 0.208,
+    "pixel_temporal_std_median": 0.0,
+    "pixel_temporal_std_p99": 0.5,
+    "max_consecutive_frame_MAD": 0.091,
+    "ref_pixel_temporal_std_median": 0.819
+   },
+   "pegboard_left": {
+    "region_mean_luma_std": 0.006,
+    "region_mean_luma_range": 0.025,
+    "pixel_temporal_std_median": 0.0,
+    "pixel_temporal_std_p99": 0.488,
+    "max_consecutive_frame_MAD": 0.019,
+    "ref_pixel_temporal_std_median": 1.057
+   },
+   "bench_left": {
+    "region_mean_luma_std": 0.025,
+    "region_mean_luma_range": 0.084,
+    "pixel_temporal_std_median": 0.0,
+    "pixel_temporal_std_p99": 0.499,
+    "max_consecutive_frame_MAD": 0.048,
+    "ref_pixel_temporal_std_median": 0.956
+   },
+   "bench_right": {
+    "region_mean_luma_std": 0.125,
+    "region_mean_luma_range": 0.622,
+    "pixel_temporal_std_median": 0.427,
+    "pixel_temporal_std_p99": 0.625,
+    "max_consecutive_frame_MAD": 0.448,
+    "ref_pixel_temporal_std_median": 1.252
+   }
+  },
+  "camera_max_shift_px_pegboard": 0.513
+ }
+}

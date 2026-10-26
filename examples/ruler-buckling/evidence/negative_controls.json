@@ -1,0 +1,212 @@
+{
+ "good_static": {
+  "control_ok": true,
+  "verdicts": {
+   "C4_inextensible": true,
+   "C5_clamp": true,
+   "C1_pcr": true,
+   "C1b_n_buckle": true,
+   "C2_postbuckling": true,
+   "C3_equilibrium": true
+  },
+  "must_fail": [],
+  "must_pass": [
+   "C1_pcr",
+   "C1b_n_buckle",
+   "C2_postbuckling",
+   "C3_equilibrium",
+   "C4_inextensible",
+   "C5_clamp"
+  ],
+  "numbers": {
+   "len_err": 1.3955863686909709e-09,
+   "post": 0.0,
+   "equil": 1.3028598591916692e-05,
+   "pcr": {
+    "P_cr_N": {
+     "Wcr_actual_BC(n_buckle)": 0.00031886721296014997,
+     "Wcr_actual_BC_layer": -1.6973064775105406e-05,
+     "euler_ideal": -0.21348813599154604,
+     "selfweight_e0": -0.17657469633709755
+    }
+   },
+   "energy": null
+  }
+ },
+ "bad_E_plus1pct": {
+  "control_ok": true,
+  "verdicts": {
+   "C4_inextensible": true,
+   "C5_clamp": true,
+   "C1_pcr": false,
+   "C1b_n_buckle": true,
+   "C2_postbuckling": false,
+   "C3_equilibrium": false
+  },
+  "must_fail": [
+   "C1_pcr",
+   "C2_postbuckling",
+   "C3_equilibrium"
+  ],
+  "must_pass": [
+   "C4_inextensible"
+  ],
+  "numbers": {
+   "len_err": 1.371838975749995e-09,
+   "post": 0.03703847578641195,
+   "equil": 0.009997685553464586,
+   "pcr": {
+    "P_cr_N": {
+     "Wcr_actual_BC(n_buckle)": 0.010322055885089831,
+     "Wcr_actual_BC_layer": 0.009982857204577256,
+     "euler_ideal": -0.2056230173514615,
+     "selfweight_e0": -0.1683404433004685
+    }
+   },
+   "energy": null
+  }
+ },
+ "bad_length_plus1pct": {
+  "control_ok": true,
+  "verdicts": {
+   "C4_inextensible": false,
+   "C5_clamp": false,
+   "C1_pcr": false,
+   "C1b_n_buckle": true,
+   "C2_postbuckling": false,
+   "C3_equilibrium": false
+  },
+  "must_fail": [
+   "C4_inextensible",
+   "C2_postbuckling"
+  ],
+  "must_pass": [],
+  "numbers": {
+   "len_err": 0.0026800000000001822,
+   "post": 0.054862714212742025,
+   "equil": 0.02116556109880555,
+   "pcr": {
+    "P_cr_N": {
+     "Wcr_actual_BC(n_buckle)": -0.019391366323928905,
+     "Wcr_actual_BC_layer": -0.0197205892214245,
+     "euler_ideal": -0.22898552690083918,
+     "selfweight_e0": -0.19279942783756254
+    }
+   },
+   "energy": null
+  }
+ },
+ "bad_stretch_2e-5": {
+  "control_ok": true,
+  "verdicts": {
+   "C4_inextensible": false,
+   "C5_clamp": true,
+   "C1_pcr": true,
+   "C1b_n_buckle": true,
+   "C2_postbuckling": true,
+   "C3_equilibrium": true
+  },
+  "must_fail": [
+   "C4_inextensible"
+  ],
+  "must_pass": [
+   "C5_clamp"
+  ],
+  "numbers": {
+   "len_err": 5.359769625123967e-06,
+   "post": 1.999999999990898e-05,
+   "equil": 1.426162783679756e-05,
+   "pcr": {
+    "P_cr_N": {
+     "Wcr_actual_BC(n_buckle)": 0.00031886721296014997,
+     "Wcr_actual_BC_layer": -1.6973064775105406e-05,
+     "euler_ideal": -0.21348813599154604,
+     "selfweight_e0": -0.17657469633709755
+    }
+   },
+   "energy": null
+  }
+ },
+ "good_dynamic_Q50": {
+  "control_ok": true,
+  "verdicts": {
+   "C4_inextensible": true,
+   "C5_clamp": true,
+   "C1_pcr": true,
+   "C1b_n_buckle": null,
+   "C2_postbuckling": null,
+   "C3_equilibrium": null,
+   "C6_energy": true
+  },
+  "must_fail": [],
+  "must_pass": [
+   "C4_inextensible",
+   "C5_clamp",
+   "C6_energy"
+  ],
+  "numbers": {
+   "len_err": 2.190272962998563e-10,
+   "post": null,
+   "equil": null,
+   "pcr": {
+    "P_cr_N": {
+     "Wcr_actual_BC(n_buckle)": 0.00031886721296014997,
+     "Wcr_actual_BC_layer": -1.6973064775105406e-05,
+     "euler_ideal": -0.21348813599154604,
+     "selfweight_e0": -0.17657469633709755
+    }
+   },
+   "energy": {
+    "scale_J": 0.014171308414231061,
+    "tol_J": 7.085654207115531e-05,
+    "min_dissipation_J": -3.293085440048187e-06,
+    "max_decrease_J": 3.293085440048187e-06,
+    "final_dissipation_J": 0.0007157251465839378,
+    "U_max_J": 0.014171308414231061,
+    "work_end_J": -0.0028719254619919833,
+    "passed": true
+   }
+  }
+ },
+ "bad_energy_injection": {
+  "control_ok": true,
+  "verdicts": {
+   "C4_inextensible": true,
+   "C5_clamp": true,
+   "C1_pcr": true,
+   "C1b_n_buckle": null,
+   "C2_postbuckling": null,
+   "C3_equilibrium": null,
+   "C6_energy": false
+  },
+  "must_fail": [
+   "C6_energy"
+  ],
+  "must_pass": [
+   "C4_inextensible"
+  ],
+  "numbers": {
+   "len_err": 1.2517388292554443e-08,
+   "post": null,
+   "equil": null,
+   "pcr": {
+    "P_cr_N": {
+     "Wcr_actual_BC(n_buckle)": 0.00031886721296014997,
+     "Wcr_actual_BC_layer": -1.6973064775105406e-05,
+     "euler_ideal": -0.21348813599154604,
+     "selfweight_e0": -0.17657469633709755
+    }
+   },
+   "energy": {
+    "scale_J": 0.015053740376303212,
+    "tol_J": 7.526870188151607e-05,
+    "min_dissipation_J": -0.00018021263955004927,
+    "max_decrease_J": 0.00018021263955004927,
+    "final_dissipation_J": -0.00016774614851838515,
+    "U_max_J": 0.015053740376303212,
+    "work_end_J": 0.0005253358619628902,
+    "passed": false
+   }
+  }
+ }
+}

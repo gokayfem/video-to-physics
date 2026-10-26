@@ -1,0 +1,606 @@
+{
+ "version": "v001",
+ "status": "reference measurement - draft",
+ "created_utc": "2026-10-26T00:50:53Z",
+ "reference": {
+  "path": "WS/reference-batch/clips/02-vertical-spring.mp4",
+  "sha256_verified": "fee726c2c30d36e5cf403a7152ff8a02d100682ee4333e1a495aa4746f6865cd",
+  "frames": 241,
+  "fps": 24,
+  "size": [
+   1920,
+   1088
+  ],
+  "codec": "h264 yuv420p 8.3 Mbit/s"
+ },
+ "labels": "[obs] measured from pixels; [fit] model fitted to measurements; [inf] inference; [asm] assumption",
+ "camera_drift": {
+  "verdict": "[obs] NOT static: smooth push-in, image scale +4.76 % over 10 s (0.481 %/s, near-linear) about (973, 512) px, pan tx -46.4 px / ty -24.7 px, roll < 0.059 deg",
+  "method": "8-dof ECC homography of every frame vs frame 0 on a static mask (KLT-chain init); per-frame similarity extracted",
+  "evidence": {
+   "static_landmark_track_vs_homography_rms_px": "0.25-0.73 for the 8 top-frame landmarks (static_landmarks.csv); post-bottom/plate landmarks 0.7-2.1",
+   "similarity_vs_homography_rms_median_px": 0.384408,
+   "landmarks_vs_similarity_rms_median_px": 0.992309,
+   "landmark_displacement_raw_max_px": "25-33 (frame corners) at frame 240",
+   "hook_top_vs_frame_after_drift_rms_px": 0.642,
+   "layer_scales_frame240": {
+    "posts": 1.04713,
+    "table": 1.0462
+   }
+  },
+  "zoom_vs_dolly": "frame and side table give the same scale within 0.3 %; backdrop textureless (inconclusive). Modelled as zoom (clip-01 precedent); dolly not excluded"
+ },
+ "camera": {
+  "f_px": 3555.473987,
+  "f_px_range_variants": [
+   3421.274325,
+   3848.621675
+  ],
+  "focal_mm_36": 66.665137,
+  "C_world_Win": [
+   -0.038392,
+   -5.259441,
+   -0.056469
+  ],
+  "distance_to_A_Win": 5.259884,
+  "pitch_deg": -7.079843,
+  "yaw_deg": 0.490938,
+  "unit": "W_in = crossbar inner span = 1",
+  "R4_static_reprojection_rms_px": {
+   "0": 0.679,
+   "60": 0.771,
+   "120": 0.793,
+   "180": 0.757,
+   "240": 0.86
+  },
+  "R4_locked_camera_rms_px": {
+   "0": 0.679,
+   "60": 4.996,
+   "120": 10.12,
+   "180": 14.811,
+   "240": 19.365
+  },
+  "R4_pass": true,
+  "blender_projection_max_err_px": 0.003122,
+  "blender_pass": true
+ },
+ "tracks": {
+  "weight": {
+   "methods": "B silhouette profiles + Tukey line fits (primary); C Canny + RANSAC lines (check); A photometric ECC affine kept as diagnostic (fails: highlights do not move with the body)",
+   "B_vs_C_rms_px": [
+    1.673,
+    2.521
+   ],
+   "B_vs_C_max_px": [
+    3.564,
+    5.215
+   ],
+   "sigma_median_px": [
+    1.535,
+    1.594
+   ],
+   "sigma_max_px": [
+    2.847,
+    2.93
+   ],
+   "tilt_B_vs_C_rms_deg": 1.229,
+   "tilt_B_vs_C_const_offset_deg": -1.786,
+   "tilt_sigma_median_deg": 0.87,
+   "note": "B-C differences are swing-correlated (systematic ~2-4 px, ~2 deg), i.e. silhouette definition depends on motion blur/background; treat weight centre to +-3 px and tilt to +-2 deg (static offset +-1.8 deg)"
+  },
+  "ring": {
+   "methods": "A radial edges + robust circle fit (primary); B annulus ZNCC (check)",
+   "A_vs_B_rms_px": [
+    0.717,
+    1.268
+   ],
+   "A_vs_B_max_px": [
+    3.284,
+    3.934
+   ],
+   "sigma_median_px": [
+    0.553,
+    0.575
+   ],
+   "note": "eye-ring centre = spring lower attachment; most precise moving observable; single-frame outlier at frame 116 (method A radius -3 px)"
+  },
+  "spring": {
+   "methods": "row-extent midpoint line fit (primary) vs gradient-centroid line fit (check)",
+   "tilt_methods_rms_deg": 0.456,
+   "body_length_stab_px": {
+    "mean": 460.179926,
+    "sd": 1.575753,
+    "min": 455.788208,
+    "max": 463.516649
+   },
+   "coils": {
+    "open_gaps_values": [
+     11,
+     12
+    ],
+    "frames_with_12": 67,
+    "mean_swing_when_12_deg": 6.292905,
+    "mean_swing_when_11_deg": -2.161008,
+    "n_transitions": 16,
+    "dense_scallops_R_median": 10.0,
+    "open_pitch_px_median": 29.0625,
+    "dense_len_px_median": 139.2839
+   },
+   "top_attachment": "S-hook static to 0.64 px rms (max 1.15) after drift removal: the hook does NOT move",
+   "pivot_P_eff_frame0_px": [
+    954.44,
+    217.67
+   ],
+   "pivot_P_eff_sd_px": [
+    0.19,
+    2.0
+   ]
+  },
+  "files": [
+   "weight_track.csv",
+   "ring_track.csv",
+   "spring_track.csv",
+   "static_landmarks.csv",
+   "modes_series.csv",
+   "tracks_3d.csv",
+   "camera_drift (cache/H_ecc.npy; camera/drift.csv)"
+  ]
+ },
+ "three_d": {
+  "assumption": "ring, weight centre and spring axis in the vertical plane Y=0 through A (frame-front-parallel)",
+  "size_tests": [
+   {
+    "signal": "weight silhouette width",
+    "K_size_units": 0.211638,
+    "depth_noise_rms_Win": 0.092969,
+    "dY_dX": -0.243045,
+    "dY_dX_sd": 0.057179,
+    "swing_plane_yaw_deg": -13.660577,
+    "swing_plane_yaw_sd_deg": 3.276107,
+    "quadrature_Y_amp_Win": 0.057767,
+    "quadrature_sd": 0.057021,
+    "lateral_amp_Win": 0.148353,
+    "depth_trend_per_s_Win": 0.002225,
+    "depth_trend_sd": 0.00207
+   },
+   {
+    "signal": "ring outer radius",
+    "K_size_units": 0.048112,
+    "depth_noise_rms_Win": 0.077451,
+    "dY_dX": 0.170986,
+    "dY_dX_sd": 0.061593,
+    "swing_plane_yaw_deg": 9.702959,
+    "swing_plane_yaw_sd_deg": 3.529027,
+    "quadrature_Y_amp_Win": -0.100604,
+    "quadrature_sd": 0.061565,
+    "lateral_amp_Win": 0.114745,
+    "depth_trend_per_s_Win": 0.001217,
+    "depth_trend_sd": 0.001724
+   }
+  ],
+  "verdict": "[obs/inf] no consistent out-of-plane motion: weight-width depth cue gives swing-plane yaw -14 +- 3 deg, ring-radius cue 10 +- 4 deg (opposite signs -> systematics dominate); quadrature (elliptical) terms consistent with 0. Plane Y=0 adopted; |yaw| <~ 15 deg not excluded",
+  "P_eff_world_Win": [
+   -0.002875,
+   0.0,
+   -0.225071
+  ],
+  "A_to_P_eff_Win": 0.225089,
+  "P_eff_to_ring_Win": {
+   "mean": 0.81819,
+   "sd": 0.001817
+  },
+  "P_eff_to_weight_centre_Win": {
+   "mean": 0.998436,
+   "sd": 0.001526
+  },
+  "ring_to_weight_centre_Win": 0.180341,
+  "weight_diameter_Win": 0.211638,
+  "weight_silhouette_length_Win": 0.306589,
+  "spring_coil_body_length_Win": {
+   "mean": 0.686884,
+   "sd": 0.002201
+  },
+  "theta_ring_deg_range": [
+   -8.10086,
+   8.39684
+  ]
+ },
+ "modes": {
+  "lateral_swing": {
+   "present": true,
+   "period_s_sine_fit": [
+    1.300744,
+    0.000652
+   ],
+   "period_s_zero_crossings": [
+    1.30248,
+    0.00286
+   ],
+   "amplitude_deg_image": [
+    7.861998,
+    8.216123,
+    7.621655
+   ],
+   "amplitude_per_half_cycle": [
+    [
+     0.976,
+     7.862,
+     0.038
+    ],
+    [
+     1.608,
+     7.886,
+     0.041
+    ],
+    [
+     2.252,
+     8.056,
+     0.049
+    ],
+    [
+     2.897,
+     8.13,
+     0.059
+    ],
+    [
+     3.543,
+     8.214,
+     0.07
+    ],
+    [
+     4.194,
+     8.216,
+     0.067
+    ],
+    [
+     4.846,
+     8.192,
+     0.044
+    ],
+    [
+     5.5,
+     8.129,
+     0.056
+    ],
+    [
+     6.154,
+     7.837,
+     0.057
+    ],
+    [
+     6.803,
+     7.613,
+     0.047
+    ],
+    [
+     7.455,
+     7.609,
+     0.046
+    ],
+    [
+     8.112,
+     7.644,
+     0.06
+    ],
+    [
+     8.777,
+     7.582,
+     0.061
+    ],
+    [
+     9.448,
+     7.622,
+     0.046
+    ]
+   ],
+   "half_period_per_half_cycle": [
+    [
+     0.976,
+     0.6242,
+     0.0041
+    ],
+    [
+     1.608,
+     0.6404,
+     0.0039
+    ],
+    [
+     2.252,
+     0.6469,
+     0.0042
+    ],
+    [
+     2.897,
+     0.6435,
+     0.0047
+    ],
+    [
+     3.543,
+     0.6487,
+     0.0065
+    ],
+    [
+     4.194,
+     0.6541,
+     0.0082
+    ],
+    [
+     4.846,
+     0.6494,
+     0.0063
+    ],
+    [
+     5.5,
+     0.6578,
+     0.0054
+    ],
+    [
+     6.154,
+     0.6501,
+     0.0056
+    ],
+    [
+     6.803,
+     0.649,
+     0.0053
+    ],
+    [
+     7.455,
+     0.6541,
+     0.0052
+    ],
+    [
+     8.112,
+     0.6604,
+     0.0069
+    ],
+    [
+     8.777,
+     0.6701,
+     0.007
+    ],
+    [
+     9.448,
+     0.6712,
+     0.005
+    ]
+   ],
+   "phase_t0": "phase at t=0: weight essentially at its left turning point (swing -7.27 deg at t=0, turning point at t=0.047 s, -7.48 deg); not released exactly at t=0",
+   "decay_fit_per_s": [
+    0.007904,
+    0.002615
+   ],
+   "sine_chi2nu": 67.898806
+  },
+  "vertical_bob": {
+   "present": false,
+   "evidence": {
+    "regression_coef_px": {
+     "const": 547.601974,
+     "per_rad": -10.904855,
+     "per_rad2": -140.088403,
+     "per_rad2_s2": 0.336244
+    },
+    "residual_rms_px": 0.973274,
+    "median_sigma_r_px": 0.563567,
+    "residual_chi2nu": 4.624574,
+    "residual_spectrum_peaks_hz": [
+     [
+      0.768,
+      1.0
+     ],
+     [
+      1.548,
+      0.2647
+     ],
+     [
+      0.286,
+      0.0435
+     ],
+     [
+      1.267,
+      0.0391
+     ]
+    ],
+    "raw_r_rms_about_mean_px": 1.175079
+   },
+   "radial_fit": {
+    "r0_px": 546.469159,
+    "a_2w_px": -1.314609,
+    "phase_2w": 0.186431,
+    "a_z_px": -1.159975,
+    "omega_z": 4.773214,
+    "period_z_s": 1.316343,
+    "s_period_z_s": 0.005531,
+    "phase_z": 3.674387,
+    "s": [
+     0.056966,
+     0.06685,
+     0.055769,
+     0.08735,
+     0.020058,
+     0.110696
+    ],
+    "chi2nu": 2.876315
+   },
+   "verdict": "[obs] no independent axial (bob) oscillation: pivot-ring distance varies only +-1.2 px rms about 546 px, explained by swing-locked w and 2w terms (spectral peaks 0.767 and 1.533 Hz); residual after regression on phi, phi^2, phidot^2 is 0.97 px rms with remaining power at the swing frequency only. The prompt's 1 cm vertical bob is absent."
+  },
+  "weight_rocking": {
+   "present": true,
+   "gain_tilt_per_swing_B": 1.287691,
+   "gain_tilt_per_swing_C": 1.405782,
+   "static_offset_deg_B": 1.32873,
+   "amplitude_per_half_cycle_deg": [
+    [
+     0.664,
+     10.568,
+     0.383
+    ],
+    [
+     1.288,
+     10.552,
+     0.375
+    ],
+    [
+     1.928,
+     10.754,
+     0.373
+    ],
+    [
+     2.575,
+     11.12,
+     0.428
+    ],
+    [
+     3.219,
+     11.185,
+     0.478
+    ],
+    [
+     3.867,
+     11.094,
+     0.371
+    ],
+    [
+     4.521,
+     10.948,
+     0.308
+    ],
+    [
+     5.171,
+     10.249,
+     0.356
+    ],
+    [
+     5.829,
+     9.655,
+     0.379
+    ],
+    [
+     6.479,
+     9.604,
+     0.402
+    ],
+    [
+     7.128,
+     8.976,
+     0.462
+    ],
+    [
+     7.782,
+     9.232,
+     0.453
+    ],
+    [
+     8.442,
+     9.749,
+     0.371
+    ],
+    [
+     9.112,
+     9.812,
+     0.392
+    ]
+   ],
+   "verdict": "[obs] the weight tilts in phase with the swing, ~1.3-1.4x the swing angle (i.e. it rocks ~2.5-3 deg beyond the pivot-ring line): consistent with the in-phase mode of a double pendulum (spring + weight hinged at the ring) [inf]"
+  },
+  "spring_axis": {
+   "gain_vs_swing": 0.961,
+   "note": "spring axis tilt ~0.96x the P_eff-ring angle; the spring body pivots about its top coil (P_eff), the S-hook is fixed"
+  },
+  "out_of_plane": "see three_d",
+  "spin": "[obs] not measurable: brushed axisymmetric cylinder; photometric ECC shows highlight bands do not follow the body (view-dependent reflections)",
+  "frequency_ratio": "undefined: no independent axial frequency observed (only swing harmonics); autoparametric 2:1 not testable from the reference"
+ },
+ "cadence": {
+  "offsets_frames_by_n_mod_4": [
+   0.2739,
+   0.0981,
+   -0.0942,
+   -0.2779
+  ],
+  "sd": [
+   0.0074,
+   0.0079,
+   0.0081,
+   0.0074
+  ],
+  "step_ratio_by_destination_n_mod_4": {
+   "0": 1.671954,
+   "1": 0.913648,
+   "2": 0.748838,
+   "3": 0.875259
+  },
+  "verdict": "[obs] same generator 4-frame cadence as clip 01: steps into n = 0 mod 4 are ~1.67x; diagnostic only, not a retiming licence"
+ },
+ "discontinuities": {
+  "attachment_jump": "none: S-hook static to <=1.2 px after drift removal; ring and weight tracks have no acceleration outliers > 6 robust sigma (ring/weight centre screens 0 flagged)",
+  "coil_count_change": "none: open-coil gap count is 11 or 12; the 12th gap is the boundary turn between the open and close-wound sections and appears only when the spring is swung to image-right (mean swing +6.3 deg vs -2.2 deg), reversibly, 16 transitions; the close-wound section keeps ~10 scallops (right edge median). Interpreted as a near-closed coil opening on the outside of the bend, not a coil-count change",
+  "shape_change": "none visible: single-frame tracker outliers at frame 116 (ring radius -3 px, method A vs B differ by 5 px; ring looks unchanged in a 2x zoom) and weight width/tilt outliers at frames 75-77, 135-136, 143-144 coincide with motion blur/cadence frames; weight silhouette length is constant (sd 0.8 px)"
+ },
+ "anchor_window": {
+  "T_a_s": 10.0,
+  "held_out_s": [
+   7.5,
+   10.0
+  ],
+  "reason": "no qualifying amplitude increase (> 3 sigma) in any measured mode and no visible discontinuity",
+  "near_misses": [
+   {
+    "mode": "lateral swing (image angle of ring about P_eff)",
+    "max_z": 2.66307,
+    "at_t": 1.92816
+   },
+   {
+    "mode": "weight rocking (absolute weight tilt at swing turning points)",
+    "max_z": 0.88335,
+    "at_t": 8.44212
+   },
+   {
+    "mode": "weight rocking relative to pivot-ring line",
+    "max_z": 0.98008,
+    "at_t": 8.44212
+   }
+  ],
+  "literal_radius_note": "if the rule were applied literally to the raw r(t) turning points (not an oscillation mode), the first > 3 sigma increase would be at t = 9.373291 s",
+  "trends_not_tested_by_rule": {
+   "swing_amp_first_deg": 7.862,
+   "swing_amp_peak_deg": 8.21612,
+   "swing_amp_peak_t": 4.19428,
+   "swing_amp_last_deg": 7.62165,
+   "growth_pct_first_to_peak": 4.50426,
+   "growth_rate_deg_per_s_until_peak": [
+    0.12939,
+    0.01961
+   ],
+   "half_period_first_s": 0.62424,
+   "half_period_last_s": 0.67119,
+   "half_period_trend_s_per_s": [
+    0.00381,
+    0.00061
+   ],
+   "half_period_sd_s": 0.01146,
+   "half_period_median_sd_s": 0.00537,
+   "note": "the declared rule tests half-cycle-to-half-cycle jumps only; the swing amplitude instead grows gradually (+4.5 % from 0.98 s to 4.19 s, a non-physical energy injection for a passive system) and then decays faster; the half-period lengthens by 7.5 % over the clip. Both lie inside a 10 s anchor window."
+  }
+ },
+ "ai_defects_vs_prompt": [
+  "lateral swing +-8 deg (image) with weight rocking (prompt: straight vertical bob, no sideways motion)",
+  "no visible vertical bob (prompt: ~1 cm bob, decaying)",
+  "swing amplitude grows +4.5 % over 1-4 s then decays (non-physical energy injection)",
+  "half-period lengthens 7.5 % over the clip (period wander)",
+  "camera push-in +4.8 % and pan (prompt: frame perfectly still / locked camera)",
+  "S-hook static while the spring body pivots at its top coil (hook should swing with the spring if hinged at the bar)",
+  "4-frame generator cadence"
+ ],
+ "visuals": [
+  "v001_amplitude_period_per_halfcycle_Ta.png",
+  "v001_annotated_f000_all_tracks.jpg",
+  "v001_camera_drift_plot.png",
+  "v001_camera_drift_raw_vs_corrected.jpg",
+  "v001_reprojection_overlay.jpg",
+  "v001_spring_coil_crops.jpg",
+  "v001_tracking_methods_and_cadence.png",
+  "v001_turning_points_zero_crossings.jpg"
+ ]
+}

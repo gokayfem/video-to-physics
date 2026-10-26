@@ -1,0 +1,530 @@
+{
+ "version": "v028",
+ "owner": "scene role C (look)",
+ "units": "lengths in D (disc diameter); colours linear Rec.709; light energies in W at D_ref_m, scaled by (D_m/D_ref_m)^2",
+ "D_ref_m": 0.1,
+ "walnut": {
+  "color_dark": [
+   0.09,
+   0.026,
+   0.011
+  ],
+  "color_mid": [
+   0.245,
+   0.08,
+   0.036
+  ],
+  "color_light": [
+   0.36,
+   0.145,
+   0.068
+  ],
+  "pore_color": [
+   0.06,
+   0.02,
+   0.01
+  ],
+  "end_grain_darken": 1.12,
+  "streak_freq_across": 130.0,
+  "streak_freq_along": 2.0,
+  "streak_detail": 10.0,
+  "streak_contrast": 3.2,
+  "band_freq_across": 4.0,
+  "band_freq_along": 0.1667,
+  "band_weight": 0.3,
+  "warp_amp": 0.12,
+  "warp_freq": 0.7667,
+  "pore_freq_across": 200.0,
+  "pore_freq_along": 12.0,
+  "pore_threshold": 0.52,
+  "pore_amount": 0.8,
+  "roughness": 0.48,
+  "roughness_pore": 0.6,
+  "coat_weight": 0.05,
+  "coat_roughness": 0.18,
+  "bump_strength": 0.08,
+  "bump_distance": 0.0045000000000000005,
+  "specular_ior_level": 0.28,
+  "mottle_amount": 0.1,
+  "mottle_freq": 40.0,
+  "end_contrast": 0.35,
+  "cathedral_amount": 0.25,
+  "cathedral_freq_across": 2.6667,
+  "cathedral_freq_along": 0.6667,
+  "cathedral_bend": 0.36,
+  "parts": {
+   "posts": {
+    "grain_axis": [
+     0,
+     0,
+     1
+    ],
+    "end_axis": [
+     1,
+     0,
+     0
+    ],
+    "seed": 5.3,
+    "tone": 1.0
+   },
+   "crossbar": {
+    "grain_axis": [
+     1,
+     0,
+     0
+    ],
+    "end_axis": [
+     0,
+     1,
+     0
+    ],
+    "seed": 9.1,
+    "tone": 0.92
+   },
+   "feet": {
+    "grain_axis": [
+     0,
+     1,
+     0
+    ],
+    "end_axis": [
+     1,
+     0,
+     0
+    ],
+    "seed": 2.7,
+    "tone": 0.75
+   }
+  },
+  "provenance": "clip-02 v016 walnut shader, frequencies rescaled per-S(0.30 m) -> per-D(0.10 m); colours re-based on the clip-03 reference (orange-red, L 0.45-0.53, C 0.063-0.076, hue 35-40 deg)",
+  "provenance_v017": "VR03-10: feet +0.12 L -> tone 0.75; crossbar tone 0.92; finer streaks"
+ },
+ "black_steel": {
+  "base_color": [
+   0.012,
+   0.011,
+   0.012
+  ],
+  "metallic": 0.0,
+  "roughness": 0.45,
+  "rough_noise_amp": 0.05,
+  "rough_noise_freq": 2.0,
+  "bump_strength": 0.01,
+  "bump_freq": 200.0,
+  "bump_distance": 0.0003,
+  "specular_ior_level": 0.15,
+  "coat_weight": 0.1,
+  "coat_roughness": 0.25
+ },
+ "screw_steel": {
+  "base_color": [
+   0.86,
+   0.86,
+   0.87
+  ],
+  "metallic": 1.0,
+  "roughness": 0.06,
+  "front_y_D": -0.131,
+  "front_base_color": [
+   0.28,
+   0.28,
+   0.29
+  ],
+  "front_roughness": 0.35
+ },
+ "wire_steel": {
+  "base_color": [
+   0.5,
+   0.5,
+   0.52
+  ],
+  "metallic": 1.0,
+  "roughness": 0.3
+ },
+ "brass": {
+  "base_color": [
+   0.86,
+   0.54,
+   0.17
+  ],
+  "rim_color": [
+   0.95,
+   0.7,
+   0.35
+  ],
+  "anisotropic": 0.9,
+  "roughness": 0.32,
+  "roughness_streak_amp": 0.015,
+  "color_streak_amp": 0.004,
+  "streak_freq": 600.0,
+  "streak_freq_along": 0.4,
+  "streak_detail": 4.0,
+  "bump_streak": 0.002,
+  "rim_roughness": 0.15,
+  "top_band_m_scale": 0.01,
+  "mark_wall": 0.15,
+  "mark_end_inset": 0.002,
+  "mark_darkness": 1.0,
+  "mark_color": [
+   0.008,
+   0.006,
+   0.004
+  ],
+  "mark_roughness": 0.5,
+  "mark_depth_D": 0.0015,
+  "bump_strength": 0.6,
+  "provenance": "turned brass: anisotropic tangent circumferential (radial highlight cones), concentric streaks; engraved diameter (geometry.json mark_width)",
+  "view_lobes": {
+   "enabled": true,
+   "power": 4.0,
+   "bright": 1.0,
+   "dark": 0.12,
+   "provenance": "reference ring r0.7: flat-topped lobes ~47 deg wide along the view azimuth, L 0.75 vs 0.42 (linear ~0.2)",
+   "edge_deg": [
+    0.0,
+    55.0
+   ]
+  },
+  "metallic_top": 0.85,
+  "provenance_v017": "VR03-07/08: saturation up, ring streaks down, lobe contrast up, wide low rim strip; darker flat-bottomed mark cavity",
+  "provenance_v019": "VR03-07: disc-only softboxes warm-tinted (light-linked to TOR_Disc) - AgX desaturates the bright lobes; reference brass C 0.048",
+  "specular_ior_level": 0.0,
+  "mark_bump": 0.25,
+  "radial_streaks": {
+   "freq": 140.0,
+   "freq_r": 3.0,
+   "detail": 6.0,
+   "amp": 0.3
+  },
+  "provenance_v026": "VR03-07 v002: softer cone edges (0-55 deg), less saturated base and lights, fine radial texture; VR03-08: darker narrower groove (less bump)"
+ },
+ "set": {
+  "half_width_D": 40.0,
+  "wall_height_D": 20.0,
+  "table_front_D": 30.0,
+  "wall_y_D": 3.26,
+  "cove_D": 0.0,
+  "table": {
+   "color": [
+    0.2467,
+    0.189,
+    0.231
+   ],
+   "roughness": 0.85,
+   "mottle_amp": 0.015,
+   "mottle_freq": 0.4,
+   "bump_strength": 0.0025,
+   "grain_freq": 200.0,
+   "ramp_y": [
+    3.26,
+    1.6,
+    0.62,
+    1.0
+   ]
+  },
+  "backdrop": {
+   "color": [
+    0.3599,
+    0.3044,
+    0.3311
+   ],
+   "roughness": 0.95,
+   "mottle_amp": 0.02,
+   "mottle_freq": 0.3,
+   "ramp_z": [
+    -1.5763,
+    -1.0763,
+    0.6,
+    1.0
+   ]
+  },
+  "provenance": "crease (darkest band) back-projected through the camera of record onto the table plane: y = 3.0-3.3 D (frames 0/120/240)",
+  "provenance_ramps": "reference row profile: dark crease band (L 0.52) below the wall (0.66-0.68) and above the table (0.60); modelled as albedo ramps (shadowed lower wall / far table)",
+  "provenance_v017": "VR03-09: wall y 3.26 D = reference max-gradient horizon back-projected through the camera of record (frames 0/120/240, both sides); mauve chroma x1.6; softer/wider crease ramps; table micro-detail /3",
+  "provenance_v023": "VR03-09: the reference wall gradient flips with the orbit (bright right at f0, bright left at f240) = a WORLD-fixed pool behind the stand seen with parallax; wash = narrow pool centred at x 0 on the wall (not camera-relative)"
+ },
+ "lights": {
+  "target_D": [
+   0.0,
+   0.0,
+   -0.9
+  ],
+  "key": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": -100.0,
+   "elevation_deg": 75.0,
+   "distance_D": 5.0,
+   "size_D": 5.0,
+   "energy_W": 8.0,
+   "color": [
+    1.0,
+    0.97,
+    0.94
+   ],
+   "exclude": [
+    "TOR_Look_Backdrop",
+    "TOR_Disc"
+   ],
+   "spread_deg": 50.0
+  },
+  "fill_left": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": -120.0,
+   "elevation_deg": 20.0,
+   "distance_D": 7.0,
+   "size_D": 4.0,
+   "energy_W": 5.0,
+   "color": [
+    1.0,
+    0.98,
+    0.97
+   ],
+   "exclude": [
+    "TOR_Disc",
+    "TOR_Look_Backdrop",
+    "TOR_Look_Table"
+   ]
+  },
+  "wall_wash": {
+   "type": "AREA",
+   "shape": "DISK",
+   "location_D": [
+    0.0,
+    0.4,
+    0.6
+   ],
+   "aim_D": [
+    0.0,
+    3.26,
+    -0.7
+   ],
+   "size_D": 2.0,
+   "energy_W": 4.0,
+   "color": [
+    1.0,
+    0.97,
+    0.98
+   ],
+   "shadow": false,
+   "receivers": [
+    "TOR_Look_Backdrop",
+    "TOR_Look_Cove"
+   ],
+   "spread_deg": 60.0
+  },
+  "disc_back": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "location_D": [
+    0.0,
+    2.3,
+    0.0
+   ],
+   "aim_D": [
+    0.0,
+    0.0,
+    -0.9
+   ],
+   "size_D": 6.0,
+   "size_y_D": 2.5,
+   "energy_W": 0.559,
+   "color": [
+    1.0,
+    0.93,
+    0.8
+   ],
+   "receivers": [
+    "TOR_Disc"
+   ],
+   "shadow": false
+  },
+  "disc_front": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "location_D": [
+    0.8,
+    -3.5,
+    -0.2
+   ],
+   "aim_D": [
+    0.0,
+    0.0,
+    -0.95
+   ],
+   "size_D": 4.0,
+   "size_y_D": 1.0,
+   "energy_W": 0.865,
+   "color": [
+    1.0,
+    0.93,
+    0.8
+   ],
+   "receivers": [
+    "TOR_Disc"
+   ],
+   "shadow": false
+  },
+  "hardware_strip": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "location_D": [
+    -0.6,
+    -2.0,
+    1.6
+   ],
+   "aim_D": [
+    0.0,
+    0.0,
+    0.25
+   ],
+   "size_D": 1.2,
+   "size_y_D": 0.3,
+   "energy_W": 0.15,
+   "color": [
+    1.0,
+    0.98,
+    0.96
+   ],
+   "receivers": [
+    "TOR_Clamp"
+   ],
+   "provenance": "reference clamp: satin top bend highlight, bright polished screw heads/collet"
+  },
+  "screw_strip": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "location_D": [
+    0.5,
+    -2.0,
+    0.4
+   ],
+   "aim_D": [
+    0.0,
+    -0.13,
+    0.06
+   ],
+   "size_D": 1.0,
+   "size_y_D": 1.0,
+   "energy_W": 0.8,
+   "color": [
+    1.0,
+    0.98,
+    0.96
+   ],
+   "receivers": [
+    "TOR_Screws",
+    "TOR_Collet"
+   ],
+   "provenance": "VR03-06: chrome washer/button/collet faces reflect a small panel placed near the camera direction"
+  },
+  "rim_low": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "location_D": [
+    0.6,
+    -3.5,
+    -2.3
+   ],
+   "aim_D": [
+    0.0,
+    0.0,
+    -0.9
+   ],
+   "size_D": 10.0,
+   "size_y_D": 1.5,
+   "energy_W": 2.0,
+   "color": [
+    1.0,
+    0.9,
+    0.72
+   ],
+   "shadow": false,
+   "receivers": [
+    "TOR_Disc"
+   ],
+   "provenance": "reference: bright golden side band of the disc (mirror direction of the side band points below the disc toward the camera)"
+  },
+  "collet_strip": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "location_D": [
+    0.7,
+    -1.0,
+    0.02
+   ],
+   "aim_D": [
+    0.0,
+    0.0,
+    0.01
+   ],
+   "size_D": 0.3,
+   "size_y_D": 0.6,
+   "energy_W": 0.8,
+   "color": [
+    1.0,
+    0.98,
+    0.96
+   ],
+   "shadow": false,
+   "receivers": [
+    "TOR_Collet"
+   ],
+   "provenance": "VR03-06 v002: chrome collet ring highlight"
+  }
+ },
+ "world": {
+  "color": [
+   0.05,
+   0.048,
+   0.05
+  ],
+  "strength": 1.0
+ },
+ "render": {
+  "view_transform": "AgX",
+  "look": "AgX - Base Contrast",
+  "exposure": -0.5,
+  "gamma": 1.0,
+  "eevee": {
+   "taa_render_samples": 32,
+   "use_raytracing": true,
+   "ray_tracing_method": "SCREEN",
+   "use_shadows": true,
+   "shadow_ray_count": 2,
+   "shadow_step_count": 8,
+   "fast_gi_method": "GLOBAL_ILLUMINATION",
+   "use_fast_gi": true
+  },
+  "cycles": {
+   "samples": 128,
+   "use_denoising": true,
+   "max_bounces": 8,
+   "glossy_bounces": 4,
+   "device": "CPU"
+  },
+  "output_path": "//render/"
+ },
+ "probes": {
+  "TOR_Look_DiscProbe": {
+   "enabled": false,
+   "location_D": [
+    0,
+    0,
+    -0.9
+   ],
+   "influence_D": 0.8
+  }
+ },
+ "note": "EEVEE light probe near the disc disabled from the start (clip-02 lesson: it mirrors the lit table)",
+ "collet_steel": {
+  "base_color": [
+   0.9,
+   0.9,
+   0.91
+  ],
+  "metallic": 1.0,
+  "roughness": 0.08
+ }
+}

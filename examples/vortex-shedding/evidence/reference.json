@@ -1,0 +1,250 @@
+{
+ "_doc": "Role E independent reference (FEniCSx 0.11 IPCS, Taylor-Hood P2/P1, gmsh, semi-implicit AB/CN). Not the production code.",
+ "benchmark_ST2D2_published": {
+  "St": [
+   0.295,
+   0.305
+  ],
+  "Cd_max": [
+   3.22,
+   3.24
+  ],
+  "Cl_max": [
+   0.99,
+   1.01
+  ]
+ },
+ "st2d2": [
+  {
+   "file": "ref_st2d2_L1.npz",
+   "ok": true,
+   "done": true,
+   "cells": 3682,
+   "vel_dofs": 15100,
+   "dt": 0.001,
+   "hcyl": 0.008,
+   "window": [
+    6.815926674799423,
+    7.811562238637867
+   ],
+   "St": 0.30131507038922845,
+   "St_probe": 0.3013148846310383,
+   "Cd_max": 3.1727203064683067,
+   "Cd_mean": 3.1413539724705903,
+   "Cl_max": 0.9855733481327639,
+   "Cl_amp": 0.9998774822643517,
+   "Cl_amp_growth_last_period": 4.2149449241968284e-06,
+   "period_spread": 2.449938659350585e-07,
+   "t_end": 8.000000000001005,
+   "in_band": {
+    "St": true,
+    "Cd_max": false,
+    "Cl_max": false
+   },
+   "rel_err_to_band_mid": {
+    "St": 0.004383567964094856,
+    "Cd_max": -0.017733651248202385,
+    "Cl_max": -0.014426651867236129
+   }
+  },
+  {
+   "file": "ref_st2d2_L1b.npz",
+   "ok": true,
+   "done": true,
+   "cells": 7561,
+   "vel_dofs": 30778,
+   "dt": 0.001,
+   "hcyl": 0.0055,
+   "window": [
+    6.801392394268147,
+    7.794912944360404
+   ],
+   "St": 0.3019565120944326,
+   "St_probe": 0.3019563708493356,
+   "Cd_max": 3.1963898598338747,
+   "Cd_mean": 3.16486543361259,
+   "Cl_max": 0.9815908210492967,
+   "Cl_amp": 1.0001587971548358,
+   "Cl_amp_growth_last_period": 2.1799413407741497e-05,
+   "period_spread": 4.0334943085738106e-07,
+   "t_end": 8.000000000001005,
+   "in_band": {
+    "St": true,
+    "Cd_max": false,
+    "Cl_max": false
+   },
+   "rel_err_to_band_mid": {
+    "St": 0.006521706981441981,
+    "Cd_max": -0.010405616150503323,
+    "Cl_max": -0.018409178950703264
+   }
+  },
+  {
+   "file": "ref_st2d2_L2.npz",
+   "ok": true,
+   "done": true,
+   "cells": 14432,
+   "vel_dofs": 58468,
+   "dt": 0.001,
+   "hcyl": 0.004,
+   "window": [
+    6.801080123790436,
+    7.794608491777991
+   ],
+   "St": 0.301954136053172,
+   "St_probe": 0.30195433992460874,
+   "Cd_max": 3.211711820928573,
+   "Cd_mean": 3.1802181230011266,
+   "Cl_max": 0.9856405082027281,
+   "Cl_amp": 1.002409388405999,
+   "Cl_amp_growth_last_period": -1.6983932932146395e-05,
+   "period_spread": 3.7948333642728946e-07,
+   "t_end": 8.000000000001005,
+   "in_band": {
+    "St": true,
+    "Cd_max": false,
+    "Cl_max": false
+   },
+   "rel_err_to_band_mid": {
+    "St": 0.0065137868439067255,
+    "Cd_max": -0.00566197494471441,
+    "Cl_max": -0.014359491797271917
+   }
+  }
+ ],
+ "st2d2_aitken_extrapolated": {
+  "Cd_max": 3.2398351988044527,
+  "Cl_max": null,
+  "St": null
+ },
+ "prod_Re150": [
+  {
+   "file": "ref_prod_M1.npz",
+   "ok": true,
+   "done": true,
+   "cells": 12573,
+   "vel_dofs": 50994,
+   "dt": 0.01,
+   "hcyl": 0.05,
+   "window": [
+    119.91902247992313,
+    139.54315953365713
+   ],
+   "St": 0.20383061884695183,
+   "St_probe": 0.20383062807124397,
+   "Cd_max": 1.55523751022277,
+   "Cd_mean": 1.5256083422766085,
+   "Cl_max": 0.5932034724035877,
+   "Cl_amp": 0.5932605829485147,
+   "Cl_amp_growth_last_period": 9.004176445337464e-06,
+   "period_spread": 3.8606128229266745e-07,
+   "t_end": 140.00000000001765
+  },
+  {
+   "U_approach_est": 0.9575001529135188,
+   "St_Uapproach": 0.1927093472797174,
+   "Cd_mean_Uapproach": 1.4128230644329078,
+   "Cl_amp_Uapproach": 0.4987111144583144,
+   "file": "ref_prod_M1b.npz",
+   "ok": true,
+   "done": true,
+   "cells": 12573,
+   "vel_dofs": 50994,
+   "dt": 0.01,
+   "hcyl": 0.05,
+   "window": [
+    77.9079573740684,
+    99.58591479398021
+   ],
+   "St": 0.1845192294881938,
+   "St_probe": 0.18452244586131794,
+   "Cd_max": 1.3159891721503232,
+   "Cd_mean": 1.2952854293323894,
+   "Cl_max": 0.4572294966297089,
+   "Cl_amp": 0.4572216127171303,
+   "Cl_amp_growth_last_period": 1.957405572650117e-05,
+   "period_spread": 9.570841399253048e-05,
+   "t_end": 100.00000000001425
+  },
+  {
+   "U_approach_est": 0.9845707342761333,
+   "St_Uapproach": 0.19381194370135374,
+   "Cd_mean_Uapproach": 1.4116999543030402,
+   "Cl_amp_Uapproach": 0.5152217042971535,
+   "file": "ref_prod_M1c.npz",
+   "ok": true,
+   "done": true,
+   "cells": 12573,
+   "vel_dofs": 50994,
+   "dt": 0.01,
+   "hcyl": 0.05,
+   "window": [
+    70.20251627149017,
+    91.16450734913062
+   ],
+   "St": 0.19082156772152645,
+   "St_probe": 0.1908284326671133,
+   "Cd_max": 1.3919452083466253,
+   "Cd_mean": 1.3684730393228433,
+   "Cl_max": 0.4994341833037127,
+   "Cl_amp": 0.4994453739659673,
+   "Cl_amp_growth_last_period": 4.899398948943201e-05,
+   "period_spread": 0.00020054169765572154,
+   "t_end": 95.0000000000117
+  }
+ ],
+ "control_wide_W40_Re150": {
+  "file": "ref_unbounded_W40.npz",
+  "ok": true,
+  "done": true,
+  "cells": 11537,
+  "vel_dofs": 46702,
+  "dt": 0.012,
+  "hcyl": 0.05,
+  "window": [
+   86.32363208205993,
+   107.6062775547472
+  ],
+  "St": 0.1879465597983735,
+  "St_probe": 0.18794935913103863,
+  "Cd_max": 1.3780515097954942,
+  "Cd_mean": 1.3514065172960965,
+  "Cl_max": 0.5321108419676425,
+  "Cl_amp": 0.5322768361272128,
+  "Cl_amp_growth_last_period": 1.2224672284455451e-05,
+  "period_spread": 8.935169288888553e-05,
+  "t_end": 110.00400000000371,
+  "_doc": "W = 40 D (blockage 2.5 %), plug inflow 15 D upstream, lambda = 0: solver vs Williamson 1996 St = 0.1834, 2-D Cd ~ 1.33"
+ },
+ "B_targets": {
+  "St": 0.19107518353723482,
+  "Cd_mean": 1.4091345339240238,
+  "Cl_amp": 0.5551136042731002
+ },
+ "production_reference": {
+  "St": 0.19082156772152645,
+  "Cd_mean": 1.3684730393228433,
+  "Cl_amp": 0.4994453739659673,
+  "normalisation": "U_ref",
+  "approach_normalised": {
+   "St": 0.19381194370135374,
+   "Cd_mean": 1.4116999543030402,
+   "Cl_amp": 0.5152217042971535
+  },
+  "U_in_calibration": {
+   "method": "empty-channel run (same mesh/solver, lambda D/U = 0.0041123): u(x_cyl, 0) = 0.97171 U at U_in 0.90139 U -> U_in = 0.92763 U; check run gives u(x_cyl,0) = 0.99898 U (-0.10 %)",
+   "files": [
+    "ref_empty_cal1.npz",
+    "ref_empty_cal2.npz"
+   ]
+  },
+  "U_approach_over_U_ref": 0.9845707342761333,
+  "source": "ref_prod_M1c.npz",
+  "setup": "production channel scaled by D: W = 12 D, inlet 26 D upstream (plug U_in = 0.92763 U), outlet 34 D, lambda D/U = 0.0041123 (B decision), Re = 150, U = centreline approach speed (B def.)",
+  "vs_B": {
+   "St": -0.0013273090257634238,
+   "Cd_mean": -0.02885565119744121,
+   "Cl_amp": -0.10028259058797219
+  }
+ }
+}

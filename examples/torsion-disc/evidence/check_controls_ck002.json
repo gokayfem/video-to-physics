@@ -1,0 +1,509 @@
+{
+  "label": "ck002 (checkpoint copies)",
+  "created_utc": "2026-10-26T07:28:35+00:00",
+  "inputs": {
+    "checkpoints/ck002/params/physics.json": "1ca3ae7639e76ca9a0fd66fedaa6295aba16c17e144aa0e19df1f6d11906f1ad"
+  },
+  "model": {
+    "mode": "string",
+    "g": 9.80665,
+    "A": [
+      0.003177844404946483,
+      -0.006353833928543974,
+      0.0
+    ],
+    "L": 0.19144630805989588,
+    "M": 2.244049928899122,
+    "I_c": [
+      [
+        0.006879813451761031,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.006879813451761031,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.013742018796770466
+      ]
+    ],
+    "p_b": [
+      0.0,
+      0.0,
+      0.0034307233865516445
+    ],
+    "kappa": 0.00040969241859275596,
+    "k_a": 0.046654384405026235,
+    "k_b": 79.29263685388473,
+    "bend_law": "cos",
+    "twist": "vertical",
+    "c_t": 2.3727622968169412e-06,
+    "c_s": 0.0,
+    "c_v": 0.030787149021077962,
+    "c_r": 0.0,
+    "c_rp": 9.438731253207566e-05,
+    "q0": [
+      -0.35423856469380444,
+      0.014299216977882025,
+      -0.011296417581141385,
+      0.9349775198513199
+    ],
+    "w0": [
+      0.23601062276522392,
+      0.005909084311290284,
+      -0.41395673751118084
+    ],
+    "u0": [
+      0.03460264309753445,
+      -0.010949014931671294,
+      0.999341171053555
+    ],
+    "udot0": [
+      0.0013498100904095747,
+      -0.24923163637911766,
+      -0.0027773777218060617
+    ]
+  },
+  "tolerance_rel": 0.0001,
+  "tolerance_pos": 1e-06,
+  "verifier_code_sha256": "dea5699079501138c5cbf81dbdd4007031d00142ee968d8358f3dc20d9163a6d",
+  "variants": {
+    "base": {
+      "edits": {},
+      "regime": "twist",
+      "omega_expected": 0.17266473254855846,
+      "omega_fit": 0.17266473254866138,
+      "rel_omega_err": 5.95967719618784e-13,
+      "gamma_expected": 8.633237706582703e-05,
+      "gamma_fit": 8.63323768963439e-05,
+      "rel_gamma_err": 1.9631468672898222e-09,
+      "run": {
+        "tag": "base_regime",
+        "edits": [
+          [
+            "/initial_state/X0",
+            [
+              0.0,
+              0.0,
+              -0.19487703144644752
+            ]
+          ],
+          [
+            "/initial_state/V0",
+            [
+              -0.0,
+              -0.0,
+              -0.0
+            ]
+          ],
+          [
+            "/initial_state/q0",
+            [
+              0.9987502603949663,
+              0.0,
+              0.0,
+              0.04997916927067833
+            ]
+          ],
+          [
+            "/initial_state/w0",
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        ],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/base_regime/physics.json --out verify/out/controls_ck002/base_regime",
+        "params_copy": "verify/out/controls_ck002/base_regime/physics.json",
+        "trajectory": "verify/out/controls_ck002/base_regime/trajectory.csv",
+        "sha256": "c6d2b01123531a9f167596e31a3c52d3b4ef9037384a239ccdca2f910838b671"
+      },
+      "full_ic_vs_verifier": {
+        "n_common": 961,
+        "t_max": 10.0,
+        "C_max_m": 3.834748256404721e-12,
+        "C_t_at_max": 9.989583333333334,
+        "P_max_m": 4.6656837128544704e-12,
+        "quaternion_hemisphere_mismatches": 0,
+        "attitude_max_rad": 2.4229245372109055e-10,
+        "attitude_t_at_max": 9.989583333333334,
+        "psi_max_rad": 5.196287844455583e-12,
+        "info_velocity_max_m_s": 4.3108788161874373e-10,
+        "status": "PASS"
+      },
+      "full_run": {
+        "tag": "base_full",
+        "edits": [],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/base_full/physics.json --out verify/out/controls_ck002/base_full",
+        "params_copy": "verify/out/controls_ck002/base_full/physics.json",
+        "trajectory": "verify/out/controls_ck002/base_full/trajectory.csv",
+        "sha256": "ea2b7544482aed997aa22cc792c17a82cb9168d1e8136cd7e49b23b9e3a99751"
+      },
+      "status": "PASS"
+    },
+    "kappa_x4": {
+      "edits": {
+        "kappa": 0.0016387696743710239
+      },
+      "regime": "twist",
+      "omega_expected": 0.34532949747176084,
+      "omega_fit": 0.3453294974717609,
+      "rel_omega_err": 2.220446049250313e-16,
+      "gamma_expected": 8.633237706582703e-05,
+      "gamma_fit": 8.633237703820487e-05,
+      "rel_gamma_err": 3.1995139870844014e-10,
+      "run": {
+        "tag": "kappa_x4_regime",
+        "edits": [
+          [
+            "/initial_state/X0",
+            [
+              0.0,
+              0.0,
+              -0.19487703144644752
+            ]
+          ],
+          [
+            "/initial_state/V0",
+            [
+              -0.0,
+              -0.0,
+              -0.0
+            ]
+          ],
+          [
+            "/initial_state/q0",
+            [
+              0.9987502603949663,
+              0.0,
+              0.0,
+              0.04997916927067833
+            ]
+          ],
+          [
+            "/initial_state/w0",
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        ],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/kappa_x4_regime/physics.json --out verify/out/controls_ck002/kappa_x4_regime",
+        "params_copy": "verify/out/controls_ck002/kappa_x4_regime/physics.json",
+        "trajectory": "verify/out/controls_ck002/kappa_x4_regime/trajectory.csv",
+        "sha256": "56340fce43896319eaeaeee657e0f6ddc7484e1b13bac827ba482ffd1fc0a48a"
+      },
+      "full_ic_vs_verifier": {
+        "n_common": 961,
+        "t_max": 10.0,
+        "C_max_m": 3.93727531711805e-12,
+        "C_t_at_max": 9.90625,
+        "P_max_m": 4.775818060732008e-12,
+        "quaternion_hemisphere_mismatches": 0,
+        "attitude_max_rad": 2.476447624958753e-10,
+        "attitude_t_at_max": 9.989583333333334,
+        "psi_max_rad": 4.8054893397875276e-12,
+        "info_velocity_max_m_s": 4.419743475994562e-10,
+        "status": "PASS"
+      },
+      "full_run": {
+        "tag": "kappa_x4_full",
+        "edits": [],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/kappa_x4_full/physics.json --out verify/out/controls_ck002/kappa_x4_full",
+        "params_copy": "verify/out/controls_ck002/kappa_x4_full/physics.json",
+        "trajectory": "verify/out/controls_ck002/kappa_x4_full/trajectory.csv",
+        "sha256": "422ae4538c5bd5f9051b72eefd72747b9d1cb7b95bad6fd6820e41ef5c073b8f"
+      },
+      "status": "PASS"
+    },
+    "I_x4": {
+      "edits": {
+        "I_c": [
+          [
+            0.027519253807044123,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.027519253807044123,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.05496807518708186
+          ]
+        ]
+      },
+      "regime": "twist",
+      "omega_expected": 0.08633237436794021,
+      "omega_fit": 0.08633237436726078,
+      "rel_omega_err": 7.869926932357885e-12,
+      "gamma_expected": 2.158309426645676e-05,
+      "gamma_fit": 2.158309452051481e-05,
+      "rel_gamma_err": 1.177115982464727e-08,
+      "run": {
+        "tag": "I_x4_regime",
+        "edits": [
+          [
+            "/initial_state/X0",
+            [
+              0.0,
+              0.0,
+              -0.19487703144644752
+            ]
+          ],
+          [
+            "/initial_state/V0",
+            [
+              -0.0,
+              -0.0,
+              -0.0
+            ]
+          ],
+          [
+            "/initial_state/q0",
+            [
+              0.9987502603949663,
+              0.0,
+              0.0,
+              0.04997916927067833
+            ]
+          ],
+          [
+            "/initial_state/w0",
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        ],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/I_x4_regime/physics.json --out verify/out/controls_ck002/I_x4_regime",
+        "params_copy": "verify/out/controls_ck002/I_x4_regime/physics.json",
+        "trajectory": "verify/out/controls_ck002/I_x4_regime/trajectory.csv",
+        "sha256": "950dcbfd939eabe6cd41bd79ec83dfc93a2edb5872b2501b1d40dc0e877d9d3e"
+      },
+      "full_ic_vs_verifier": {
+        "n_common": 961,
+        "t_max": 10.0,
+        "C_max_m": 5.930254065313166e-13,
+        "C_t_at_max": 9.625,
+        "P_max_m": 6.99026336236106e-13,
+        "quaternion_hemisphere_mismatches": 0,
+        "attitude_max_rad": 3.3187645474841307e-11,
+        "attitude_t_at_max": 9.958333333333334,
+        "psi_max_rad": 6.725731083179198e-13,
+        "info_velocity_max_m_s": 3.0069668517334906e-11,
+        "status": "PASS"
+      },
+      "full_run": {
+        "tag": "I_x4_full",
+        "edits": [],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/I_x4_full/physics.json --out verify/out/controls_ck002/I_x4_full",
+        "params_copy": "verify/out/controls_ck002/I_x4_full/physics.json",
+        "trajectory": "verify/out/controls_ck002/I_x4_full/trajectory.csv",
+        "sha256": "334e4106bc8ed8baf8555775548c4879303e41acedbfe0ea3a297dc7295a2b1e"
+      },
+      "status": "PASS"
+    },
+    "L_plus50": {
+      "edits": {
+        "L": 0.28716946208984384
+      },
+      "regime": "swing",
+      "omega_expected": 5.7269839510114275,
+      "omega_fit": 5.726983950975094,
+      "rel_omega_err": 6.3442584519179945e-12,
+      "gamma_expected": 0.0,
+      "gamma_fit": 0.0,
+      "rel_gamma_err": null,
+      "run": {
+        "tag": "L_plus50_regime",
+        "edits": [
+          [
+            "/parameters/damping/c_t",
+            0.0
+          ],
+          [
+            "/parameters/damping/c_x",
+            0.0
+          ],
+          [
+            "/parameters/damping/c_r",
+            0.0
+          ],
+          [
+            "/initial_state/X0",
+            [
+              2.897913944483431e-06,
+              0.0,
+              -0.29060018546194627
+            ]
+          ],
+          [
+            "/initial_state/V0",
+            [
+              -0.0,
+              0.0,
+              -0.0
+            ]
+          ],
+          [
+            "/initial_state/q0",
+            [
+              0.9999999999875,
+              -0.0,
+              -4.999999999979167e-06,
+              -0.0
+            ]
+          ],
+          [
+            "/initial_state/w0",
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        ],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/L_plus50_regime/physics.json --out verify/out/controls_ck002/L_plus50_regime",
+        "params_copy": "verify/out/controls_ck002/L_plus50_regime/physics.json",
+        "trajectory": "verify/out/controls_ck002/L_plus50_regime/trajectory.csv",
+        "sha256": "eb80ef36e72763bf75415e26cb5716dbd221a607b6489f1acb7c697a71781b19"
+      },
+      "full_ic_vs_verifier": {
+        "n_common": 961,
+        "t_max": 10.0,
+        "C_max_m": 2.4965067987008523e-12,
+        "C_t_at_max": 9.979166666666666,
+        "P_max_m": 3.295310125708786e-12,
+        "quaternion_hemisphere_mismatches": 0,
+        "attitude_max_rad": 2.3286983888690803e-10,
+        "attitude_t_at_max": 9.979166666666666,
+        "psi_max_rad": 5.31663602032495e-12,
+        "info_velocity_max_m_s": 2.714462464277314e-10,
+        "status": "PASS"
+      },
+      "full_run": {
+        "tag": "L_plus50_full",
+        "edits": [],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/L_plus50_full/physics.json --out verify/out/controls_ck002/L_plus50_full",
+        "params_copy": "verify/out/controls_ck002/L_plus50_full/physics.json",
+        "trajectory": "verify/out/controls_ck002/L_plus50_full/trajectory.csv",
+        "sha256": "98145e83df707e2d1e35365d7b803adbf62c2515a07b2ea13307864d11c9e807"
+      },
+      "status": "PASS"
+    },
+    "damping_x10": {
+      "edits": {
+        "c_t": 2.3727622968169412e-05,
+        "c_v": 0.30787149021077964,
+        "c_rp": 0.0009438731253207566
+      },
+      "regime": "twist",
+      "omega_expected": 0.17266259580873783,
+      "omega_fit": 0.17266259580881946,
+      "rel_omega_err": 4.727329638853917e-13,
+      "gamma_expected": 0.0008633237706582704,
+      "gamma_fit": 0.0008633237705366517,
+      "rel_gamma_err": 1.408726468810073e-10,
+      "run": {
+        "tag": "damping_x10_regime",
+        "edits": [
+          [
+            "/initial_state/X0",
+            [
+              0.0,
+              0.0,
+              -0.19487703144644752
+            ]
+          ],
+          [
+            "/initial_state/V0",
+            [
+              -0.0,
+              -0.0,
+              -0.0
+            ]
+          ],
+          [
+            "/initial_state/q0",
+            [
+              0.9987502603949663,
+              0.0,
+              0.0,
+              0.04997916927067833
+            ]
+          ],
+          [
+            "/initial_state/w0",
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        ],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/damping_x10_regime/physics.json --out verify/out/controls_ck002/damping_x10_regime",
+        "params_copy": "verify/out/controls_ck002/damping_x10_regime/physics.json",
+        "trajectory": "verify/out/controls_ck002/damping_x10_regime/trajectory.csv",
+        "sha256": "e369715acaccf95d86d58304ee2c4c641d99e7dcf19b5c650fb17afbccc858c3"
+      },
+      "full_ic_vs_verifier": {
+        "n_common": 961,
+        "t_max": 10.0,
+        "C_max_m": 2.0815902098580057e-12,
+        "C_t_at_max": 9.6875,
+        "P_max_m": 2.5239652699909003e-12,
+        "quaternion_hemisphere_mismatches": 0,
+        "attitude_max_rad": 1.307404842021308e-10,
+        "attitude_t_at_max": 9.989583333333334,
+        "psi_max_rad": 1.8531842727043113e-12,
+        "info_velocity_max_m_s": 2.3328316222107606e-10,
+        "status": "PASS"
+      },
+      "full_run": {
+        "tag": "damping_x10_full",
+        "edits": [],
+        "cmd": "python3 checkpoints/ck002/solver/run.py --params verify/out/controls_ck002/damping_x10_full/physics.json --out verify/out/controls_ck002/damping_x10_full",
+        "params_copy": "verify/out/controls_ck002/damping_x10_full/physics.json",
+        "trajectory": "verify/out/controls_ck002/damping_x10_full/trajectory.csv",
+        "sha256": "91522ef8976ad44add58428b167b6b870dc80ee2d664c2128fc313b6ab406042"
+      },
+      "status": "PASS"
+    }
+  },
+  "ratios": {
+    "kappa_x4": {
+      "period_ratio_var_over_base": 0.49999995312529283
+    },
+    "I_x4": {
+      "period_ratio_var_over_base": 1.9999998125169116
+    },
+    "L_plus50": {
+      "period_ratio_var_over_base": 0.030149330612191248
+    },
+    "damping_x10": {
+      "period_ratio_var_over_base": 1.0000123752329328
+    }
+  },
+  "status": "PASS",
+  "summary": {
+    "P9": "PASS",
+    "variants": {
+      "base": "PASS",
+      "kappa_x4": "PASS",
+      "I_x4": "PASS",
+      "L_plus50": "PASS",
+      "damping_x10": "PASS"
+    }
+  }
+}

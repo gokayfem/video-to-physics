@@ -1,0 +1,49 @@
+{
+ "frame": 0,
+ "method": "full-res frame 0; static-frame edges from luma-gradient maxima at fixed rows/columns (scene/measure/fit_frame0.py prints them again), detail parts read by eye on 2-3x cubic zooms with a 5 px grid. Pixel convention: contract (u right, v down, top-left corner origin). sigma in px.",
+ "edges": {
+  "postL_outer_front":   {"pts": [[487.5, 80], [488.5, 150], [489.5, 300], [492.5, 500], [495.5, 700], [498.5, 900]], "sigma": 1.0},
+  "postL_inner_front":   {"pts": [[611.5, 80], [611.5, 500], [616.5, 900]], "sigma": 2.5},
+  "postL_inner_back":    {"pts": [[622.5, 150], [624.5, 500], [627.5, 900]], "sigma": 1.5},
+  "postR_inner_front":   {"pts": [[1302.5, 150], [1293.5, 500], [1288.5, 900]], "sigma": 2.5},
+  "postR_inner_back":    {"pts": [[1288.5, 150], [1283.5, 500], [1278.5, 900]], "sigma": 1.5},
+  "postR_outer_front":   {"pts": [[1424.5, 80], [1423.5, 150], [1420.5, 300], [1416.5, 500], [1411.5, 700], [1409.5, 900]], "sigma": 1.0},
+  "postL_top_front":     {"pts": [[520, 52.5], [550, 52.5], [590, 52.5]], "sigma": 1.5},
+  "postR_top_front":     {"pts": [[1330, 55.5], [1360, 55.5], [1400, 55.5]], "sigma": 1.5},
+  "postL_bottom_front":  {"pts": [[550, 1026.5]], "sigma": 2.0},
+  "postR_bottom_front":  {"pts": [[1360, 1027.5]], "sigma": 2.0},
+  "bar_top_front":       {"pts": [[700, 62.5], [800, 62.5], [1100, 63.5], [1200, 64.5]], "sigma": 1.0},
+  "bar_bottom_front":    {"pts": [[700, 119.5], [800, 119.5], [1100, 120.5], [1200, 120.5]], "sigma": 1.0},
+  "base_top_back":       {"pts": [[700, 984.5], [800, 984.5], [1100, 984.5], [1200, 984.5]], "sigma": 1.0},
+  "base_top_front":      {"pts": [[700, 1056.5], [1100, 1055.5]], "sigma": 2.5},
+  "base_bottom_front":   {"pts": [[550, 1073.5], [700, 1073.5], [1100, 1073.5], [1360, 1073.5]], "sigma": 1.0},
+  "base_left_front":     {"pts": [[477.5, 1062.5]], "sigma": 2.0},
+  "base_right_front":    {"pts": [[1434.5, 1062.5]], "sigma": 2.0},
+  "table_back_edge":     {"pts": [[100, 827.5], [300, 827.5], [1100, 830.5], [1200, 830.5], [1700, 830.5], [1850, 829.5]], "sigma": 1.5}
+ },
+ "points_plane_y0": {
+  "note": "dynamic/spring parts read by eye; mapped to frame 0 pixels with the measurement role's ECC homography (measurement/cache/H_ecc.npy, frame0->frame n) before intersecting the plane y = 0 (spring plane through A)",
+  "A_top_loop_inner_top":   {"f000": [955.5, 55.0], "sigma": 2.0},
+  "top_loop_outer_top":     {"f000": [955.5, 47.0], "sigma": 2.0},
+  "top_loop_outer_bottom":  {"f000": [957.0, 122.0], "sigma": 3.0},
+  "spring_coil_top":        {"f120": [968.0, 214.0], "sigma": 3.0},
+  "spring_open_tight_boundary": {"f120": [955.0, 548.0], "f000": [918.0, 545.0], "sigma": 5.0},
+  "spring_coil_bottom":     {"f120": [944.0, 671.0], "f000": [903.0, 665.0], "sigma": 3.0},
+  "H_hinge":                {"f000": [884.0, 737.0], "f120": [894.0, 742.0], "f240": [994.0, 750.0], "sigma": 3.0},
+  "eye_centre":             {"f000": [885.5, 757.0], "f120": [894.0, 765.0], "f240": [994.0, 774.0], "sigma": 2.0}
+ },
+ "sizes_px": {
+  "note": "widths read on zooms; converted to world with the local image scale at the spring plane",
+  "spring_coil_outer_width": {"f120": 78.0, "f240": 80.0, "sigma": 3.0},
+  "spring_wire_diameter":    {"f120": 6.5, "sigma": 1.5},
+  "hook_wire_diameter":      {"f000": 8.0, "sigma": 1.5},
+  "eye_outer_diameter":      {"f000": 65.0, "f120": 67.0, "f240": 66.0, "sigma": 2.0},
+  "eye_wire_diameter":       {"f000": 10.0, "sigma": 1.5},
+  "cylinder_diameter":       {"f120": 153.0, "f240": 150.0, "sigma": 4.0},
+  "cylinder_height_axis":    {"f120": 190.0, "sigma": 8.0},
+  "lower_loop_length_outer": {"f000": 80.0, "f120": 82.0, "sigma": 5.0},
+  "lower_loop_width_visible": {"f240": 16.0, "sigma": 3.0},
+  "coil_count_open":  {"value": 12, "sigma": 1, "method": "counted on f000/f120/f240 crops"},
+  "coil_count_tight": {"value": 10, "sigma": 1, "method": "counted on a 4x zoom of f240 (10-11 turns, pitch ~11 px vs wire ~6.5 px)"}
+ }
+}

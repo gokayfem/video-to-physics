@@ -1,0 +1,143 @@
+{
+ "_doc": "Role C (solver) physical parameters for the ruler-buckling rod model. SI units. provenance: assumed | declared | geometry (scene_params geometry x assumed density) | measured | fitted. Nothing here is fitted to the AI reference.",
+ "strip": {
+  "E_Pa": {
+   "value": 193000000000.0,
+   "provenance": "assumed (AISI 301/304 stainless, CONTRACT)"
+  },
+  "nu": {
+   "value": 0.29,
+   "provenance": "assumed (not used: planar Kirchhoff rod, plate effect b/t=50 -> see notes)"
+  },
+  "rho_kg_m3": {
+   "value": 7900.0,
+   "provenance": "assumed"
+  },
+  "width_m": {
+   "value": 0.025,
+   "provenance": "declared (scene_params.ruler)"
+  },
+  "thickness_m": {
+   "value": 0.0005,
+   "provenance": "declared (scene_params.ruler)"
+  },
+  "free_length_m": {
+   "value": 0.28,
+   "provenance": "declared: jaw top z=0.095 to strip top z=0.375"
+  }
+ },
+ "tip_body": {
+  "_doc": "rigid body bolted to the strip top; offsets measured along the strip tangent from the top of the flexible part (= 12 mm below the strip top, where the platform tabs end). Dead load at the body's CoM.",
+  "rigid_top_strip_m": {
+   "value": 0.012,
+   "provenance": "geometry: platform tabs (12 mm tall, both faces, 2 screws) clamp the top 12 mm of the strip -> flexible length 0.268 m"
+  },
+  "pieces": [
+   {
+    "name": "strip_top_12mm",
+    "mass_kg": 0.001185,
+    "offset_m": 0.006,
+    "len_m": 0.012,
+    "provenance": "geometry x rho_steel"
+   },
+   {
+    "name": "tabs_x2_Al",
+    "mass_kg": 0.00324,
+    "offset_m": 0.006,
+    "len_m": 0.012,
+    "provenance": "geometry (2 x 25x2x12 mm) x 2700 kg/m3 (assumed 6061)",
+    "lateral_offset_m": 0.00125
+   },
+   {
+    "name": "screws_x2",
+    "mass_kg": 0.000482,
+    "offset_m": 0.006,
+    "len_m": 0.0,
+    "provenance": "geometry est. (heads x1.6 for shanks) x 7900, as physics/derive.py"
+   },
+   {
+    "name": "plate_Al",
+    "mass_kg": 0.00506,
+    "offset_m": 0.0135,
+    "len_m": 0.003,
+    "provenance": "geometry (25x25x3 mm) x 2700"
+   },
+   {
+    "name": "peg_steel",
+    "mass_kg": 0.003971,
+    "offset_m": 0.035,
+    "len_m": 0.04,
+    "provenance": "geometry v002 (d4 x 40 mm, lead) x 7900"
+   }
+  ],
+  "platform_total_kg_note": "13.94 g from geometry (matches physics/benchmarks.json v002 m0, 40 mm peg)",
+  "weight_mass_kg": {
+   "value": 0.02,
+   "provenance": "declared (scene_params.slotted_weights.mass_each_kg)"
+  },
+  "weight_thickness_m": {
+   "value": 0.0045,
+   "provenance": "declared"
+  },
+  "weight_outer_d_m": {
+   "value": 0.025,
+   "provenance": "declared"
+  },
+  "weight_hole_d_m": {
+   "value": 0.0055,
+   "provenance": "declared"
+  },
+  "first_weight_base_offset_m": {
+   "value": 0.015,
+   "provenance": "geometry: 12 mm rigid strip + 3 mm plate; weights stack on the plate top"
+  }
+ },
+ "loading": {
+  "schedule_source": "lead decision (message superseding CHANGELOG 09:22Z): 7 weights seated at 1.0,1.6,2.2,2.8,3.4,4.0,4.6 s; t_j = start of the contact-force ramp; mass/inertia joins the tip body at release t_j + tau. measurement/summary.json key weight_arrival_times_s would override.",
+  "t_first_s": 1.0,
+  "spacing_s": 0.6,
+  "n_weights": 7,
+  "ramp_s": {
+   "value": 0.15,
+   "provenance": "assumed per physics/FORMULATION.md: contact force m_w g S((t-t0)/tau), S = smootherstep; mass+inertia added as a step at release t0+tau"
+  },
+  "duration_s": 10.0
+ },
+ "imperfection": {
+  "tip_offset_m": {
+   "value": -0.00028,
+   "provenance": "assumed: stress-free initial bow y0 = d0 (1-cos(pi s/2Lf)), |d0| = Lf/~1000 = 0.28 mm, towards -Y (camera side; leans screen-left, away from the weight stack)"
+  }
+ },
+ "damping": {
+  "alpha_M_per_s": {
+   "value": 0.063,
+   "provenance": "assumed per FORMULATION: Rayleigh mass-proportional, zeta=0.005 at 1 Hz (Q1~50 overall, clamp/joint friction dominated)"
+  },
+  "eta_s": {
+   "value": 0.00032,
+   "provenance": "assumed per FORMULATION: Rayleigh stiffness-proportional on bending stiffness, zeta=0.02 at 20 Hz"
+  },
+  "rho_air": {
+   "value": 1.2,
+   "provenance": "assumed"
+  },
+  "Cd_plate": {
+   "value": 1.9,
+   "provenance": "assumed (flat plate normal flow; quadratic drag on strip lateral velocity)"
+  }
+ },
+ "g": {
+  "value": 9.81,
+  "provenance": "standard"
+ },
+ "integrator": {
+  "scheme": "generalized-alpha (Chung-Hulbert)",
+  "rho_inf": 0.85,
+  "dt_levels_s": [
+   0.0020833333333333333,
+   0.0010416666666666667,
+   0.0005208333333333333
+  ]
+ }
+}

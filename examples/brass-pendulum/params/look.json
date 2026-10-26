@@ -1,0 +1,361 @@
+{
+ "version": "v011",
+ "owner": "look (materials, textures, lighting)",
+ "units": "lengths in L_c (pivot-to-bob-centre) unless suffixed _m; angles in degrees (report units); colours linear Rec.709 unless suffixed _srgb; light energies in W at L_ref_m and scaled by (L_c/L_ref_m)^2",
+ "L_ref_m": 0.3866862877704617,
+ "walnut": {
+  "grain_axis_per_object": {
+   "PND_Base": [
+    1,
+    0,
+    0
+   ],
+   "PND_Post": [
+    0,
+    0,
+    1
+   ],
+   "PND_Arm": [
+    1,
+    0,
+    0
+   ]
+  },
+  "end_stripe_axis_per_object": {
+   "PND_Base": [
+    0,
+    1,
+    0
+   ],
+   "PND_Post": [
+    1,
+    0,
+    0
+   ],
+   "PND_Arm": [
+    0,
+    1,
+    0
+   ]
+  },
+  "seed_per_object": {
+   "PND_Base": 1.7,
+   "PND_Post": 5.3,
+   "PND_Arm": 9.1
+  },
+  "tone_per_object": {
+   "PND_Base": 0.95,
+   "PND_Post": 1.0,
+   "PND_Arm": 0.92
+  },
+  "color_dark": [
+   0.045,
+   0.019,
+   0.011
+  ],
+  "color_mid": [
+   0.135,
+   0.064,
+   0.036
+  ],
+  "color_light": [
+   0.245,
+   0.13,
+   0.078
+  ],
+  "pore_color": [
+   0.03,
+   0.016,
+   0.01
+  ],
+  "end_grain_darken": 1.12,
+  "streak_freq_across_per_Lc": 118.0,
+  "streak_freq_along_per_Lc": 8.0,
+  "streak_detail": 8.0,
+  "streak_contrast": 1.4,
+  "band_freq_across_per_Lc": 16.0,
+  "band_freq_along_per_Lc": 0.6,
+  "band_weight": 0.5,
+  "warp_amp_Lc": 0.02,
+  "warp_freq_per_Lc": 3.0,
+  "pore_freq_across_per_Lc": 420.0,
+  "pore_freq_along_per_Lc": 14.0,
+  "pore_threshold": 0.56,
+  "pore_amount": 0.6,
+  "roughness": 0.48,
+  "roughness_pore": 0.6,
+  "coat_weight": 0.05,
+  "coat_roughness": 0.18,
+  "bump_strength": 0.08,
+  "bump_distance_Lc": 0.002,
+  "specular_ior_level": 0.28,
+  "freq_scale_per_object": {
+   "PND_Base": 1.0,
+   "PND_Post": 1.0,
+   "PND_Arm": 1.7
+  },
+  "mottle_amount": 0.2,
+  "mottle_freq_per_Lc": 160.0,
+  "end_contrast": 0.35,
+  "top_contrast": 1.9
+ },
+ "brass": {
+  "base_color": [
+   0.93,
+   0.67,
+   0.32
+  ],
+  "roughness": 0.07,
+  "metallic": 1.0,
+  "anisotropic": 0.0
+ },
+ "steel": {
+  "base_color": [
+   0.78,
+   0.78,
+   0.8
+  ],
+  "roughness": 0.16,
+  "metallic": 1.0
+ },
+ "wire": {
+  "base_color": [
+   0.035,
+   0.034,
+   0.033
+  ],
+  "roughness": 0.35,
+  "metallic": 0.8
+ },
+ "set": {
+  "table_color": [
+   0.058,
+   0.054,
+   0.047
+  ],
+  "table_roughness": 0.75,
+  "backdrop_color": [
+   0.3,
+   0.265,
+   0.235
+  ],
+  "backdrop_roughness": 0.9,
+  "wall_yaw_from_camera": true,
+  "wall_yaw_deg": 36.29,
+  "wall_distance_Lc": 1.52,
+  "wall_half_width_Lc": 60.0,
+  "wall_height_Lc": 30.0,
+  "cove_radius_Lc": 0.0,
+  "table_extent_front_Lc": 60.0,
+  "note": "table top plane at the base bottom (z = -h_pivot - base_thickness); wall perpendicular to the camera's horizontal view direction so the table/wall crease is horizontal in the image like the reference (v ~ 890 px at frame 0); if crease_v_px is set, wall distance is solved so the crease projects at that row (u = 960) through the scene camera, overriding wall_distance_Lc",
+  "crease_v_px": 890.0
+ },
+ "lights": {
+  "target_Lc": [
+   -0.25,
+   0.0,
+   -0.75
+  ],
+  "key": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": -53.6,
+   "elevation_deg": 78.0,
+   "distance_Lc": 4.0,
+   "size_Lc": 1.0,
+   "energy_W": 46.0,
+   "color": [
+    1.0,
+    0.96,
+    0.9
+   ],
+   "provenance": "direction from the large bob highlight (reflection of the view ray about the normal at highlight px (1035,794); bob centre (1038.6,827.4), r 55.7 px)",
+   "flag_off_backdrop": true
+  },
+  "rim_right": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": 23.3,
+   "elevation_deg": 36.7,
+   "distance_Lc": 3.0,
+   "size_Lc": 0.5,
+   "energy_W": 6.0,
+   "color": [
+    1.0,
+    0.97,
+    0.93
+   ],
+   "provenance": "small bob highlight at (1074,802)",
+   "flag_off_backdrop": true
+  },
+  "fill_front": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": -89.0,
+   "elevation_deg": 19.6,
+   "distance_Lc": 3.5,
+   "size_Lc": 0.45,
+   "energy_W": 8.0,
+   "color": [
+    1.0,
+    0.98,
+    0.95
+   ],
+   "provenance": "small bob highlight at (1021,820)",
+   "flag_off_backdrop": true
+  },
+  "backdrop_wash": {
+   "type": "SPOT",
+   "location_from_camera_Lc": [
+    0.0,
+    1.0,
+    0.5
+   ],
+   "aim_px_on_wall": [
+    960,
+    560
+   ],
+   "spot_size_deg": 120.0,
+   "spot_blend": 0.6,
+   "radius_Lc": 0.5,
+   "energy_W": 45.0,
+   "color": [
+    1.0,
+    0.95,
+    0.88
+   ],
+   "link_to_set_only": true,
+   "provenance": "broad floor of the backdrop luma (edges ~0.33)"
+  },
+  "backdrop_pool": {
+   "type": "AREA",
+   "aim_px_on_wall": [
+    920,
+    680
+   ],
+   "standoff_Lc": 1.6,
+   "size_Lc": 0.8,
+   "energy_W": 5.0,
+   "color": [
+    1.0,
+    0.95,
+    0.88
+   ],
+   "link_to_set_only": true,
+   "provenance": "backdrop luma pool centred near (1080,700) px falling symmetrically to ~0.33 at both frame edges; a disk facing the wall at standoff d gives E ~ (d^2/(d^2+x^2))^2, d chosen ~ the half-width of the visible wall"
+  },
+  "softbox": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": -53.6,
+   "elevation_deg": 78.0,
+   "distance_Lc": 3.0,
+   "size_Lc": 2.4,
+   "energy_W": 30.0,
+   "color": [
+    1.0,
+    0.96,
+    0.9
+   ],
+   "flag_off_backdrop": true,
+   "provenance": "same direction as the key; the large softbox gives the big elliptical bob highlight (ref upper-half luma p90 0.885) while the smaller key keeps the bob's contact shadow visible"
+  }
+ },
+ "world": {
+  "color": [
+   0.045,
+   0.039,
+   0.033
+  ],
+  "strength": 1.0,
+  "note": "dark surroundings: the bob's upper half reflects near-black brown except the softboxes"
+ },
+ "render": {
+  "view_transform": "AgX",
+  "look": "AgX - Base Contrast",
+  "exposure": 0.0,
+  "gamma": 1.0,
+  "eevee": {
+   "taa_render_samples": 32,
+   "use_raytracing": true,
+   "ray_tracing_method": "SCREEN",
+   "use_shadows": true,
+   "shadow_ray_count": 2,
+   "shadow_step_count": 8,
+   "fast_gi_method": "GLOBAL_ILLUMINATION",
+   "use_fast_gi": true
+  },
+  "cycles": {
+   "samples": 192,
+   "use_denoising": true,
+   "max_bounces": 8,
+   "glossy_bounces": 4,
+   "device": "CPU"
+  },
+  "output_path": "//render/",
+  "view_transform_comparison": {
+   "frame": 0,
+   "note": "EEVEE v006 build re-rendered with other transforms; Oklab L delta vs reference",
+   "AgX - Base Contrast": {
+    "backdrop_grid_mae": 0.039,
+    "base_top_dL": 0.039,
+    "base_front_dL": 0.017,
+    "post_front_dL": 0.004,
+    "bob_dL": 0.003
+   },
+   "Standard": {
+    "backdrop_grid_mae": 0.036,
+    "base_top_dL": 0.051,
+    "base_front_dL": 0.039,
+    "post_front_dL": 0.021,
+    "bob_dL": 0.026
+   },
+   "Standard exp -0.5": {
+    "backdrop_grid_mae": 0.087,
+    "base_top_dL": -0.017,
+    "base_front_dL": -0.001,
+    "post_front_dL": -0.026,
+    "bob_dL": -0.021
+   },
+   "AgX - Medium High Contrast": {
+    "backdrop_grid_mae": 0.049,
+    "base_top_dL": 0.047,
+    "base_front_dL": -0.015,
+    "post_front_dL": -0.021,
+    "bob_dL": -0.014
+   },
+   "Filmic": {
+    "backdrop_grid_mae": 0.029,
+    "base_top_dL": 0.069,
+    "base_front_dL": 0.064,
+    "post_front_dL": 0.05,
+    "bob_dL": 0.039
+   },
+   "choice": "AgX - Base Contrast: smallest wood/bob L errors at exposure 0; no transform restores the base-top grain contrast (a material issue)"
+  }
+ },
+ "probes": {
+  "PND_Look_BobProbe": {
+   "enabled": true,
+   "influence_Lc": 0.35,
+   "clip_start_Lc": 0.09,
+   "note": "EEVEE sphere light probe at the bob rest centre so the brass reflects the off-screen table/stand (screen-space tracing cannot); Cycles ignores it",
+   "location_Lc": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "PND_Look_PinProbe": {
+   "enabled": true,
+   "location_Lc": [
+    0.0,
+    0.0,
+    0.032
+   ],
+   "influence_Lc": 0.09,
+   "clip_start_Lc": 0.03,
+   "note": "pin/loop reflections"
+  }
+ }
+}

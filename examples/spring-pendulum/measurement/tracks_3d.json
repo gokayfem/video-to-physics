@@ -1,0 +1,63 @@
+{
+ "assumption": "ring, weight centre and spring axis in the vertical plane Y=0 through A (frame-front-parallel)",
+ "size_tests": [
+  {
+   "signal": "weight silhouette width",
+   "K_size_units": 0.21163771043004279,
+   "depth_noise_rms_Win": 0.0929693220697787,
+   "dY_dX": -0.24304488883684564,
+   "dY_dX_sd": 0.057178857013626676,
+   "swing_plane_yaw_deg": -13.660576638349859,
+   "swing_plane_yaw_sd_deg": 3.276107184262815,
+   "quadrature_Y_amp_Win": 0.0577666097600196,
+   "quadrature_sd": 0.05702107310797189,
+   "lateral_amp_Win": 0.14835259450786817,
+   "depth_trend_per_s_Win": 0.0022249641055408147,
+   "depth_trend_sd": 0.002069895258833936
+  },
+  {
+   "signal": "ring outer radius",
+   "K_size_units": 0.048112356299225424,
+   "depth_noise_rms_Win": 0.0774512081954561,
+   "dY_dX": 0.17098628141763259,
+   "dY_dX_sd": 0.0615931321556732,
+   "swing_plane_yaw_deg": 9.702958852987628,
+   "swing_plane_yaw_sd_deg": 3.5290265195115924,
+   "quadrature_Y_amp_Win": -0.1006036090527058,
+   "quadrature_sd": 0.06156452619724579,
+   "lateral_amp_Win": 0.11474513573444549,
+   "depth_trend_per_s_Win": 0.0012174613444134396,
+   "depth_trend_sd": 0.0017244882313324757
+  }
+ ],
+ "P_eff_world": [
+  -0.0028745242496278703,
+  0.0,
+  -0.225070734596437
+ ],
+ "theta_ring_deg": {
+  "min": -8.10085984579257,
+  "max": 8.396840005524151,
+  "mean": 0.32044271605138247
+ },
+ "r_ring_Win": {
+  "mean": 0.8181896914241329,
+  "sd": 0.0018167131733580271
+ },
+ "r_weight_Win": {
+  "mean": 0.9984363380979517,
+  "sd": 0.0015263931288335244
+ },
+ "ring_to_weight_centre_Win": 0.18034056788512817,
+ "ring_to_weight_centre_sd": 0.0013029845472847061,
+ "A_to_Peff_Win": 0.2250890900542305,
+ "spring_body_len_Win": {
+  "mean": 0.6868837102285908,
+  "sd": 0.002200898364226885
+ },
+ "weight_size_Win": {
+  "diameter": 0.21163771043004279,
+  "silhouette_length": 0.3065889777202461
+ },
+ "ring_outer_radius_Win": 0.048112356299225424
+}

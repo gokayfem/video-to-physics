@@ -1,0 +1,741 @@
+{
+  "created_utc": "2026-10-25T23:26:20+00:00",
+  "tag": "ck002",
+  "base_params": {
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json": "dc20e99c7119379f640eee4fb22b7cb405cc9495b0b659785e1742b37f093ee7"
+  },
+  "solver_cmd_template": "{py} <CASE_ROOT>/verify/out/ck002/ckcopy/solver/run.py --params {params} --out {outdir}",
+  "bake_cmd_template": "tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python <CASE_ROOT>/verify/out/ck002/ckcopy/scene/build.py -- --out {blend} --physics {params} --geometry <CASE_ROOT>/verify/out/ck002/ckcopy/params/geometry.json --camera <CASE_ROOT>/verify/out/ck002/ckcopy/params/camera.json --bake {traj} --look",
+  "tolerance": 0.0001,
+  "verifier_code_sha256": "9cf065388f822b30c592848ff209f84105066ffd99f23bb3f3d3a994f57f68b8",
+  "variants": {
+    "base": {
+      "params": "<CASE_ROOT>/verify/out/controls/ck002/base/physics.json",
+      "params_sha256": "ec00fe95b8c45f5a9ae43e9b9482fd6de94249ddde5132b0350bc9644bf3b673",
+      "edits": [],
+      "commands": [
+        {
+          "cmd": "python3 <CASE_ROOT>/verify/out/ck002/ckcopy/solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/base/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/base/solver_out",
+          "rc": 0,
+          "stderr_tail": ""
+        },
+        {
+          "cmd": "tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python <CASE_ROOT>/verify/out/ck002/ckcopy/scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/base/pendulum.blend --physics <CASE_ROOT>/verify/out/controls/ck002/base/physics.json --geometry <CASE_ROOT>/verify/out/ck002/ckcopy/params/geometry.json --camera <CASE_ROOT>/verify/out/ck002/ckcopy/params/camera.json --bake <CASE_ROOT>/verify/out/controls/ck002/base/solver_out/trajectory.csv --look",
+          "rc": 0,
+          "stderr_tail": "ndulum.blend --python review/render_preview.py -- --out review/renders/ck002_final100 --pct 100 --samples 64)\n[render-lock] waiting (held by: 69963 2026-10-25T23:25:57Z /opt/homebrew/bin/blender -b checkpoints/ck002/pendulum.blend --python review/render_preview.py -- --out review/renders/ck002_final100 --pct 100 --samples 64)\n[render-lock] waiting (held by: 69963 2026-10-25T23:25:57Z /opt/homebrew/bin/blender -b checkpoints/ck002/pendulum.blend --python review/render_preview.py -- --out review/renders/ck002_final100 --pct 100 --samples 64)\n[render-lock] waiting (held by: 69963 2026-10-25T23:25:57Z /opt/homebrew/bin/blender -b checkpoints/ck002/pendulum.blend --python review/render_preview.py -- --out review/renders/ck002_final100 --pct 100 --samples 64)\n[render-lock] waiting (held by: 69963 2026-10-25T23:25:57Z /opt/homebrew/bin/blender -b checkpoints/ck002/pendulum.blend --python review/render_preview.py -- --out review/renders/ck002_final100 --pct 100 --samples 64)\n[render-lock] waiting (held by: 72647 2026-10-25T23:39:12Z /opt/homebrew/bin/blender -b checkpoints/ck002/pendulum.blend --python review/render_preview.py -- --out review/renders/ck002_diag_side --pct 50 --engine BLENDER_WORKBENCH --camera PND_Cam_SideOrtho)\n[render-lock] waiting (held by: 72647 2026-10-25T23:39:12Z /opt/homebrew/bin/blender -b checkpoints/ck002/pendulum.blend --python review/render_preview.py -- --out review/renders/ck002_diag_side --pct 50 --engine BLENDER_WORKBENCH --camera PND_Cam_SideOrtho)\n"
+        }
+      ],
+      "model": {
+        "I_P": 0.458281309305573,
+        "mgd": 9.459484046731125,
+        "c_v": 0.0020820914327404363,
+        "k_q": 0.0,
+        "tau_c": 0.0,
+        "theta0": -0.08447293248409532,
+        "omega0": 0.37929871118296804,
+        "g": 9.80665,
+        "L_c": 0.4738475540756993,
+        "m_bob": 2.0356735337958085
+      },
+      "trajectory_sha256": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba",
+      "analysis": {
+        "zeta": 0.0005000000000000001,
+        "n_periods": 7,
+        "periods": [
+          {
+            "t_start": 0.1742438760723774,
+            "T_meas": 1.3841843118732613,
+            "T_pred": 1.3841843117471804,
+            "amp": 0.11855559781933829,
+            "rel": 9.108669374313649e-11
+          },
+          {
+            "t_start": 1.5584281879456388,
+            "T_meas": 1.3841766779845437,
+            "T_pred": 1.3841766778592919,
+            "amp": 0.11818313190892873,
+            "rel": 9.048828353286353e-11
+          },
+          {
+            "t_start": 2.9426048659301824,
+            "T_meas": 1.3841690921399716,
+            "T_pred": 1.3841690920155423,
+            "amp": 0.11781183991202557,
+            "rel": 8.9894536259294e-11
+          },
+          {
+            "t_start": 4.326773958070154,
+            "T_meas": 1.3841615540357433,
+            "T_pred": 1.3841615539121317,
+            "amp": 0.11744171809358321,
+            "rel": 8.930434169940327e-11
+          },
+          {
+            "t_start": 5.710935512105897,
+            "T_meas": 1.384154063369997,
+            "T_pred": 1.3841540632471974,
+            "amp": 0.11707276273077356,
+            "rel": 8.871814394240118e-11
+          },
+          {
+            "t_start": 7.095089575475894,
+            "T_meas": 1.3841466198427987,
+            "T_pred": 1.3841466197208052,
+            "amp": 0.1167049701129361,
+            "rel": 8.813616503289268e-11
+          },
+          {
+            "t_start": 8.479236195318693,
+            "T_meas": 1.3841392231561258,
+            "T_pred": 1.3841392230349334,
+            "amp": 0.11633833654153958,
+            "rel": 8.75579608816679e-11
+          }
+        ],
+        "max_rel_period_err": 9.108669374313649e-11,
+        "n_turning_points": 14,
+        "turning_times": [
+          0.5201802309900364,
+          1.2122723873937684,
+          1.9043626323115574,
+          2.59645097176799,
+          3.2885374117685737,
+          3.9806219582997984,
+          4.672704617329196,
+          5.364785394805404,
+          6.056864296658221,
+          6.7489413287986695,
+          7.44101649711906,
+          8.133089807493043,
+          8.825161265775675,
+          9.517230877803472
+        ],
+        "amp_meas": [
+          0.11864882478846328,
+          0.11846229782718981,
+          0.11827606504628778,
+          0.11809012597728152,
+          0.11790448015255155,
+          0.11771912710523226,
+          0.11753406636915605,
+          0.1173492974790517,
+          0.11716481997022872,
+          0.11698063337895832,
+          0.11679673724207336,
+          0.11661313109732953,
+          0.11642981448312946,
+          0.1162467869386655
+        ],
+        "amp_pred": [
+          0.11864882478846327,
+          0.11846229782707327,
+          0.11827606504601597,
+          0.11809012597687883,
+          0.11790448015201638,
+          0.11771912710454861,
+          0.11753406636835963,
+          0.11734929747809614,
+          0.1171648199691664,
+          0.11698063337773874,
+          0.11679673724074029,
+          0.1166131310958556,
+          0.11642981448152522,
+          0.11624678693694424
+        ],
+        "max_rel_envelope_err": 1.4807044479425713e-11,
+        "amp_ratio_end_over_start": 0.9797550641223769,
+        "status": "PASS"
+      },
+      "predicted_small_angle_period_s": 1.382968271183876,
+      "blend": {
+        "P5": "PASS",
+        "P6": "PASS",
+        "P8_blend": "PASS",
+        "motion_is_baked_keyframes": true
+      },
+      "blend_P6_max_dtheta": 4.029804529098735e-07,
+      "status": "PASS"
+    },
+    "L_x4": {
+      "params": "<CASE_ROOT>/verify/out/controls/ck002/L_x4/physics.json",
+      "params_sha256": "3d52fe9260810d4884dfea8a0000be806a581bb24b2f52828db52058ad7c869b",
+      "edits": [
+        [
+          "/L_c",
+          1.8953902163027971
+        ],
+        [
+          "/I_P",
+          7.314373927623207
+        ],
+        [
+          "/L_eq",
+          1.8957034211108317
+        ],
+        [
+          "/wire_length",
+          1.856866024914529
+        ]
+      ],
+      "commands": [
+        {
+          "cmd": "python3 <CASE_ROOT>/verify/out/ck002/ckcopy/solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/L_x4/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/L_x4/solver_out",
+          "rc": 0,
+          "stderr_tail": ""
+        },
+        {
+          "cmd": "tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python <CASE_ROOT>/verify/out/ck002/ckcopy/scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/L_x4/pendulum.blend --physics <CASE_ROOT>/verify/out/controls/ck002/L_x4/physics.json --geometry <CASE_ROOT>/verify/out/ck002/ckcopy/params/geometry.json --camera <CASE_ROOT>/verify/out/ck002/ckcopy/params/camera.json --bake <CASE_ROOT>/verify/out/controls/ck002/L_x4/solver_out/trajectory.csv --look",
+          "rc": 0,
+          "stderr_tail": ""
+        }
+      ],
+      "model": {
+        "I_P": 7.314373927623207,
+        "mgd": 37.8379361869245,
+        "c_v": 0.0020820914327404363,
+        "k_q": 0.0,
+        "tau_c": 0.0,
+        "theta0": -0.08447293248409532,
+        "omega0": 0.37929871118296804,
+        "g": 9.80665,
+        "L_c": 1.8953902163027971,
+        "m_bob": 2.0356735337958085
+      },
+      "trajectory_sha256": "f8676353701da79f7fd13e218f97899d2d959c23617a5d0244bb3f3c411b11f4",
+      "analysis": {
+        "zeta": 6.257739813247303e-05,
+        "n_periods": 3,
+        "periods": [
+          {
+            "t_start": 0.20616042519040298,
+            "T_meas": 2.7685753122148897,
+            "T_pred": 2.7685753122043386,
+            "amp": 0.18715428437647152,
+            "rel": 3.810951554328312e-12
+          },
+          {
+            "t_start": 2.9747357374052927,
+            "T_meas": 2.7685705200701283,
+            "T_pred": 2.768570520059587,
+            "amp": 0.18708041638744688,
+            "rel": 3.807398840649512e-12
+          },
+          {
+            "t_start": 5.743306257475421,
+            "T_meas": 2.7685657317378514,
+            "T_pred": 2.76856573172732,
+            "amp": 0.18700657778782545,
+            "rel": 3.804068171575636e-12
+          }
+        ],
+        "max_rel_period_err": 3.810951554328312e-12,
+        "n_turning_points": 7,
+        "turning_times": [
+          0.8982769470500511,
+          2.282564603194106,
+          3.6668510610635807,
+          5.051136321135226,
+          6.435420383885603,
+          7.81970324979108,
+          9.203984919327835
+        ],
+        "amp_meas": [
+          0.1871727541474609,
+          0.18713581280390396,
+          0.1870988788099417,
+          0.18706195216407953,
+          0.1870250328648195,
+          0.1869881209106642,
+          0.18695121630012002
+        ],
+        "amp_pred": [
+          0.1871727541474609,
+          0.18713581280390212,
+          0.1870988788099396,
+          0.18706195216407623,
+          0.1870250328648152,
+          0.1869881209106601,
+          0.18695121630011471
+        ],
+        "max_rel_envelope_err": 2.842170943040401e-14,
+        "amp_ratio_end_over_start": 0.9988163990621929,
+        "status": "PASS"
+      },
+      "predicted_small_angle_period_s": 2.762515525685899,
+      "blend": {
+        "P5": "PASS",
+        "P6": "PASS",
+        "P8_blend": "PASS",
+        "motion_is_baked_keyframes": true
+      },
+      "blend_P6_max_dtheta": 6.1060512313027e-08,
+      "status": "PASS"
+    },
+    "amp_2deg": {
+      "params": "<CASE_ROOT>/verify/out/controls/ck002/amp_2deg/physics.json",
+      "params_sha256": "b562b02e469b08452b63432109625c0eabf18e35bc087aed1e827678b7690f53",
+      "edits": [
+        [
+          "/theta_init",
+          0.03490658503988659
+        ],
+        [
+          "/omega_init",
+          0.0
+        ]
+      ],
+      "commands": [
+        {
+          "cmd": "python3 <CASE_ROOT>/verify/out/ck002/ckcopy/solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/amp_2deg/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/amp_2deg/solver_out",
+          "rc": 0,
+          "stderr_tail": ""
+        },
+        {
+          "cmd": "tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python <CASE_ROOT>/verify/out/ck002/ckcopy/scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/amp_2deg/pendulum.blend --physics <CASE_ROOT>/verify/out/controls/ck002/amp_2deg/physics.json --geometry <CASE_ROOT>/verify/out/ck002/ckcopy/params/geometry.json --camera <CASE_ROOT>/verify/out/ck002/ckcopy/params/camera.json --bake <CASE_ROOT>/verify/out/controls/ck002/amp_2deg/solver_out/trajectory.csv --look",
+          "rc": 0,
+          "stderr_tail": "[render-lock] waiting (held by: 70686 2026-10-25T23:39:28Z /opt/homebrew/bin/blender -b --factory-startup --python scene/build.py -- --out <CASE_ROOT>/verify/out/ck002/p10/v_rebuild_A/scene/out/pendulum.blend --physics params/physics.json --geometry params/geometry.json --camera params/camera.json --bake solver/out/trajectory.csv --look)\n"
+        }
+      ],
+      "model": {
+        "I_P": 0.458281309305573,
+        "mgd": 9.459484046731125,
+        "c_v": 0.0020820914327404363,
+        "k_q": 0.0,
+        "tau_c": 0.0,
+        "theta0": 0.03490658503988659,
+        "omega0": 0.0,
+        "g": 9.80665,
+        "L_c": 0.4738475540756993,
+        "m_bob": 2.0356735337958085
+      },
+      "trajectory_sha256": "3529abfeb3ab7b7280d642ea30aa52f1bd884b20e979bad4805c5667a3d8f8b2",
+      "analysis": {
+        "zeta": 0.0005000000000000001,
+        "n_periods": 6,
+        "periods": [
+          {
+            "t_start": 1.0374152286270135,
+            "T_meas": 1.3830729464537201,
+            "T_pred": 1.383072946443302,
+            "amp": 0.03476977844508671,
+            "rel": 7.532641177476762e-12
+          },
+          {
+            "t_start": 2.4204881750807337,
+            "T_meas": 1.383072291769007,
+            "T_pred": 1.383072291758655,
+            "amp": 0.03466070231501337,
+            "rel": 7.484679542812955e-12
+          },
+          {
+            "t_start": 3.8035604668497407,
+            "T_meas": 1.3830716411865933,
+            "T_pred": 1.3830716411763058,
+            "amp": 0.03455196846114451,
+            "rel": 7.438272220383624e-12
+          },
+          {
+            "t_start": 5.186632108036334,
+            "T_meas": 1.383070994680761,
+            "T_pred": 1.3830709946705395,
+            "amp": 0.03444357580855172,
+            "rel": 7.390310585719817e-12
+          },
+          {
+            "t_start": 6.569703102717095,
+            "T_meas": 1.3830703522259604,
+            "T_pred": 1.3830703522158,
+            "amp": 0.03433552328568933,
+            "rel": 7.346123709339736e-12
+          },
+          {
+            "t_start": 7.952773454943055,
+            "T_meas": 1.3830697137967904,
+            "T_pred": 1.3830697137866947,
+            "amp": 0.03422780982438149,
+            "rel": 7.29949434230548e-12
+          }
+        ],
+        "max_rel_period_err": 7.532641177476762e-12,
+        "n_turning_points": 15,
+        "turning_times": [
+          0.0,
+          0.6915368026736062,
+          1.3830734403850402,
+          2.0746099136519494,
+          2.7661462229903546,
+          3.4576823689146563,
+          4.149218351937642,
+          4.840754172570486,
+          5.532289831322764,
+          6.223825328702446,
+          6.9153606652159105,
+          7.606895841367946,
+          8.298430857661753,
+          8.989965714598958,
+          9.68150041267961
+        ],
+        "amp_meas": [
+          0.03490658503988659,
+          0.034851789306981455,
+          0.03479707961535756,
+          0.03474245582978476,
+          0.03468791781525438,
+          0.03463346543699948,
+          0.034579098560413246,
+          0.034524817051150215,
+          0.03447062077505265,
+          0.03441650959816235,
+          0.03436248338677489,
+          0.034308542007342846,
+          0.034254685326566864,
+          0.0342009132113538,
+          0.03414722552878976
+        ],
+        "amp_pred": [
+          0.03490658503988659,
+          0.03485178930698509,
+          0.03479707961535361,
+          0.034742455829775795,
+          0.03468791781524935,
+          0.03463346543698347,
+          0.034579098560399,
+          0.03452481705113159,
+          0.03447062077502652,
+          0.0344165095981417,
+          0.03436248338674585,
+          0.03430854200731708,
+          0.0342546853265424,
+          0.034200913211318865,
+          0.03414722552875709
+        ],
+        "max_rel_envelope_err": 1.021627227260069e-12,
+        "amp_ratio_end_over_start": 0.9782459524405169,
+        "status": "PASS"
+      },
+      "predicted_small_angle_period_s": 1.382968271183876,
+      "blend": {
+        "P5": "PASS",
+        "P6": "PASS",
+        "P8_blend": "PASS",
+        "motion_is_baked_keyframes": true
+      },
+      "blend_P6_max_dtheta": 1.1973117532149136e-07,
+      "status": "PASS"
+    },
+    "amp_15deg": {
+      "params": "<CASE_ROOT>/verify/out/controls/ck002/amp_15deg/physics.json",
+      "params_sha256": "6cb32f3dc60f77f330529e7b8082f4287dfd244aa7733ee3c781be1846d39f2a",
+      "edits": [
+        [
+          "/theta_init",
+          0.2617993877991494
+        ],
+        [
+          "/omega_init",
+          0.0
+        ]
+      ],
+      "commands": [
+        {
+          "cmd": "python3 <CASE_ROOT>/verify/out/ck002/ckcopy/solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/amp_15deg/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/amp_15deg/solver_out",
+          "rc": 0,
+          "stderr_tail": ""
+        },
+        {
+          "cmd": "tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python <CASE_ROOT>/verify/out/ck002/ckcopy/scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/amp_15deg/pendulum.blend --physics <CASE_ROOT>/verify/out/controls/ck002/amp_15deg/physics.json --geometry <CASE_ROOT>/verify/out/ck002/ckcopy/params/geometry.json --camera <CASE_ROOT>/verify/out/ck002/ckcopy/params/camera.json --bake <CASE_ROOT>/verify/out/controls/ck002/amp_15deg/solver_out/trajectory.csv --look",
+          "rc": 0,
+          "stderr_tail": "[render-lock] waiting (held by: 72765 2026-10-25T23:39:36Z /usr/bin/time -l /opt/homebrew/bin/blender -b <CASE_ROOT>/verify/out/ck002/p10/delivery_rebuild/scene/out/pendulum.blend --python verify/check_blend.py -- --params params/physics.json --ref <CASE_ROOT>/verify/out/ck002/p10/delivery_rebuild/.delivery/ref_trajectory.csv --trajectory solver/out/trajectory.csv --out <CASE_ROOT>/verify/out/ck002/p10/delivery_rebuild/.delivery/check_blend_rebuild.json --dump <CASE_ROOT>/verify/out/ck002/p10/delivery_rebuild/.delivery/check_blend_rebuild.npz)\n"
+        }
+      ],
+      "model": {
+        "I_P": 0.458281309305573,
+        "mgd": 9.459484046731125,
+        "c_v": 0.0020820914327404363,
+        "k_q": 0.0,
+        "tau_c": 0.0,
+        "theta0": 0.2617993877991494,
+        "omega0": 0.0,
+        "g": 9.80665,
+        "L_c": 0.4738475540756993,
+        "m_bob": 2.0356735337958085
+      },
+      "trajectory_sha256": "acf371c31e3d15060edddad8f81dadaf0a9530e1ee06bf7610d0b1927c0cd9f7",
+      "analysis": {
+        "zeta": 0.0005000000000000001,
+        "n_periods": 6,
+        "periods": [
+          {
+            "t_start": 1.0417883481269798,
+            "T_meas": 1.3888689397583673,
+            "T_pred": 1.3888689390326276,
+            "amp": 0.2607654181043816,
+            "rel": 5.225400112607304e-10
+          },
+          {
+            "t_start": 2.430657287885347,
+            "T_meas": 1.388831549106588,
+            "T_pred": 1.3888315483863662,
+            "amp": 0.259941099461009,
+            "rel": 5.18580955954917e-10
+          },
+          {
+            "t_start": 3.819488836991935,
+            "T_meas": 1.3887943981335455,
+            "T_pred": 1.3887943974187946,
+            "amp": 0.25911942705754715,
+            "rel": 5.146556514290523e-10
+          },
+          {
+            "t_start": 5.208283235125481,
+            "T_meas": 1.388757485268103,
+            "T_pred": 1.3887574845587758,
+            "amp": 0.2583003920132732,
+            "rel": 5.107638756385313e-10
+          },
+          {
+            "t_start": 6.597040720393584,
+            "T_meas": 1.3887208089498655,
+            "T_pred": 1.3887208082459168,
+            "amp": 0.2574839854809874,
+            "rel": 5.069042963157244e-10
+          },
+          {
+            "t_start": 7.985761529343449,
+            "T_meas": 1.3886843676291054,
+            "T_pred": 1.388684366930489,
+            "amp": 0.2566701986468648,
+            "rel": 5.030780236836563e-10
+          }
+        ],
+        "max_rel_period_err": 5.225400112607304e-10,
+        "n_turning_points": 15,
+        "turning_times": [
+          0.0,
+          0.6944532881403573,
+          1.3888971531667444,
+          2.083331625336071,
+          2.7777567348058625,
+          3.4721725116346005,
+          4.166578985782069,
+          4.860976187109685,
+          5.555364145380837,
+          6.249742890261226,
+          6.944112451319192,
+          7.638472858026051,
+          8.332824139756433,
+          9.027166325788595,
+          9.721499445304776
+        ],
+        "amp_meas": [
+          0.2617993877991494,
+          0.26138523584004086,
+          0.26097174934550915,
+          0.26055892719704143,
+          0.260146768278142,
+          0.259735271474622,
+          0.2593244356742954,
+          0.2589142597669852,
+          0.258504742644807,
+          0.2580958832018525,
+          0.2576876803342184,
+          0.2572801329402867,
+          0.2568732399203704,
+          0.25646700017680163,
+          0.25606141261418247
+        ],
+        "amp_pred": [
+          0.2617993877991494,
+          0.2613852358385313,
+          0.26097174934246825,
+          0.26055892719244667,
+          0.2601467682720682,
+          0.2597352714670453,
+          0.2593244356651956,
+          0.258914259756437,
+          0.2585047426327827,
+          0.258095883188336,
+          0.25768768031928524,
+          0.25728013292389934,
+          0.2568732399025219,
+          0.25646700015756707,
+          0.25606141259351395
+        ],
+        "max_rel_envelope_err": 8.07169886485326e-11,
+        "amp_ratio_end_over_start": 0.9780825492633731,
+        "status": "PASS"
+      },
+      "predicted_small_angle_period_s": 1.382968271183876,
+      "blend": {
+        "P5": "PASS",
+        "P6": "PASS",
+        "P8_blend": "PASS",
+        "motion_is_baked_keyframes": true
+      },
+      "blend_P6_max_dtheta": 8.820223782457504e-07,
+      "status": "PASS"
+    },
+    "damping_x10": {
+      "params": "<CASE_ROOT>/verify/out/controls/ck002/damping_x10/physics.json",
+      "params_sha256": "0aee981ebf649ec2f440a156c53799c4818a008d18e5a939e122548b3e2fa70b",
+      "edits": [
+        [
+          "/damping/c",
+          0.020820914327404363
+        ],
+        [
+          "/damping/k_q",
+          0.0
+        ],
+        [
+          "/damping/tau_c",
+          0.0
+        ]
+      ],
+      "commands": [
+        {
+          "cmd": "python3 <CASE_ROOT>/verify/out/ck002/ckcopy/solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/damping_x10/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/damping_x10/solver_out",
+          "rc": 0,
+          "stderr_tail": ""
+        },
+        {
+          "cmd": "tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python <CASE_ROOT>/verify/out/ck002/ckcopy/scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/damping_x10/pendulum.blend --physics <CASE_ROOT>/verify/out/controls/ck002/damping_x10/physics.json --geometry <CASE_ROOT>/verify/out/ck002/ckcopy/params/geometry.json --camera <CASE_ROOT>/verify/out/ck002/ckcopy/params/camera.json --bake <CASE_ROOT>/verify/out/controls/ck002/damping_x10/solver_out/trajectory.csv --look",
+          "rc": 0,
+          "stderr_tail": ""
+        }
+      ],
+      "model": {
+        "I_P": 0.458281309305573,
+        "mgd": 9.459484046731125,
+        "c_v": 0.020820914327404363,
+        "k_q": 0.0,
+        "tau_c": 0.0,
+        "theta0": -0.08447293248409532,
+        "omega0": 0.37929871118296804,
+        "g": 9.80665,
+        "L_c": 0.4738475540756993,
+        "m_bob": 2.0356735337958085
+      },
+      "trajectory_sha256": "4d25effea84a95dc79ab16db101fcefdbb2a9cc6459f5c02bdf073f545f85db6",
+      "analysis": {
+        "zeta": 0.005000000000000002,
+        "n_periods": 7,
+        "periods": [
+          {
+            "t_start": 0.17474728049786056,
+            "T_meas": 1.384153950072586,
+            "T_pred": 1.384153937984716,
+            "amp": 0.11621842676864848,
+            "rel": 8.733038736608023e-09
+          },
+          {
+            "t_start": 1.5589012305704464,
+            "T_meas": 1.3840826403593303,
+            "T_pred": 1.384082629040957,
+            "amp": 0.11261871407105764,
+            "rel": 8.17752709991737e-09
+          },
+          {
+            "t_start": 2.9429838709297766,
+            "T_meas": 1.384015691760403,
+            "T_pred": 1.3840156811606965,
+            "amp": 0.1091308121744837,
+            "rel": 7.65866059460052e-09
+          },
+          {
+            "t_start": 4.32699956269018,
+            "T_meas": 1.3839528365062792,
+            "T_pred": 1.383952826577978,
+            "amp": 0.10575121975976289,
+            "rel": 7.173872607069143e-09
+          },
+          {
+            "t_start": 5.710952399196459,
+            "T_meas": 1.3838938233932607,
+            "T_pred": 1.383893814092399,
+            "amp": 0.10247654770770835,
+            "rel": 6.720791478898036e-09
+          },
+          {
+            "t_start": 7.0948462225897195,
+            "T_meas": 1.3838384167438331,
+            "T_pred": 1.3838384080294885,
+            "amp": 0.0993035152739541,
+            "rel": 6.297226962104219e-09
+          },
+          {
+            "t_start": 8.478684639333553,
+            "T_meas": 1.3837863954340044,
+            "T_pred": 1.383786387268072,
+            "amp": 0.09622894641451187,
+            "rel": 5.9011509012663055e-09
+          }
+        ],
+        "max_rel_period_err": 8.733038736608023e-09,
+        "n_turning_points": 14,
+        "turning_times": [
+          0.519688369521247,
+          1.2117653894358988,
+          1.9038242992517285,
+          2.5958656615641402,
+          3.2878900214165587,
+          3.9798979068525884,
+          4.671889829450534,
+          5.363866284840828,
+          6.055827753206983,
+          6.747774699770544,
+          7.439707575260635,
+          8.131626816368533,
+          8.823532846187813,
+          9.51542607464052
+        ],
+        "amp_meas": [
+          0.11712900389720897,
+          0.11530069131799901,
+          0.11350100327514838,
+          0.11172948765898959,
+          0.10998569968338683,
+          0.10826920175874039,
+          0.10657956336735665,
+          0.10491636094180726,
+          0.10327917774509172,
+          0.10166760375388444,
+          0.10008123554347595,
+          0.09851967617541334,
+          0.09698253508718685,
+          0.09546942798391972
+        ],
+        "amp_pred": [
+          0.11712900389720897,
+          0.11530069118801387,
+          0.11350100302320706,
+          0.11172948729277404,
+          0.1099856992102026,
+          0.10826920118530217,
+          0.10657956270021475,
+          0.10491636018738261,
+          0.10327917690918603,
+          0.10166760284206854,
+          0.10008123456107132,
+          0.09851967512737372,
+          0.09698253397827893,
+          0.09546942681878702
+        ],
+        "max_rel_envelope_err": 1.2204249388858557e-08,
+        "amp_ratio_end_over_start": 0.8150793126158792,
+        "status": "PASS"
+      },
+      "predicted_small_angle_period_s": 1.382968271183876,
+      "blend": {
+        "P5": "PASS",
+        "P6": "PASS",
+        "P8_blend": "PASS",
+        "motion_is_baked_keyframes": true
+      },
+      "blend_P6_max_dtheta": 3.87925039646575e-07,
+      "status": "PASS"
+    }
+  },
+  "status": "PASS",
+  "through_bake": true
+}

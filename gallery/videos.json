@@ -1,0 +1,135 @@
+{
+ "release_video": {
+  "title": "Video 2 Physics release film (v2)",
+  "url": "https://v3b.fal.media/files/b/0aaff708/qFBVeL9OOVmM9wQsUWIi6_video2physics_release_v2.mp4",
+  "hero_image": "hero.jpg (first frame of this film, 1600 px wide)"
+ },
+ "cases": {
+  "brass-pendulum": {
+   "thumbnail": "thumb_brass-pendulum.jpg",
+   "readme": "../examples/brass-pendulum/README.md",
+   "videos": [
+    {
+     "role": "reconstruction",
+     "file": "v004_reconstruction_ck003_1920x1088.mp4",
+     "source": "01-brass-pendulum/review/visuals/v004_reconstruction_ck003_1920x1088.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff792/KvfaQqpImbD8ArgPS3bil_v004_reconstruction_ck003_1920x1088.mp4",
+     "bytes": 4941821,
+     "sha256": "3c160f8a1870af481aca2fd4c10c570efc4b175b915cdff33a982053b4be916e"
+    },
+    {
+     "role": "side_by_side",
+     "file": "v004_sbs_ck003_final_f000-240.mp4",
+     "source": "01-brass-pendulum/review/visuals/v004_sbs_ck003_final_f000-240.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff792/5mLxPMLYaKqfNXoHIQw77_v004_sbs_ck003_final_f000-240.mp4",
+     "bytes": 2252308,
+     "sha256": "da58d4f3832a636b5f6bb504e0969e8bb7d2a55eb32ac02e5cfabf8b67f09963"
+    }
+   ]
+  },
+  "spring-pendulum": {
+   "thumbnail": "thumb_spring-pendulum.jpg",
+   "readme": "../examples/spring-pendulum/README.md",
+   "videos": [
+    {
+     "role": "reconstruction",
+     "file": "v003_reconstruction_ck003_1920x1088.mp4",
+     "source": "02-vertical-spring/review/visuals/v003_reconstruction_ck003_1920x1088.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff792/BE3PJk6Nkn6HCv710XAV3_v003_reconstruction_ck003_1920x1088.mp4",
+     "bytes": 6317397,
+     "sha256": "ab18dc2c7fabc1d4be35c2a8860084adcd2fffd9ff80327d55e95f7133c92a0b"
+    },
+    {
+     "role": "side_by_side",
+     "file": "v003_sbs_ck003_final_f000-240.mp4",
+     "source": "02-vertical-spring/review/visuals/v003_sbs_ck003_final_f000-240.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff792/h2R2nWH8HM2oWAnRR5EXg_v003_sbs_ck003_final_f000-240.mp4",
+     "bytes": 3570697,
+     "sha256": "518cdb886b49c8593d3cd99a981a7ca1ebeec569035590f4efe6a4f79aec0ac5"
+    }
+   ]
+  },
+  "torsion-disc": {
+   "thumbnail": "thumb_torsion-disc.jpg",
+   "readme": "../examples/torsion-disc/README.md",
+   "videos": [
+    {
+     "role": "reconstruction",
+     "file": "v003_reconstruction_ck003_1920x1088.mp4",
+     "source": "03-torsion-disc/review/visuals/v003_reconstruction_ck003_1920x1088.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff793/75HGVTbcgK6k4vNys2X9O_v003_reconstruction_ck003_1920x1088.mp4",
+     "bytes": 7474489,
+     "sha256": "2cea224c0b4949daae6360fdb6068f907a0c77e7a8b0cb77a629289761bb7d7d"
+    },
+    {
+     "role": "side_by_side",
+     "file": "v003_sbs_ck003_final_f000-240.mp4",
+     "source": "03-torsion-disc/review/visuals/v003_sbs_ck003_final_f000-240.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff793/7cs5kwcM4OUL1DkOFL4dW_v003_sbs_ck003_final_f000-240.mp4",
+     "bytes": 4061217,
+     "sha256": "e85c6ce8d203475355d337cf236bbfffbac603e21e24b26bf568c95f43496330"
+    }
+   ]
+  },
+  "ruler-buckling": {
+   "thumbnail": "thumb_ruler-buckling.jpg",
+   "readme": "../examples/ruler-buckling/README.md",
+   "videos": [
+    {
+     "role": "reconstruction",
+     "file": "final_ck002_1920x1088.mp4",
+     "source": "batch2/01-ruler-buckling/review/final_ck002_1920x1088.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff793/URFZU7ItJ7ntuy-_ql84Y_final_ck002_1920x1088.mp4",
+     "bytes": 889570,
+     "sha256": "c688b0e16ae03184067bbf5ebbd0be9739e2b674e309b5bbe1fb1a42f1216fd4"
+    },
+    {
+     "role": "side_by_side",
+     "file": "ck002_sbs.mp4",
+     "source": "batch2/01-ruler-buckling/review/visuals/ck002_sbs.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff793/5inSNa0rtNA8ZzBomv91__ck002_sbs.mp4",
+     "bytes": 1516788,
+     "sha256": "4c695e1a578b25bca1a099e5aa6a8f4dace4ee4c32ed4cdaa06791a030dcde4c"
+    },
+    {
+     "role": "ai_reference",
+     "file": "reference.mp4",
+     "source": "batch2/01-ruler-buckling/reference/reference.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff793/v6jgKggwsoxK2USHdd3xf_reference.mp4",
+     "bytes": 5686409,
+     "sha256": "0c5b9b3beb8decf024f1e2b1eefaad06e12d25b0f195913c924f80bf16dfeef0"
+    }
+   ]
+  },
+  "vortex-shedding": {
+   "thumbnail": "thumb_vortex-shedding.jpg",
+   "readme": "../examples/vortex-shedding/README.md",
+   "videos": [
+    {
+     "role": "reconstruction",
+     "file": "final_ck004_1920x1088.mp4",
+     "source": "batch2/02-vortex-shedding/review/final_ck004_1920x1088.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff794/mtpIr-BFQRUpsZ-tsPBVS_final_ck004_1920x1088.mp4",
+     "bytes": 15647669,
+     "sha256": "87ae8773ac18238926cc51c047ef82374cb1cec1f8fd2442747152214104ea72"
+    },
+    {
+     "role": "side_by_side",
+     "file": "ck004_sbs.mp4",
+     "source": "batch2/02-vortex-shedding/review/visuals/ck004_sbs.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff794/9bHQMmRi-i6lZvNbE2u7B_ck004_sbs.mp4",
+     "bytes": 3857146,
+     "sha256": "07adbf9b63d5dc81cbafee52478fb79ea864e402d19074b2fbbc51074a621b38"
+    },
+    {
+     "role": "ai_reference",
+     "file": "reference.mp4",
+     "source": "batch2/02-vortex-shedding/reference/reference.mp4",
+     "url": "https://v3b.fal.media/files/b/0aaff794/NYhxI2WhNSYJxPK6F4BoE_reference.mp4",
+     "bytes": 13099226,
+     "sha256": "3ba4444230e0e6220d6f1a548fe96df1078411b79e813c57d80062f192ef41f8"
+    }
+   ]
+  }
+ }
+}

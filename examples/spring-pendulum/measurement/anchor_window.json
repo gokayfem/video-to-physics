@@ -1,0 +1,498 @@
+{
+ "start_of_clip": {
+  "start_turning_point": {
+   "t": 0.04679,
+   "y": -7.48477,
+   "sy": 0.1288
+  },
+  "note": "phase at t=0: weight essentially at its left turning point (swing -7.27 deg at t=0, turning point at t=0.047 s, -7.48 deg); not released exactly at t=0"
+ },
+ "rule": "config/CHANGELOG.md 2026-10-25T23:41:09Z",
+ "T_a_s": 10.0,
+ "held_out_s": [
+  7.5,
+  10.0
+ ],
+ "reason": "no qualifying amplitude increase (> 3 sigma) in any measured mode and no visible discontinuity",
+ "modes": [
+  {
+   "mode": "lateral swing (image angle of ring about P_eff)",
+   "note": "primary oscillation mode",
+   "n_half_cycles": 15,
+   "max_increase_z": 2.66307,
+   "max_increase_at_t": 1.92816,
+   "first_trigger_t": null,
+   "steps": [
+    {
+     "turning_point_t": 0.66351,
+     "prev_amp": 7.74578,
+     "amp": 7.862,
+     "z": 1.44497
+    },
+    {
+     "turning_point_t": 1.28775,
+     "prev_amp": 7.862,
+     "amp": 7.88596,
+     "z": 0.42632
+    },
+    {
+     "turning_point_t": 1.92816,
+     "prev_amp": 7.88596,
+     "amp": 8.05647,
+     "z": 2.66307
+    },
+    {
+     "turning_point_t": 2.57505,
+     "prev_amp": 8.05647,
+     "amp": 8.12954,
+     "z": 0.95688
+    },
+    {
+     "turning_point_t": 3.21854,
+     "prev_amp": 8.12954,
+     "amp": 8.21407,
+     "z": 0.9285
+    },
+    {
+     "turning_point_t": 3.86723,
+     "prev_amp": 8.21407,
+     "amp": 8.21612,
+     "z": 0.02117
+    },
+    {
+     "turning_point_t": 4.52134,
+     "prev_amp": 8.21612,
+     "amp": 8.19169,
+     "z": -0.30434
+    },
+    {
+     "turning_point_t": 5.17077,
+     "prev_amp": 8.19169,
+     "amp": 8.12907,
+     "z": -0.88304
+    },
+    {
+     "turning_point_t": 5.82859,
+     "prev_amp": 8.12907,
+     "amp": 7.83723,
+     "z": -3.67253
+    },
+    {
+     "turning_point_t": 6.47864,
+     "prev_amp": 7.83723,
+     "amp": 7.61299,
+     "z": -3.05113
+    },
+    {
+     "turning_point_t": 7.12763,
+     "prev_amp": 7.61299,
+     "amp": 7.60929,
+     "z": -0.05615
+    },
+    {
+     "turning_point_t": 7.78177,
+     "prev_amp": 7.60929,
+     "amp": 7.64436,
+     "z": 0.46192
+    },
+    {
+     "turning_point_t": 8.44212,
+     "prev_amp": 7.64436,
+     "amp": 7.58207,
+     "z": -0.72937
+    },
+    {
+     "turning_point_t": 9.11221,
+     "prev_amp": 7.58207,
+     "amp": 7.62165,
+     "z": 0.51982
+    }
+   ]
+  },
+  {
+   "mode": "weight rocking (absolute weight tilt at swing turning points)",
+   "note": "locked to the swing frequency",
+   "n_half_cycles": 14,
+   "max_increase_z": 0.88335,
+   "max_increase_at_t": 8.44212,
+   "first_trigger_t": null,
+   "steps": [
+    {
+     "turning_point_t": 1.28775,
+     "prev_amp": 10.56766,
+     "amp": 10.55242,
+     "z": -0.02844
+    },
+    {
+     "turning_point_t": 1.92816,
+     "prev_amp": 10.55242,
+     "amp": 10.75428,
+     "z": 0.38158
+    },
+    {
+     "turning_point_t": 2.57505,
+     "prev_amp": 10.75428,
+     "amp": 11.12009,
+     "z": 0.64434
+    },
+    {
+     "turning_point_t": 3.21854,
+     "prev_amp": 11.12009,
+     "amp": 11.18526,
+     "z": 0.10156
+    },
+    {
+     "turning_point_t": 3.86723,
+     "prev_amp": 11.18526,
+     "amp": 11.0941,
+     "z": -0.15061
+    },
+    {
+     "turning_point_t": 4.52134,
+     "prev_amp": 11.0941,
+     "amp": 10.94781,
+     "z": -0.30341
+    },
+    {
+     "turning_point_t": 5.17077,
+     "prev_amp": 10.94781,
+     "amp": 10.24901,
+     "z": -1.48414
+    },
+    {
+     "turning_point_t": 5.82859,
+     "prev_amp": 10.24901,
+     "amp": 9.655,
+     "z": -1.14217
+    },
+    {
+     "turning_point_t": 6.47864,
+     "prev_amp": 9.655,
+     "amp": 9.60365,
+     "z": -0.09303
+    },
+    {
+     "turning_point_t": 7.12763,
+     "prev_amp": 9.60365,
+     "amp": 8.97646,
+     "z": -1.02495
+    },
+    {
+     "turning_point_t": 7.78177,
+     "prev_amp": 8.97646,
+     "amp": 9.23209,
+     "z": 0.39512
+    },
+    {
+     "turning_point_t": 8.44212,
+     "prev_amp": 9.23209,
+     "amp": 9.74938,
+     "z": 0.88335
+    },
+    {
+     "turning_point_t": 9.11221,
+     "prev_amp": 9.74938,
+     "amp": 9.81196,
+     "z": 0.11595
+    }
+   ]
+  },
+  {
+   "mode": "weight rocking relative to pivot-ring line",
+   "note": "locked to the swing frequency",
+   "n_half_cycles": 14,
+   "max_increase_z": 0.98008,
+   "max_increase_at_t": 8.44212,
+   "first_trigger_t": null,
+   "steps": [
+    {
+     "turning_point_t": 1.28775,
+     "prev_amp": 2.69759,
+     "amp": 2.62473,
+     "z": -0.13511
+    },
+    {
+     "turning_point_t": 1.92816,
+     "prev_amp": 2.62473,
+     "amp": 2.68566,
+     "z": 0.11452
+    },
+    {
+     "turning_point_t": 2.57505,
+     "prev_amp": 2.68566,
+     "amp": 2.99961,
+     "z": 0.57185
+    },
+    {
+     "turning_point_t": 3.21854,
+     "prev_amp": 2.99961,
+     "amp": 3.00155,
+     "z": 0.00327
+    },
+    {
+     "turning_point_t": 3.86723,
+     "prev_amp": 3.00155,
+     "amp": 2.86356,
+     "z": -0.2455
+    },
+    {
+     "turning_point_t": 4.52134,
+     "prev_amp": 2.86356,
+     "amp": 2.69682,
+     "z": -0.35433
+    },
+    {
+     "turning_point_t": 5.17077,
+     "prev_amp": 2.69682,
+     "amp": 2.1171,
+     "z": -1.21701
+    },
+    {
+     "turning_point_t": 5.82859,
+     "prev_amp": 2.1171,
+     "amp": 1.81892,
+     "z": -0.56659
+    },
+    {
+     "turning_point_t": 6.47864,
+     "prev_amp": 1.81892,
+     "amp": 1.99213,
+     "z": 0.31088
+    },
+    {
+     "turning_point_t": 7.12763,
+     "prev_amp": 1.99213,
+     "amp": 1.36212,
+     "z": -1.02294
+    },
+    {
+     "turning_point_t": 7.78177,
+     "prev_amp": 1.36212,
+     "amp": 1.5829,
+     "z": 0.33882
+    },
+    {
+     "turning_point_t": 8.44212,
+     "prev_amp": 1.5829,
+     "amp": 2.16297,
+     "z": 0.98008
+    },
+    {
+     "turning_point_t": 9.11221,
+     "prev_amp": 2.16297,
+     "amp": 2.2202,
+     "z": 0.10479
+    }
+   ]
+  }
+ ],
+ "raw_radius_literal": {
+  "mode": "pivot-ring distance r(t), raw turning points (NOT an independent mode)",
+  "note": "r(t) is a mixture of swing-locked w and 2w terms; no independent axial (vertical bob) frequency is detected (analysis.json vertical_bob_search); half-cycles of a mixture alternate large/small by construction",
+  "n_half_cycles": 27,
+  "max_increase_z": 7.44755,
+  "max_increase_at_t": 9.37329,
+  "first_trigger_t": 9.37329,
+  "steps": [
+   {
+    "turning_point_t": 0.70172,
+    "prev_amp": 1.45101,
+    "amp": 1.44512,
+    "z": -0.01898
+   },
+   {
+    "turning_point_t": 1.07283,
+    "prev_amp": 1.44512,
+    "amp": 0.59099,
+    "z": -2.65014
+   },
+   {
+    "turning_point_t": 1.30637,
+    "prev_amp": 0.59099,
+    "amp": 0.92031,
+    "z": 1.15148
+   },
+   {
+    "turning_point_t": 1.60246,
+    "prev_amp": 0.92031,
+    "amp": 1.30988,
+    "z": 1.44434
+   },
+   {
+    "turning_point_t": 1.88946,
+    "prev_amp": 1.30988,
+    "amp": 1.55848,
+    "z": 0.92916
+   },
+   {
+    "turning_point_t": 2.30158,
+    "prev_amp": 1.55848,
+    "amp": 0.74641,
+    "z": -3.74939
+   },
+   {
+    "turning_point_t": 2.57586,
+    "prev_amp": 0.74641,
+    "amp": 0.70821,
+    "z": -0.2538
+   },
+   {
+    "turning_point_t": 2.85203,
+    "prev_amp": 0.70821,
+    "amp": 1.35684,
+    "z": 2.1153
+   },
+   {
+    "turning_point_t": 3.19468,
+    "prev_amp": 1.35684,
+    "amp": 1.63935,
+    "z": 0.68313
+   },
+   {
+    "turning_point_t": 3.55998,
+    "prev_amp": 1.63935,
+    "amp": 0.8004,
+    "z": -2.72643
+   },
+   {
+    "turning_point_t": 3.85044,
+    "prev_amp": 0.8004,
+    "amp": 0.34949,
+    "z": -3.43976
+   },
+   {
+    "turning_point_t": 4.11473,
+    "prev_amp": 0.34949,
+    "amp": 1.00879,
+    "z": 2.09335
+   },
+   {
+    "turning_point_t": 4.52505,
+    "prev_amp": 1.00879,
+    "amp": 1.4632,
+    "z": 1.03874
+   },
+   {
+    "turning_point_t": 4.91082,
+    "prev_amp": 1.4632,
+    "amp": 0.85337,
+    "z": -1.7496
+   },
+   {
+    "turning_point_t": 5.21374,
+    "prev_amp": 0.85337,
+    "amp": 0.7088,
+    "z": -0.58747
+   },
+   {
+    "turning_point_t": 5.5004,
+    "prev_amp": 0.7088,
+    "amp": 1.08637,
+    "z": 0.82127
+   },
+   {
+    "turning_point_t": 5.83378,
+    "prev_amp": 1.08637,
+    "amp": 1.60613,
+    "z": 0.91792
+   },
+   {
+    "turning_point_t": 6.20341,
+    "prev_amp": 1.60613,
+    "amp": 1.20416,
+    "z": -0.96836
+   },
+   {
+    "turning_point_t": 6.48881,
+    "prev_amp": 1.20416,
+    "amp": 1.50871,
+    "z": 1.64291
+   },
+   {
+    "turning_point_t": 6.76452,
+    "prev_amp": 1.50871,
+    "amp": 2.21294,
+    "z": 2.18229
+   },
+   {
+    "turning_point_t": 7.80363,
+    "prev_amp": 2.21294,
+    "amp": 0.46704,
+    "z": -5.09393
+   },
+   {
+    "turning_point_t": 8.03111,
+    "prev_amp": 0.46704,
+    "amp": 0.91271,
+    "z": 1.01788
+   },
+   {
+    "turning_point_t": 8.43297,
+    "prev_amp": 0.91271,
+    "amp": 1.16591,
+    "z": 0.4425
+   },
+   {
+    "turning_point_t": 8.89125,
+    "prev_amp": 1.16591,
+    "amp": 0.85955,
+    "z": -0.71917
+   },
+   {
+    "turning_point_t": 9.16364,
+    "prev_amp": 0.85955,
+    "amp": 0.53124,
+    "z": -1.49246
+   },
+   {
+    "turning_point_t": 9.37329,
+    "prev_amp": 0.53124,
+    "amp": 2.23428,
+    "z": 7.44755
+   }
+  ]
+ },
+ "literal_note": "if the rule were applied literally to the raw r(t) turning points (not an oscillation mode), the first > 3 sigma increase would be at t = 9.373291 s",
+ "visible_discontinuities": {
+  "attachment_jump": "none: S-hook static to <=1.2 px after drift removal; ring and weight tracks have no acceleration outliers > 6 robust sigma (ring/weight centre screens 0 flagged)",
+  "coil_count_change": "none: open-coil gap count is 11 or 12; the 12th gap is the boundary turn between the open and close-wound sections and appears only when the spring is swung to image-right (mean swing +6.3 deg vs -2.2 deg), reversibly, 16 transitions; the close-wound section keeps ~10 scallops (right edge median). Interpreted as a near-closed coil opening on the outside of the bend, not a coil-count change",
+  "shape_change": "none visible: single-frame tracker outliers at frame 116 (ring radius -3 px, method A vs B differ by 5 px; ring looks unchanged in a 2x zoom) and weight width/tilt outliers at frames 75-77, 135-136, 143-144 coincide with motion blur/cadence frames; weight silhouette length is constant (sd 0.8 px)"
+ },
+ "trends_not_tested_by_rule": {
+  "swing_amp_first_deg": 7.862,
+  "swing_amp_peak_deg": 8.21612,
+  "swing_amp_peak_t": 4.19428,
+  "swing_amp_last_deg": 7.62165,
+  "growth_pct_first_to_peak": 4.50426,
+  "growth_rate_deg_per_s_until_peak": [
+   0.12939,
+   0.01961
+  ],
+  "half_period_first_s": 0.62424,
+  "half_period_last_s": 0.67119,
+  "half_period_trend_s_per_s": [
+   0.00381,
+   0.00061
+  ],
+  "half_period_sd_s": 0.01146,
+  "half_period_median_sd_s": 0.00537,
+  "note": "the declared rule tests half-cycle-to-half-cycle jumps only; the swing amplitude instead grows gradually (+4.5 % from 0.98 s to 4.19 s, a non-physical energy injection for a passive system) and then decays faster; the half-period lengthens by 7.5 % over the clip. Both lie inside a 10 s anchor window."
+ },
+ "near_misses": [
+  {
+   "mode": "lateral swing (image angle of ring about P_eff)",
+   "max_z": 2.66307,
+   "at_t": 1.92816
+  },
+  {
+   "mode": "weight rocking (absolute weight tilt at swing turning points)",
+   "max_z": 0.88335,
+   "at_t": 8.44212
+  },
+  {
+   "mode": "weight rocking relative to pivot-ring line",
+   "max_z": 0.98008,
+   "at_t": 8.44212
+  }
+ ]
+}

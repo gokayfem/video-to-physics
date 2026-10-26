@@ -1,0 +1,318 @@
+{
+  "version": "v004",
+  "checkpoint": "ck002",
+  "status": "final for ck002",
+  "created_utc": "2026-10-25T23:41:32+00:00",
+  "checkpoint_integrity": "checkpoints/ck002/MANIFEST.sha256 557/557 OK before and after; all work on byte-identical copy verify/out/ck002/ckcopy",
+  "inputs_sha256": {
+    "params/physics.json": "dc20e99c7119379f640eee4fb22b7cb405cc9495b0b659785e1742b37f093ee7",
+    "params/geometry.json": "71ab5ead32888861e423476bebb3f46f4b743187729989309eb1b28088624ae2",
+    "params/camera.json": "3eee32766ac1449483b25ea64faddbfaaba44aa31cae6d7a6a5b4154ae2a55c1",
+    "params/look.json": "76034a40136a6c231c6e9e6c99d97c9d2b106b8cc4d8d02a927c43204b16a546",
+    "solver/out/trajectory.csv": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba",
+    "solver/out/trajectory_meta.json": "594b8227ce69cda850227483ccb8204548af253fff6ced92e6dd0efbc3d8f558",
+    "pendulum.blend": "64c4c5bb8a37ceae3c7a59ecc145b74828ee9df89ffefa520371bbc431ea7c66",
+    "solver/pendulum.py": "21f44cb6a96854185daf2a8cacc6a2f2d0c8bca14fb62fec9900624df43884be",
+    "solver/run.py": "bb1ecd576fd8ad48f1fb248112d7e73d24e8be7c255a41372251f734f2b59e1c",
+    "solver/bake_blender.py": "5546c76b7012965aefaa92b429c48432fd78618cdfa18d6af6f9086c24337b4a",
+    "scene/build.py": "4e85a421990fb3085998c78be244690c2e05f429cf71c173e01ab55046f5ede0",
+    "scene/look.py": "3e5f5446c92bf43dd05c5ebedc8045b1ce7d5375391c717955fd51f89e3b11bc",
+    "scene/pnd_nodes.py": "824400dd1b2f278b7c78ecc820cc85c3f6729729f69abdeb9f944bf9574a6169",
+    "camera/project.py": "2d65216b1730e31937d2d23be49ee165b8a49375cd2d094d603bc0ffb636545e",
+    "measurement/bob_track.csv": "a903842122cab76126ce4ad2a7ea81b491512ac8068f78d6dec50a35110f493b",
+    "solver/out/fit_tilt/Ta_4.0/fit_projected.json": "0cc9d241af86bb4d06f7c45896ea4d0a4dc2821b70fe816ad614fd10a125f2c8",
+    "config/acceptance.json": "8b65d70eb9f357b5d9aa7e75d01f21f34b7e73006da3ba933bba0adaa1d62e60",
+    "MANIFEST.sha256": "2e878f6d0328d0b3f19f5f80978cbc9737678a4b4d6927e92e0004b508658d16"
+  },
+  "params_summary": {
+    "level_tilt_rad": 0.012595906923464214,
+    "level_tilt_sigma": 0.0009913335550363076,
+    "Q": 1000.0,
+    "Q_provenance": "assumed",
+    "theta_init": -0.08447293248409532,
+    "omega_init": 0.37929871118296804,
+    "L_c": 0.4738475540756993,
+    "fit_window": "ANCHOR t <= 4.0 s (frames 0..96)"
+  },
+  "P1": {
+    "status": "PASS",
+    "theta_successive_max_diffs_rad": [
+      7.918301361820035e-10,
+      4.949807447598986e-11,
+      3.0940769694606796e-12
+    ],
+    "p_obs": 3.999791412632807,
+    "p_theory": 4,
+    "finest_run_bitwise_equals_ck_trajectory": true
+  },
+  "P2": {
+    "status": "PASS",
+    "max_abs_dtheta_rad": 2.0718507205003123e-13,
+    "tol": 1e-06,
+    "note": "tilt does not enter the dynamics (theta from true gravity); verifier ref solver has no tilt term"
+  },
+  "P3": {
+    "status": "PASS",
+    "T_exact_s": 1.384189551447696,
+    "max_rel_err": 4.0190073491430667e-14,
+    "tol": 1e-07
+  },
+  "P4": {
+    "status": "PASS",
+    "damped_balance_rel": 1.4877439404197812e-14,
+    "damped_max_per_sample_increment_over_E0": -1.746286100723864e-08,
+    "conservative_drift_rel": 2.7049889825814205e-14,
+    "conservative_max_per_sample_increment_over_E0": 1.5397629593155777e-14
+  },
+  "P5": {
+    "status": "PASS",
+    "pivot_drift_m": 0.0,
+    "max_abs_L_minus_Lc_m": 4.1253834404120227e-08,
+    "max_abs_y_bob_m": 2.8188636620725294e-17,
+    "wire_top_gap_m": 1.3657995884130278e-20,
+    "wire_bottom_gap_m": 3.465894336807107e-08,
+    "pin_drift_m": 0.0
+  },
+  "P6": {
+    "status": "PASS",
+    "max_abs_dtheta_rad": 4.029804529098735e-07,
+    "max_on_frames_rad": 1.2179503752762777e-08,
+    "tol": 1e-05
+  },
+  "P7": {
+    "status": "PASS",
+    "T_min_N": 19.822790341692215,
+    "T_max_N": 20.243462946987197
+  },
+  "P8": {
+    "status": "PASS",
+    "solver_dtheta0": 0.0,
+    "blend_theta_frame0_err_rad": 2.1684064127613922e-09,
+    "scene": {
+      "fps": 24,
+      "fps_base": 1.0,
+      "frame_start": 0,
+      "frame_end": 240,
+      "frame_map_old": 100,
+      "frame_map_new": 100,
+      "unit_scale": 1.0,
+      "gravity": [
+        0.0,
+        0.0,
+        -9.8100004196167
+      ],
+      "ok": true
+    }
+  },
+  "P9": {
+    "status": "PASS",
+    "through": "ckcopy solver/run.py -> ckcopy scene/build.py --bake --look (render lock) -> verify/check_blend.py",
+    "variants": {
+      "base": {
+        "status": "PASS",
+        "max_rel_period_err": 9.108669374313649e-11,
+        "max_rel_envelope_err": 1.4807044479425713e-11,
+        "blend_P6_max_dtheta": 4.029804529098735e-07
+      },
+      "L_x4": {
+        "status": "PASS",
+        "max_rel_period_err": 3.810951554328312e-12,
+        "max_rel_envelope_err": 2.842170943040401e-14,
+        "blend_P6_max_dtheta": 6.1060512313027e-08
+      },
+      "amp_2deg": {
+        "status": "PASS",
+        "max_rel_period_err": 7.532641177476762e-12,
+        "max_rel_envelope_err": 1.021627227260069e-12,
+        "blend_P6_max_dtheta": 1.1973117532149136e-07
+      },
+      "amp_15deg": {
+        "status": "PASS",
+        "max_rel_period_err": 5.225400112607304e-10,
+        "max_rel_envelope_err": 8.07169886485326e-11,
+        "blend_P6_max_dtheta": 8.820223782457504e-07
+      },
+      "damping_x10": {
+        "status": "PASS",
+        "max_rel_period_err": 8.733038736608023e-09,
+        "max_rel_envelope_err": 1.2204249388858557e-08,
+        "blend_P6_max_dtheta": 3.87925039646575e-07
+      }
+    },
+    "tol": 0.0001
+  },
+  "P10": {
+    "status": "PASS",
+    "compare_dumps": {
+      "ck_vs_A": "PASS",
+      "ck_vs_B": "PASS",
+      "A_vs_B": "PASS"
+    },
+    "delivery_clean_rebuild_verdict": "NOT_REPRODUCED"
+  },
+  "tilt_audit": {
+    "status": "PASS",
+    "swing_parent": null,
+    "swing_under_tilt": false,
+    "swing_rot_vs_RotY_minus_theta": 2.9788237654315708e-08,
+    "bob_angle_vs_theta_world_rad": 1.2179513259047425e-08,
+    "stand_up_axis_angle_rad": {
+      "min": 0.012595906589335832,
+      "max": 0.012595906589335832,
+      "expected": 0.012595906923464214,
+      "max_err": 3.341283812130502e-10
+    },
+    "bob_rest_in_stand_frame_rad": 0.012595906589335834,
+    "bob_rest_minus_stand_down_world_rad": -0.012595906589335832,
+    "cameras_under_tilt": {
+      "PND_Cam_Locked": true,
+      "PND_Cam_Overview": true,
+      "PND_Cam_Reference": true,
+      "PND_Cam_SideOrtho": true
+    },
+    "not_under_tilt": [
+      "PND_Bob:MESH",
+      "PND_Swing:EMPTY",
+      "PND_Wire:MESH"
+    ],
+    "rebuilds": {
+      "A": "PASS",
+      "B": "PASS"
+    }
+  },
+  "fit_audit": {
+    "claims_file": "solver/out/fit_tilt/Ta_4.0/fit_projected.json",
+    "claims_reproduced_within_0p05px": true,
+    "comparison": {
+      "rms_fit_px": {
+        "verifier": 13.930570060678646,
+        "claimed": 13.930570059445273,
+        "abs_diff": 1.2333725152302577e-09,
+        "rel_diff": 8.853711728717092e-11
+      },
+      "rms_holdout_px": {
+        "verifier": 27.269215336846507,
+        "claimed": 27.269215317616933,
+        "abs_diff": 1.922957437727746e-08,
+        "rel_diff": 7.051752004339647e-10
+      },
+      "max_abs_px": {
+        "verifier": 46.57530387490738,
+        "claimed": 46.575303844740574,
+        "abs_diff": 3.0166802389430813e-08,
+        "rel_diff": 6.476995295616808e-10
+      },
+      "locked_rms_fit_px": {
+        "verifier": 14.941184623773838,
+        "claimed": 14.941184622700215,
+        "abs_diff": 1.0736229683061538e-09
+      },
+      "locked_rms_holdout_px": {
+        "verifier": 28.342322868885883,
+        "claimed": 28.342322850681914,
+        "abs_diff": 1.8203969887053972e-08
+      },
+      "rms_anchor_px": {
+        "verifier": 3.2391517256722495,
+        "claimed": 3.2391517254993194,
+        "abs_diff": 1.7293011467245378e-10
+      },
+      "locked_rms_anchor_px": {
+        "verifier": 8.228571910946346,
+        "claimed": 8.228571910935386,
+        "abs_diff": 1.0960121699099545e-11
+      }
+    },
+    "tilt_applied_rad": 0.012595906923464214,
+    "gauge_cam_over_phys_Leff": 1.0013412460367321,
+    "anchor_0_4p0": {
+      "rms_px": 3.2391517256722495,
+      "rms_u_v_px": [
+        3.161944731473968,
+        0.7030002966069979
+      ],
+      "mean_du_px": 0.176525939567545,
+      "mean_dv_px": -0.20052267424296835
+    },
+    "diagnostic_same_trajectory_without_tilt_anchor_rms_px": 8.119780765909692,
+    "fit_th_off_equals_physics_tilt": true,
+    "reference_fidelity": {
+      "median_sigma_px": 0.40548736108539807,
+      "R2_target_px": 2,
+      "R3_target_px": 3,
+      "R2_pass": false,
+      "R3_rms_pass": false,
+      "note": "R2/R3 are reference-fidelity targets, reported not judged as physics (acceptance.json); expected FAIL per CHANGELOG 22:33:36Z"
+    },
+    "derived_param_consistency": {
+      "L_c_vs_L_eq_formula": 0.0,
+      "r_vs_Lc_over_ratio": 0.0,
+      "m_vs_rho_volume_rel": 0.0,
+      "I_P_vs_formula_rel": 0.0,
+      "L_eq_vs_I_over_mLc_rel": 0.0,
+      "c_vs_I_w0_over_Q_rel": 2.220446049250313e-16,
+      "L_eff_m_vs_Lc_over_k_rel": 0.0,
+      "fit_params_equal_physics": {
+        "L_eq": true,
+        "theta0": true,
+        "omega0": true,
+        "k": true
+      },
+      "camera_json_sha256_used_by_fit": "3eee32766ac1449483b25ea64faddbfaaba44aa31cae6d7a6a5b4154ae2a55c1",
+      "camera_json_sha256_in_checkpoint": "3eee32766ac1449483b25ea64faddbfaaba44aa31cae6d7a6a5b4154ae2a55c1",
+      "camera_json_L_eff_m": 0.4391130415447836,
+      "physics_L_eff_m": 0.43852487179847544
+    }
+  },
+  "motion_disclosure": {
+    "baked_keyframes": true,
+    "channel": "PND_Swing rotation_euler[1] = -theta",
+    "n_keys": 241,
+    "other_animated_objects": [
+      "PND_Cam_Reference"
+    ]
+  },
+  "reports": {
+    "physics": "verify/out/ck002/check_physics_ck002.json",
+    "convergence": "verify/out/ck002/check_convergence_ck002.json",
+    "blend": "verify/out/ck002/check_blend_ck002.json",
+    "tilt": "verify/out/ck002/check_tilt_ck002.json",
+    "controls": "verify/out/ck002/check_controls_ck002.json",
+    "repeat": "verify/out/ck002/check_repeat_ck002.json",
+    "fit_audit": "verify/out/ck002/fit_audit_ck002.json"
+  },
+  "verifier_code_sha256": {
+    "ref_solver.py": "6c704a2382559dae914ccf6e605ea39ef4569d5dbe49ebeb9d733da305d26abc",
+    "check_physics.py": "496e399535815df828f1f4e3f193d3fe1e28fc0e5078edbcb14d9db7cab8c0a4",
+    "check_blend.py": "fb74e8e745c8cd709ad9a87c7a0e6ef80c8cbcee5f1eef72726281c34b292cd5",
+    "check_tilt.py": "e82c4c5c7ead5f09f5136348b64835dcb9c431b0c97cfc50c5e44632a24993ee",
+    "check_convergence.py": "8cb6344f6d030d3e93387062314f4f49968431954c6bfba5f5c53f6ce9b15649",
+    "check_controls.py": "9cf065388f822b30c592848ff209f84105066ffd99f23bb3f3d3a994f57f68b8",
+    "compare_dumps.py": "84560ffa3a62479af4de5d1cf8e24ee449346628361aa5723f95ec5e83496920",
+    "run_production_at_step.py": "3e29bd356cce2ce04724e2e3b6aab5a2f12546e6cdbdfb54eca953223a6ad5f7",
+    "audit_fit_residuals.py": "e562cb41a2704f23c88acc55652de90e25f3429443c84366756eec9572b6997c",
+    "clean_rebuild_verifier.sh": "45dd586b63edf62f6dd5a8715aaf4b99b63a94ae9f394d71f7e851e0fe1b3df8",
+    "make_visuals.py": "8a144931e1f43520176b5f861ab38a1d3dd425dcfa7c656d01991b72a94973be",
+    "plot_tilt.py": "7e0aa0fe96dd9560b1652515b78ada8866fc390e1ed66f381e44302cd4b82db3",
+    "vparams.py": "ad707fbef33ec88ad270ed9174f4ccdcefed8d664d3fda2ba21a66c43c2fe79e",
+    "vlib.py": "c3cafa0abc69db97791d29811c0675f9d3fb2f08c77faeb85bc4a2d36b93b1c0"
+  },
+  "visuals": {
+    "verify/visuals/v004_P2_benchmark_theta.png": "9cb6f2192c89946ebc87cc939c070ff843910f0f3a001ff575de32f10c27b14b",
+    "verify/visuals/v004_P1_convergence.png": "475d926fc28ef885c2cd7edb58011a7f63816bb20da08fcaf5fffb032ec27461",
+    "verify/visuals/v004_P4_energy.png": "23067b20de6587170fef4604da7a6ee2490120ba3878d2428644a9de267dd711",
+    "verify/visuals/v004_P3_P7_period_tension.png": "fe94924ffa0f19234d87aa420f9cc341392e4b97358386980352b65e7278991b",
+    "verify/visuals/v004_P5_P6_blend_overlay.png": "fc88b4b0f98d7f5c348099e7576cc2823d9fe7220820ee8abd9ca0c84fc7833b",
+    "verify/visuals/v004_P9_controls.png": "233fc10399efc3290209542578f92d7318de8acdb4cc042bce9f01db4eda3a49",
+    "verify/visuals/v004_fit_residual_map.png": "ef24331f75f72ecb1bec7dbeb0c1100b7830be98078f66fe7f44690210e37203",
+    "verify/visuals/v004_tilt_audit.png": "919473932abc31db3e5ef785aed4ba60e33795c4ec88183575ab4612459f2a12"
+  },
+  "not_run": [
+    "full synthetic negative-control suite not re-run for ck002 (check code unchanged since ck001 re-run)",
+    "no render/look appearance checks (out of physics scope)"
+  ],
+  "negative_controls_new": {
+    "check_tilt with tilt sign flipped in params copy": "FAIL (detected)",
+    "fit residual audit without tilt": "claims NOT reproduced (detected; anchor RMS 8.12 px vs 3.24)"
+  }
+}

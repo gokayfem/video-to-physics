@@ -1,0 +1,537 @@
+{
+ "schema": "sim02-camera/v1",
+ "owner": "Measure+Camera (A)",
+ "status": "draft v001: frame-0 static calibration + per-frame measured drift (zoom/pan)",
+ "created_utc": "2026-10-26T00:44:02Z",
+ "conventions": {
+  "world": "config/coordinates.md: origin A = spring top attachment (hook bearing on crossbar top face, crossbar mid-depth); X along the crossbar toward image right; Y horizontal away from camera; Z up (gravity -Z assumed)",
+  "pixels": "CONTRACT: origin top-left corner of top-left pixel, pixel centres at +0.5, 1920x1088",
+  "R_world_to_cv": "OpenCV camera axes (x right, y down, z forward): Xc = R (X - C)",
+  "blender": "camera matrix_world rotation = R^T diag(1,-1,-1); sensor_fit HORIZONTAL, sensor 36 mm; shift_x = -(cx-960)/1920, shift_y = (cy-544)/1920",
+  "utility": "camera/project.py: load_camera(frame=n) (camera of record), load_camera(kind='locked'|'front_ortho'|'overview'), project, ray, intersect_plane, blender_camera_settings"
+ },
+ "scale": {
+  "unit": "W_in = crossbar inner span (distance between the inner faces of the two posts) = 1",
+  "metres_per_unit": null,
+  "metres_per_unit_source": "not set: metric scale is model-conditioned by the dynamics fit (period + g = 9.80665 m/s^2)",
+  "provisional_hint": "simple-pendulum length for the measured swing period 1.3007 s is 0.4199 m; the image pivot (spring coil top P_eff) to weight-centre distance is ~0.98 W_in, so W_in ~ 0.43 m (rough, depends on the compound/elastic model; NOT adopted)"
+ },
+ "reference_camera": {
+  "description": "camera of record: static calibration on reference frame 0 (t = 0); per-frame camera = measured image-space drift realised as focal length / principal point / roll (camera/drift.csv)",
+  "reference_frame": 0,
+  "intrinsics": {
+   "resolution": [
+    1920,
+    1088
+   ],
+   "pixel_aspect": 1.0,
+   "f_px": 3555.4739865127312,
+   "cx_px": 960.0,
+   "cy_px": 544.0,
+   "focal_mm_36mm_sensor": 66.6651372471137,
+   "hfov_deg": 30.219811827670974,
+   "vfov_deg": 17.39798533647451,
+   "principal_point_assumption": "image centre (free principal point is degenerate with pitch/f: runs to v=377 px with f=2605 at the same RMS)",
+   "lens_distortion": "none (assumed)"
+  },
+  "extrinsics": {
+   "R_world_to_cv": [
+    [
+     0.999962301012627,
+     -0.00822136028334753,
+     0.002793884146442924
+    ],
+    [
+     0.0017591780022997755,
+     -0.12327146391690469,
+     -0.9923714281842961
+    ],
+    [
+     0.008503049234749488,
+     0.992338931725887,
+     -0.12325235387138356
+    ]
+   ],
+   "C_world": [
+    -0.03839207594785027,
+    -5.259440776933245,
+    -0.05646908008792935
+   ],
+   "C_world_sd": [
+    0.0014487605841164055,
+    0.06572775089726554,
+    0.015690853522511747
+   ],
+   "distance_to_A": 5.259884028623611,
+   "view_pitch_deg": -7.07984260274991,
+   "view_yaw_deg_from_+Y_toward_+X": 0.49093802081908633,
+   "roll_deg": 0.16130789597124653,
+   "camera_height_note": "camera centre is between the crossbar top (z=0) and bottom (z=-0.082): neither the top face nor the underside of the crossbar is visible; plate top visible"
+  },
+  "blender_frame0": {
+   "location": [
+    -0.03839207594785027,
+    -5.259440776933245,
+    -0.05646908008792935
+   ],
+   "rotation_matrix": [
+    [
+     0.999962301012627,
+     -0.0017591780022997755,
+     -0.008503049234749488
+    ],
+    [
+     -0.00822136028334753,
+     0.12327146391690469,
+     -0.992338931725887
+    ],
+    [
+     0.002793884146442924,
+     0.9923714281842961,
+     0.12325235387138356
+    ]
+   ],
+   "lens_mm": 66.6651372471137,
+   "sensor_width_mm": 36.0,
+   "sensor_fit": "HORIZONTAL",
+   "shift_x": -0.0,
+   "shift_y": 0.0,
+   "per_frame": "lens_mm, shift_x/y, roll from camera/drift.csv (or project.load_camera(frame=n) + blender_camera_settings)"
+  }
+ },
+ "drift": {
+  "verdict": "REAL: smooth near-linear push-in, image scale +4.76 % over 10 s (0.481 %/s) about a fixed point near (973, 512) px, pan up to -46.4 px (tx) / -24.7 px (ty), roll < 0.059 deg",
+  "model": "per-frame similarity (from the 8-dof static-mask homography) realised as zoom (focal length s*f), principal-point shift s R(rho) c + t and roll rho; camera centre and orientation fixed",
+  "zoom_vs_dolly": "frame (posts) and side-table layers give the same scale within 0.3 % (measurement/drift_parallax.json, drift_layers_ecc.json); the textureless backdrop cannot discriminate. A dolly is not excluded; zoom adopted (clip-01 precedent)",
+  "similarity_vs_homography_rms_median_px": 0.38440814304874377,
+  "similarity_vs_homography_max_px": 2.220484863937105,
+  "landmarks_vs_similarity_rms_median_px": 0.992309111987699,
+  "landmarks_vs_similarity_rms_max_px": 1.8392834794942472,
+  "cubic_smooth_vs_raw_maxdev_px": 0.6615471235954828,
+  "per_frame_table": "camera/drift.csv (raw per-frame values are the camera of record)",
+  "smooth_model_polys_vs_frame0": {
+   "scale_poly": [
+    -2.322594263674639e-06,
+    2.7611746551393767e-05,
+    0.004741624957595768,
+    0.9997923751633527
+   ],
+   "roll_poly": [
+    2.345773508544692e-06,
+    -3.822723882640684e-05,
+    0.0001164211150283559,
+    -0.00045840154380486414
+   ],
+   "tx_poly": [
+    0.006172796227193485,
+    -0.09124124756724945,
+    -4.333868209036353,
+    -0.06701104662593876
+   ],
+   "ty_poly": [
+    -0.0024362482511966115,
+    0.04006350107457384,
+    -2.6646444748362894,
+    0.4444111829755094
+   ]
+  }
+ },
+ "locked_cameras": {
+  "locked_reference": {
+   "description": "frame-0 camera held for all frames (drift-free diagnostic)",
+   "blender": {
+    "location": [
+     -0.03839207594785027,
+     -5.259440776933245,
+     -0.05646908008792935
+    ],
+    "rotation_matrix": [
+     [
+      0.999962301012627,
+      -0.0017591780022997755,
+      -0.008503049234749488
+     ],
+     [
+      -0.00822136028334753,
+      0.12327146391690469,
+      -0.992338931725887
+     ],
+     [
+      0.002793884146442924,
+      0.9923714281842961,
+      0.12325235387138356
+     ]
+    ],
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "HORIZONTAL",
+    "shift_x": -0.0,
+    "shift_y": 0.0,
+    "type": "PERSP",
+    "lens_mm": 66.6651372471137
+   }
+  },
+  "front_ortho": {
+   "description": "orthographic, looking along +Y at the frame front (X right, Z up); diagnostic of in-plane motion",
+   "cv": {
+    "type": "ORTHO",
+    "R_world_to_cv": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ]
+    ],
+    "C": [
+     0.0,
+     -10.0,
+     -0.716344409235
+    ],
+    "ortho_scale": 3.0
+   },
+   "blender": {
+    "location": [
+     0.0,
+     -10.0,
+     -0.716344409235
+    ],
+    "rotation_matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ]
+    ],
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "HORIZONTAL",
+    "shift_x": -0.0,
+    "shift_y": 0.0,
+    "type": "ORTHO",
+    "ortho_scale": 3.0
+   }
+  },
+  "overview": {
+   "description": "locked 3/4 overview from front-right, slightly above the crossbar; shows depth (Y) motion",
+   "cv": {
+    "type": "PERSP",
+    "R_world_to_cv": [
+     [
+      0.8320502943378437,
+      0.5547001962252291,
+      -0.0
+     ],
+     [
+      0.14467614974265644,
+      -0.21701422461398467,
+      -0.9653878174137228
+     ],
+     [
+      -0.5355008117528377,
+      0.8032512176292566,
+      -0.260818638116927
+     ]
+    ],
+    "C": [
+     2.6,
+     -3.9,
+     0.55
+    ],
+    "f_px": 2400.0
+   },
+   "blender": {
+    "location": [
+     2.6,
+     -3.9,
+     0.55
+    ],
+    "rotation_matrix": [
+     [
+      0.8320502943378437,
+      -0.14467614974265644,
+      0.5355008117528377
+     ],
+     [
+      0.5547001962252291,
+      0.21701422461398467,
+      -0.8032512176292566
+     ],
+     [
+      0.0,
+      0.9653878174137228,
+      0.260818638116927
+     ]
+    ],
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "HORIZONTAL",
+    "shift_x": -0.0,
+    "shift_y": 0.0,
+    "type": "PERSP",
+    "lens_mm": 45.0
+   }
+  }
+ },
+ "key_points": {
+  "A_world": [
+   0,
+   0,
+   0
+  ],
+  "A_image_frame0_px": [
+   956.8000066118678,
+   63.58790948108606
+  ],
+  "A_note": "A is hidden behind the crossbar front face (camera below the top face); hook apex visible ~10 px above",
+  "P_eff_image_frame0_px": [
+   954.44,
+   217.67
+  ],
+  "P_eff_world_on_plane_Y0": [
+   -0.0028745242496278703,
+   0.0,
+   -0.225070734596437
+  ],
+  "P_eff_note": "least-squares intersection of the 241 spring-axis lines (frame-0 geometry): the spring body swings about its top coil (lower end of the S-hook), not about A; the S-hook stays fixed to <=1.2 px (measurement/analysis.json). Assumes the spring hangs in the plane Y = 0 through A"
+ },
+ "frame_geometry_implied_by_calibration": {
+  "units": "W_in",
+  "values": {
+   "xc": -0.0017475871465414193,
+   "wp": 0.1741150713180988,
+   "dp": 0.20100651421400845,
+   "yp0": -0.10050343375101842,
+   "zpt": 0.012461432111319677,
+   "dc": 0.080000353567056,
+   "zc0": -0.08187234370747226,
+   "bx0": -0.6961526220734258,
+   "bx1": 0.6953707802375854,
+   "by0": -0.27055673983544654,
+   "by1": 0.15535616229486024,
+   "bz1": -1.4204992606816538,
+   "bz0": -1.4451502505813196
+  },
+  "sd": {
+   "xc": 0.0011472279886833693,
+   "wp": 0.00011788267730465989,
+   "dp": 0.0025490195888061354,
+   "yp0": 0.015617608553352036,
+   "zpt": 0.0003088110568795745,
+   "dc": 0.031131031704273712,
+   "zc0": 0.00035073897244023653,
+   "bx0": 0.0011676106239944604,
+   "bx1": 0.0011716025677388504,
+   "by0": 0.01564178397427257,
+   "by1": 0.015623662893050646,
+   "bz1": 0.00036605235450084747,
+   "bz0": 0.0003844511938524483
+  },
+  "boxes": "posts x[xc-0.5-wp, xc-0.5] & [xc+0.5, xc+0.5+wp], y[yp0, yp0+dp], z[bz1, zpt]; crossbar x[xc-0.5, xc+0.5], y[-dc/2, dc/2], z[zc0, 0]; plate x[bx0,bx1], y[by0,by1], z[bz0,bz1]",
+  "priors": "posts centred on crossbar in Y (sd 0.02), square post section (sd 15 %), plate centred on frame in X (sd 0.02), crossbar depth 0.08 +- 0.04 (weakly observed)"
+ },
+ "fit_quality": {
+  "static_edge_points_rms_px_frame0": 0.6787797443925085,
+  "n_points": 2678,
+  "per_edge": {
+   "pL_front_outer": {
+    "rms": 0.3027461446006516,
+    "mean": -0.027959441451948598,
+    "n": 297
+   },
+   "pL_front_inner": {
+    "rms": 0.9371593054384425,
+    "mean": 0.3431999297695678,
+    "n": 229
+   },
+   "pL_back_inner": {
+    "rms": 0.16351603020425537,
+    "mean": -0.0024135760182942695,
+    "n": 265
+   },
+   "pR_front_outer": {
+    "rms": 0.387899695487561,
+    "mean": -0.02856363402744636,
+    "n": 297
+   },
+   "pR_front_inner": {
+    "rms": 0.5740477725606454,
+    "mean": 0.4671494682824738,
+    "n": 107
+   },
+   "pR_back_inner": {
+    "rms": 0.3593681070644521,
+    "mean": -0.0013475120158940987,
+    "n": 282
+   },
+   "pL_top_front": {
+    "rms": 0.1171380744424946,
+    "mean": 0.029169814955814388,
+    "n": 33
+   },
+   "pR_top_front": {
+    "rms": 0.31327464620527207,
+    "mean": -0.029215639470587307,
+    "n": 33
+   },
+   "pL_bottom_front": {
+    "rms": 1.0738652258365287,
+    "mean": -0.9133963700302755,
+    "n": 26
+   },
+   "pR_bottom_front": {
+    "rms": 0.8394494599658712,
+    "mean": 0.7675333860315219,
+    "n": 31
+   },
+   "bar_top_a": {
+    "rms": 0.16215651038768963,
+    "mean": -0.011792504644351321,
+    "n": 99
+   },
+   "bar_top_b": {
+    "rms": 0.1672872220716662,
+    "mean": 0.011592103127314868,
+    "n": 101
+   },
+   "bar_bot_a": {
+    "rms": 0.4313166469156722,
+    "mean": 0.3759408111959024,
+    "n": 99
+   },
+   "bar_bot_b": {
+    "rms": 0.40565696058827894,
+    "mean": -0.36887614971527316,
+    "n": 101
+   },
+   "plate_back_a": {
+    "rms": 0.019303285963012524,
+    "mean": 0.01575110225561863,
+    "n": 41
+   },
+   "plate_back_b": {
+    "rms": 0.2936808247400834,
+    "mean": -0.018456578614375628,
+    "n": 35
+   },
+   "plate_front_top": {
+    "rms": 1.6206850944846278,
+    "mean": -0.0003120119274151286,
+    "n": 287
+   },
+   "plate_front_bot": {
+    "rms": 0.2641376456169945,
+    "mean": -6.074396864649012e-05,
+    "n": 287
+   },
+   "plate_left_end": {
+    "rms": 0.33525880759293486,
+    "mean": -0.00311165009301411,
+    "n": 14
+   },
+   "plate_right_end": {
+    "rms": 0.7373500041195089,
+    "mean": -0.008064578879701198,
+    "n": 14
+   }
+  },
+  "R4_target_px": 2.0,
+  "R4_pass_frame0": true,
+  "per_frame_reprojection": "camera/out/reprojection_by_frame.json"
+ },
+ "uncertainty": {
+  "f_px_sd_formal": 43.80028827068975,
+  "f_px_variants_sd": 99.60322545779395,
+  "f_px_variants_range": [
+   3421.2743251986126,
+   3848.6216750587337
+  ],
+  "distance_to_A_range_Win": [
+   5.064889535905618,
+   5.686132605196987
+  ],
+  "pitch_range_deg": [
+   -7.6653503682259245,
+   -6.822414473200904
+  ],
+  "f_profile": {
+   "2600": {
+    "rms": 0.7067189658540148,
+    "cost": 1021.3154973764435,
+    "dist": 3.8750501196675526
+   },
+   "3000": {
+    "rms": 0.6840936767279481,
+    "cost": 870.2246050289091,
+    "dist": 4.453482085824002
+   },
+   "3300": {
+    "rms": 0.6782812275716545,
+    "cost": 818.5914988323627,
+    "dist": 4.888657133104021
+   },
+   "3556": {
+    "rms": 0.6787848109158826,
+    "cost": 806.5071850542522,
+    "dist": 5.260648277316896
+   },
+   "3800": {
+    "rms": 0.6825181088131543,
+    "cost": 815.7387321103721,
+    "dist": 5.615629213210459
+   },
+   "4200": {
+    "rms": 0.692982078864255,
+    "cost": 862.330349445193,
+    "dist": 6.198325078571356
+   },
+   "4800": {
+    "rms": 0.7136366445155677,
+    "cost": 977.6023555206154,
+    "dist": 7.073697645428419
+   }
+  },
+  "note": "f and distance trade off along the line of sight (ratio fixed); realistic f range ~3000-4200 px (shallow cost profile); free principal point is degenerate"
+ },
+ "provenance": {
+  "reference_sha256": "fee726c2c30d36e5cf403a7152ff8a02d100682ee4333e1a495aa4746f6865cd",
+  "inputs": {
+   "camera/out/edges_f000.json": "a9e5b97945fe230dea3706f3cfce49ff8a94d273f15d1c41746ec257de9fd317",
+   "camera/out/calib_result.json": "d598d354ba06e217132042b194110e829379d9b7432556968fe2d5653f56aadb",
+   "camera/out/calib_variants.json": "41ab1659f471c0048e77fc55dd4b5db69464a4d65d0fe9f290c50e9fc68a985a",
+   "camera/out/drift_similarity_raw.csv": "2b375cbe8e16266a20cb1048a61295c37b2dca055c69f688aab6d59d73918738",
+   "measurement/analysis.json": "8dc6a30d4d8ee47130429a4d201af65321b4e2b21f33cced156b9ad0a52a289e"
+  },
+  "code": {
+   "camera/calibrate.py": "ed290ff86325c858a64b02888741d0725ff8685f3fd487db380a7422a4f21eac",
+   "camera/edges.py": "df185ffa6c07131ba95d3cbb4573ab51ce4d5d389c4ebb1f7d71c057f087ada1",
+   "camera/calib_variants.py": "117b4eb44aba0ae3e7828d12c97ffc3e3088af0ad5a3133de0aca6983667c078",
+   "camera/drift_fit.py": "75b04e3879c476e1662e4d609e63188f98b219e2d264d25cafe8ddc95c7ca34e",
+   "camera/project.py": "d6eb949331deb2a2a3e98ab98e72a1f69983daf6c2e372f31e4c2f1f7ee166e7",
+   "camera/write_params.py": "a1ad3e0787cca936546db39a73bf0b41a80088555882f55749a0c197dc8c6be8",
+   "measurement/scripts/s1_drift.py": "d9b6c0650362dc246223a87e273bca1647d848b440922f86dba12a6ae1d5bb4f"
+  },
+  "classes": {
+   "f, R, C (W_in units)": "measured (image-fitted; assumptions: pinhole, centred principal point, rectilinear axis-aligned frame boxes)",
+   "drift": "measured",
+   "metres": "model-conditioned (not yet set)",
+   "P_eff in world": "measured image point + assumption (plane Y=0)"
+  }
+ }
+}

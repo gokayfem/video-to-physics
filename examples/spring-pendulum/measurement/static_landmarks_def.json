@@ -1,0 +1,135 @@
+[
+ {
+  "name": "postL_top_outer",
+  "u0": 490.0,
+  "v0": 56.0,
+  "half": 14,
+  "desc": "left post top, outer (left) rounded corner"
+ },
+ {
+  "name": "postL_top_inner",
+  "u0": 608.0,
+  "v0": 56.0,
+  "half": 14,
+  "desc": "left post top, inner (right) rounded corner"
+ },
+ {
+  "name": "bar_L_top",
+  "u0": 622.0,
+  "v0": 63.0,
+  "half": 12,
+  "desc": "crossbar top edge meets left post"
+ },
+ {
+  "name": "bar_L_bottom",
+  "u0": 626.0,
+  "v0": 118.0,
+  "half": 12,
+  "desc": "crossbar bottom edge meets left post"
+ },
+ {
+  "name": "bar_R_top",
+  "u0": 1296.0,
+  "v0": 63.0,
+  "half": 12,
+  "desc": "crossbar top edge meets right post"
+ },
+ {
+  "name": "bar_R_bottom",
+  "u0": 1294.0,
+  "v0": 118.0,
+  "half": 12,
+  "desc": "crossbar bottom edge meets right post"
+ },
+ {
+  "name": "postR_top_inner",
+  "u0": 1302.0,
+  "v0": 57.0,
+  "half": 14,
+  "desc": "right post top, inner (left) rounded corner"
+ },
+ {
+  "name": "postR_top_outer",
+  "u0": 1421.0,
+  "v0": 57.0,
+  "half": 14,
+  "desc": "right post top, outer (right) rounded corner"
+ },
+ {
+  "name": "postL_wood_mid",
+  "u0": 550.0,
+  "v0": 520.0,
+  "half": 16,
+  "desc": "left post front face wood grain (texture patch)"
+ },
+ {
+  "name": "postR_wood_mid",
+  "u0": 1360.0,
+  "v0": 520.0,
+  "half": 16,
+  "desc": "right post front face wood grain (texture patch)"
+ },
+ {
+  "name": "postL_bottom_inner",
+  "u0": 627.0,
+  "v0": 1002.0,
+  "half": 14,
+  "desc": "left post inner edge meets base plate"
+ },
+ {
+  "name": "postR_bottom_inner",
+  "u0": 1288.0,
+  "v0": 1002.0,
+  "half": 14,
+  "desc": "right post inner edge meets base plate"
+ },
+ {
+  "name": "screw_L",
+  "u0": 516.0,
+  "v0": 1042.0,
+  "half": 12,
+  "desc": "left base screw head"
+ },
+ {
+  "name": "screw_R",
+  "u0": 1402.0,
+  "v0": 1042.0,
+  "half": 12,
+  "desc": "right base screw head"
+ },
+ {
+  "name": "plate_L_corner",
+  "u0": 482.0,
+  "v0": 1050.0,
+  "half": 14,
+  "desc": "base plate left front corner"
+ },
+ {
+  "name": "plate_R_corner",
+  "u0": 1437.0,
+  "v0": 1050.0,
+  "half": 14,
+  "desc": "base plate right front corner"
+ },
+ {
+  "name": "table_L",
+  "u0": 300.0,
+  "v0": 960.0,
+  "half": 16,
+  "desc": "table wood grain patch left"
+ },
+ {
+  "name": "table_R",
+  "u0": 1640.0,
+  "v0": 960.0,
+  "half": 16,
+  "desc": "table wood grain patch right"
+ },
+ {
+  "name": "hook_top",
+  "u0": 957.0,
+  "v0": 52.0,
+  "half": 10,
+  "desc": "spring top hook apex over the crossbar (NOT assumed static; tested)"
+ }
+]

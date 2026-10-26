@@ -1,0 +1,18 @@
+[
+ {
+  "role": "reconstruction",
+  "file": "v003_reconstruction_ck003_1920x1088.mp4",
+  "source": "02-vertical-spring/review/visuals/v003_reconstruction_ck003_1920x1088.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff792/BE3PJk6Nkn6HCv710XAV3_v003_reconstruction_ck003_1920x1088.mp4",
+  "bytes": 6317397,
+  "sha256": "ab18dc2c7fabc1d4be35c2a8860084adcd2fffd9ff80327d55e95f7133c92a0b"
+ },
+ {
+  "role": "side_by_side",
+  "file": "v003_sbs_ck003_final_f000-240.mp4",
+  "source": "02-vertical-spring/review/visuals/v003_sbs_ck003_final_f000-240.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff792/h2R2nWH8HM2oWAnRR5EXg_v003_sbs_ck003_final_f000-240.mp4",
+  "bytes": 3570697,
+  "sha256": "518cdb886b49c8593d3cd99a981a7ca1ebeec569035590f4efe6a4f79aec0ac5"
+ }
+]

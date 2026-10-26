@@ -1,0 +1,485 @@
+{
+ "schema": "sim03-measurement-summary/v1",
+ "version": "v002",
+ "status": "reference measurement - draft",
+ "reference_sha256": "c640e5ce848f7a86c0c6d6a2156aa4d89c022c51ba164b5b119bef16b0a2045c",
+ "frames": 241,
+ "fps": 24,
+ "unit": "D = disc diameter = 1 (declared gauge); metres not set (prompt intent ~0.10 m)",
+ "camera": {
+  "smoothed": true,
+  "jerk_right_post_px": {
+   "cam_jerk_median": 0.0018912550262226075,
+   "cam_jerk_max": 0.0037272132733008135,
+   "ref_jerk_median": 0.09329629816787181,
+   "ref_jerk_max": 0.6686346817175736
+  },
+  "verdict": "REAL and LARGE (not a locked camera): the camera ORBITS about a vertical axis through the stand, azimuth +15.4 -> -7.9 deg (-23.3 deg in 10 s), distance to A 4.696 -> 4.651 D, elevation 6.8..7.4 deg, roll -0.30..-0.15 deg; a single static-mask homography cannot represent it (parallax: H-vs-similarity residual 34 px median)",
+  "f_px_constant": 2602.0,
+  "f_systematic_range_px": [
+   2550,
+   2690
+  ],
+  "azimuth_deg_frame0_240": [
+   15.41541287499833,
+   -7.877498017693846
+  ],
+  "distance_to_A_frame0_240_min_max_D": [
+   4.696213036635188,
+   4.651154112230525,
+   4.6498520451906575,
+   4.696213036635188
+  ],
+  "R4_static_rms_px": {
+   "0": 0.7371594746802685,
+   "60": 0.6224045776564895,
+   "120": 0.346859943682462,
+   "180": 0.4510797510761551,
+   "240": 0.5334530194413246
+  },
+  "R4_all_frames": {
+   "median": 0.5695723490883081,
+   "max": 0.9048186272118915,
+   "frame_of_max": 189
+  },
+  "R4_pass": true,
+  "R4_locked_camera_rms_px": {
+   "0": 0.7371594746802685,
+   "60": 9.320338874799393,
+   "120": 16.262227860089073,
+   "180": 19.492175710231578,
+   "240": 21.117046508728304
+  },
+  "blender_projection_max_err_px": 0.004653967729431855,
+  "blender_pass": true
+ },
+ "twist": {
+  "definition": "psi = world azimuth (from +X toward +Y, i.e. counter-clockwise seen from above) of the engraved diameter line in the disc plane; unwrapped",
+  "psi0_deg": -168.337735,
+  "total_rotation_deg": -378.48481999999996,
+  "turns": -1.0513467222222221,
+  "turning_points": [],
+  "rate_by_second_deg_s": [
+   -24.648494999999997,
+   -33.54738499999999,
+   -37.772609999999986,
+   -40.07120500000002,
+   -43.095320000000015,
+   -46.78107,
+   -43.64783,
+   -40.05404999999996,
+   -35.79138999999998,
+   -33.07546500000001
+  ],
+  "rate_t0_deg_s_(7th-order)": -15.912352629076652,
+  "methods": {
+   "A_minus_B_rms_deg": 0.5521983814217615,
+   "A_minus_B_mean_deg": 0.07488904564315588,
+   "A_minus_B_max_deg": 2.519549999999981,
+   "sigma_psi_median_deg": 0.26046610497657213
+  },
+  "models": {
+   "constant_spin": {
+    "p": [
+     -152.08147178455334,
+     -40.31162617253029
+    ],
+    "sd": [
+     0.7661462416113507,
+     0.13834323619071826
+    ],
+    "rms_deg": 5.987747466959584,
+    "chi2nu": 892.2774617316791,
+    "bic": 213265.28294773828
+   },
+   "constant_accel": {
+    "p": [
+     -160.5552900604211,
+     -34.047193922579744,
+     -1.347623316223032
+    ],
+    "sd": [
+     0.8036736845823869,
+     0.43987580477981997,
+     0.09211963086159614
+    ],
+    "rms_deg": 6.311446762728819,
+    "chi2nu": 471.79186365667897,
+    "bic": 112302.91794109007
+   },
+   "cubic": {
+    "p": [
+     -169.13226943518353,
+     -21.09161718577089,
+     -4.37824820707958,
+     0.27324205289974535
+    ],
+    "sd": [
+     0.20129684834944783,
+     0.19719843611773136,
+     0.05105098281681082,
+     0.003700876345110642
+    ],
+    "rms_deg": 1.21445184359731,
+    "chi2nu": 19.74051561399742,
+    "bic": 4700.441388251351
+   },
+   "slow_oscillation_c+A_sin(2pi t/T+phi)": {
+    "p": [
+     -365.20228779907393,
+     -225.43080940966354,
+     31.772839771998395,
+     5.2261881100363485
+    ],
+    "sd": [
+     0.5946319404418651,
+     1.1925728905573365,
+     0.19759365079689753,
+     0.004963370745336584
+    ],
+    "rms_deg": 1.1763275182302055,
+    "chi2nu": 17.91252405356107,
+    "bic": 4267.207388427936
+   }
+  },
+  "verdict": "NO torsional oscillation in 0-10 s: the disc spins one way (clockwise from above) by 379 deg, rate -25 -> -47 -> -33 deg/s. Fits as the middle of a very slow large oscillation (T ~ 32 s, amplitude ~226 deg) or cubic; neither is identifiable as torsion physics from this clip"
+ },
+ "disc": {
+  "centre_mean_D": [
+   0.013773970929570254,
+   -0.013817423061845394,
+   -0.8574904769851136
+  ],
+  "wire_length_A_to_top_face_D": 0.8574904769851137,
+  "thickness_D": 0.031000000000000003,
+  "tilt": {
+   "mean_deg": 2.140902154852327,
+   "max_deg": 3.374170783018622,
+   "about_X_mean_ptp": [
+    0.4585127220401934,
+    6.124663965283334
+   ],
+   "about_Y_mean_ptp": [
+    0.13180543751293822,
+    4.801744310419254
+   ],
+   "regression_on_cos2psi_sin2psi": {
+    "tilt_X": [
+     0.4459642758309881,
+     0.1683496272055845,
+     -0.14059979508250928
+    ],
+    "tilt_Y": [
+     0.1298919808095329,
+     0.004993603155844935,
+     0.10222734668744263
+    ]
+   },
+   "regression_on_swing_angles": {
+    "tilt_X": [
+     1.1526534754306603,
+     -0.08855513266228239,
+     0.6580948120752028
+    ],
+    "tilt_Y": [
+     1.0744572656850182,
+     -0.9538654971316162,
+     0.07091242490715871
+    ]
+   },
+   "correlations": {
+    "tilt_Y_vs_swing_x": -0.9608916997327878,
+    "tilt_X_vs_swing_y": 0.8759209797603995
+   }
+  },
+  "silhouette_rms_px_median": 0.9460980381580428,
+  "line_kink_deg": {
+   "A_mean_sd_range": [
+    -0.1309426141078838,
+    3.038315637331398,
+    -6.32277,
+    6.48427
+   ],
+   "B_mean_sd_range": [
+    0.0888137759336099,
+    3.6458873332698256,
+    -6.61259,
+    8.35688
+   ]
+  },
+  "line_rotation_centre_offset_from_silhouette_centre_D": [
+   0.0019157589789887055,
+   0.03093161221184173
+  ]
+ },
+ "sway": {
+  "Qx": {
+   "mean": 0.020492755144626028,
+   "trend_per_s": -0.0014296228515705805,
+   "amp": 0.02624921068469609,
+   "amp_sd": 0.0005739728228961175,
+   "period_s": 0.9479336863843965,
+   "period_sd": 0.0010906999700239285,
+   "rms_resid": 0.006241152274589943,
+   "chi2nu": 39.77723556450522
+  },
+  "Qy": {
+   "mean": 0.0038622801309011767,
+   "trend_per_s": -0.003686505716472327,
+   "amp": 0.0387893177743444,
+   "amp_sd": 0.0013548669726671484,
+   "period_s": 0.9538248258810974,
+   "period_sd": 0.0017587852591113584,
+   "rms_resid": 0.014743695779616737,
+   "chi2nu": 55.16164629445524
+  },
+  "tilt_about_Y": {
+   "mean": 0.12512504720135584,
+   "trend_per_s": 0.0068276733285048226,
+   "amp": 1.7824978587787323,
+   "amp_sd": 0.04133782278924128,
+   "period_s": 0.9480720493934718,
+   "period_sd": 0.0011588587409574326,
+   "rms_resid": 0.4496275100778296,
+   "chi2nu": 20.644805243359354
+  },
+  "wire_image_tilt": {
+   "mean": 0.27436367115004323,
+   "trend_per_s": -0.03219760693556241,
+   "amp": 1.5151331294205648,
+   "amp_sd": 0.032769954035706345,
+   "period_s": 0.9550619339740343,
+   "period_sd": 0.0010889181174656953,
+   "rms_resid": 0.35586811172257726,
+   "chi2nu": 12.932520855414936
+  },
+  "spectral_peaks_hz": {
+   "Qx": 1.045643153526971,
+   "Qy": 1.033195020746888,
+   "Qz": 1.045643153526971,
+   "tilt_X": 1.033195020746888,
+   "tilt_Y": 1.033195020746888,
+   "wire_tilt": 1.033195020746888
+  },
+  "swing_angles_deg": {
+   "x_mean_ptp": [
+    0.9190234838280021,
+    4.96677472226614
+   ],
+   "y_mean_ptp": [
+    -0.931106727506466,
+    8.808338543540476
+   ]
+  },
+  "two_D_amplitude": {
+   "window_centres_s": [
+    0.2916666666666667,
+    0.75,
+    1.2083333333333333,
+    1.6666666666666667,
+    2.125,
+    2.5833333333333335,
+    3.0416666666666665,
+    3.5,
+    3.9583333333333335,
+    4.416666666666667,
+    4.875,
+    5.333333333333333,
+    5.791666666666667,
+    6.25,
+    6.708333333333333,
+    7.166666666666667,
+    7.625,
+    8.083333333333334,
+    8.541666666666666,
+    9.0,
+    9.458333333333334
+   ],
+   "amp_D": [
+    0.03991017439093822,
+    0.058725407963810046,
+    0.0541995824052353,
+    0.05023549139769983,
+    0.04843784303631871,
+    0.04604373823352715,
+    0.04525990017416392,
+    0.051747265884852324,
+    0.0591637637567446,
+    0.06216256837488458,
+    0.05373980093339912,
+    0.06677479801437898,
+    0.0613033523323969,
+    0.04596010794690686,
+    0.05150945712546355,
+    0.0477521747625996,
+    0.04579941686538029,
+    0.043899388551954015,
+    0.04427356171143495,
+    0.04197620808564187,
+    0.04356796435582599
+   ],
+   "sd_D": [
+    0.003083655236898151,
+    0.0026321237212928853,
+    0.0017055186128354547,
+    0.0025880303647938378,
+    0.0020325638885570533,
+    0.0025628321927030915,
+    0.0026354810906999097,
+    0.0015399812196471997,
+    0.0021791697662361304,
+    0.0018639236267400023,
+    0.0031565332169249906,
+    0.0029901262843994745,
+    0.0018949904611121084,
+    0.0027482169408466106,
+    0.002173623533104805,
+    0.003528844353114295,
+    0.002509266603417512,
+    0.0019842880921319417,
+    0.0022431271649866833,
+    0.0010586601950542994,
+    0.0013525001816261928
+   ]
+  }
+ },
+ "disc_P_track_for_fit": {
+  "file": "measurement/disc_P_track.csv",
+  "meta": {
+   "definition": "P = centre of the fitted top-face circle (radius 0.5 D) of the rigid-disc silhouette model (s3_disc_pose: top + bottom face, thickness 0.031 D), world coords (origin A, X crossbar, Y away, Z up), unit D; camera = smoothed camera of record",
+   "mean_D": [
+    0.011858740786214452,
+    -0.04473524066164834,
+    -0.8577335380782982
+   ],
+   "std_D": [
+    0.019962852677586105,
+    0.032973962081499684,
+    0.006371143199526228
+   ],
+   "sd_eff_median_D": [
+    0.001312590067797278,
+    0.0030889917336311677,
+    0.0009319761054150284
+   ],
+   "sd_formal_median_D": [
+    0.0001987714956323315,
+    0.0013913947916538915,
+    0.00046167534634208054
+   ],
+   "silhouette_rms_px_median": 0.9460980381580428,
+   "wire_length_A_to_P_mean_D": 0.8577335380782983,
+   "Q_minus_P": {
+    "value_D_world": "(+0.0019, +0.0309, 0) in the world-azimuth frame, i.e. constant +0.031 D in world +Y (away from the camera)",
+    "test": "line perpendicular offset vs psi: world-fixed point model rms 0.0058 D; disc-attached chord model (constant offset) rms 0.0229 D -> the line passes through a world-fixed point, not a disc-attached one (AI inconsistency, or a depth bias of the silhouette centre along the view ~ +Y)"
+   },
+   "systematics": "f +-3 % scales positions about the camera (mainly depth/Y and the absolute distance); A placement assumption; disc taken as a rigid circle"
+  },
+  "note": "lead decision VR03-05: the dynamics fit uses the silhouette centre P (not the mark rotation centre Q)"
+ },
+ "camera_smoothing": {
+  "chosen_tau_s": 1.2,
+  "max_deviation_from_raw": {
+   "azimuth_deg": 0.1951585266889479,
+   "elevation_deg": 0.11615859504038074,
+   "distance_D": 0.008732422740430401,
+   "rotation_deg": 0.21980010826437102
+  }
+ },
+ "cadence": {
+  "timing_offsets_by_n_mod_4": {
+   "0": {
+    "mean_resid_deg": 0.45933897310297966,
+    "timing_offset_frames": 0.2969571974119609,
+    "sd": 0.05791566568829982
+   },
+   "1": {
+    "mean_resid_deg": -0.24220659125598776,
+    "timing_offset_frames": -0.13897316260517475,
+    "sd": 0.05296333633963959
+   },
+   "2": {
+    "mean_resid_deg": -0.16754761476171798,
+    "timing_offset_frames": -0.1039337497719311,
+    "sd": 0.05174807153553732
+   },
+   "3": {
+    "mean_resid_deg": 0.1167430137831668,
+    "timing_offset_frames": 0.06979812567011989,
+    "sd": 0.052843553752689
+   }
+  },
+  "step_ratio_by_n_mod_4_of_destination": {
+   "0": 0.910108421305599,
+   "1": 1.7497438973493802,
+   "2": 1.0479178447990845,
+   "3": 0.9445138024423302
+  },
+  "resid_rms_7th_order_deg": 0.7207501863733266
+ },
+ "highlight_lobes": {
+  "rotation_deg_range": [
+   -17.5,
+   1.0
+  ],
+  "lobe_vs_camera_azimuth_slope": 0.8010204115747803,
+  "note": "lighting-locked anisotropic highlights; should not follow the disc spin"
+ },
+ "anchor_window": {
+  "T_a_s": 2.5,
+  "reason": "earliest trigger sway_Qy_D a_trigger_t at 0.661 s; floor 2.5 s applied",
+  "triggers": [
+   {
+    "t": 0.6612775351047416,
+    "mode": "sway_Qy_D",
+    "test": "a_trigger_t"
+   },
+   {
+    "t": 4.361623967001104,
+    "mode": "sway_Qy_D",
+    "test": "b_trigger_t"
+   },
+   {
+    "t": 4.595341700424597,
+    "mode": "sway_Qx_D",
+    "test": "a_trigger_t"
+   },
+   {
+    "t": 4.595341700424597,
+    "mode": "sway_Qx_D",
+    "test": "b_trigger_t"
+   },
+   {
+    "t": 6.674045782257607,
+    "mode": "disc_tilt_about_Y_deg",
+    "test": "a_trigger_t"
+   }
+  ],
+  "twist": "not applicable: psi has no turning point in 0-10 s (monotonic clockwise rotation, rate -51..-24 deg/s), so no half-cycle amplitudes exist",
+  "discontinuities": {
+   "psi_residual_outliers_frames(>5 MAD)": [],
+   "kink_jumps_frames(>6 MAD)": [
+    61,
+    62,
+    63,
+    164,
+    165,
+    169,
+    171
+   ],
+   "line_offset_jumps_frames(>6 MAD)": [],
+   "silhouette_rms_max_px": 1.2880948685902363,
+   "verdict": "none visible (see notes): line stays one full diameter, slight kink varies smoothly"
+  }
+ },
+ "files": {
+  "twist": "measurement/twist_track.csv",
+  "twist_raw": "measurement/twist_raw.csv",
+  "disc": "measurement/disc_track.csv",
+  "disc_pose_raw": "measurement/disc_pose_camcentred.csv (world, file name historical)",
+  "disc_ellipse_image": "measurement/disc_ellipse_image.csv",
+  "wire": "measurement/wire_track.csv",
+  "camera": "params/camera.json, camera/drift.csv, camera/project.py",
+  "analysis": "measurement/analysis.json, anchor_window.json"
+ }
+}

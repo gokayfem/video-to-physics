@@ -1,0 +1,18 @@
+[
+ {
+  "role": "reconstruction",
+  "file": "v003_reconstruction_ck003_1920x1088.mp4",
+  "source": "03-torsion-disc/review/visuals/v003_reconstruction_ck003_1920x1088.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff793/75HGVTbcgK6k4vNys2X9O_v003_reconstruction_ck003_1920x1088.mp4",
+  "bytes": 7474489,
+  "sha256": "2cea224c0b4949daae6360fdb6068f907a0c77e7a8b0cb77a629289761bb7d7d"
+ },
+ {
+  "role": "side_by_side",
+  "file": "v003_sbs_ck003_final_f000-240.mp4",
+  "source": "03-torsion-disc/review/visuals/v003_sbs_ck003_final_f000-240.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff793/7cs5kwcM4OUL1DkOFL4dW_v003_sbs_ck003_final_f000-240.mp4",
+  "bytes": 4061217,
+  "sha256": "e85c6ce8d203475355d337cf236bbfffbac603e21e24b26bf568c95f43496330"
+ }
+]

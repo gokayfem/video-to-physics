@@ -1,0 +1,244 @@
+{
+ "version": "v001",
+ "role": "A measurement",
+ "source": "reference/reference.mp4 (AI i2v, 241 f, 24 fps)",
+ "conventions": "world SI; +y = far wall = image up in rectified frames; MEASURED = from pixels+exact frame-0 camera+Snell; MODEL-CONDITIONED = needs U=1.5cm/s, D=10mm",
+ "geometry_check_frame0": {
+  "method": "refracted pinhole (flat surface z=0.023, n=1.333), code/geom.py",
+  "needle_streak_y_at_x-88mm_mm": [
+   25.21,
+   16.9,
+   8.54,
+   0.21,
+   -8.19,
+   -16.44,
+   -24.68
+  ],
+  "nominal_mm": [
+   24,
+   16,
+   8,
+   0,
+   -8,
+   -16,
+   -24
+  ],
+  "max_err_mm": 1.2,
+  "needle_tips_and_cylinder_base_ring": "overlay coincides by eye (<~3 px); pure pinhole would be ~19-42 px off",
+  "rectified_map_uncertainty_mm": "~\u00b11 (y), \u00b11 (x)",
+  "status": "measured"
+ },
+ "camera_stability": {
+  "method": "ECC homography, static regions (channel interior masked), half-res",
+  "ecc_cc_min": 0.99587,
+  "disp_px_centre_t5_t10": [
+   0.763,
+   3.164
+  ],
+  "disp_px_corner_max_t5_t10": [
+   1.37,
+   5.934
+  ],
+  "disp_px_cyl_base_t10": 2.99,
+  "per_frame_homography": "stabilisation_H_frame0_to_n.npy / camera_stability.csv (maps frame-0 px -> frame-n px)",
+  "note": "slow zoom-like drift, mostly after t=6 s; all rectified frames are stabilised",
+  "status": "measured"
+ },
+ "rectification": {
+  "dir": "rectified/r0000..r0240.png",
+  "res_m_per_px": 0.00025,
+  "x_range": [
+   -0.3,
+   0.3
+  ],
+  "y_range": [
+   -0.06,
+   0.06
+  ],
+  "visible_x_m": [
+   -0.1,
+   0.2606
+  ],
+  "valid_mask": "rectified/rect_valid.png (cylinder-occluded + off-frame black)",
+  "status": "measured"
+ },
+ "dye_front": {
+  "x_front_t0_m": -0.0329,
+  "x_front_t0_rel_cyl_D": 0.71,
+  "speed_fit_0.2s_to_exit_m_s": 0.0586,
+  "speed_fit_sigma": 0.0011,
+  "speed_over_U": 3.91,
+  "speed_0_1.5s_m_s": 0.0677,
+  "t_front_leaves_view_s": 4.875,
+  "physical_max_m_s": 0.0225,
+  "factor_over_phys_max": 2.61,
+  "csv": "dye_front.csv",
+  "status": "front measured; ratio to U model-conditioned (U=1.5 cm/s)"
+ },
+ "shedding": {
+  "first_rollup": {
+   "side": "lower, y<0 (near wall, image down-right in original view)",
+   "t_s": 0.75,
+   "t_unc_s": 0.08,
+   "frame": 18,
+   "x_m": -0.003,
+   "other_side": "upper y>0 hooks at 0.67 s, rolls up at 0.92 s (f22)",
+   "note": "roll-up happens at the advancing dye front ~4D downstream, both sides within 0.17 s (=0.15 AI period, not ~0.5)",
+   "status": "measured (visual, rectified sheet)"
+  },
+  "frequency_Hz": {
+   "spectral_peak_probe_3_6D": 0.887,
+   "zero_cross_period_s_mean_std": [
+    1.112,
+    0.137
+   ],
+   "f_from_periods": 0.899,
+   "unc_Hz": 0.04,
+   "physical_expected_Hz": 0.27,
+   "ratio": 3.26,
+   "status": "measured (t>=2.5 s, ~7 cycles)"
+  },
+  "St_at_U1.5": 0.587,
+  "status_St": "model-conditioned",
+  "convection_speed_m_s": {
+   "core_tracks_median": 0.048176470588235286,
+   "p16_p84": [
+    0.02704195804195805,
+    0.06254030959752332
+   ],
+   "n_tracks": 71,
+   "xcorr_upper_lower": [
+    0.0428,
+    0.0468
+   ],
+   "near_wake_-30..+40mm": 0.0356,
+   "far_wake_>60mm": 0.055,
+   "over_U": 3.21,
+   "physical_expected": 0.0128,
+   "tracks_moving_upstream": 0,
+   "status": "measured; ratio model-conditioned"
+  },
+  "streamwise_wavelength_m": {
+   "from_vc_over_f": 0.0547,
+   "fft_upper_lower": [
+    0.0545,
+    0.0625
+   ],
+   "fft_scatter": [
+    0.051,
+    0.024
+   ],
+   "physical_expected": 0.0555,
+   "status": "measured (FFT noisy; vc/f preferred)"
+  },
+  "lateral_row_positions_m": {
+   "upper_median": 0.0254,
+   "lower_median": -0.0219,
+   "spread_sd": [
+    0.0115,
+    0.011
+   ],
+   "h_m": 0.0473,
+   "h_over_D": 4.72,
+   "physical_expected_h_over_D": "~1.0-2.0 (near wake Re 150)",
+   "status": "measured (dye-blob maxima, t>=3 s)"
+  },
+  "vortex_size": {
+   "eq_diameter_median_m": 0.0218,
+   "p16_p84_m": [
+    0.0099,
+    0.0439
+   ],
+   "over_D": 2.18,
+   "method": "blurred dye cover blob at 60% of peak; visual spirals ~20-25 mm",
+   "status": "measured, method-dependent \u00b130%"
+  },
+  "alternation_regularity": {
+   "period_CV": 0.123,
+   "mirror_symmetry_index_near_wake_mean": 0.219,
+   "note": "no mirror-symmetric pairs after onset (index <0.25); periods vary 0.92-1.27 s"
+  },
+  "implied_flow_if_AI_kinematics_taken_literally": {
+   "U_implied_m_s": 0.0567,
+   "Re_implied": 567,
+   "St_implied": 0.155,
+   "note": "AI wake looks like a ~3.5x time-compressed (or ~3.8x faster) flow; spatial wavelength ~physical"
+  }
+ },
+ "colour_budget": {
+  "needle_feed_fraction_m_c_y": [
+   0.42857142857142855,
+   0.2857142857142857,
+   0.2857142857142857
+  ],
+  "upstream": [
+   0.465,
+   0.339,
+   0.196
+  ],
+  "near_wake": [
+   0.275,
+   0.412,
+   0.313
+  ],
+  "far_wake": [
+   0.055,
+   0.366,
+   0.579
+  ],
+  "status": "measured (hue classifier, indicative \u00b10.05)"
+ },
+ "static_objects": {
+  "upstream_streak_y_std_mm": [
+   0.053,
+   0.064,
+   0.091,
+   0.07,
+   0.054,
+   0.097,
+   0.0
+  ],
+  "cyl_top_mean_abs_diff_8bit_mean_max": [
+   5.715103734439834,
+   8.029874686716791
+  ],
+  "rake_mad_8bit": [
+   2.224441548155241,
+   3.313459757834758
+  ],
+  "bg_brightness_range_8bit": [
+   53.67688888888889,
+   54.61049470899471
+  ],
+  "max_frame_to_frame_bg_step": 0.23072486772486656,
+  "duplicate_frames": 0
+ },
+ "defects": [
+  "D1 dye front advances 5.9 cm/s = 3.9U (0-1.5 s: 6.8 cm/s), 2.6x the physical maximum (1.5U); front reaches x=+0.26 m at 4.9 s vs >=12 s physically",
+  "D2 shedding frequency 0.88 Hz vs 0.27 Hz physical (3.3x); St=0.59 at the declared U",
+  "D3 vortices convect at 4.8 cm/s = 3.2U (physical ~0.85U = 1.3 cm/s) and accelerate downstream (3.6 -> 5.5 cm/s); none move upstream",
+  "D4 wake far too wide: vortex rows at y=+25/-22 mm, h=4.7D (physical ~1-2D); outer needles (+-24 mm, 2.4D off-axis) are drawn into vortices",
+  "D5 vortices too large at formation: ~2.2D (1-4.4D) spirals already 2-4D behind cylinder; intermittent third central row in far wake",
+  "D6 onset is an impulsive-start-like curl at the dye head on both sides almost simultaneously (0.75 s / 0.92 s), contradicting the long-running periodic state",
+  "D7 colour budget not conserved: magenta (3/7 of feed, 46% upstream) falls to ~5% in far wake while yellow (2/7) rises to ~58%",
+  "D8 near wake shows no dye-free recirculation bubble/stagnation split at the cylinder (streaks pass close behind it) - visual, tentative",
+  "D9 period irregular (CV 13%, 0.92-1.27 s) at Re 150 where shedding is strictly periodic",
+  "D10 camera slow zoom drift up to 3.2 px centre / 5.9 px corners at 10 s (stabilised here); cylinder/needles stay geometrically fixed (cyl top MAD 5.7/255 shading only); no flicker (bg steps <0.25/255), no duplicated frames"
+ ],
+ "visuals": [
+  "visuals/v001_rectified_strip_t0-10s_measured.jpg",
+  "visuals/v001_dye_front_vs_bounds_measured.png",
+  "visuals/v001_wake_probe_signal_spectrum_measured.png",
+  "visuals/v001_first_rollup_annotated_measured.jpg",
+  "visuals/v001_xt_diagram_vortex_tracks_measured.png",
+  "visuals/v001_camera_drift_measured.png",
+  "visuals/v001_colour_budget_measured.png",
+  "visuals/v001_cylinder_needles_constancy_measured.jpg"
+ ],
+ "code": "measurement/code/{geom,stab,rectify,analyse,viz}.py",
+ "caveats": [
+  "generated footage: numbers describe the AI clip, not reality",
+  "green front line in strip after t=4.9 s is the visibility limit, not a front",
+  "far-wake dye fades (defocus/vignette) -> blob detection weaker at x>0.2 m"
+ ]
+}

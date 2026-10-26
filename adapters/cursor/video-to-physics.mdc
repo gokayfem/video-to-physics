@@ -1,0 +1,16 @@
+---
+description: Physics reconstructions from reference videos: measurement, solvers (ODE, FEM, CFD), verification, Blender bakes
+globs: **/*.py
+alwaysApply: false
+---
+
+Copy this file into your project's `.cursor/rules/`. Install the skill too (Cursor reads `~/.cursor/skills`,
+`~/.claude/skills` and `.agents/skills`), so the rule can point at it.
+
+- Use the `video-to-physics` skill: scaffold a case with `scripts/v2p.py new`, route the phenomenon with
+  `references/physics-routing.md`, and follow the phases in `references/workflow.md`.
+- Label every parameter measured, declared, assumed or fitted; never fit to a generator's defects.
+- Benchmark solvers on closed forms first; converge on three resolutions; check budgets.
+- Bake solver output through files (`deformation.npz`, tracer PNGs) and check the evaluated Blender result against
+  them; build checkpoints with `v2p.py checkpoint` from frozen copies.
+- Verify with an independent implementation and negative controls before calling anything verified.

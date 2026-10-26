@@ -1,0 +1,429 @@
+{
+ "schema": "sim01-camera/v1",
+ "owner": "camera/appearance",
+ "status": "calibrated (frame-120 static calibration + per-frame drift); scale model-conditioned via params/physics.json L_c_m",
+ "created_utc": "2026-10-25T23:42:46Z",
+ "conventions": {
+  "world": "CONTRACT: metres, Z up, origin = pivot P_ring (wire departure at bottom of the pin loop), X horizontal in the adopted swing plane toward image right, Y away from camera",
+  "pixels": "CONTRACT: origin top-left corner, pixel centres at +0.5, 1920x1088",
+  "R_world_to_cv": "OpenCV camera axes (x right, y down, z forward): Xc = R (X - C)",
+  "blender": "camera object matrix_world rotation = R_world_to_cv^T diag(1,-1,-1); sensor_fit HORIZONTAL; shift_x = -(cx-960)/1920, shift_y = (cy-544)/1920",
+  "projection_utility": "camera/project.py (load_camera(frame=n), project, ray, intersect_plane)"
+ },
+ "scale": {
+  "unit": "L_eff = radius of the bob-centre arc about its rotation centre P_eff (calibration gauge = 1)",
+  "L_eff_m": 0.43852487179847544,
+  "L_eff_m_source": "params/physics.json L_eff_m.value (metres per camera.json length unit; gauge decision config/CHANGELOG.md 2026-10-25T22:47:40Z) (sha256 dc20e99c7119379f640eee4fb22b7cb405cc9495b0b659785e1742b37f093ee7), provenance model-conditioned",
+  "note": "all metre values below = (value in L_eff) x L_eff_m; re-run camera/write_params.py when physics L_eff_m changes. L_c (|P_ring - bob centre|) is a different length (physics.json L_c_in_L_eff_units)"
+ },
+ "reference_camera": {
+  "description": "reference-matched camera; static calibration on reference frame 120 (t=5.0 s); per-frame drift in 'drift' and camera/drift.csv",
+  "reference_frame": 120,
+  "intrinsics": {
+   "resolution": [
+    1920,
+    1088
+   ],
+   "pixel_aspect": 1.0,
+   "f_px": 2431.027,
+   "cx_px": 960.0,
+   "cy_px": 544.0,
+   "principal_point_assumption": "image centre (free principal point is degenerate: runs to u=2057 px)",
+   "sensor_width_mm": 36.0,
+   "sensor_fit": "HORIZONTAL",
+   "focal_mm": 45.5817,
+   "hfov_deg": 43.0976,
+   "vfov_deg": 25.227,
+   "lens_distortion": "none (assumed)"
+  },
+  "extrinsics": {
+   "R_world_to_cv": [
+    [
+     0.809073251,
+     0.587694255,
+     0.003992094
+    ],
+    [
+     -0.007425199,
+     0.01701384,
+     -0.999827683
+    ],
+    [
+     -0.587660906,
+     0.808904192,
+     0.01812919
+    ]
+   ],
+   "C_world_m": [
+    0.876424,
+    -1.347275,
+    -0.305719
+   ],
+   "C_world_Leff": [
+    1.99857,
+    -3.07229,
+    -0.69715
+   ],
+   "t_world_to_cv_m": [
+    0.083915,
+    -0.276237,
+    1.610399
+   ],
+   "distance_to_pivot_Leff": 3.7309,
+   "distance_to_pivot_m": 1.63607,
+   "view_pitch_deg": 1.0388,
+   "view_azimuth_deg_from_+Y_toward_+X": -35.998,
+   "roll_deg_world_up_vs_image_up_positive_toward_image_right": 0.2288
+  },
+  "blender": {
+   "location_m": [
+    0.8764242489103736,
+    -1.347275022809192,
+    -0.3057192563844439
+   ],
+   "rotation_euler_xyz_rad": [
+    1.5889266541390525,
+    -0.0039921045531818855,
+    0.6282118442425397
+   ],
+   "rotation_matrix": [
+    [
+     0.809073251,
+     0.007425199,
+     0.587660906
+    ],
+    [
+     0.587694255,
+     -0.01701384,
+     -0.808904192
+    ],
+    [
+     0.003992094,
+     0.999827683,
+     -0.01812919
+    ]
+   ],
+   "lens_mm": 45.58174906452357,
+   "sensor_width_mm": 36.0,
+   "sensor_fit": "HORIZONTAL",
+   "shift_x": -0.0,
+   "shift_y": 0.0,
+   "per_frame": "lens_mm, shift_x/y and roll from camera/drift.csv (use project.load_camera(frame=n) + blender_camera_settings)"
+  }
+ },
+ "drift": {
+  "verdict": "REAL: smooth monotonic push-in (image scale +3.30 % from frame 0 to 240, ~0.33 %/s) with a small pan; no measurable parallax between post/arm and base (similarity rms 0.3-0.8 px, affine/homography no better) -> represented as a zoom (focal-length change) + principal-point shift, camera centre fixed",
+  "evidence": [
+   "camera/out/drift_similarity.png",
+   "camera/out/drift_similarity_raw.csv",
+   "camera/drift.csv",
+   "measurement/summary.json camera_drift (independent, agrees: scale 1.0327 at frame 240 vs frame 0)"
+  ],
+  "scale_frame0": 0.983211,
+  "scale_frame240": 1.01565,
+  "max_abs_roll_rad": 0.00048595,
+  "smooth_vs_raw_maxdev_px": 0.6516013154034681,
+  "static_feature_similarity_rms_px_median": 0.538782,
+  "model": {
+   "scale_poly": [
+    -8.484425192224883e-06,
+    0.00010636549011778196,
+    0.003006021309757354,
+    0.9832332294656437
+   ],
+   "roll_poly": [
+    4.2042930719573815e-06,
+    -7.42754394861518e-05,
+    0.0003469601183313793,
+    -0.0003769280817256498
+   ],
+   "tx_poly": [
+    0.009009879592733853,
+    -0.11949185702306686,
+    -2.8657913168399642,
+    16.433008646409142
+   ],
+   "ty_poly": [
+    -0.0014447342738943504,
+    0.04444182222391191,
+    -0.7572298131449574,
+    2.8392473245726273
+   ],
+   "note": "image-space similarity x_n = s R(rho) x_120 + t (pixels, contract convention) relative to reference frame 120, cubic polynomials in t_s fitted to camera/out/drift_similarity_raw.csv; realised in the camera as per-frame focal length s*f, principal point s R(rho) c + t and roll rho about the optical axis (extrinsic position fixed)"
+  },
+  "alternative_dolly": "a camera dolly of equal image scale would produce depth-dependent parallax of order 1 px between post and base front at the clip ends; not observed above 0.3 px, so the zoom representation is preferred (not proven)"
+ },
+ "locked_cameras": {
+  "locked_reference": {
+   "description": "drift-free diagnostic: frame-120 reference calibration held for all frames (project.load_camera(kind='locked'))",
+   "blender": {
+    "location_m": [
+     0.8764242489103736,
+     -1.347275022809192,
+     -0.3057192563844439
+    ],
+    "rotation_euler_xyz_rad": [
+     1.5889266541390525,
+     -0.0039921045531818855,
+     0.6282118442425397
+    ],
+    "lens_mm": 45.58174906452357,
+    "shift_x": -0.0,
+    "shift_y": 0.0,
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "HORIZONTAL"
+   }
+  },
+  "side_ortho": {
+   "description": "orthographic view straight along +Y onto the swing plane (true theta visible); for diagnostics",
+   "blender": {
+    "type": "ORTHO",
+    "location_m": [
+     0.0,
+     -3.508199,
+     -0.272111
+    ],
+    "rotation_euler_xyz_rad": [
+     1.5707963267948966,
+     0.0,
+     0.0
+    ],
+    "ortho_scale_m": 1.31557,
+    "shift_x": 0.0,
+    "shift_y": 0.0,
+    "sensor_fit": "HORIZONTAL",
+    "clip_end_m": 8.7705
+   }
+  },
+  "overview": {
+   "description": "fixed 3/4 overview, longer lens, slightly above the arm, shows swing plane obliquity and the whole stand",
+   "blender": {
+    "type": "PERSP",
+    "location_m": [
+     1.40328,
+     -2.280329,
+     0.482377
+    ],
+    "rotation_euler_xyz_rad": [
+     1.295089368503505,
+     0.0,
+     0.572308824841394
+    ],
+    "lens_mm": 60.0,
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "HORIZONTAL",
+    "shift_x": 0.0,
+    "shift_y": 0.0
+   }
+  }
+ },
+ "swing_plane": {
+  "adopted_phi_deg": 0.0,
+  "definition": "phi = azimuth of the swing direction from the arm axis (+X_arm) toward +Y; world X = swing direction",
+  "free_fit_phi_deg": {
+   "sd": 1.14107,
+   "min": -1.26917,
+   "max": 5.65514
+  },
+  "angle_between_swing_plane_and_image_plane_deg": 36.011,
+  "note": "bob moves toward the camera on the image-right side (apparent radius +5 % right vs left turning point)",
+  "theta_range_deg_from_this_fit": [
+   -10.871,
+   11.59
+  ]
+ },
+ "pivot": {
+  "P_ring_image_f120_px": [
+   1089.5,
+   127.0
+  ],
+  "P_ring_world_m": [
+   0,
+   0,
+   0
+  ],
+  "P_eff_world_Leff": [
+   0,
+   0,
+   -0.08105
+  ],
+  "P_eff_world_m": [
+   0,
+   0,
+   -0.035544
+  ],
+  "P_eff_note": "the straight lower wire lines (and the bob arc) rotate about a point ~0.08 L_eff below the pin loop; the wire bends near the loop in the AI clip. The rotation radius about P_eff is L_eff; |B - P_ring| at theta=0 is 1+e L_eff. See camera/NOTES.md (request to lead/dynamics)."
+ },
+ "bob_radius_from_image_Leff": 0.0867,
+ "bob_radius_from_image_m": 0.038021,
+ "stand_geometry_implied_by_calibration": {
+  "frame": "world (stand frame, phi=0)",
+  "units_Leff": {
+   "bx0": -0.9235,
+   "bx1": 0.49845,
+   "by0": -0.37156,
+   "by1": 0.36311,
+   "bz0": -1.40511,
+   "bz1": -1.20812,
+   "px0": -0.73199,
+   "px1": -0.54205,
+   "py0": -0.07827,
+   "py1": 0.07756,
+   "pz1": 0.16408,
+   "aw": 0.134,
+   "az0": -0.02594,
+   "az1": 0.10806,
+   "ax1": -0.05684,
+   "rb": 0.03562,
+   "rp": 0.0,
+   "ra": 0.02692
+  },
+  "metres": {
+   "bx0": -0.40498,
+   "bx1": 0.21858,
+   "by0": -0.16294,
+   "by1": 0.15923,
+   "bz0": -0.61617,
+   "bz1": -0.52979,
+   "px0": -0.321,
+   "px1": -0.2377,
+   "py0": -0.03432,
+   "py1": 0.03401,
+   "pz1": 0.07195,
+   "aw": 0.05876,
+   "az0": -0.01137,
+   "az1": 0.04739,
+   "ax1": -0.02492,
+   "rb": 0.01562,
+   "rp": 0.0,
+   "ra": 0.01181
+  },
+  "boxes": "base x[bx0,bx1] y[by0,by1] z[bz0,bz1]; post x[px0,px1] y[py0,py1] z[bz1,pz1]; arm x[..px1..ax1] y[-aw/2,aw/2] z[az0,az1]; rb/rp/ra = fillet radii (silhouette model)",
+  "priors": "post centred on arm in Y (sd 0.01), post and arm cross-sections square (sd 15 %), fillet radius <= 0.04"
+ },
+ "fit_quality": {
+  "static_edge_points_rms_px": 0.2661,
+  "n_static_edge_points": 969,
+  "per_edge_rms_px": {
+   "b_left_top": 0.57,
+   "b_back_top": 0.148,
+   "b_front_left_v": 0.179,
+   "b_front_bottom": 0.194,
+   "b_back_right_v": 0.088,
+   "p_left": 0.228,
+   "p_right": 0.261,
+   "p_top_front": 0.234,
+   "p_top_right": 0.285,
+   "p_bot_front": 0.202,
+   "p_bot_right": 0.387,
+   "a_top": 0.198,
+   "a_bottom": 0.126,
+   "a_end_right": 0.251,
+   "a_front_bottom2": 0.346
+  },
+  "P_ring_residual_px": [
+   -2.824,
+   -0.001
+  ],
+  "P_eff_residual_px": [
+   -3.474,
+   0.151
+  ],
+  "bob_centre_rms_px": 0.754,
+  "bob_radius_rms_px": 0.4204,
+  "R4_target_px": 2.0,
+  "R4_pass": true
+ },
+ "uncertainty": {
+  "method": "spread over calibration variants (jackknife over edges, re-picked edges +-3 px, pivot weights, bob halves, free phi) camera/out/calib_variants.json; units: f px, C/dist in L_eff, angles deg",
+  "variants": {
+   "f": {
+    "sd": 45.73497,
+    "min": 2378.90801,
+    "max": 2644.70936
+   },
+   "dist": {
+    "sd": 0.07012,
+    "min": 3.65158,
+    "max": 4.04718
+   },
+   "Cx": {
+    "sd": 0.0685,
+    "min": 1.93735,
+    "max": 2.32438
+   },
+   "Cy": {
+    "sd": 0.04023,
+    "min": -3.23897,
+    "max": -3.01582
+   },
+   "Cz": {
+    "sd": 0.00331,
+    "min": -0.71024,
+    "max": -0.69291
+   },
+   "pitch_deg": {
+    "sd": 0.0328,
+    "min": 0.95843,
+    "max": 1.11243
+   },
+   "yaw_deg": {
+    "sd": 0.4796,
+    "min": -38.40984,
+    "max": -35.76311
+   },
+   "roll_deg": {
+    "sd": 0.0328,
+    "min": 88.88756,
+    "max": 89.04156
+   },
+   "phi_deg": {
+    "sd": 1.14107,
+    "min": -1.26917,
+    "max": 5.65514
+   },
+   "e": {
+    "sd": 0.00475,
+    "min": 0.07714,
+    "max": 0.10559
+   },
+   "Rb": {
+    "sd": 0.00037,
+    "min": 0.08644,
+    "max": 0.08871
+   },
+   "static_rms": {
+    "sd": 0.02165,
+    "min": 0.24314,
+    "max": 0.37003
+   }
+  },
+  "focal_distance_coupling": "f and distance trade off along the line of sight; their ratio (image scale of the stand) is fixed to ~0.1 %"
+ },
+ "provenance": {
+  "reference_sha256": "ced22d105d7bf9e93d7c152fab02b62e077cbe54162056114201c50b61f56bae",
+  "inputs": {
+   "camera/out/edges_f120.json": "fbfd2cc855138135bf09a132d653c454ba2188a45482f6e0d37e864c3cbd8384",
+   "camera/out/bob_meas_f120.csv": "80e8b336afd0073dcbc18715ce4e3dcbe1e4b83635ecbeaa88e0a8b64da7fef1",
+   "camera/out/pivot_f120.json": "6c5921c9ba38d8a97889f052e0979d50ff64c0e6d8a59a0cb5cb461093a2fcdd",
+   "camera/out/drift_similarity_raw.csv": "d178e231ebff84a444253c29c1e468b84acf6a4d26c5df2c2b816fba2030fde1",
+   "measurement/bob_track.csv": "a903842122cab76126ce4ad2a7ea81b491512ac8068f78d6dec50a35110f493b"
+  },
+  "code": {
+   "camera/calibrate.py": "2595e06727e5edbc41f53ceb67a43a29570d212b392d55a46784746a0674458e",
+   "camera/edges.py": "55aec6f3b4f9468c4d7a3e3f79ef300fd60fa455d11eed6c779308b224b38d60",
+   "camera/write_params.py": "b50dc3946089b8cec3f03baedf6978231635f00d4acd23262a0f9d1647185e97",
+   "camera/project.py": "2d65216b1730e31937d2d23be49ee165b8a49375cd2d094d603bc0ffb636545e",
+   "camera/drift_fit.py": "388f3fb4d5375dcdd95ddaf6b78759d3aa74fb517bbe1034b64cb76da4cc9d3a",
+   "camera/track_static.py": "4c8e51500636f49fdab8713804ca58cc418e2502e3b7b04028ed115c2356e390",
+   "camera/wire_pivot.py": "f46c440a6fadaec2dfff1d6e03c4a035eb0c89daf781f94eb7f6ce2964e9239d",
+   "camera/bob_to_f120.py": "856167860203f3c4c4709035abdf2c9c7643ecef694aa770ceb4adda37dbd9b0"
+  },
+  "provenance_classes": {
+   "f_px, R, C (in L_eff)": "measured (image-fitted, assumptions: pinhole, centred principal point, rectilinear stand)",
+   "C in metres": "model-conditioned (L_eff_m from the period fit)",
+   "drift": "measured",
+   "phi=0": "assumed (within uncertainty of the free fit)"
+  }
+ }
+}

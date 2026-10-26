@@ -1,0 +1,301 @@
+{
+ "model": "pinhole, no lens distortion; (0,0) = top-left corner of the image, pixel centres at +0.5; uv = K (R X + t)",
+ "image_size": [
+  1920,
+  1088
+ ],
+ "style": "cinematic34",
+ "intrinsics": {
+  "fx_px": 2133.3333333333335,
+  "fy_px": 2133.3333333333335,
+  "cx_px": 960.0,
+  "cy_px": 544.0,
+  "skew": 0.0,
+  "lens_mm": 40.0,
+  "sensor_width_mm": 36.0,
+  "sensor_fit": "HORIZONTAL",
+  "K": [
+   [
+    2133.3333333333335,
+    0,
+    960.0
+   ],
+   [
+    0,
+    2133.3333333333335,
+    544.0
+   ],
+   [
+    0,
+    0,
+    1
+   ]
+  ],
+  "depth_of_field": {
+   "enabled": true,
+   "fstop": 8.0,
+   "focus_distance_m": 0.40348708629608154
+  }
+ },
+ "extrinsics": {
+  "camera_position_world_m": [
+   -0.17202192544937134,
+   -0.29795071482658386,
+   0.25090208649635315
+  ],
+  "blender_rotation_euler_xyz_rad": [
+   0.9599310755729675,
+   2.120424724694203e-09,
+   -0.5235987901687622
+  ],
+  "R_world_to_cv_camera": [
+   [
+    0.8660253882408142,
+    -0.5,
+    -2.120424724694203e-09
+   ],
+   [
+    -0.2867882251739502,
+    -0.4967317581176758,
+    -0.8191520571708679
+   ],
+   [
+    0.40957602858543396,
+    0.7094064950942993,
+    -0.5735764503479004
+   ]
+  ],
+  "t_world_to_cv_camera": [
+   -2.108048732310246e-09,
+   0.008191515203092692,
+   0.42573575752860116
+  ],
+  "elevation_deg_below_horizontal": 35.0,
+  "note": "World: Z up, flow +X, plate top z=0. OpenCV camera frame: x right, y down, z forward."
+ },
+ "scale_on_plate_z0 (local, perspective varies across the frame)": {
+  "at_cylinder_base": {
+   "px_per_mm_along_flow_X": 4.9532,
+   "px_per_mm_across_Y": 3.5868
+  },
+  "wake_x+0.05": {
+   "px_per_mm_along_flow_X": 4.169,
+   "px_per_mm_across_Y": 3.5743
+  },
+  "wake_x+0.12": {
+   "px_per_mm_along_flow_X": 3.681,
+   "px_per_mm_across_Y": 3.5849
+  },
+  "upstream_x-0.10": {
+   "px_per_mm_along_flow_X": 5.6058,
+   "px_per_mm_across_Y": 3.6488
+  }
+ },
+ "projection_test_anchor_points": {
+  "cylinder_base_centre": {
+   "X": [
+    -0.04,
+    0.0,
+    0.0
+   ],
+   "uv": [
+    779.47,
+    646.47
+   ],
+   "depth_m": 0.40935
+  },
+  "cylinder_top_centre": {
+   "X": [
+    -0.04,
+    0.0,
+    0.036
+   ],
+   "uv": [
+    769.88,
+    490.07
+   ],
+   "depth_m": 0.3887
+  },
+  "needle_tip_0": {
+   "X": [
+    -0.093,
+    -0.024,
+    0.013
+   ],
+   "uv": [
+    557.37,
+    756.27
+   ],
+   "depth_m": 0.36316
+  },
+  "needle_tip_1": {
+   "X": [
+    -0.093,
+    -0.016,
+    0.013
+   ],
+   "uv": [
+    540.43,
+    730.02
+   ],
+   "depth_m": 0.36884
+  },
+  "needle_tip_2": {
+   "X": [
+    -0.093,
+    -0.008,
+    0.013
+   ],
+   "uv": [
+    524.0,
+    704.57
+   ],
+   "depth_m": 0.37451
+  },
+  "needle_tip_3": {
+   "X": [
+    -0.093,
+    0.0,
+    0.013
+   ],
+   "uv": [
+    508.07,
+    679.87
+   ],
+   "depth_m": 0.38019
+  },
+  "needle_tip_4": {
+   "X": [
+    -0.093,
+    0.008,
+    0.013
+   ],
+   "uv": [
+    492.6,
+    655.9
+   ],
+   "depth_m": 0.38586
+  },
+  "needle_tip_5": {
+   "X": [
+    -0.093,
+    0.016,
+    0.013
+   ],
+   "uv": [
+    477.58,
+    632.63
+   ],
+   "depth_m": 0.39154
+  },
+  "needle_tip_6": {
+   "X": [
+    -0.093,
+    0.024,
+    0.013
+   ],
+   "uv": [
+    462.99,
+    610.02
+   ],
+   "depth_m": 0.39721
+  },
+  "wall_top_inner_near_x-0.10": {
+   "X": [
+    -0.1,
+    -0.06,
+    0.030199999999999998
+   ],
+   "uv": [
+    588.33,
+    819.36
+   ],
+   "depth_m": 0.32489
+  },
+  "wall_top_inner_near_x+0.00": {
+   "X": [
+    0.0,
+    -0.06,
+    0.030199999999999998
+   ],
+   "uv": [
+    1134.94,
+    621.3
+   ],
+   "depth_m": 0.36585
+  },
+  "wall_top_inner_near_x+0.10": {
+   "X": [
+    0.1,
+    -0.06,
+    0.030199999999999998
+   ],
+   "uv": [
+    1571.47,
+    463.13
+   ],
+   "depth_m": 0.40681
+  },
+  "wall_top_inner_near_x+0.15": {
+   "X": [
+    0.15,
+    -0.06,
+    0.030199999999999998
+   ],
+   "uv": [
+    1758.36,
+    395.41
+   ],
+   "depth_m": 0.42729
+  },
+  "wall_top_inner_far_x-0.10": {
+   "X": [
+    -0.1,
+    0.06,
+    0.030199999999999998
+   ],
+   "uv": [
+    353.32,
+    452.05
+   ],
+   "depth_m": 0.41002
+  },
+  "wall_top_inner_far_x+0.00": {
+   "X": [
+    0.0,
+    0.06,
+    0.030199999999999998
+   ],
+   "uv": [
+    818.09,
+    324.74
+   ],
+   "depth_m": 0.45098
+  },
+  "wall_top_inner_far_x+0.10": {
+   "X": [
+    0.1,
+    0.06,
+    0.030199999999999998
+   ],
+   "uv": [
+    1205.46,
+    218.63
+   ],
+   "depth_m": 0.49194
+  },
+  "wall_top_inner_far_x+0.15": {
+   "X": [
+    0.15,
+    0.06,
+    0.030199999999999998
+   ],
+   "uv": [
+    1375.93,
+    171.93
+   ],
+   "depth_m": 0.51241
+  }
+ },
+ "refraction_note": "Everything below the water surface (z < 0.023 m: plate/floor, dye sheet at z=0.013, needle tips, cylinder below the surface) is seen through a flat n=1.333 interface: at this oblique view the apparent position is displaced strongly (tens of px) toward the camera/upwards in the image vs the pinhole projection above; use Snell refraction at the surface (see scene/check_camera.py r_refr for the 1-D version) for any sub-surface point. Points above the surface (cylinder top, wall tops, rake) follow the pinhole model directly."
+}

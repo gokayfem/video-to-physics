@@ -1,0 +1,117 @@
+{
+  "checkpoint": "ck002",
+  "inputs": {
+    "params/physics.json": "962fc5363a6e77baaabf22d70ead098b8ac8deedd7afea0113a2c618a47fe4c3",
+    "solver/out/trajectory.csv": "d45be5ab934d5bd74814880dc1091558e5d57c98a3452d3617d601d8b43b2f95",
+    "spring.blend": "6718ce7fbf5c23cccbd1414760398395f28898b8283d22578fac029fcba8b76c",
+    "params/camera.json": "df3399540dea8342d1c4f68833faf22b5afc3655f7efb9b47168ae927fb2fc21"
+  },
+  "P1": {
+    "status": "PASS",
+    "finest_pair_m": 4.994560320881192e-12,
+    "orders": [
+      4.000693645901217,
+      3.998688577454483
+    ]
+  },
+  "P2": {
+    "status": "PASS",
+    "max_pos_m": 3.6519731254485083e-13,
+    "max_att_rad": 6.136293332469109e-13,
+    "extra_3d_m": 5.847529530033713e-12
+  },
+  "P3": {
+    "status": "PASS",
+    "B1_rest": {
+      "max_dev_over_ell_eq": 1.692380102759882e-16
+    },
+    "B2_axial": {
+      "max_err_over_amp": 8.381512458918257e-10,
+      "rel_omega_err": 5.901723554302407e-12
+    },
+    "B5_rigid_mode0": {
+      "rel_omega_err": 1.4658718683335792e-11
+    },
+    "B5_rigid_mode1": {
+      "rel_omega_err": 3.530731262912923e-11
+    }
+  },
+  "P4": {
+    "status": "PASS",
+    "balance": 9.064138959436672e-14,
+    "cons_drift": 7.553449132863894e-14,
+    "Lz_3d": 4.362555985142123e-16
+  },
+  "P5": "PASS",
+  "P6": {
+    "status": "PASS",
+    "eye_m": 1.4926853969129184e-08,
+    "rot_rad": 2.9802322387695312e-08
+  },
+  "P7": {
+    "status": "PASS",
+    "Tmin": 51.11428793729281
+  },
+  "P8": {
+    "status": "PASS",
+    "blend": "PASS"
+  },
+  "P9": {
+    "status": "PASS",
+    "variants": {
+      "base": "PASS",
+      "k_x4": "PASS",
+      "M_x4": "PASS",
+      "L0_plus50": "PASS",
+      "damping_x10": "PASS"
+    },
+    "nominal_ic_diagnostic": {
+      "k_x4": [
+        "SpringCompressionError"
+      ],
+      "M_x4": [],
+      "L0_plus50": [
+        "SpringCompressionError"
+      ],
+      "damping_x10": []
+    }
+  },
+  "P10": {
+    "ck_vs_A": "PASS",
+    "ck_vs_B": "PASS",
+    "A_vs_B": "PASS",
+    "ck_vs_coilfault": "FAIL"
+  },
+  "blend_negative_controls": {
+    "hook_gap_50um": {
+      "P5": "FAIL",
+      "P6": "PASS",
+      "P8_blend": "PASS",
+      "motion_is_baked_keyframes": true
+    },
+    "anchor_drift_2um": {
+      "P5": "FAIL",
+      "P6": "PASS",
+      "P8_blend": "PASS",
+      "motion_is_baked_keyframes": true
+    },
+    "weight_rot_1e-4": {
+      "P5": "PASS",
+      "P6": "FAIL",
+      "P8_blend": "PASS",
+      "motion_is_baked_keyframes": true
+    },
+    "coil_extra_turn": {
+      "P5": "FAIL",
+      "P6": "PASS",
+      "P8_blend": "PASS",
+      "motion_is_baked_keyframes": true
+    }
+  },
+  "fit_audit": {
+    "reproduced": true,
+    "max_diff_px": 4.1361689184782335e-08,
+    "rms_anchor": 6.724227663279255,
+    "R2_pass": false
+  }
+}

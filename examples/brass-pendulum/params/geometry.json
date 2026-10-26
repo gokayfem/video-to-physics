@@ -1,0 +1,295 @@
+{
+ "schema": "pnd-geometry/1",
+ "owner": "geometry & rig (scene/)",
+ "generated_by": "scene/measure/make_geometry_params.py",
+ "generated_utc": "2026-10-25T23:52:48Z",
+ "units": "every entry in 'ratios' is a length in camera.json units (L_eff; metres = ratio x physics.json L_eff_m, CHANGELOG 2026-10-25T22:47Z) EXCEPT bob_radius, which is r / |P_ring - bob| = r / L_c (provenance for dynamics' L_c/r; the builder takes r from physics.json)",
+ "frame": "world frame of CONTRACT.md: pivot P = origin, X image-right in the swing plane, Y away from camera, Z up",
+ "scale_note": "L_c is model-conditioned (from the period, owned by dynamics). The builder reads it from params/physics.json at build time; never hard-coded.",
+ "camera_note": "Camera FIXED to params/camera.json (sha256 b8f51e1de285563db20dbfc056ee6bac6bce6e46efa565a2f780df549d223bd3) via camera/project.py, per-frame drift included; ratios are lengths / L_eff (camera gauge, = physics L_c when camera.json was written). Pixel-read sizes scaled by K = 1.0764 (camera-of-record image scale at the pivot vs the 700.6 px/L used in v1). Not fitted, reported: P_ring and bob diagnostics in the fit file (bob centre lies |B-P_ring| = 1.05-1.07 L_eff from P_ring: the camera gauge L_eff is the bob arc radius about P_eff, 0.081 below P_ring).",
+ "superseded": "v1 proportions from scene/measure/fit_joint.json (own joint-fit camera, f=2749 px at f120) are superseded by the camera of record",
+ "fit_source": {
+  "file": "scene/measure/fit_fixedcam.json",
+  "sha256": "52363064f2642a3e2f109f543dd2506ae7954e5078dd35903d88caa62e8fb246",
+  "rms_normalised": 0.6890867687748062,
+  "n_obs": 133,
+  "n_par": 16
+ },
+ "ratios": {
+  "bob_radius": {
+   "value": 0.0813,
+   "sd": 0.003,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": false,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px. Cross-check: direct pixel ratio frame 0, bob radius 56.5 px / |P - bob centre| 700.6 px = 0.0806 (circle fit to silhouette; P at wire exit (1087,124))",
+   "note": "If params/physics.json declares a bob radius the builder uses that value and reports the difference."
+  },
+  "wire_diameter": {
+   "value": 0.00377,
+   "sd": 0.00161,
+   "provenance": "approximate",
+   "perspective_sensitive": false,
+   "method": "apparent dark-line width 2.5-4 px over |P-bob| ~700 px, frames 0/120, per-row profile (scratch wire.py); motion blur/defocus widen it so this is an upper-leaning estimate"
+  },
+  "pin_shaft_radius": {
+   "value": 0.02368,
+   "sd": 0.00323,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": false,
+   "method": "pin shaft apparent diameter 31 px (frame 0, 4x zoom, v 88.8-120) / ~700 px per L_c at the pivot depth"
+  },
+  "pin_head_radius": {
+   "value": 0.0284,
+   "sd": 0.0015,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": false,
+   "method": "VR-11 re-measure (frame 120, 8x zoom, camera of record dv/dz = 659.7 px per L_eff at P): head apparent diameter 37.5 px (frame 0: 38.75 px). ck002 rendered ~35 px. The reference pin is NOT 1.5-2x thicker; it looks heavier because its fat head starts right at the loop (short exposed shaft)"
+  },
+  "pin_tip_x": {
+   "value": 0.0666,
+   "sd": 0.0025,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px (pin_tip landmark)"
+  },
+  "pin_head_start_x": {
+   "value": -0.0212,
+   "sd": 0.004,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "VR-11 (frame 120, 8x zoom): head shoulder at u~1075 vs P at u 1086.8, du/dx = 556.7 px per L_eff at P -> -0.0212; the wire loop wraps the head's left end. Previous value (v1-v3) 0.004:"
+  },
+  "pin_head_start_x_v1": {
+   "value": 0.004,
+   "sd": 0.006,
+   "provenance": "approximate",
+   "perspective_sensitive": true,
+   "method": "head shoulder sits just +X of the wire loop (frame 0/120 4x zoom: loop at u 1074-1085, head from ~1086); placed so the loop (centred at x=0) bears on the shoulder"
+  },
+  "wire_loop_outer_radius_measured": {
+   "value": 0.0341,
+   "sd": 0.003,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": false,
+   "method": "VR-11 (frame 120, 8x zoom): loop ring outer height 45 px / 659.7 px per L_eff, concentric with the head, no gap; the wire twists into a short V below the ring (ring bottom ~4.5 px above P). Builder uses a TIGHT loop: centreline radius = pin_head_radius + wire_radius + 0.0005 (check: measured outer 0.0341 vs model 0.0313)"
+  },
+  "wire_loop_radius_v1": {
+   "value": 0.03014,
+   "sd": 0.00431,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": false,
+   "method": "loop ring around the pin: apparent outer height 44 px (frame 0, 4x zoom, v 79-123) => centreline radius ~0.028 L_c"
+  },
+  "pin_axis_z_fit": {
+   "value": 0.0402,
+   "sd": 0.0012,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px (free parameter). SINCE v4 (VR-11) THE BUILDER USES THIS (arm centre = pin axis). Earlier note: the builder used the contact-derived pin_axis_z = 2*loop_radius - wire_radius - pin_shaft_radius (loop rests on top of the shaft, wire leaves the loop bottom at P) = 0.0347; agreement is a consistency check"
+  },
+  "arm_height": {
+   "value": 0.1234,
+   "sd": 0.0027,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": false,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px"
+  },
+  "arm_depth": {
+   "value": 0.0905,
+   "sd": 0.0055,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px; set mainly by the narrow arm end face width (28-32 px), so it depends on the fitted camera yaw (~37 deg)"
+  },
+  "arm_end_x": {
+   "value": -0.0693,
+   "sd": 0.002,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px (arm end face plane, relative to P)"
+  },
+  "post_size_x": {
+   "value": 0.1877,
+   "sd": 0.0047,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px"
+  },
+  "post_size_y": {
+   "value": 0.1541,
+   "sd": 0.0053,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px"
+  },
+  "post_centre_x": {
+   "value": -0.6318,
+   "sd": 0.0046,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px"
+  },
+  "post_centre_y": {
+   "value": 0.0,
+   "sd": 0.0072,
+   "provenance": "assumed (consistent with fit)",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px gives -0.0072 +/- 0.0054; set to 0 (arm and pin on the swing plane, post centred on the arm) by design"
+  },
+  "post_top_z": {
+   "value": 0.1621,
+   "sd": 0.0025,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px"
+  },
+  "base_width": {
+   "value": 1.3677,
+   "sd": 0.05425,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px; corners are rounded so silhouette corners sit slightly inside. Alternative (camera role's calibration-implied stand, params/camera.json stand_geometry_implied_by_calibration): 1.4220; kept ours per lead decision, the difference is included in sd."
+  },
+  "base_depth": {
+   "value": 0.6904,
+   "sd": 0.04427,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px; back-left corner hidden behind the post (weak). Alternative (camera role's calibration-implied stand, params/camera.json stand_geometry_implied_by_calibration): 0.7347; kept ours per lead decision, the difference is included in sd."
+  },
+  "base_thickness": {
+   "value": 0.1824,
+   "sd": 0.01459,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px; bottom edges are in contact shadow. Alternative (camera role's calibration-implied stand, params/camera.json stand_geometry_implied_by_calibration): 0.1970; kept ours per lead decision, the difference is included in sd."
+  },
+  "h_pivot": {
+   "value": 1.2049,
+   "sd": 0.0022,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px (base top plane is z = -h_pivot)"
+  },
+  "base_centre_x": {
+   "value": -0.1769,
+   "sd": 0.0098,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px"
+  },
+  "base_centre_y": {
+   "value": -0.0581,
+   "sd": 0.0135,
+   "provenance": "measured-ratio",
+   "perspective_sensitive": true,
+   "method": "least-squares fit of a parametric box model with the camera FIXED to params/camera.json (camera/project.py load_camera(frame=n)) to 20/19 hand-read landmarks plus 30/31 base top-edge points (edge_points.py, line constraints) in frames 0 (t=0 s) and 120 (t=5 s) (scene/measure/fit_fixedcam.py); rms 0.69 sigma, point residual rms 5.2 px"
+  },
+  "base_corner_radius": {
+   "value": 0.03229,
+   "sd": 0.01615,
+   "provenance": "approximate",
+   "perspective_sensitive": true,
+   "method": "rounding of the vertical corners seen at the back-right and front-left silhouettes (~15-25 px), frame 0/120"
+  },
+  "base_top_edge_radius": {
+   "value": 0.02368,
+   "sd": 0.01076,
+   "provenance": "approximate",
+   "perspective_sensitive": true,
+   "method": "width of the rounded top-edge highlight band along the front edge (~12-20 px), frame 0/120"
+  },
+  "base_bottom_edge_radius": {
+   "value": 0.008,
+   "sd": 0.006,
+   "provenance": "assumed",
+   "perspective_sensitive": true,
+   "method": "bottom edge slightly softened, in shadow"
+  },
+  "wood_edge_radius": {
+   "value": 0.00646,
+   "sd": 0.00323,
+   "provenance": "approximate",
+   "perspective_sensitive": true,
+   "method": "post and arm edges softened (~3-5 px highlight), frame 0 2x zoom"
+  },
+  "eyelet_radius": {
+   "value": 0.0034,
+   "sd": 0.001,
+   "provenance": "approximate",
+   "perspective_sensitive": false,
+   "method": "VR-12: brass stem/eyelet where the wire enters the bob, apparent width 4-5 px (frames 0 and 120, 12x zoom) / 659.7 px per L_eff"
+  },
+  "eyelet_height": {
+   "value": 0.006,
+   "sd": 0.003,
+   "provenance": "approximate",
+   "perspective_sensitive": false,
+   "method": "VR-12: the bright stem shows 8-12 px long but INSIDE the bob silhouette, ending at its top edge (frames 0/120, 12x zoom): seen ~6 deg from above, the pole projects ~6 px inside the outline, so the stem is short. A first try of 0.012 L_eff stuck out above the outline (v012 draft); 0.006 keeps it within"
+  },
+  "bolt_radius": {
+   "value": 0.0226,
+   "sd": 0.00538,
+   "provenance": "approximate",
+   "perspective_sensitive": true,
+   "method": "steel cap on the post -X face at arm height, apparent height 30 px (frame 0)"
+  },
+  "bolt_protrusion": {
+   "value": 0.085,
+   "sd": 0.02,
+   "provenance": "approximate",
+   "perspective_sensitive": true,
+   "method": "the dark cap shows at u~680-695, v~140-170 in frame 0, i.e. 0-15 px left of the post's front-left silhouette (u~694). Projecting candidate positions through the frame-0 fitted camera, a cap on the -X face at y=0 must reach ~0.08-0.1 L_c out of the face to be visible there (0.018 in v004 and 0.03 in v005 stayed hidden). Likely the end of a through-bolt; the AI reference may be inconsistent here"
+  }
+ },
+ "derived_ratios": {
+  "pin_axis_z": 0.0402,
+  "arm_visible_length": 0.46865,
+  "post_height_above_base": 1.367,
+  "pin_length_from_arm_face": 0.1359
+ },
+ "derived_absolute_m": {
+  "L_eff_m_used": 0.43852487179847544,
+  "L_c_m_used": 0.4738475540756993,
+  "L_c_source": "params/physics.json",
+  "note": "stand = ratio x L_eff_m; bob radius ratio x L_c (provenance only)",
+  "bob_radius_m": 0.038524,
+  "wire_diameter_m": 0.001653,
+  "pin_shaft_radius_m": 0.010384,
+  "pin_head_radius_m": 0.012454,
+  "pin_tip_x_m": 0.029206,
+  "pin_head_start_x_m": -0.009297,
+  "pin_head_start_x_v1_m": 0.001754,
+  "wire_loop_outer_radius_measured_m": 0.014954,
+  "wire_loop_radius_v1_m": 0.013217,
+  "pin_axis_z_fit_m": 0.017629,
+  "arm_height_m": 0.054114,
+  "arm_depth_m": 0.039687,
+  "arm_end_x_m": -0.03039,
+  "post_size_x_m": 0.082311,
+  "post_size_y_m": 0.067577,
+  "post_centre_x_m": -0.27706,
+  "post_centre_y_m": 0.0,
+  "post_top_z_m": 0.071085,
+  "base_width_m": 0.59977,
+  "base_depth_m": 0.302758,
+  "base_thickness_m": 0.079987,
+  "h_pivot_m": 0.528379,
+  "base_centre_x_m": -0.077575,
+  "base_centre_y_m": -0.025478,
+  "base_corner_radius_m": 0.01416,
+  "base_top_edge_radius_m": 0.010384,
+  "base_bottom_edge_radius_m": 0.003508,
+  "wood_edge_radius_m": 0.002833,
+  "eyelet_radius_m": 0.001491,
+  "eyelet_height_m": 0.002631,
+  "bolt_radius_m": 0.009911,
+  "bolt_protrusion_m": 0.037275,
+  "pin_axis_z_m": 0.017629,
+  "arm_visible_length_m": 0.205515,
+  "post_height_above_base_m": 0.599463,
+  "pin_length_from_arm_face_m": 0.059596,
+  "bob_clearance_above_base_m": 0.016007,
+  "wire_free_length_m": 0.435324
+ }
+}

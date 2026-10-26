@@ -1,0 +1,30 @@
+{
+ "definition": "P = centre of the fitted top-face circle (radius 0.5 D) of the rigid-disc silhouette model (s3_disc_pose: top + bottom face, thickness 0.031 D), world coords (origin A, X crossbar, Y away, Z up), unit D; camera = smoothed camera of record",
+ "mean_D": [
+  0.011858740786214452,
+  -0.04473524066164834,
+  -0.8577335380782982
+ ],
+ "std_D": [
+  0.019962852677586105,
+  0.032973962081499684,
+  0.006371143199526228
+ ],
+ "sd_eff_median_D": [
+  0.001312590067797278,
+  0.0030889917336311677,
+  0.0009319761054150284
+ ],
+ "sd_formal_median_D": [
+  0.0001987714956323315,
+  0.0013913947916538915,
+  0.00046167534634208054
+ ],
+ "silhouette_rms_px_median": 0.9460980381580428,
+ "wire_length_A_to_P_mean_D": 0.8577335380782983,
+ "Q_minus_P": {
+  "value_D_world": "(+0.0019, +0.0309, 0) in the world-azimuth frame, i.e. constant +0.031 D in world +Y (away from the camera)",
+  "test": "line perpendicular offset vs psi: world-fixed point model rms 0.0058 D; disc-attached chord model (constant offset) rms 0.0229 D -> the line passes through a world-fixed point, not a disc-attached one (AI inconsistency, or a depth bias of the silhouette centre along the view ~ +Y)"
+ },
+ "systematics": "f +-3 % scales positions about the camera (mainly depth/Y and the absolute distance); A placement assumption; disc taken as a rigid circle"
+}

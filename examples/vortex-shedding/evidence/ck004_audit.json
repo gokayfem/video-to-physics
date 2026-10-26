@@ -1,0 +1,117 @@
+{
+ "checkpoint": "ck004 (final; flow = ck003, mass-conserving filament dye)",
+ "auditor": "role E",
+ "fields_identity": "fields.npz bit-identical to ck003 (all arrays max|diff| = 0, same keys/shapes)",
+ "rerun_dye_checks": {
+  "tracer_mass_budget_linear": {
+   "passed": true,
+   "value": {
+    "max_dev_frac": [
+     0.008027387018240956,
+     0.0002588525588023124,
+     0.0002665571580620017
+    ]
+   },
+   "tol": 0.05
+  },
+  "tracer_bounds": {
+   "passed": true,
+   "value": {
+    "min": 0.0,
+    "max": 1.0
+   },
+   "tol": [
+    -0.02,
+    1.02
+   ]
+  },
+  "no_dye_upstream_of_needles": {
+   "passed": true,
+   "value": {
+    "upstream_extent_m": 0.0008749999999999869,
+    "max_c_beyond_tol": 0
+   },
+   "tol": 0.003
+  },
+  "dye_advected_by_velocity_scale": {
+   "passed": true,
+   "value": {
+    "best_scale": 0.9987805315576086,
+    "err_by_scale": {
+     "0.5": 0.3003,
+     "0.75": 0.2285,
+     "0.9": 0.1304,
+     "1.0": 0.0262,
+     "1.1": 0.1356,
+     "1.25": 0.2413,
+     "1.5": 0.321,
+     "2.0": 0.3831
+    },
+    "err_no_motion": 0.37860050797462463,
+    "n_points": 115956,
+    "n_pairs": 8
+   },
+   "tol": [
+    0.85,
+    1.15
+   ]
+  },
+  "dye_front_speed_le_max_velocity": {
+   "passed": true,
+   "value": {
+    "front_speed_max": 0.018000000000000016,
+    "umax": 0.021226242184638977,
+    "ratio": 0.848006907837237
+   },
+   "tol": "<= 1.05 umax"
+  }
+ },
+ "dye_front_t0": {
+  "outer_particles_over_D": [
+   0.6417058763840036,
+   0.5708730632559438,
+   0.5913751080652251,
+   0.6653959832842054
+  ],
+  "outer_png_front_c025_over_D": [
+   0.6875000000000041,
+   0.6125000000000013,
+   0.6375000000000041,
+   0.7125000000000014
+  ],
+  "png_front_by_threshold_over_D": {
+   "0.02": 0.7625000000000014,
+   "0.1": 0.7375000000000042,
+   "0.25": 0.7125000000000014,
+   "0.5": 0.6875000000000041
+  },
+  "target": 0.6,
+  "passed": true
+ },
+ "blender": {
+  "filepath": "<CASE_ROOT>/checkpoints/ck004/solver/out/dye/f0000.png",
+  "dye_dir_ok": true,
+  "sfra": 0,
+  "offset": -1,
+  "frames": 241,
+  "colorspace": "Non-Color",
+  "scene_range": [
+   0,
+   240
+  ],
+  "fps": 24.0,
+  "frame_n_to_file_ok": true,
+  "passed": true
+ },
+ "unchanged_since_ck003": [
+  "divergence",
+  "no-slip",
+  "St (Cl/probe/field/ref)",
+  "Cd/Cl vs reference",
+  "wake KE periodicity",
+  "vortex convection",
+  "phase anchor"
+ ],
+ "unchanged_note": "flow checks re-ran automatically with identical fields and returned identical values (all PASS)",
+ "verdict": "PASS: all checks pass, including the tracer mass budget (now applicable, max deviation 0.8 %)"
+}

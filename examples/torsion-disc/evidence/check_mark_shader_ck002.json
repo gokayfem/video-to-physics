@@ -1,0 +1,38 @@
+{
+  "blend": "<CASE_ROOT>/checkpoints/ck002/torsion.blend",
+  "disc": "TOR_Disc",
+  "materials": [
+    {
+      "name": "TOR_Brass",
+      "texcoord": [
+        {
+          "node": "Texture Coordinate",
+          "object": null,
+          "outputs_used": [
+            "Object"
+          ]
+        }
+      ],
+      "attributes": [
+        {
+          "name": "tor_mark_azimuth_rad",
+          "type": "OBJECT",
+          "used": true,
+          "value": -6.80029923865803
+        },
+        {
+          "name": "tor_mark_width_m",
+          "type": "OBJECT",
+          "used": true,
+          "value": 0.002102701430467137
+        }
+      ],
+      "other_coord_nodes": []
+    }
+  ],
+  "params_mu": -6.80029923865803,
+  "animated_custom_properties": [],
+  "blend_mark_azimuth_rad": -6.80029923865803,
+  "azimuth_vs_params": 0.0,
+  "status": "PASS"
+}

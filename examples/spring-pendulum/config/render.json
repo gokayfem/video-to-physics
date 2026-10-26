@@ -1,0 +1,1 @@
+{"motion_blur": {"enabled": true, "shutter": 0.09, "position": "CENTER", "uncertainty": 0.05, "evidence": "scene/NOTES.md Update 2; scene/measure/mb_tune.json (reference weight edge width vs speed: 2.25 + 0.069*speed px)"}}

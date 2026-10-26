@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "path": "verify/clean_rebuild_verifier.sh <ckcopy> <work> <ref> --look (stages params/*, solver/{pendulum,run,bake_blender}.py, scene/{build,pnd_nodes,look}.py + scene/vendor, camera/{project.py,drift.csv})",
+  "compare_dumps": {
+    "ck_vs_A": "PASS",
+    "ck_vs_B": "PASS",
+    "A_vs_B": "PASS"
+  },
+  "trajectory_sha256": {
+    "ck": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba",
+    "A": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba",
+    "B": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba"
+  },
+  "bake_keyframe_arrays_sha256": {
+    "ck": "d30bb176e7f0e4520e36ed6a988bfc1ef1c8a9e1e949b4841cfe9e9f4d713e4e",
+    "A": "d30bb176e7f0e4520e36ed6a988bfc1ef1c8a9e1e949b4841cfe9e9f4d713e4e",
+    "B": "d30bb176e7f0e4520e36ed6a988bfc1ef1c8a9e1e949b4841cfe9e9f4d713e4e"
+  },
+  "tilt_check_on_rebuilds": {
+    "A": "PASS",
+    "B": "PASS"
+  },
+  "blend_file_sha256": {
+    "ck": "64c4c5bb8a37ceae3c7a59ecc145b74828ee9df89ffefa520371bbc431ea7c66",
+    "A": "b84ebbbf44bc56e82e8a3573bd8b03c8581895977e4d44be0e6a87ba826dd326",
+    "B": "d0e43ac009a8188cf23ec4b6aaee92fc48dbff244a4b1c7e850af1096bdb658e"
+  },
+  "delivery_clean_rebuild": {
+    "ran": true,
+    "verdict": "NOT_REPRODUCED",
+    "problems": [
+      "pipeline_steps",
+      "graph dump pendulum.graph.json (bitwise)",
+      "build report pendulum.build.json",
+      "bake report pendulum.bake.json",
+      "check_rig.json"
+    ],
+    "cause": "build_bake step failed: ModuleNotFoundError nodekit -- delivery/inputs_manifest.json does not stage scene/vendor/ (build.json lists scene/vendor/VENDORED.json as an input); downstream check_rig/check_blend/dumps/reopen then failed on the missing .blend. trajectory.csv bitwise IDENTICAL, trajectory_meta IDENTICAL, params bytes IDENTICAL in that run.",
+    "report": "verify/out/ck002/p10/delivery_rebuild/.delivery/rebuild_report.json"
+  }
+}

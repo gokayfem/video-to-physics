@@ -1,0 +1,87 @@
+{
+  "label": "ck002 (checkpoint copies)",
+  "created_utc": "2026-10-26T07:29:18+00:00",
+  "kind": "step",
+  "inputs": [
+    {
+      "value": 0.0013020833333333333,
+      "file": "<CASE_ROOT>/verify/out/conv_ck002/run_step_1.302083e-03.csv",
+      "sha256": "c5da18fbc907bfc249cb4fcfdc36b937721b86f001d83489720afaa841cf3e38"
+    },
+    {
+      "value": 0.0006510416666666666,
+      "file": "<CASE_ROOT>/verify/out/conv_ck002/run_step_6.510417e-04.csv",
+      "sha256": "9b43ee3a6d2c5c40adf4cef427614915034edf0694eea9c288f1b900ffbda859"
+    },
+    {
+      "value": 0.0003255208333333333,
+      "file": "<CASE_ROOT>/verify/out/conv_ck002/run_step_3.255208e-04.csv",
+      "sha256": "ea2b7544482aed997aa22cc792c17a82cb9168d1e8136cd7e49b23b9e3a99751"
+    },
+    {
+      "value": 0.00016276041666666666,
+      "file": "<CASE_ROOT>/verify/out/conv_ck002/run_step_1.627604e-04.csv",
+      "sha256": "c79296afab0f67ffa0d5c19fe375861fdf89f089c6f8794579dd192da32149d0"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": ".venv/bin/python checkpoints/ck002/solver/run.py --params checkpoints/ck002/params/physics.json --h 0.0013020833333333333 --out <CASE_ROOT>/verify/out/conv_ck002/run_step_1.302083e-03.csv_dir && cp <CASE_ROOT>/verify/out/conv_ck002/run_step_1.302083e-03.csv_dir/trajectory.csv <CASE_ROOT>/verify/out/conv_ck002/run_step_1.302083e-03.csv",
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": ".venv/bin/python checkpoints/ck002/solver/run.py --params checkpoints/ck002/params/physics.json --h 0.0006510416666666666 --out <CASE_ROOT>/verify/out/conv_ck002/run_step_6.510417e-04.csv_dir && cp <CASE_ROOT>/verify/out/conv_ck002/run_step_6.510417e-04.csv_dir/trajectory.csv <CASE_ROOT>/verify/out/conv_ck002/run_step_6.510417e-04.csv",
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": ".venv/bin/python checkpoints/ck002/solver/run.py --params checkpoints/ck002/params/physics.json --h 0.0003255208333333333 --out <CASE_ROOT>/verify/out/conv_ck002/run_step_3.255208e-04.csv_dir && cp <CASE_ROOT>/verify/out/conv_ck002/run_step_3.255208e-04.csv_dir/trajectory.csv <CASE_ROOT>/verify/out/conv_ck002/run_step_3.255208e-04.csv",
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": ".venv/bin/python checkpoints/ck002/solver/run.py --params checkpoints/ck002/params/physics.json --h 0.00016276041666666666 --out <CASE_ROOT>/verify/out/conv_ck002/run_step_1.627604e-04.csv_dir && cp <CASE_ROOT>/verify/out/conv_ck002/run_step_1.627604e-04.csv_dir/trajectory.csv <CASE_ROOT>/verify/out/conv_ck002/run_step_1.627604e-04.csv",
+      "returncode": 0,
+      "stderr_tail": ""
+    }
+  ],
+  "verifier_code_sha256": "b08e045b530f64547c23ce718fb9fffdd4b4c1619d795a0f1f6ec3f45c0872bd",
+  "P1": {
+    "values": [
+      0.0013020833333333333,
+      0.0006510416666666666,
+      0.0003255208333333333,
+      0.00016276041666666666
+    ],
+    "pos_successive_max_diffs_m": [
+      9.143347732588902e-10,
+      5.715539846962159e-11,
+      3.5863161398919097e-12
+    ],
+    "att_successive_max_diffs_rad": [
+      5.7448109695905644e-08,
+      3.6205548383484883e-09,
+      2.2716069826455857e-10
+    ],
+    "psi_successive_max_diffs_rad": [
+      1.2681664607328003e-09,
+      7.820544212222558e-11,
+      4.873434988894587e-12
+    ],
+    "combined_successive_max_diffs": [
+      5.7448109695905644e-08,
+      3.6205548383484883e-09,
+      2.2716069826455857e-10
+    ],
+    "observed_order": [
+      3.987976714699834,
+      3.994425645946175
+    ],
+    "e_last_m": 2.2716069826455857e-10,
+    "p_obs_last": 3.994425645946175,
+    "p_theory": 4.0,
+    "criterion": "max|C_{h/2}-C_{h/4}| < 1e-7 m (att, psi < 1e-7 rad) and |p_obs - p_theory| <= 0.5 (finest triple)",
+    "status": "PASS"
+  }
+}

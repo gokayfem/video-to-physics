@@ -1,0 +1,301 @@
+{
+ "frame": 0,
+ "t_s": 0.0,
+ "method": "manual reading of 2x/4x nearest-neighbour zoom crops with a 10 px grid (geometry role); bob circle by least-squares fit to the silhouette contour; wire line by per-row darkest-pixel parabola fit (rows v=200..730)",
+ "pixel_convention": "CONTRACT: (u,v) origin top-left corner of top-left pixel, centres at +0.5",
+ "points": {
+  "P_wire_exit": {
+   "uv": [
+    1087.0,
+    124.0
+   ],
+   "sigma_px": 2.0,
+   "note": "where the wire leaves the loop on the pin (bottom of loop)"
+  },
+  "bob_centre": {
+   "uv": [
+    1039.0,
+    821.0
+   ],
+   "sigma_px": 3.0,
+   "note": "circle fit centre (1039.0,819.7) r=57.0; bbox by eye 982-1094 x 770-882"
+  },
+  "bob_radius_px": {
+   "value": 56.5,
+   "sigma_px": 1.5
+  },
+  "pin_tip": {
+   "uv": [
+    1122.5,
+    102.0
+   ],
+   "sigma_px": 2.0,
+   "note": "rounded pin head, axis height"
+  },
+  "arm_end_front_top": {
+   "uv": [
+    1030.0,
+    62.5
+   ],
+   "sigma_px": 3.0
+  },
+  "arm_end_front_bot": {
+   "uv": [
+    1032.0,
+    142.0
+   ],
+   "sigma_px": 3.0
+  },
+  "arm_end_back_top": {
+   "uv": [
+    1060.0,
+    67.5
+   ],
+   "sigma_px": 3.0
+  },
+  "arm_end_back_bot": {
+   "uv": [
+    1065.0,
+    147.5
+   ],
+   "sigma_px": 3.0
+  },
+  "arm_post_front_top": {
+   "uv": [
+    797.5,
+    95.0
+   ],
+   "sigma_px": 3.0,
+   "note": "arm front-top edge meets post +X face"
+  },
+  "arm_post_front_bot": {
+   "uv": [
+    797.5,
+    170.0
+   ],
+   "sigma_px": 3.0
+  },
+  "post_top_FL": {
+   "uv": [
+    696.0,
+    69.0
+   ],
+   "sigma_px": 3.0
+  },
+  "post_top_FR": {
+   "uv": [
+    782.5,
+    57.5
+   ],
+   "sigma_px": 3.0
+  },
+  "post_top_BR": {
+   "uv": [
+    840.0,
+    70.0
+   ],
+   "sigma_px": 3.0
+  },
+  "post_bot_FL": {
+   "uv": [
+    692.5,
+    882.5
+   ],
+   "sigma_px": 3.0
+  },
+  "post_bot_FR": {
+   "uv": [
+    780.0,
+    891.0
+   ],
+   "sigma_px": 3.0
+  },
+  "post_bot_BR": {
+   "uv": [
+    839.0,
+    882.0
+   ],
+   "sigma_px": 3.0
+  },
+  "base_top_FL": {
+   "uv": [
+    493.0,
+    895.0
+   ],
+   "sigma_px": 5.0,
+   "note": "rounded edge; silhouette corner"
+  },
+  "base_top_BR": {
+   "uv": [
+    1472.0,
+    922.0
+   ],
+   "sigma_px": 5.0
+  },
+  "base_top_FR": {
+   "uv": [
+    1240.0,
+    990.0
+   ],
+   "sigma_px": 10.0,
+   "note": "large rounded corner: the reading is the highlight on the rounded edge (weak). v003 tried sigma 25 px: silhouette IoU fell 0.942->0.919, reverted; base back/left top edges added as line observations instead (v004)"
+  },
+  "base_top_BL": {
+   "uv": [
+    713.0,
+    863.0
+   ],
+   "sigma_px": 12.0,
+   "note": "hidden behind post: intersection of left-end top edge and back top edge lines; weak"
+  },
+  "base_bot_FL": {
+   "uv": [
+    500.0,
+    1013.0
+   ],
+   "sigma_px": 6.0,
+   "note": "bottom edge in contact shadow, rounded"
+  },
+  "base_bot_BR": {
+   "uv": [
+    1475.0,
+    1043.0
+   ],
+   "sigma_px": 6.0
+  }
+ },
+ "lines": {
+  "base_back_top": {
+   "pts": [
+    [
+     854.5,
+     864.16
+    ],
+    [
+     874.5,
+     865.48
+    ],
+    [
+     894.5,
+     867.08
+    ],
+    [
+     914.5,
+     868.71
+    ],
+    [
+     934.5,
+     871.14
+    ],
+    [
+     1154.5,
+     892.27
+    ],
+    [
+     1174.5,
+     893.44
+    ],
+    [
+     1194.5,
+     895.45
+    ],
+    [
+     1214.5,
+     897.45
+    ],
+    [
+     1234.5,
+     898.85
+    ],
+    [
+     1254.5,
+     900.38
+    ],
+    [
+     1274.5,
+     904.12
+    ],
+    [
+     1294.5,
+     904.29
+    ],
+    [
+     1314.5,
+     907.08
+    ],
+    [
+     1334.5,
+     909.44
+    ],
+    [
+     1354.5,
+     911.55
+    ],
+    [
+     1374.5,
+     914.43
+    ],
+    [
+     1394.5,
+     915.45
+    ],
+    [
+     1414.5,
+     917.12
+    ]
+   ],
+   "sigma_px": 2.0,
+   "method": "first pixel with HSV saturation > 0.30 from above, 5x5 blur"
+  },
+  "base_left_top": {
+   "pts": [
+    [
+     518.5,
+     892.71
+    ],
+    [
+     533.5,
+     889.71
+    ],
+    [
+     548.5,
+     888.04
+    ],
+    [
+     563.5,
+     886.29
+    ],
+    [
+     578.5,
+     884.36
+    ],
+    [
+     593.5,
+     881.77
+    ],
+    [
+     608.5,
+     879.67
+    ],
+    [
+     623.5,
+     877.79
+    ],
+    [
+     638.5,
+     875.32
+    ],
+    [
+     653.5,
+     873.54
+    ],
+    [
+     668.5,
+     872.47
+    ]
+   ],
+   "sigma_px": 2.0,
+   "method": "same"
+  }
+ }
+}

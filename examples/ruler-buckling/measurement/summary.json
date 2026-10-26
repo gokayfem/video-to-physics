@@ -1,0 +1,48 @@
+{
+ "version": "v001",
+ "camera": {
+  "max_drift_px": 1.482949137687683,
+  "clamp_drift_px_max": 0.26886025071144104,
+  "median_resid_px": 0.04227340221405029,
+  "verdict": "static (<1.5 px anywhere)"
+ },
+ "plane_assumption": "strip centreline back-projected onto plane x=0 (perpendicular to broad face, through clamp); tip = point at 280 mm arclength from jaw top; delta = world Y of tip minus frames 0-24 baseline (4.7 mm offset removed)",
+ "delta_noise_mm_prebuckle": 1.9425591903607595,
+ "onset_frame": 126,
+ "onset_t_s": 5.25,
+ "weights_at_onset": 7,
+ "load_at_onset_g": 140,
+ "weight_arrivals": [
+  {
+   "seated_frame": 36,
+   "count_after": 1,
+   "mode": "disc appears mid-air at right of strip (f24), floats over peg, descends; no hand"
+  },
+  {
+   "seated_frame": 60,
+   "count_after": 3,
+   "mode": "one floating disc visible (f48-56) but count jumps 1->3"
+  },
+  {
+   "seated_frame": 84,
+   "count_after": 5,
+   "mode": "floating discs (f72-80), count jumps 3->5"
+  },
+  {
+   "seated_frame": 112,
+   "count_after": 7,
+   "mode": "floating disc (f100-108), count jumps 5->7"
+  }
+ ],
+ "stack_height_mm_at_onset": 31.5,
+ "delta_extremes_mm": {
+  "min": -81.16467172423714,
+  "min_frame": 158,
+  "max": 170.6048502536348,
+  "max_frame": 233
+ },
+ "sides": "buckles toward -Y (camera-left) f124-176 (~-77 mm plateau), swings back through vertical ~f184, then to +Y/right f190-240 (to 171 mm)",
+ "out_of_plane": "row-width test: f160 consistent with weak-axis bending in x=0 plane (row width constant ~38-45 px); f200-240 row width grows 47->85 px with tangent tilt, matching edgewise (strong-axis, y=0 plane) bending prediction 47->71 px -> right-lean is largely non-physical in-plane bending; x0-plane delta for f>185 is model-conditioned and unreliable",
+ "uncertainty": "delta +-2 mm pre-buckle (baseline/segmentation), +-10 %% post-buckle in-plane frames; post f185 plane ambiguity dominates",
+ "onset_rule": "first frame of >=5 consecutive frames with |delta|>8 mm (4 sigma of pre-buckle noise 1.9 mm); slow lean visible from ~f121"
+}

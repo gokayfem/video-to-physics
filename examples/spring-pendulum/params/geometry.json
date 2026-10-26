@@ -1,0 +1,468 @@
+{
+ "version": "v002",
+ "owner": "scene (role C)",
+ "units": "ratios to W_in (= S) = clear span between the posts' inner faces, the camera of record unit. Metres = ratio x S_m (metres per W_in, see S_m_*).",
+ "S_m_assumed": {
+  "value": 0.25,
+  "status": "ASSUMED placeholder until physics.json/camera.json give a metre gauge",
+  "note": "build.py reads the gauge in this order: physics.json S_m | scene_unit_S_m, camera.json scale.S_m, then this value"
+ },
+ "world": "config/coordinates.md: origin A = top-loop bearing point on the bar top (y = 0 through the bar centre), X along the bar to image right, Y away from the camera, Z up",
+ "ratios": {
+  "post_width_x": {
+   "value": 0.175096,
+   "sd": 0.001145,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance",
+   "status": "measured"
+  },
+  "post_depth_y": {
+   "value": 0.188329,
+   "sd": 0.03,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance; weakly observed (inner faces 10-14 px wide); prior d_p = w_p +- 0.05",
+   "status": "fitted+prior"
+  },
+  "post_top_z": {
+   "value": 0.012672,
+   "sd": 0.00088,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance; above A (bar top)",
+   "status": "measured"
+  },
+  "base_top_z": {
+   "value": -1.422783,
+   "sd": 0.003034,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance; base-plate top below A",
+   "status": "measured"
+  },
+  "frame_centre_x": {
+   "value": -0.0013,
+   "sd": 0.000368,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance; frame centre relative to A (A under the top loop)",
+   "status": "measured"
+  },
+  "bar_height_z": {
+   "value": 0.08205,
+   "sd": 0.000726,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance",
+   "status": "measured"
+  },
+  "bar_depth_y": {
+   "value": 0.041025,
+   "sd": 0.020513,
+   "method": "not visible from the front: 0.5 x bar height (flat bar)",
+   "status": "assumed"
+  },
+  "plate_width_x": {
+   "value": 1.381941,
+   "sd": 0.005743,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance; front-corner silhouettes (2 px residual from the plan-view corner rounding)",
+   "status": "measured"
+  },
+  "plate_depth_y": {
+   "value": 0.419701,
+   "sd": 0.010131,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance",
+   "status": "measured"
+  },
+  "plate_centre_y": {
+   "value": -0.04699,
+   "sd": 0.012592,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance; prior 0 +- 0.05",
+   "status": "fitted+prior"
+  },
+  "plate_thickness": {
+   "value": 0.025845,
+   "sd": 0.002765,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance",
+   "status": "measured"
+  },
+  "table_back_edge_y": {
+   "value": 1.482531,
+   "sd": 0.020851,
+   "method": "box-model fit with the camera of record FIXED (params/camera.json load_camera(frame=0); scene/measure/fit_fixedcam.py), 1-sigma from the fit covariance; table/backdrop crease row 827-830 px",
+   "status": "fitted"
+  },
+  "plate_corner_radius": {
+   "value": 0.032369,
+   "sd": 0.007357,
+   "method": "front-left/right plan-view corner rounding read on 2x zooms (~22 px)",
+   "status": "approximate"
+  },
+  "plate_top_edge_radius": {
+   "value": 0.005885,
+   "sd": 0.002943,
+   "method": "highlight band on the plate's front top edge (~4 px)",
+   "status": "approximate"
+  },
+  "wood_edge_radius": {
+   "value": 0.004352,
+   "sd": 0.002902,
+   "method": "post edge softening (~3 px)",
+   "status": "approximate"
+  },
+  "screw_head_radius": {
+   "value": 0.019127,
+   "sd": 0.004414,
+   "method": "front screw heads (u 510 / 1399, v 1042-1045), ~26 px wide",
+   "status": "approximate"
+  },
+  "screw_inset_x": {
+   "value": 0.048553,
+   "sd": 0.005885,
+   "method": "screw centre to plate side edge (~33 px)",
+   "status": "approximate"
+  },
+  "screw_inset_y": {
+   "value": 0.075,
+   "sd": 0.02,
+   "method": "screw centre to plate front edge, from v 1042 between the front (1056) and back (984) top edges",
+   "status": "approximate"
+  },
+  "screw_head_height": {
+   "value": 0.008828,
+   "sd": 0.004414,
+   "method": "~6 px",
+   "status": "approximate"
+  },
+  "hook_wire_radius": {
+   "value": 0.010773,
+   "sd": 0.001486,
+   "method": "VR-08 (visual review ck001): S-hook shank 14-15 px wide at f0 rows v 140-150 (render was 9 px with the v001 eye reading of 8 px); 673 px/W_in at the spring plane, frame 0",
+   "status": "measured (review)"
+  },
+  "spring_wire_radius": {
+   "value": 0.004715,
+   "sd": 0.001088,
+   "method": "coil wire width on zooms (6.5 px)",
+   "status": "approximate"
+  },
+  "coil_mean_radius": {
+   "value": 0.052591,
+   "sd": 0.002176,
+   "method": "outer coil width f120/f240 (78-80 px) minus one wire, /2",
+   "status": "measured"
+  },
+  "top_loop_inner_height": {
+   "value": 0.085907,
+   "sd": 0.004352,
+   "method": "outer loop height through the camera (v 47 -> 122 px) minus 2 wire diameters; must enclose the bar (h_b)",
+   "status": "measured"
+  },
+  "top_loop_inner_width_y": {
+   "value": 0.053025,
+   "sd": 0.01,
+   "method": "loop seen edge-on: bar depth (assumed) + clearance",
+   "status": "assumed"
+  },
+  "loop_gap_A_px": {
+   "value": 6.0,
+   "sd": 3.0,
+   "method": "the reference draws the loop's inner top ~6 px ABOVE the bar top edge (floating); the rig rests it on the bar (A = bar top)",
+   "status": "note"
+  },
+  "hinge_P_eff_x": {
+   "value": -0.002875,
+   "sd": 0.003,
+   "method": "camera.json key_points.P_eff_world_on_plane_Y0 (LSQ intersection of 241 spring-axis lines)",
+   "status": "measured"
+  },
+  "hinge_P_eff_z": {
+   "value": -0.225071,
+   "sd": 0.003,
+   "method": "camera.json key_points.P_eff_world_on_plane_Y0 (0.225 W_in below A)",
+   "status": "measured"
+  },
+  "hook_turns": {
+   "value": 2,
+   "sd": 0,
+   "method": "lead decision (CHANGELOG): 2 static turns at the hook above the hinge",
+   "status": "counted"
+  },
+  "hook_turn_pitch": {
+   "value": 0.009901,
+   "sd": 0.002,
+   "method": "close turns (1.05 wire diameters); coil top is 0.012 W_in above P in the tracks",
+   "status": "approximate"
+  },
+  "coil_count_open": {
+   "value": 11,
+   "sd": 0,
+   "method": "measurement/spring_track.csv n_open_gaps median 11 (open pitch 29.1 px median)",
+   "status": "counted"
+  },
+  "coil_count_tight": {
+   "value": 10,
+   "sd": 1,
+   "method": "counted on a 4x zoom of f240 (10-11 turns, pitch ~11 px vs wire ~6.5 px)",
+   "status": "counted"
+  },
+  "coil_body_open_length_ref": {
+   "value": 0.475924,
+   "sd": 0.012232,
+   "method": "P -> tight-section start along P->H, mean over 241 frames (scene/measure/spring_layout.py)",
+   "status": "measured"
+  },
+  "coil_body_tight_length_ref": {
+   "value": 0.198878,
+   "sd": 0.013655,
+   "method": "tight section length, mean over 241 frames",
+   "status": "measured"
+  },
+  "bottom_hardware_length": {
+   "value": 0.112491,
+   "sd": 0.001532,
+   "method": "last coil -> H along the axis, mean over 241 frames",
+   "status": "measured"
+  },
+  "spring_length_ref_PH": {
+   "value": 0.787293,
+   "sd": 0.001817,
+   "method": "|P_eff - H| mean over 241 frames (reference configuration of the section lengths)",
+   "status": "measured"
+  },
+  "bend_length": {
+   "value": 0.01298,
+   "sd": 0.01,
+   "method": "rotation ramps in over 0.3 open turns below P (bending concentrated at the top coil)",
+   "status": "assumed"
+  },
+  "spring_length_ref_AH": {
+   "value": 1.005524,
+   "sd": 0.005803,
+   "method": "|A - H| at frame 120 (provenance; gauge fallback)",
+   "status": "measured"
+  },
+  "lower_loop_inner_width_y": {
+   "value": 0.043213,
+   "sd": 0.01,
+   "method": "loop seen nearly edge-on (16 px visible); width across the eye wire assumed 0.02 S larger",
+   "status": "assumed"
+  },
+  "eye_wire_radius": {
+   "value": 0.008828,
+   "sd": 0.001103,
+   "method": "eye ring band width: 12 px (VR-08 review; v001 read 10 px); outer diameter kept at the measured 65-67 px",
+   "status": "approximate (review)"
+  },
+  "eye_ring_radius": {
+   "value": 0.039725,
+   "sd": 0.001471,
+   "method": "eye outer diameter (65-67 px) minus one wire, /2 (centreline)",
+   "status": "measured"
+  },
+  "weight_radius": {
+   "value": 0.105786,
+   "sd": 0.002,
+   "method": "measurement/weight_track.csv width_px median over 241 frames / per-frame px per W_in (v001 eye reading 0.1144 was 5 % high)",
+   "status": "measured"
+  },
+  "weight_height": {
+   "value": 0.260333,
+   "sd": 0.01,
+   "method": "silhouette length (median 0.3064 W_in, includes the top-face ellipse) minus D sin(view elevation 12.6 deg)",
+   "status": "measured"
+  },
+  "weight_top_edge_radius": {
+   "value": 0.007357,
+   "sd": 0.002943,
+   "method": "rounded top rim (~5 px)",
+   "status": "approximate"
+  },
+  "weight_bottom_chamfer": {
+   "value": 0.004414,
+   "sd": 0.002943,
+   "method": "small bottom chamfer (~3 px)",
+   "status": "approximate"
+  },
+  "lower_loop_inner_length": {
+   "value": 0.094302,
+   "sd": 0.007254,
+   "method": "outer loop length 80-82 px minus 2 wire diameters (loop top merges into the last coil)",
+   "status": "approximate"
+  }
+ },
+ "derived": {
+  "H_to_cylinder_centre": 0.209616,
+  "H_to_cylinder_centre_note": "H = eye inner top; eye centre = H - (R_e - r_e); eye outer bottom touches the cylinder top: top = H - 2 R_e; centre = top - h/2",
+  "AH_frames_xz_S": {
+   "f000": [
+    -0.1009,
+    -1.00368
+   ],
+   "f120": [
+    -0.08702,
+    -1.00968
+   ],
+   "f240": [
+    0.05499,
+    -1.01183
+   ]
+  },
+  "AH_length_frames_S": [
+   1.00874,
+   1.01342,
+   1.01332
+  ],
+  "rest_clearance_weight_to_plate_S": 0.07332
+ },
+ "camera_frame0_approx": {
+  "f_px": 3224.7718142573713,
+  "C_S": [
+   -0.04055494031538249,
+   -4.788260276483045,
+   -0.17207329115211314
+  ],
+  "R_world_to_cv": [
+   [
+    0.9999453125831421,
+    -0.009964466256403936,
+    0.003175099246825758
+   ],
+   [
+    0.0020423283462392373,
+    -0.11169759632375492,
+    -0.9937401450431707
+   ],
+   [
+    0.010256741096876427,
+    0.993692284556804,
+    -0.11167113715885214
+   ]
+  ],
+  "principal_point_px": [
+   960.0,
+   544.0
+  ],
+  "yaw_pitch_roll_deg": [
+   -0.5913773476144638,
+   6.411658277999047,
+   0.18306512848131928
+  ],
+  "status": "APPROXIMATE scene-role camera (frame 0 only, static); replaced by params/camera.json when it exists"
+ },
+ "fit_quality": {
+  "rms_sigma": 0.5428348402114074,
+  "n_obs": 60,
+  "n_par": 11,
+  "edge_residuals_px": {
+   "postL_outer_front": [
+    0.28,
+    0.34,
+    -0.69,
+    -0.38,
+    -0.08,
+    0.22
+   ],
+   "postL_inner_front": [
+    2.51,
+    -1.39,
+    -0.11
+   ],
+   "postL_inner_back": [
+    1.57,
+    0.45,
+    -0.11
+   ],
+   "postR_inner_front": [
+    0.4,
+    -3.5,
+    -2.68
+   ],
+   "postR_inner_back": [
+    -0.54,
+    -0.6,
+    0.05
+   ],
+   "postR_outer_front": [
+    0.07,
+    0.38,
+    0.19,
+    -0.07,
+    -1.32,
+    0.43
+   ],
+   "postL_top_front": [
+    -0.21,
+    -0.3,
+    -0.42
+   ],
+   "postR_top_front": [
+    0.41,
+    0.32,
+    0.21
+   ],
+   "postL_bottom_front": [
+    -0.25
+   ],
+   "postR_bottom_front": [
+    0.26
+   ],
+   "bar_top_front": [
+    -0.19,
+    -0.48,
+    -0.35,
+    0.36
+   ],
+   "bar_bottom_front": [
+    0.19,
+    -0.08,
+    0.08,
+    -0.19
+   ],
+   "base_top_back": [
+    0.18,
+    0.11,
+    -0.1,
+    -0.17
+   ],
+   "base_top_front": [
+    0.56,
+    -0.65
+   ],
+   "base_bottom_front": [
+    0.19,
+    0.11,
+    -0.09,
+    -0.21
+   ],
+   "base_left_front": [
+    2.0
+   ],
+   "base_right_front": [
+    2.01
+   ],
+   "table_back_edge": [
+    -0.82,
+    -1.03,
+    1.1,
+    1.0,
+    0.46,
+    -0.7
+   ]
+  }
+ },
+ "camera_json_implied_frame_Win": {
+  "xc": -0.0017475871465414193,
+  "wp": 0.1741150713180988,
+  "dp": 0.20100651421400845,
+  "yp0": -0.10050343375101842,
+  "zpt": 0.012461432111319677,
+  "dc": 0.080000353567056,
+  "zc0": -0.08187234370747226,
+  "bx0": -0.6961526220734258,
+  "bx1": 0.6953707802375854,
+  "by0": -0.27055673983544654,
+  "by1": 0.15535616229486024,
+  "bz1": -1.4204992606816538,
+  "bz0": -1.4451502505813196
+ },
+ "sources": {
+  "fit": "scene/measure/fit_fixedcam.json",
+  "fit_sha256": "87c02850421850ad13fbc0b492c96cf981ad2a76a3fbdaf9130b5095e0a457f3",
+  "spring_layout": "scene/measure/spring_layout.json",
+  "spring_layout_sha256": "98ef96309de61071b224010f1b40687154b4aeb440098e43116075d15b6e0d0e",
+  "camera_json_sha256": "df3399540dea8342d1c4f68833faf22b5afc3655f7efb9b47168ae927fb2fc21",
+  "landmarks": "scene/measure/landmarks_f000.json",
+  "landmarks_sha256": "651122e7f383b32b413edb2bda478bf0f563444e091a0df3203b973bc8de5b0d",
+  "homography": "measurement/cache/H_ecc.npy (measurement role, frame0->frame n)"
+ }
+}

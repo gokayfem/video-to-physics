@@ -1,0 +1,56 @@
+{
+  "label": "ck002 judged ladder",
+  "created_utc": "2026-10-26T02:21:07+00:00",
+  "kind": "step",
+  "inputs": [
+    {
+      "value": 0.0026041666666666665,
+      "file": "<CASE_ROOT>/verify/out/ck002/prod_runs/conv/run_step_2.604167e-03.csv",
+      "sha256": "4b55ad1feb8744f2dbbec310d514c05de5c898400306a8a60d62dfc1969d81d6"
+    },
+    {
+      "value": 0.0013020833333333333,
+      "file": "<CASE_ROOT>/verify/out/ck002/prod_runs/conv/run_step_1.302083e-03.csv",
+      "sha256": "05577d07933155ca9e5a23447884e9decc96f6efbc0a827555cb86693ed761cd"
+    },
+    {
+      "value": 0.0006510416666666666,
+      "file": "<CASE_ROOT>/verify/out/ck002/prod_runs/conv/run_step_6.510417e-04.csv",
+      "sha256": "0d53202c4f0787894fe56f6cd10ae8e1fafa6504ea89a8f22c339a8c930dd06e"
+    },
+    {
+      "value": 0.0003255208333333333,
+      "file": "<CASE_ROOT>/verify/out/ck002/prod_runs/conv/run_step_3.255208e-04.csv",
+      "sha256": "d45be5ab934d5bd74814880dc1091558e5d57c98a3452d3617d601d8b43b2f95"
+    }
+  ],
+  "commands": [],
+  "verifier_code_sha256": "feeb2d8d05d42eeb15adf909501442f6d7600c62e17a34288b7340fe1d6f7d07",
+  "P1": {
+    "values": [
+      0.0026041666666666665,
+      0.0013020833333333333,
+      0.0006510416666666666,
+      0.0003255208333333333
+    ],
+    "pos_successive_max_diffs_m": [
+      1.2780600466832936e-09,
+      7.984035654828858e-11,
+      4.994560320881192e-12
+    ],
+    "att_successive_max_diffs_rad": [
+      2.3626444652050477e-09,
+      1.4774747329156774e-10,
+      9.236857119527702e-12
+    ],
+    "observed_order": [
+      4.000693645901217,
+      3.998688577454483
+    ],
+    "e_last_m": 4.994560320881192e-12,
+    "p_obs_last": 3.998688577454483,
+    "p_theory": 4.0,
+    "criterion": "max|E_{h/2}-E_{h/4}| < 1e-7 m (att < 1e-7 rad) and |p_obs - p_theory| <= 0.5 (finest triple)",
+    "status": "PASS"
+  }
+}

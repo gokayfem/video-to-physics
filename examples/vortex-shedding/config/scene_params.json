@@ -1,0 +1,300 @@
+{
+ "_doc": "Batch-2 concept B first frame. SI units (m, s). World: Z up, grid-plate top surface at z=0, flow along +X (left->right in image), +Y = image up. Channel centreline y=0.",
+ "units": "m",
+ "plate": {
+  "size_x": 0.6,
+  "size_y": 0.4,
+  "thickness": 0.006,
+  "albedo": 0.76,
+  "grid_pitch": 0.01,
+  "grid_line_width": 0.0005,
+  "grid_origin": [
+   0.0,
+   0.0
+  ],
+  "grid_ink_albedo": 0.03,
+  "grid_enabled": false,
+  "tint": [
+   1.0,
+   0.975,
+   0.94
+  ],
+  "_note": "v2 (photoreal pass, user direction): printed grid removed; plain warm matte white floor with subtle mottling. grid_* kept for reference only"
+ },
+ "channel": {
+  "material": "clear acrylic (PMMA, n=1.49)",
+  "inner_width": 0.12,
+  "wall_thickness": 0.005,
+  "wall_height": 0.03,
+  "wall_z_gap": 0.0002,
+  "length": 0.6,
+  "floor_thickness": 0.003,
+  "floor_note": "floor not modelled as a separate dielectric (Cycles has no nested IOR); optical path is water n=1.333 from surface to plate"
+ },
+ "water": {
+  "depth": 0.02,
+  "surface_z": 0.023,
+  "ior": 1.333,
+  "nu_m2_s": 1e-06,
+  "rho_kg_m3": 998.0
+ },
+ "cylinder": {
+  "D": 0.01,
+  "center": [
+   -0.04,
+   0.0
+  ],
+  "z_bottom": 0.003,
+  "z_top": 0.036,
+  "finish": "matte black"
+ },
+ "flow": {
+  "U_m_s": 0.015,
+  "direction": [
+   1,
+   0,
+   0
+  ],
+  "Re": 150.0,
+  "Re_check": "U*D/nu = 0.015*0.010/1e-6 = 150",
+  "St_expected": 0.18,
+  "f_shed_Hz_expected": 0.27,
+  "wavelength_m_expected": 0.0555,
+  "note": "intended flow for the prompt + solver; the frame shows steady upstream streaks only"
+ },
+ "injectors": {
+  "count": 7,
+  "y": [
+   -0.024,
+   -0.016,
+   -0.008,
+   0.0,
+   0.008,
+   0.016,
+   0.024
+  ],
+  "x_vertical": -0.108,
+  "x_tip": -0.093,
+  "z_tip": 0.013,
+  "needle_od": 0.0007,
+  "needle_id": 0.0004,
+  "material": "stainless steel",
+  "rake_bar": {
+   "x_center": -0.108,
+   "width_x": 0.008,
+   "thickness": 0.004,
+   "z_bottom": 0.03
+  }
+ },
+ "dye": {
+  "color_rgb_linear": [
+   0.003,
+   0.03,
+   0.22
+  ],
+  "z_sheet": 0.013,
+  "sigma0": 0.00055,
+  "sigma_growth": 0.0022,
+  "front_x_rel_cyl_D": 0.6,
+  "front_fade": 0.004,
+  "peak_alpha": 0.95,
+  "model": "streaklines = potential-flow streamlines psi = y(1 - a^2/r^2) = y0 around the cylinder (steady upstream state at frame 0)",
+  "texture_res_m_per_px": 7e-05
+ },
+ "camera": {
+  "type": "perspective",
+  "lens_mm": 100.0,
+  "sensor_width_mm": 36.0,
+  "sensor_fit": "HORIZONTAL",
+  "position": [
+   0.0,
+   0.0,
+   0.72222
+  ],
+  "look": "straight down -Z, image up = +Y",
+  "frame_width_at_grid_m": 0.26
+ },
+ "render": {
+  "engine": "CYCLES",
+  "device": "METAL",
+  "res": [
+   1920,
+   1088
+  ],
+  "samples": 128,
+  "denoise": "OIDN",
+  "view_transform": "Standard",
+  "exposure": 0.0,
+  "seed": 0
+ },
+ "lighting": {
+  "world_white": 0.4,
+  "area_light": {
+   "size": 2.0,
+   "z": 1.2,
+   "power_W": 30.0
+  }
+ },
+ "look": {
+  "acrylic_scuff_rough": 0.12,
+  "acrylic_bevel": 0.0006,
+  "water_ripple_strength": 0.025,
+  "meniscus_r": 0.0012,
+  "dye_seed": 7,
+  "dye_unevenness": 0.4,
+  "softbox_pos": [
+   0.22,
+   0.14,
+   1.0
+  ],
+  "softbox_size": [
+   0.4,
+   0.25
+  ],
+  "softbox_strength": 4.0,
+  "post": {
+   "vignette_strength": 0.3,
+   "grain_sigma_8bit": 1.6,
+   "seed": 3
+  }
+ },
+ "style": "cinematic34",
+ "v3": {
+  "_doc": "v3 look (user direction): 3/4 cinematic, colourful dye, slate base. Physics geometry unchanged.",
+  "target": [
+   0.0,
+   0.0,
+   0.01
+  ],
+  "elevation_deg": 35.0,
+  "azimuth_deg": 30.0,
+  "distance_m": 0.42,
+  "lens_mm": 40.0,
+  "fstop": 8.0,
+  "focus_z": 0.013,
+  "dye_palette_linear": [
+   [
+    0.85,
+    0.02,
+    0.32
+   ],
+   [
+    0.0,
+    0.55,
+    0.85
+   ],
+   [
+    0.95,
+    0.62,
+    0.0
+   ]
+  ],
+  "dye_streak_colors": [
+   0,
+   1,
+   2,
+   0,
+   1,
+   2,
+   0
+  ],
+  "slate_dark": [
+   0.006,
+   0.009,
+   0.02
+  ],
+  "slate_light": [
+   0.02,
+   0.03,
+   0.06
+  ],
+  "caustic_scale": 70.0,
+  "caustic_strength": 0.035,
+  "caustic_color": [
+   0.6,
+   0.85,
+   1.0
+  ],
+  "water_ripple_strength": 0.06,
+  "world_color": [
+   0.004,
+   0.007,
+   0.018
+  ],
+  "lights": [
+   {
+    "name": "PND_Key",
+    "pos": [
+     0.05,
+     0.05,
+     0.55
+    ],
+    "size": [
+     0.4,
+     0.3
+    ],
+    "power_W": 3.0,
+    "color": [
+     1.0,
+     0.93,
+     0.85
+    ]
+   },
+   {
+    "name": "PND_Magenta",
+    "pos": [
+     -0.35,
+     0.3,
+     0.18
+    ],
+    "size": [
+     0.25,
+     0.1
+    ],
+    "power_W": 2.5,
+    "color": [
+     1.0,
+     0.2,
+     0.7
+    ]
+   },
+   {
+    "name": "PND_Cyan",
+    "pos": [
+     0.4,
+     -0.25,
+     0.15
+    ],
+    "size": [
+     0.25,
+     0.1
+    ],
+    "power_W": 2.5,
+    "color": [
+     0.15,
+     0.75,
+     1.0
+    ]
+   }
+  ],
+  "softbox_pos": [
+   0.25,
+   0.38,
+   0.32
+  ],
+  "softbox_size": [
+   0.35,
+   0.2
+  ],
+  "softbox_color": [
+   0.7,
+   0.8,
+   1.0
+  ],
+  "softbox_strength": 2.0,
+  "view_transform": "AgX",
+  "exposure": -0.3,
+  "post_vignette": 0.3,
+  "dye_shader_transparent_mix": 0.25
+ }
+}

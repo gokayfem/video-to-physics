@@ -1,0 +1,23 @@
+{
+  "name": "video-to-physics",
+  "displayName": "Video 2 Physics",
+  "version": "0.1.0",
+  "description": "Turn a reference video, image or idea into a verified physics reconstruction in Blender: measure what the footage shows, replace its wrong physics with a solved and benchmarked model, check it with an independent verifier, and render it in the same scene.",
+  "author": {
+    "name": "gokayfem",
+    "url": "https://github.com/gokayfem"
+  },
+  "homepage": "https://github.com/gokayfem/video-to-physics",
+  "repository": "https://github.com/gokayfem/video-to-physics",
+  "license": "MIT",
+  "keywords": [
+    "physics",
+    "simulation",
+    "blender",
+    "cfd",
+    "fea",
+    "verification",
+    "ai-video",
+    "video-to-3d"
+  ]
+}

@@ -1,0 +1,525 @@
+{
+  "label": "ck002 checkpoint spring.blend (reopened)",
+  "created_utc": "2026-10-26T02:22:12+00:00",
+  "blender": "5.2.2 LTS",
+  "inputs": {
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/spring.blend": "6718ce7fbf5c23cccbd1414760398395f28898b8283d22578fac029fcba8b76c",
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json": "962fc5363a6e77baaabf22d70ead098b8ac8deedd7afea0113a2c618a47fe4c3",
+    "<CASE_ROOT>/verify/out/ck002/ref_trajectory.csv": "9e698ad0d8bc8e080b67acb0c575615358ada1216891266b0b7a5ab1ce661947",
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/solver/out/trajectory.csv": "d45be5ab934d5bd74814880dc1091558e5d57c98a3452d3617d601d8b43b2f95"
+  },
+  "verifier_code_sha256": "18cafe45ff333902d37a30b1e391e6937f1ae51bacba9426df2f6a3e10a47e7b",
+  "tolerances": {
+    "P5_anchor": 1e-06,
+    "P5_static": 1e-06,
+    "P5_attach": 1e-05,
+    "P6_pos": 1e-05,
+    "P6_rad": 1e-05,
+    "P8_blend": 1e-06
+  },
+  "blend_is_dirty_after_load": false,
+  "model": {
+    "g": 9.80665,
+    "A": [
+      -0.0011977362014735965,
+      0.0,
+      -0.09376545551369177
+    ],
+    "k": 1336.3177289194673,
+    "L0": 0.28863131467225306,
+    "F_i": 0.0,
+    "M": 5.2279636638986124,
+    "m_s": 0.2750828386295483,
+    "body": "rigid",
+    "e_b": [
+      0.0,
+      0.0,
+      0.08732684229846588
+    ],
+    "I_c": [
+      [
+        0.007663048950887799,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.007663048950887799,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.007663048950887799
+      ]
+    ],
+    "c_v": 0.05717178240993457,
+    "c_a": 0.04651411593966826,
+    "c_r": 0.007663048950887799,
+    "E0": [
+      -0.048591350080795924,
+      0.0,
+      -0.4179148527309877
+    ],
+    "vE0": [
+      0.017010242235345554,
+      0.0,
+      -0.002487053375438738
+    ],
+    "q0": [
+      0.9970682958857703,
+      0.0,
+      0.07651675201840508,
+      0.0
+    ],
+    "w0": [
+      0.0,
+      -0.055369200318801354,
+      -0.0
+    ]
+  },
+  "scene": {
+    "fps": 24,
+    "fps_base": 1.0,
+    "frame_start": 0,
+    "frame_end": 240,
+    "frame_map_old": 100,
+    "frame_map_new": 100,
+    "unit_scale": 1.0,
+    "ok": true
+  },
+  "objects": {
+    "weight": [
+      "VSP_Weight",
+      "explicit"
+    ],
+    "spring": [
+      "VSP_Spring",
+      "explicit"
+    ],
+    "anchor": [
+      "VSP_Anchor",
+      "explicit"
+    ],
+    "eye": [
+      "0,0,0",
+      "eye-local"
+    ]
+  },
+  "orientation_rule": "rigid",
+  "static_objects_checked": [
+    "VSP_Anchor",
+    "VSP_BasePlate",
+    "VSP_Crossbar",
+    "VSP_FrameControls",
+    "VSP_HingePeff",
+    "VSP_Look_Backdrop",
+    "VSP_Look_BackdropPool",
+    "VSP_Look_BackdropWash",
+    "VSP_Look_FillRight",
+    "VSP_Look_Key",
+    "VSP_Look_StripLeft",
+    "VSP_Look_StripRight",
+    "VSP_Look_Table",
+    "VSP_Look_TableLeft",
+    "VSP_Look_TopBack",
+    "VSP_Look_WeightFront",
+    "VSP_Look_WeightProbe",
+    "VSP_Look_WeightTop",
+    "VSP_Posts",
+    "VSP_Screws"
+  ],
+  "animated_objects": [
+    "VSP_Cam_Reference",
+    "VSP_HookLower",
+    "VSP_Weight"
+  ],
+  "spring_modifiers_constraints": {
+    "modifiers": [
+      [
+        "VSP Spring",
+        "NODES"
+      ]
+    ],
+    "constraints": []
+  },
+  "P5_constraints_saved_blend": {
+    "n_samples": 964,
+    "n_judged": 961,
+    "anchor_world_vs_expected_max_m": 0.0,
+    "anchor_expected": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "anchor_drift_from_frame0_max_m": 0.0,
+    "static_objects_max_translation_drift_m": 0.0,
+    "static_objects_max_matrix_drift": 0.0,
+    "spring_top_end_gap_max_m": 4.821468684371166e-10,
+    "spring_bottom_end_gap_max_m": 9.558536927245509e-08,
+    "spring_top_end_world_variation_m": 0.0,
+    "top_end_offset_m": 0.0,
+    "bottom_end_offset_m": 0.0,
+    "coil_counts_frame0": [
+      23,
+      21,
+      21,
+      21,
+      21,
+      21,
+      21,
+      21
+    ],
+    "coil_counts_constant": true,
+    "coil_count_turns_estimate": 21.25,
+    "coil_count_first_change_t": null,
+    "topology_constant": true,
+    "topology_frame0_v_e_f": [
+      10236,
+      20412,
+      10176
+    ],
+    "coil_radius_m_min_max": [
+      0.021909846979851176,
+      0.02191572993142419
+    ],
+    "spring_length_min_max_m": [
+      0.3268814221994255,
+      0.32953181556973354
+    ],
+    "method_spring_ends": "GN point attributes: contact gap = |distance(target, loop centreline polyline vsp_cl) - wire radius|; top loop (part 0) vs anchor [0.0, 0.0, 0.0], lower loop (part 5) vs hinge H",
+    "top_loop_contact_gap_max_m": 4.821468684371166e-10,
+    "lower_loop_contact_gap_max_m": 9.558536927245509e-08,
+    "lower_loop_contact_signed_min_max_m": [
+      -9.497343264521646e-08,
+      9.558536927245509e-08
+    ],
+    "top_loop_contact_signed": -4.821468684371166e-10,
+    "lower_contact_sliding_along_loop_m": 2.5966984414094174e-07,
+    "hinge_in_lower_loop_frame_drift_max_m": 9.733238130528762e-08,
+    "hinge_out_of_lower_loop_plane_max_m": 9.91508302111005e-09,
+    "info_lower_loop_centreline_planarity_m": 9.84480453278605e-09,
+    "top_contact_sliding_along_loop_m": 0.0,
+    "wire_radius_top_lower_m": [
+      0.004488073771541247,
+      0.004488074273503342
+    ],
+    "static_spring_parts": "0,1,6",
+    "static_spring_vertices_max_drift_m": 0.0,
+    "info_unrotated_vsp_w0_vertices_max_motion_m": 8.484470993633428e-05,
+    "info_note_w0": "vsp_w == 0 marks 'not rotated', not 'static': coil vertices below P translate with the per-turn extension",
+    "moving_coil_centreline_to_P_eff_min_max_m": [
+      0.021805225627424235,
+      0.021806456998858956
+    ],
+    "moving_coil_centreline_to_P_eff_variation_m": 1.2313714347206295e-06,
+    "note_P_eff": "P_eff is the coil axis point of the top coil, so the centreline stays one coil radius from it; judged: variation (no sliding)",
+    "moving_first_centreline_point_drift_max_m": 0.0,
+    "coil_winding_turns_min_max": [
+      21.00000048233861,
+      21.00000048314007
+    ],
+    "coil_winding_variation_turns": 8.014602315142838e-10,
+    "hook_lower_vs_weight_origin_max_m": 0.0,
+    "note_generic_end_centroids": "spring_top/bottom_end_gap_* use extreme-projection centroids (generic test-rig rule); not judged in --vsp mode",
+    "status": "PASS"
+  },
+  "P6_blend_vs_solver": {
+    "max_abs_t_ref_mismatch": 1.7763568394002505e-15,
+    "eye_vs_ref_max_m": 1.4926853969129184e-08,
+    "eye_vs_ref_t_at_max": 8.3125,
+    "eye_vs_ref_on_frames_max_m": 1.4890414864725308e-08,
+    "info_after_clip_end_max_m": 0.0065341109770291365,
+    "weight_origin_vs_ref_eye_max_m": 1.4926853969129184e-08,
+    "weight_rotation_vs_ref_max_rad": 2.9802322387695312e-08,
+    "weight_rotation_frame0_vs_q0_rad": 0.0,
+    "status": "PASS"
+  },
+  "animation": {
+    "VSP_Cam_Reference": {
+      "has_animation_data": true,
+      "nla_strips": [],
+      "drivers": [],
+      "action": "VSP_Cam_ReferenceAction",
+      "fcurves": [
+        {
+          "channel": "VSP_Cam_Reference|location[0]",
+          "n_keys": 241,
+          "interpolations": [
+            "LINEAR"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Cam_Reference|location[1]",
+          "n_keys": 241,
+          "interpolations": [
+            "LINEAR"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Cam_Reference|location[2]",
+          "n_keys": 241,
+          "interpolations": [
+            "LINEAR"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Cam_Reference|rotation_euler[0]",
+          "n_keys": 241,
+          "interpolations": [
+            "LINEAR"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Cam_Reference|rotation_euler[1]",
+          "n_keys": 241,
+          "interpolations": [
+            "LINEAR"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Cam_Reference|rotation_euler[2]",
+          "n_keys": 241,
+          "interpolations": [
+            "LINEAR"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        }
+      ]
+    },
+    "VSP_HookLower": {
+      "has_animation_data": true,
+      "nla_strips": [],
+      "drivers": [],
+      "action": "VSP_HookLower_bake",
+      "fcurves": [
+        {
+          "channel": "VSP_HookLower|location[0]",
+          "n_keys": 961,
+          "interpolations": [
+            "BEZIER"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_HookLower|location[1]",
+          "n_keys": 961,
+          "interpolations": [
+            "BEZIER"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_HookLower|location[2]",
+          "n_keys": 961,
+          "interpolations": [
+            "BEZIER"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        }
+      ]
+    },
+    "VSP_Weight": {
+      "has_animation_data": true,
+      "nla_strips": [],
+      "drivers": [],
+      "action": "VSP_Weight_bake",
+      "fcurves": [
+        {
+          "channel": "VSP_Weight|location[0]",
+          "n_keys": 961,
+          "interpolations": [
+            "BEZIER"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Weight|location[1]",
+          "n_keys": 961,
+          "interpolations": [
+            "BEZIER"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Weight|location[2]",
+          "n_keys": 961,
+          "interpolations": [
+            "BEZIER"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Weight|rotation_euler[0]",
+          "n_keys": 961,
+          "interpolations": [
+            "BEZIER"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Weight|rotation_euler[1]",
+          "n_keys": 961,
+          "interpolations": [
+            "BEZIER"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        },
+        {
+          "channel": "VSP_Weight|rotation_euler[2]",
+          "n_keys": 961,
+          "interpolations": [
+            "BEZIER"
+          ],
+          "extrapolation": "CONSTANT",
+          "modifiers": [],
+          "mute": false
+        }
+      ]
+    }
+  },
+  "keyframe_audit": {
+    "VSP_Cam_Reference|location[0]": {
+      "n_keys": 241,
+      "integer_frames_0_240": true
+    },
+    "VSP_Cam_Reference|location[1]": {
+      "n_keys": 241,
+      "integer_frames_0_240": true
+    },
+    "VSP_Cam_Reference|location[2]": {
+      "n_keys": 241,
+      "integer_frames_0_240": true
+    },
+    "VSP_Cam_Reference|rotation_euler[0]": {
+      "n_keys": 241,
+      "integer_frames_0_240": true
+    },
+    "VSP_Cam_Reference|rotation_euler[1]": {
+      "n_keys": 241,
+      "integer_frames_0_240": true
+    },
+    "VSP_Cam_Reference|rotation_euler[2]": {
+      "n_keys": 241,
+      "integer_frames_0_240": true
+    },
+    "VSP_HookLower|location[0]": {
+      "n_keys": 961,
+      "integer_frames_0_240": false
+    },
+    "VSP_HookLower|location[1]": {
+      "n_keys": 961,
+      "integer_frames_0_240": false
+    },
+    "VSP_HookLower|location[2]": {
+      "n_keys": 961,
+      "integer_frames_0_240": false
+    },
+    "VSP_Weight|location[0]": {
+      "n_keys": 961,
+      "integer_frames_0_240": false,
+      "max_key_vs_ref_m": 1.8622660913347744e-09,
+      "handle_x_offsets_frames": [
+        0.0833282470703125,
+        0.08333587646484375
+      ],
+      "info_handle_slope_per_frame_range": [
+        -0.009574978669895545,
+        0.009633064406443476
+      ]
+    },
+    "VSP_Weight|location[1]": {
+      "n_keys": 961,
+      "integer_frames_0_240": false,
+      "max_key_vs_ref_m": 0.0,
+      "handle_x_offsets_frames": [
+        0.0833282470703125,
+        0.08333587646484375
+      ],
+      "info_handle_slope_per_frame_range": [
+        0.0,
+        0.0
+      ]
+    },
+    "VSP_Weight|location[2]": {
+      "n_keys": 961,
+      "integer_frames_0_240": false,
+      "max_key_vs_ref_m": 1.4887437616017962e-08,
+      "handle_x_offsets_frames": [
+        0.0833282470703125,
+        0.08333587646484375
+      ],
+      "info_handle_slope_per_frame_range": [
+        -0.0013100108720531013,
+        0.0013400367356748034
+      ]
+    },
+    "VSP_Weight|rotation_euler[0]": {
+      "n_keys": 961,
+      "integer_frames_0_240": false
+    },
+    "VSP_Weight|rotation_euler[1]": {
+      "n_keys": 961,
+      "integer_frames_0_240": false
+    },
+    "VSP_Weight|rotation_euler[2]": {
+      "n_keys": 961,
+      "integer_frames_0_240": false
+    }
+  },
+  "motion_is_baked_keyframes": true,
+  "P8_blend_part": {
+    "scene": {
+      "fps": 24,
+      "fps_base": 1.0,
+      "frame_start": 0,
+      "frame_end": 240,
+      "frame_map_old": 100,
+      "frame_map_new": 100,
+      "unit_scale": 1.0,
+      "ok": true
+    },
+    "eye_frame0_vs_E0_param_m": 1.4692308165319443e-08,
+    "status": "PASS"
+  },
+  "summary": {
+    "P5": "PASS",
+    "P6": "PASS",
+    "P8_blend": "PASS",
+    "motion_is_baked_keyframes": true
+  },
+  "dump": "<CASE_ROOT>/verify/out/ck002/check_blend_ck002.npz"
+}

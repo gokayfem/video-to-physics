@@ -1,0 +1,500 @@
+{
+ "version": "v016",
+ "owner": "scene role C (look)",
+ "units": "lengths in S (clear span between the posts); colours linear Rec.709; light energies in W at S_ref_m, scaled by (S_m/S_ref_m)^2",
+ "S_ref_m": 0.3,
+ "walnut": {
+  "grain_axis": [
+   0,
+   0,
+   1
+  ],
+  "end_axis": [
+   1,
+   0,
+   0
+  ],
+  "seed": 5.3,
+  "tone": 1.0,
+  "freq_scale": 1.0,
+  "color_dark": [
+   0.0159,
+   0.0049,
+   0.0022
+  ],
+  "color_mid": [
+   0.0502,
+   0.0162,
+   0.0063
+  ],
+  "color_light": [
+   0.0869,
+   0.0328,
+   0.0152
+  ],
+  "pore_color": [
+   0.0099,
+   0.004,
+   0.0023
+  ],
+  "end_grain_darken": 1.12,
+  "streak_freq_across": 90.0,
+  "streak_freq_along": 6.0,
+  "streak_detail": 8.0,
+  "streak_contrast": 1.6,
+  "band_freq_across": 12.0,
+  "band_freq_along": 0.5,
+  "band_weight": 0.6,
+  "warp_amp": 0.015,
+  "warp_freq": 2.3,
+  "pore_freq_across": 320.0,
+  "pore_freq_along": 11.0,
+  "pore_threshold": 0.56,
+  "pore_amount": 0.8,
+  "roughness": 0.48,
+  "roughness_pore": 0.6,
+  "coat_weight": 0.05,
+  "coat_roughness": 0.18,
+  "bump_strength": 0.08,
+  "bump_distance": 0.0015,
+  "specular_ior_level": 0.28,
+  "mottle_amount": 0.2,
+  "mottle_freq": 120.0,
+  "end_contrast": 0.35,
+  "cathedral_amount": 0.5,
+  "cathedral_freq_across": 8.0,
+  "cathedral_freq_along": 2.0,
+  "cathedral_bend": 0.12,
+  "provenance": "clip-01 look v011 walnut, frequencies rescaled from per-L_c (0.387 m) to per-S (0.30 m)",
+  "provenance_v011": "VR-06: posts +0.05 L and 9-13 deg too yellow -> darker, redder (R x0.9, G x0.77, B x0.7); stronger cathedral figure"
+ },
+ "black_steel": {
+  "base_color": [
+   0.004,
+   0.0037,
+   0.0037
+  ],
+  "metallic": 0.0,
+  "roughness": 0.32,
+  "rough_noise_amp": 0.05,
+  "rough_noise_freq": 6.0,
+  "bump_strength": 0.01,
+  "bump_freq": 600.0,
+  "bump_distance": 0.0003,
+  "specular_ior_level": 0.2
+ },
+ "screw_steel": {
+  "base_color": [
+   0.02,
+   0.02,
+   0.021
+  ],
+  "metallic": 0.8,
+  "roughness": 0.3,
+  "rough_noise_amp": 0.0
+ },
+ "spring_steel": {
+  "base_color": [
+   0.58,
+   0.58,
+   0.59
+  ],
+  "metallic": 1.0,
+  "roughness": 0.22
+ },
+ "brushed_steel": {
+  "base_color": [
+   0.72,
+   0.6,
+   0.46
+  ],
+  "metallic": 1.0,
+  "anisotropic": 0.75,
+  "roughness": 0.24,
+  "roughness_streak_amp": 0.06,
+  "color_streak_amp": 0.04,
+  "streak_freq": 900.0,
+  "streak_freq_along": 0.5,
+  "streak_detail": 6.0,
+  "bump_strength": 0.03,
+  "bump_distance": 0.0002,
+  "provenance_v015": "VR-05 hue: render weight 15 deg more beige (table/backdrop reflections); base tinted cool to compensate",
+  "provenance_v016": "VR-05 (re-review ck002): satin roughness 0.24, anisotropy 0.75, warm base; reviewer profile metric: ref mean L 0.489/<0.35 16.6 %/C 0.029 -> v016 0.507/12.5 %/0.027 (ck002 0.459/34 %/0.019)"
+ },
+ "eye_steel": {
+  "base_color": [
+   0.6,
+   0.6,
+   0.61
+  ],
+  "metallic": 1.0,
+  "roughness": 0.15
+ },
+ "set": {
+  "half_width_S": 30.0,
+  "wall_height_S": 15.0,
+  "table_front_S": 20.0,
+  "table": {
+   "color_dark": [
+    0.36,
+    0.25,
+    0.17
+   ],
+   "color_light": [
+    0.5,
+    0.36,
+    0.25
+   ],
+   "streak_freq_along": 1.0,
+   "streak_freq_across": 30.0,
+   "streak_detail": 6.0,
+   "streak_contrast": 6.0,
+   "band_freq_along": 0.3,
+   "band_freq_across": 8.0,
+   "band_weight": 0.5,
+   "warp_amp": 0.02,
+   "warp_freq": 1.5,
+   "roughness": 0.55,
+   "bump_strength": 0.03,
+   "bump_distance": 0.001,
+   "specular_ior_level": 0.4,
+   "grain_axis": "Y"
+  },
+  "backdrop": {
+   "color": [
+    0.3,
+    0.27,
+    0.245
+   ],
+   "roughness": 0.9
+  }
+ },
+ "lights": {
+  "target_S": [
+   0.0,
+   0.0,
+   -0.6
+  ],
+  "key": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": -110.0,
+   "elevation_deg": 35.0,
+   "distance_S": 4.0,
+   "size_S": 2.5,
+   "energy_W": 60.0,
+   "color": [
+    1.0,
+    0.96,
+    0.9
+   ],
+   "flag_off_backdrop": true,
+   "flag_off_weight": true
+  },
+  "fill_right": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": -45.0,
+   "elevation_deg": 20.0,
+   "distance_S": 4.0,
+   "size_S": 1.5,
+   "energy_W": 9.0,
+   "color": [
+    1.0,
+    0.97,
+    0.94
+   ],
+   "flag_off_backdrop": true,
+   "flag_off_weight": true
+  },
+  "top_back": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": 90.0,
+   "elevation_deg": 60.0,
+   "distance_S": 3.0,
+   "size_S": 1.0,
+   "energy_W": 10.0,
+   "color": [
+    1.0,
+    0.97,
+    0.94
+   ],
+   "flag_off_backdrop": true,
+   "flag_off_weight": true
+  },
+  "backdrop_pool": {
+   "type": "AREA",
+   "shape": "DISK",
+   "location_S": [
+    0.03,
+    0.58,
+    -1.22
+   ],
+   "aim_S": [
+    0.03,
+    1.48,
+    -1.27
+   ],
+   "size_S": 0.6,
+   "energy_W": 4.6,
+   "color": [
+    1.0,
+    0.95,
+    0.88
+   ],
+   "shadow": false,
+   "receivers": [
+    "VSP_Look_Backdrop"
+   ],
+   "provenance": "VR-04: reference backdrop brightest LOW behind the weight (L 0.751 at (1087,746) px = wall point (0.21,1.48,-1.27) W_in, just above the table); low pool aimed there, standoff 0.9 W_in, wall only"
+  },
+  "strip_left": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "azimuth_deg": -131.0,
+   "elevation_deg": 12.0,
+   "distance_S": 2.5,
+   "size_S": 0.18,
+   "size_y_S": 1.5,
+   "energy_W": 46.0,
+   "color": [
+    1.0,
+    0.97,
+    0.93
+   ],
+   "provenance": "vertical bright band on the reference weight (left of centre)",
+   "receivers": [
+    "VSP_Weight",
+    "VSP_WeightEye",
+    "VSP_Spring"
+   ],
+   "aim_S": [
+    -0.03,
+    0.0,
+    -1.2
+   ]
+  },
+  "backdrop_wash": {
+   "type": "AREA",
+   "shape": "DISK",
+   "location_S": [
+    0.0,
+    -3.0,
+    1.0
+   ],
+   "aim_S": [
+    0.0,
+    1.53,
+    -0.4
+   ],
+   "size_S": 6.0,
+   "energy_W": 12.5,
+   "color": [
+    1.0,
+    0.95,
+    0.88
+   ],
+   "shadow": false,
+   "provenance": "broad floor of the backdrop luma (edges ~0.35)",
+   "receivers": [
+    "VSP_Look_Backdrop"
+   ]
+  },
+  "strip_right": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "azimuth_deg": -49.0,
+   "elevation_deg": 12.0,
+   "distance_S": 2.5,
+   "size_S": 0.18,
+   "size_y_S": 1.5,
+   "energy_W": 62.0,
+   "color": [
+    1.0,
+    0.98,
+    0.96
+   ],
+   "receivers": [
+    "VSP_Weight",
+    "VSP_WeightEye",
+    "VSP_Spring"
+   ],
+   "provenance": "VR-05: second crisp vertical highlight band on the weight (right of centre)",
+   "aim_S": [
+    -0.03,
+    0.0,
+    -1.2
+   ]
+  },
+  "weight_top": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": 90.0,
+   "elevation_deg": 72.0,
+   "distance_S": 2.0,
+   "size_S": 0.6,
+   "energy_W": 10.0,
+   "color": [
+    1.0,
+    0.98,
+    0.95
+   ],
+   "receivers": [
+    "VSP_Weight",
+    "VSP_WeightEye"
+   ],
+   "provenance": "VR-05: bright top rim and visible top-face ellipse"
+  },
+  "table_left": {
+   "type": "AREA",
+   "shape": "DISK",
+   "azimuth_deg": -160.0,
+   "elevation_deg": 35.0,
+   "distance_S": 3.0,
+   "size_S": 2.0,
+   "energy_W": 14.0,
+   "color": [
+    1.0,
+    0.96,
+    0.9
+   ],
+   "receivers": [
+    "VSP_Look_Table"
+   ],
+   "provenance": "VR-07: table left 0.06-0.07 L too dark"
+  },
+  "weight_side_l": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "azimuth_deg": -175.0,
+   "elevation_deg": 5.0,
+   "distance_S": 3.0,
+   "size_S": 1.5,
+   "size_y_S": 2.0,
+   "energy_W": 1.5,
+   "color": [
+    1.0,
+    0.97,
+    0.93
+   ],
+   "receivers": [
+    "VSP_Weight"
+   ],
+   "aim_S": [
+    -0.03,
+    0.0,
+    -1.2
+   ]
+  },
+  "weight_side_r": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "azimuth_deg": -5.0,
+   "elevation_deg": 5.0,
+   "distance_S": 3.0,
+   "size_S": 1.5,
+   "size_y_S": 2.0,
+   "energy_W": 4.0,
+   "color": [
+    1.0,
+    0.97,
+    0.93
+   ],
+   "receivers": [
+    "VSP_Weight"
+   ],
+   "aim_S": [
+    -0.03,
+    0.0,
+    -1.2
+   ]
+  },
+  "weight_front_dim": {
+   "type": "AREA",
+   "shape": "RECTANGLE",
+   "azimuth_deg": -90.0,
+   "elevation_deg": 12.0,
+   "distance_S": 4.0,
+   "size_S": 2.5,
+   "size_y_S": 1.5,
+   "energy_W": 10.0,
+   "color": [
+    1.0,
+    0.96,
+    0.9
+   ],
+   "receivers": [
+    "VSP_Weight"
+   ],
+   "aim_S": [
+    -0.03,
+    0.0,
+    -1.2
+   ]
+  },
+  "note_v016": "weight lit only by light-linked strips (+-41 deg off the camera azimuth, aimed at the weight -> bands at +-0.35 width), dim side panels, a broad dim front panel and a top light behind; key/softbox/fill/top_back exclude the weight; the weight light probe is disabled (it mirrored the lit table as a beige central lobe)"
+ },
+ "world": {
+  "color": [
+   0.05,
+   0.045,
+   0.04
+  ],
+  "strength": 1.0
+ },
+ "render": {
+  "view_transform": "AgX",
+  "look": "AgX - Base Contrast",
+  "exposure": -1.2,
+  "gamma": 1.0,
+  "eevee": {
+   "taa_render_samples": 32,
+   "use_raytracing": true,
+   "ray_tracing_method": "SCREEN",
+   "use_shadows": true,
+   "shadow_ray_count": 2,
+   "shadow_step_count": 8,
+   "fast_gi_method": "GLOBAL_ILLUMINATION",
+   "use_fast_gi": true
+  },
+  "cycles": {
+   "samples": 128,
+   "use_denoising": true,
+   "max_bounces": 8,
+   "glossy_bounces": 4,
+   "device": "CPU"
+  },
+  "output_path": "//render/"
+ },
+ "probes": {
+  "VSP_Look_WeightProbe": {
+   "enabled": false,
+   "location_S": [
+    -0.05,
+    0.0,
+    -1.23
+   ],
+   "influence_S": 0.4,
+   "clip_start_S": 0.13
+  }
+ },
+ "crossbar_steel": {
+  "base_color": [
+   0.012,
+   0.008,
+   0.006
+  ],
+  "metallic": 0.0,
+  "roughness": 0.15,
+  "rough_noise_amp": 0.03,
+  "rough_noise_freq": 6.0,
+  "specular_ior_level": 0.2,
+  "provenance": "VR-07 (re-review): own glossy warm-neutral black (dielectric, roughness 0.15, warm specular tint) - crossbar dL +0.047 -> +0.004 (left half), hue 67 -> 56 deg (ref 38-50); the plate keeps VSP_BlackSteel",
+  "specular_tint": [
+   1.0,
+   0.8,
+   0.68
+  ]
+ }
+}

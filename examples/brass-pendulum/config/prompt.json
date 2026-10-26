@@ -1,0 +1,14 @@
+{
+ "endpoint": "blackforestlabs/flux-3-max/text-to-video",
+ "note": "Text-to-video request that produced the AI reference clip (the prompt asked for the physics; the clip did not deliver it).",
+ "concept_prompt": "A small polished solid brass sphere hangs on a single thin taut dark steel wire from a fixed visible steel pivot pin at the top of a sturdy walnut stand with a rectangular walnut base. The whole stand, the pivot, the full length of the wire and the bob are visible, seen from the front with the swing plane parallel to the image. At the first frame the bob is already displaced about four degrees to the right and is released from rest; it swings in gentle, small, planar back-and-forth oscillations at a steady natural period, the amplitude decreasing only slightly with each swing. The wire stays straight and the same length, the stand never flexes or moves, the bob never spins or wobbles out of plane.",
+ "input": {
+  "prompt": "A small polished solid brass sphere hangs on a single thin taut dark steel wire from a fixed visible steel pivot pin at the top of a sturdy walnut stand with a rectangular walnut base. The whole stand, the pivot, the full length of the wire and the bob are visible, seen from the front with the swing plane parallel to the image. At the first frame the bob is already displaced about four degrees to the right and is released from rest; it swings in gentle, small, planar back-and-forth oscillations at a steady natural period, the amplitude decreasing only slightly with each swing. The wire stays straight and the same length, the stand never flexes or moves, the bob never spins or wobbles out of plane. One uninterrupted ten-second real-time shot from a locked-off tripod camera: no cuts, no orbit, no zoom, no pan, no camera shake, no slow motion, no speed ramp. Real-time gravity and natural motion speed. Photoreal macro product photography of a quiet physics study on a tabletop: soft diffuse studio key light, gentle fill, stable exposure, steady shadows, moderate contrast, warm neutral palette, plain softly graduated warm grey backdrop. Deep depth of field so every moving part, pivot, anchor and contact surface stays sharp and fully inside the frame for the entire shot. All objects are rigid, solid and keep exactly the same shape, size, count and material from first to last frame. No hands, no people, no new objects appearing, no morphing, no wind, no liquid, no smoke, no text, no labels, no logos, no watermark, no captions, no graphics.",
+  "duration": 10,
+  "resolution": "1080p",
+  "aspect_ratio": "16:9",
+  "reasoning_level": "high",
+  "generate_audio": false,
+  "seed": 902601
+ }
+}

@@ -1,0 +1,376 @@
+{
+ "_doc": "Pinhole camera of record for firstframe/frame0.png. OpenCV convention: x right, y down, z forward; x_cam = R @ x_world + t; u = fx*X/Z + cx, v = fy*Y/Z + cy in continuous pixel coords where the image spans [0,W]x[0,H] (pixel i's centre is at i+0.5). No distortion. Units: metres, pixels. project_test compares this pinhole with Blender's own world_to_camera_view.",
+ "intrinsics": {
+  "focal_mm": 85.0,
+  "sensor_width_mm": 36.0,
+  "sensor_height_mm_effective": 20.4,
+  "sensor_fit": "HORIZONTAL",
+  "resolution_px": [
+   1920,
+   1088
+  ],
+  "shift_xy": [
+   0.0,
+   0.0
+  ],
+  "fx_px": 4533.333333333333,
+  "fy_px": 4533.333333333333,
+  "cx_px": 960.0,
+  "cy_px": 544.0,
+  "K": [
+   [
+    4533.333333333333,
+    0.0,
+    960.0
+   ],
+   [
+    0.0,
+    4533.333333333333,
+    544.0
+   ],
+   [
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "distortion": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "hfov_deg": 23.913168486298265,
+  "vfov_deg": 13.68554682526188
+ },
+ "extrinsics_world_to_camera_opencv": {
+  "R": [
+   [
+    1.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    -0.05233597382903099,
+    -0.9986295104026794
+   ],
+   [
+    0.0,
+    0.9986295104026794,
+    -0.05233597382903099
+   ]
+  ],
+  "t_m": [
+   0.0,
+   0.2196984738111496,
+   1.9715138673782349
+  ],
+  "T_4x4": [
+   [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    -0.05233597382903099,
+    -0.9986295104026794,
+    0.2196984738111496
+   ],
+   [
+    0.0,
+    0.9986295104026794,
+    -0.05233597382903099,
+    1.9715138673782349
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ]
+ },
+ "blender_camera": {
+  "location_m": [
+   0.0,
+   -1.957313895225525,
+   0.322578489780426
+  ],
+  "rotation_euler_xyz_rad": [
+   1.5184364318847656,
+   0.0,
+   0.0
+  ],
+  "matrix_world": [
+   [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.05233597382903099,
+    -0.9986295104026794,
+    -1.957313895225525
+   ],
+   [
+    0.0,
+    0.9986295104026794,
+    0.05233597382903099,
+    0.322578489780426
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "pitch_down_deg": 3.0
+ },
+ "scale_px_per_mm_at_ruler_plane": 2.3116906887760122,
+ "ruler_visible_length_px": 647.34,
+ "ruler_full_length_frac_of_height": 0.6405,
+ "project_test": {
+  "ruler_tip_centre_front": {
+   "world_m": [
+    0.0,
+    -0.00025,
+    0.375
+   ],
+   "px_pinhole": [
+    960.0,
+    184.484
+   ],
+   "px_blender": [
+    960.0,
+    184.484
+   ],
+   "diff_px": 2.8e-05,
+   "depth_m": 1.95164,
+   "in_frame": true
+  },
+  "ruler_top_left_front": {
+   "world_m": [
+    -0.0125,
+    -0.00025,
+    0.375
+   ],
+   "px_pinhole": [
+    930.965,
+    184.484
+   ],
+   "px_blender": [
+    930.965,
+    184.484
+   ],
+   "diff_px": 2.8e-05,
+   "depth_m": 1.95164,
+   "in_frame": true
+  },
+  "ruler_top_right_front": {
+   "world_m": [
+    0.0125,
+    -0.00025,
+    0.375
+   ],
+   "px_pinhole": [
+    989.035,
+    184.484
+   ],
+   "px_blender": [
+    989.035,
+    184.484
+   ],
+   "diff_px": 6.3e-05,
+   "depth_m": 1.95164,
+   "in_frame": true
+  },
+  "ruler_at_jaw_top_centre": {
+   "world_m": [
+    0.0,
+    -0.00025,
+    0.095
+   ],
+   "px_pinhole": [
+    960.0,
+    831.826
+   ],
+   "px_blender": [
+    960.0,
+    831.826
+   ],
+   "diff_px": 2e-05,
+   "depth_m": 1.96629,
+   "in_frame": true
+  },
+  "platform_top_centre": {
+   "world_m": [
+    0.0,
+    0.0,
+    0.378
+   ],
+   "px_pinhole": [
+    960.0,
+    177.512
+   ],
+   "px_blender": [
+    960.0,
+    177.512
+   ],
+   "diff_px": 4.2e-05,
+   "depth_m": 1.95173,
+   "in_frame": true
+  },
+  "peg_top_centre": {
+   "world_m": [
+    0.0,
+    0.0,
+    0.398
+   ],
+   "px_pinhole": [
+    960.0,
+    130.9
+   ],
+   "px_blender": [
+    960.0,
+    130.9
+   ],
+   "diff_px": 3.8e-05,
+   "depth_m": 1.95068,
+   "in_frame": true
+  },
+  "grid_BL": {
+   "world_m": [
+    -0.29,
+    0.149,
+    0.01
+   ],
+   "px_pinhole": [
+    339.812,
+    975.81
+   ],
+   "px_blender": [
+    339.812,
+    975.81
+   ],
+   "diff_px": 7e-05,
+   "depth_m": 2.11979,
+   "in_frame": true
+  },
+  "grid_BR": {
+   "world_m": [
+    0.29,
+    0.149,
+    0.01
+   ],
+   "px_pinhole": [
+    1580.188,
+    975.81
+   ],
+   "px_blender": [
+    1580.188,
+    975.81
+   ],
+   "diff_px": 0.000118,
+   "depth_m": 2.11979,
+   "in_frame": true
+  },
+  "grid_TL": {
+   "world_m": [
+    -0.29,
+    0.149,
+    0.45
+   ],
+   "px_pinhole": [
+    333.0,
+    30.546
+   ],
+   "px_blender": [
+    333.0,
+    30.546
+   ],
+   "diff_px": 4.8e-05,
+   "depth_m": 2.09676,
+   "in_frame": true
+  },
+  "grid_TR": {
+   "world_m": [
+    0.29,
+    0.149,
+    0.45
+   ],
+   "px_pinhole": [
+    1587.0,
+    30.546
+   ],
+   "px_blender": [
+    1587.0,
+    30.546
+   ],
+   "diff_px": 2.3e-05,
+   "depth_m": 2.09676,
+   "in_frame": true
+  },
+  "grid_TL_inframe_z400mm": {
+   "world_m": [
+    -0.29,
+    0.149,
+    0.4
+   ],
+   "px_pinhole": [
+    333.782,
+    139.007
+   ],
+   "px_blender": [
+    333.782,
+    139.007
+   ],
+   "diff_px": 4.3e-05,
+   "depth_m": 2.09938,
+   "in_frame": true
+  },
+  "grid_TR_inframe_z400mm": {
+   "world_m": [
+    0.29,
+    0.149,
+    0.4
+   ],
+   "px_pinhole": [
+    1586.218,
+    139.007
+   ],
+   "px_blender": [
+    1586.218,
+    139.007
+   ],
+   "diff_px": 5.4e-05,
+   "depth_m": 2.09938,
+   "in_frame": true
+  },
+  "grid_origin_x0_z100mm": {
+   "world_m": [
+    0.0,
+    0.149,
+    0.1
+   ],
+   "px_pinhole": [
+    960.0,
+    784.135
+   ],
+   "px_blender": [
+    960.0,
+    784.135
+   ],
+   "diff_px": 8e-06,
+   "depth_m": 2.11508,
+   "in_frame": true
+  }
+ },
+ "max_pinhole_vs_blender_diff_px": 0.000118
+}

@@ -1,0 +1,26 @@
+[
+ {
+  "role": "reconstruction",
+  "file": "final_ck004_1920x1088.mp4",
+  "source": "batch2/02-vortex-shedding/review/final_ck004_1920x1088.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff794/mtpIr-BFQRUpsZ-tsPBVS_final_ck004_1920x1088.mp4",
+  "bytes": 15647669,
+  "sha256": "87ae8773ac18238926cc51c047ef82374cb1cec1f8fd2442747152214104ea72"
+ },
+ {
+  "role": "side_by_side",
+  "file": "ck004_sbs.mp4",
+  "source": "batch2/02-vortex-shedding/review/visuals/ck004_sbs.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff794/9bHQMmRi-i6lZvNbE2u7B_ck004_sbs.mp4",
+  "bytes": 3857146,
+  "sha256": "07adbf9b63d5dc81cbafee52478fb79ea864e402d19074b2fbbc51074a621b38"
+ },
+ {
+  "role": "ai_reference",
+  "file": "reference.mp4",
+  "source": "batch2/02-vortex-shedding/reference/reference.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff794/NYhxI2WhNSYJxPK6F4BoE_reference.mp4",
+  "bytes": 13099226,
+  "sha256": "3ba4444230e0e6220d6f1a548fe96df1078411b79e813c57d80062f192ef41f8"
+ }
+]

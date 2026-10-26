@@ -1,0 +1,19 @@
+{
+ "what": "nodekit (graph builder/inspector) vendored unmodified from the procedural-blender-nodes skill; the NK library groups are not used",
+ "source_repo": "<video-to-blender>",
+ "source_path": "skills/procedural-blender-nodes/nodekit",
+ "git_commit": "bfeca3ff77d1468f3f9c6a801342cb6286e3f6b1",
+ "git_tree_hash_nodekit": "31a3e3d12c1b394e27e5f316a0f5f44204fa57f4",
+ "source_worktree_clean": true,
+ "license": "LICENSE (MIT, copied from the repository root)",
+ "files_sha256": {
+  "__init__.py": "895127787830814304714df35e806384b7f9552c2e3556a74082eb3a19eb8c18",
+  "graph.py": "f31f95325f9063a329126a32d19cafcad8ae1ea2c6ac392b68e6bda2be6d712e",
+  "inspect.py": "617febf639737d361f78db20fed77ad4a0ad5194de04f90175ce85c52c2bbdaa",
+  "library.py": "32dc20858684f739ee0e8585019668dfc28b04c13e28cfd0b8de3bd88b4f3dd4",
+  "materials.py": "10ba3e31b89c3cf3ab46d4caabe5b79d05f7c958b64f7009806dcc0da6e1d57f",
+  "scene.py": "a88159310931b2dcfdbe24a363bb33a84ed159a3b8dcd8b019e1cc53778e3c7a"
+ },
+ "tree_sha256": "323409babe363566804e7b5b429285aa26c538d2d7621c20ccf35ef1822ab9bd",
+ "tree_sha256_definition": "sha256 over lines '<sha256>  nodekit/<file>\\n' sorted by file"
+}

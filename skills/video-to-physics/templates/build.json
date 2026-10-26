@@ -1,0 +1,14 @@
+{
+  "description": "Example checkpoint build for `v2p.py checkpoint CASE NAME`. Replace <SKILL_DIR> with the path to skills/video-to-physics and adapt the script arguments to your case (see each script's usage string). {ck} stands for the checkpoint directory checkpoints/NAME. Commands run from the case root in order; a failure aborts and nothing is marked READY.",
+  "freeze": [
+    {"from": "solver/out/deformation.npz", "to": "solver/out/deformation.npz"},
+    {"from": "solver/out/meta.json", "to": "solver/out/meta.json"}
+  ],
+  "commands": [
+    "python3 <SKILL_DIR>/scripts/v2p.py lock -- blender -b --factory-startup --python scene/build.py -- --out {ck}/scene.blend --deformation {ck}/solver/out/deformation.npz",
+    "python3 <SKILL_DIR>/scripts/v2p.py lock -- blender -b --factory-startup {ck}/scene.blend --python <SKILL_DIR>/scripts/blender/check_bake.py -- <check arguments> --out {ck}/checks/check_bake.json"
+  ],
+  "copy": ["CONTRACT.md", "config", "scene", "physics", "measurement"],
+  "exclude": ["__pycache__", "*.blend1", "scene/out", "cache", "visuals", "test"],
+  "outputs": ["scene.blend", "checks/check_bake.json"]
+}

@@ -1,0 +1,114 @@
+[
+ {
+  "name": "pin_cap_tip",
+  "u0": 1120.5,
+  "v0": 98.0,
+  "half": 14,
+  "desc": "pin end cap, right extremity"
+ },
+ {
+  "name": "pin_shaft_mid",
+  "u0": 1060.0,
+  "v0": 96.0,
+  "half": 12,
+  "desc": "steel pin shaft between arm end and wire loop"
+ },
+ {
+  "name": "wire_loop_ring",
+  "u0": 1082.0,
+  "v0": 100.0,
+  "half": 14,
+  "desc": "wire loop around pin (may move with the swing)"
+ },
+ {
+  "name": "wire_departure",
+  "u0": 1086.7,
+  "v0": 125.0,
+  "half": 8,
+  "desc": "point where wire leaves the loop (moves with swing if loop rocks)"
+ },
+ {
+  "name": "arm_end_top_right",
+  "u0": 1060.0,
+  "v0": 63.0,
+  "half": 14,
+  "desc": "arm end face, upper-right corner"
+ },
+ {
+  "name": "arm_end_bottom_right",
+  "u0": 1066.0,
+  "v0": 148.0,
+  "half": 14,
+  "desc": "arm end face, lower-right corner"
+ },
+ {
+  "name": "arm_underside_at_stand",
+  "u0": 800.0,
+  "v0": 176.0,
+  "half": 14,
+  "desc": "arm underside meeting stand front face"
+ },
+ {
+  "name": "stand_top_left",
+  "u0": 697.0,
+  "v0": 67.0,
+  "half": 14,
+  "desc": "stand top, left corner"
+ },
+ {
+  "name": "stand_top_right",
+  "u0": 837.0,
+  "v0": 70.0,
+  "half": 14,
+  "desc": "stand top, right corner"
+ },
+ {
+  "name": "rear_pin_stub",
+  "u0": 684.0,
+  "v0": 155.0,
+  "half": 12,
+  "desc": "pin stub protruding left of the stand"
+ },
+ {
+  "name": "stand_base_left",
+  "u0": 694.0,
+  "v0": 883.0,
+  "half": 14,
+  "desc": "stand left edge meets base top"
+ },
+ {
+  "name": "stand_base_right",
+  "u0": 839.0,
+  "v0": 883.0,
+  "half": 14,
+  "desc": "stand right edge meets base top"
+ },
+ {
+  "name": "base_left_top_corner",
+  "u0": 502.0,
+  "v0": 903.0,
+  "half": 16,
+  "desc": "base left front-top rounded corner"
+ },
+ {
+  "name": "base_left_bottom",
+  "u0": 496.0,
+  "v0": 1010.0,
+  "half": 16,
+  "desc": "base left edge near bottom"
+ },
+ {
+  "name": "base_front_right_edge",
+  "u0": 1244.0,
+  "v0": 1003.0,
+  "half": 16,
+  "desc": "base front-right vertical edge, top"
+ },
+ {
+  "name": "base_back_right",
+  "u0": 1476.0,
+  "v0": 925.0,
+  "half": 16,
+  "desc": "base back-right rounded corner"
+ }
+]

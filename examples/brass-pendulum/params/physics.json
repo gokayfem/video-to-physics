@@ -1,0 +1,736 @@
+{
+  "schema": "physics/FORMULATION.md s7 (physics_json_schema_proposal v1)",
+  "owner": "dynamics",
+  "status": "fitted",
+  "status_note": "FITTED, ANCHORED on the opening window t in [0, 4.0] s (CHANGELOG 2026-10-25T23:06:55Z; T_a from the pre-set 3-sigma growth-onset rule) WITH a fitted level tilt of the static scene relative to true gravity (CHANGELOG 2026-10-25T23:14:43Z). Passive rigid compound pendulum under true gravity, projected through params/camera.json per-frame cameras in the tilted stand frame, hinge at P_ring. Correct physics runs unchanged to 10 s; motion after T_a is a divergence map. Damping: fitted Q ~100-140 is consistent across windows but its bootstrap 95% interval leaves [100, 6000] -> Q = 1000 declared assumption. Anchor RMS 3.24 px; R2/R3 as declared FAIL (13.9/27.3 px); see fit_provenance.",
+  "generated_by": "solver/make_params.py",
+  "model_id": "planar_compound_sphere_rigid_massless_rod_v1",
+  "model_equation": "I_P th'' = -m g L_c sin th - c th';  I_P = m L_c^2 + 0.4 m r^2;  bob centre = P + L_c (sin th, 0, -cos th)",
+  "g": {
+    "value": 9.80665,
+    "unit": "m/s^2",
+    "provenance": "assumed",
+    "source": "CONTRACT v1 (standard gravity)",
+    "range": [
+      9.78,
+      9.832
+    ]
+  },
+  "T_meas": {
+    "value": 1.3841860425259533,
+    "unit": "s",
+    "provenance": "model-conditioned",
+    "sigma": null,
+    "source": "model finite-amplitude period at the fitted L_eq (not a raw measurement; measured opening full periods 1.370/1.396/1.417/1.397 s)"
+  },
+  "theta_amp": {
+    "value": 0.11864830370050182,
+    "unit": "rad",
+    "provenance": "fitted",
+    "sigma": null,
+    "source": "max |theta| (relative to true gravity) of the fitted model over 0-10 s (informational; used only for T_meas = model period)",
+    "value_deg": 6.798047048425182
+  },
+  "T0": {
+    "value": 1.382968271183876,
+    "unit": "s",
+    "provenance": "model-conditioned",
+    "derivation": "T_meas / (2 K(sin(theta_amp/2)) / pi)",
+    "T_over_T0": 1.000880549010018
+  },
+  "L_eq": {
+    "value": 0.47510037330783805,
+    "unit": "m",
+    "provenance": "model-conditioned",
+    "sigma": 0.002604811846664234,
+    "derivation": "fitted on anchor window 0-4.0 s with level tilt: projected pixel fit (period through RK4 model, g assumed); sd = moving-block bootstrap (formal-scaled 0.00084); T_a sensitivity 3.6-4.5 s: 0.4730-0.4751 m"
+  },
+  "ratio_Lc_over_r": {
+    "value": 12.3,
+    "unit": "-",
+    "provenance": "measured",
+    "sigma": 0.45,
+    "source": "params/geometry.json (measured image ratio), per lead / CHANGELOG 2026-10-25T22:31:55Z item 2"
+  },
+  "L_c": {
+    "value": 0.4738475540756993,
+    "unit": "m",
+    "provenance": "model-conditioned",
+    "derivation": "L_eq / (1 + 0.4 / ratio^2)"
+  },
+  "L_c_in_L_eff_units": {
+    "value": 1.0805488686020446,
+    "unit": "camera.json length unit (L_eff)",
+    "provenance": "fitted",
+    "sigma": 0.0002970340729121708,
+    "source": "anchored tilt fit k = |bob - P_ring| in camera.json units (hinge at P_ring), sd = bootstrap",
+    "definition": "|P_ring - bob centre| measured through the camera of record (CHANGELOG 2026-10-25T22:47:40Z)"
+  },
+  "L_eff_m": {
+    "value": 0.43852487179847544,
+    "unit": "m per camera.json length unit",
+    "provenance": "model-conditioned",
+    "sigma": 0.002407301079477697,
+    "derivation": "L_c_m / L_c_in_L_eff_units; scene/build.py scales camera translations by THIS, never by L_c"
+  },
+  "level_tilt_rad": {
+    "value": 0.012595906923464214,
+    "unit": "rad",
+    "provenance": "fitted",
+    "sigma": 0.0009913335550363076,
+    "value_deg": 0.7216923058541127,
+    "source": "anchored projected fit (T_a 4.0 s), sd = moving-block bootstrap (formal-scaled 0.00045); T_a 3.6/4.5: 0.01164/0.01327 rad; sign verified by solver/tilt_check.py (projection reproduces the +1.50 deg right/left asymmetry: model 1.45 deg with tilt, 0.01 deg without)",
+    "convention": "The STATIC scene (table, stand, pivot hardware, backdrop, ALL cameras; i.e. everything in the camera.json/geometry.json stand frame) is rotated by +level_tilt_rad about the world +Y axis through P (right-hand rule; Blender: parent empty at P, rotation_euler = (0, +level_tilt_rad, 0)). Gravity is exactly g along -Z_world. PND_Swing is NOT tilted: theta (theta_init, trajectory) is relative to TRUE vertical. A positive value tilts the stand's up-axis toward +X_world, so the bob's rest direction appears at +level_tilt_rad (image right) in the stand/camera frame.",
+    "decision": "CHANGELOG 2026-10-25T23:14:43Z (not-quite-level table)"
+  },
+  "bob_radius": {
+    "value": 0.03852419138826823,
+    "unit": "m",
+    "provenance": "model-conditioned",
+    "derivation": "L_c / ratio"
+  },
+  "wire_length": {
+    "value": 0.43532336268743105,
+    "unit": "m",
+    "provenance": "model-conditioned",
+    "note": "L_c - r"
+  },
+  "rho_bob": {
+    "value": 8500.0,
+    "unit": "kg/m^3",
+    "provenance": "assumed",
+    "range": [
+      8400,
+      8730
+    ],
+    "source": "brass; mass is unidentifiable from kinematics (FORMULATION s6)"
+  },
+  "bob_mass": {
+    "value": 2.0356735337958085,
+    "unit": "kg",
+    "provenance": "assumed",
+    "derivation": "4/3 pi r^3 rho_bob"
+  },
+  "I_P": {
+    "value": 0.458281309305573,
+    "unit": "kg m^2",
+    "provenance": "model-conditioned",
+    "derivation": "m L_c^2 + 0.4 m r^2"
+  },
+  "wire": {
+    "diameter": {
+      "value": 0.0003,
+      "unit": "m",
+      "provenance": "assumed",
+      "range": [
+        0.0002,
+        0.0005
+      ]
+    },
+    "E": {
+      "value": 200000000000.0,
+      "unit": "Pa",
+      "provenance": "assumed",
+      "range": [
+        190000000000.0,
+        210000000000.0
+      ]
+    },
+    "rho": {
+      "value": 7850,
+      "unit": "kg/m^3",
+      "provenance": "assumed"
+    },
+    "mass_included": false,
+    "inextensible": true
+  },
+  "damping": {
+    "law": "linear_viscous_pivot",
+    "Q": {
+      "value": 1000.0,
+      "unit": "-",
+      "provenance": "assumed",
+      "range": [
+        300,
+        6000
+      ],
+      "source": "FORMULATION s5 declared assumption. Tilt fits: M1 point estimates Q = 131/102/139 (T_a 3.6/4.0/4.5, consistent, in range) but bootstrap 95% lower bounds 46-63 (< 100) and gamma = 0 not excluded for T_a 3.6 and the 4.0 production bootstrap -> rule not met (solver/out/fit_tilt/damping_evidence.json)"
+    },
+    "c": {
+      "value": 0.0020820914327404363,
+      "unit": "N m s/rad",
+      "provenance": "derived",
+      "derivation": "I_P omega0 / Q"
+    },
+    "gamma": {
+      "value": 0.002271630317954052,
+      "unit": "1/s",
+      "derivation": "c / (2 I_P)"
+    },
+    "k_q": {
+      "value": 0.0,
+      "unit": "N m s^2/rad^2",
+      "provenance": "assumed",
+      "note": "quadratic air drag available in solver, OFF (sub-pixel per FORMULATION s5)"
+    },
+    "tau_c": {
+      "value": 0.0,
+      "unit": "N m",
+      "provenance": "assumed",
+      "note": "smoothed Coulomb available in solver, OFF (rejected in FORMULATION s5)"
+    },
+    "coulomb_omega_s": {
+      "value": 0.001,
+      "unit": "rad/s",
+      "provenance": "assumed"
+    },
+    "note": "never negative; replace Q provenance by 'fitted' only if decay is significant"
+  },
+  "theta_init": {
+    "value": -0.08447293248409532,
+    "unit": "rad",
+    "provenance": "fitted",
+    "sigma": 0.002650872471767581,
+    "value_deg": -4.839942514432215,
+    "source": "anchored tilt fit; relative to TRUE vertical; sd(theta_init)=0.0027 rad, sd(omega_init)=0.012 rad/s (bootstrap)"
+  },
+  "omega_init": {
+    "value": 0.37929871118296804,
+    "unit": "rad/s",
+    "provenance": "fitted",
+    "source": "anchored tilt fit; relative to TRUE vertical; sd(theta_init)=0.0027 rad, sd(omega_init)=0.012 rad/s (bootstrap)"
+  },
+  "air": {
+    "rho": 1.204,
+    "mu": 1.813e-05,
+    "T_K": 293.15,
+    "p_Pa": 101325,
+    "provenance": "assumed",
+    "used_for": "plausibility only (Q bound); not in production EOM"
+  },
+  "systematics_on_L_mapping": {
+    "buoyancy_added_mass_rel_T": 0.00011,
+    "wire_mass_rel_Leq": 0.0003,
+    "flexible_wire_rel_T": 5e-06,
+    "g_local_rel": 0.003
+  },
+  "integrator": {
+    "solver_id": "rk4-fixed-step-v1",
+    "method": "classical RK4, fixed step dividing each output interval exactly; steps split at turning points when non-smooth terms are on",
+    "h_s": 0.0003255208333333333,
+    "h_note": "1/3072 s = 1/32 of the 1/96 s output spacing",
+    "t_end_s": 10.0,
+    "output_dt_s": 0.010416666666666666
+  },
+  "fit_provenance": {
+    "fit_file": "solver/out/fit_tilt/Ta_4.0/fit_projected.json",
+    "fit_window": "ANCHOR t <= 4.0 s (frames 0..96)",
+    "t_anchor_s": 4.0,
+    "anchor_policy": "CHANGELOG 2026-10-25T23:06:55Z (user decision): physics fitted on the opening window only; correct physics runs unchanged to 10 s; later motion = divergence map",
+    "fit_file_sha256_excluding_created_utc": "fa96a4ea7a46e5c7b846567d855db3de79461cce8012ee41ceb1dd5664dc78ec",
+    "inputs": {
+      "bob_track": "measurement/bob_track.csv",
+      "bob_track_sha256": "a903842122cab76126ce4ad2a7ea81b491512ac8068f78d6dec50a35110f493b",
+      "camera_json_sha256": "3eee32766ac1449483b25ea64faddbfaaba44aa31cae6d7a6a5b4154ae2a55c1",
+      "camera_project_py_sha256": "2d65216b1730e31937d2d23be49ee165b8a49375cd2d094d603bc0ffb636545e",
+      "ratio_Lc_over_r": [
+        12.3,
+        0.45
+      ],
+      "ratio_source": "params/geometry.json (measured), per lead",
+      "track_method": "method A (u_px, v_px) with sigma_u_px/sigma_v_px"
+    },
+    "production_fit": "MQ (Q fixed at declared assumption 1000; gamma not identified)",
+    "fitted": {
+      "L_eq": {
+        "value": 0.47510037330783805,
+        "sd_formal_scaled": 0.0008413804162572963,
+        "sd_bootstrap": 0.002604811846664234,
+        "ci95_bootstrap": [
+          0.469840622651794,
+          0.47881988380867707
+        ]
+      },
+      "theta0": {
+        "value": -0.08447293248409532,
+        "sd_formal_scaled": 0.000778664572456811,
+        "sd_bootstrap": 0.002650872471767581,
+        "ci95_bootstrap": [
+          -0.08967181818861464,
+          -0.08008959617705333
+        ]
+      },
+      "omega0": {
+        "value": 0.37929871118296804,
+        "sd_formal_scaled": 0.003547231415898601,
+        "sd_bootstrap": 0.012242069600088256,
+        "ci95_bootstrap": [
+          0.35240226332980623,
+          0.3954726935771135
+        ]
+      },
+      "k": {
+        "value": 1.0805488686020446,
+        "sd_formal_scaled": 0.0003217501292130379,
+        "sd_bootstrap": 0.0002970340729121708,
+        "ci95_bootstrap": [
+          1.080483391435987,
+          1.081439915847504
+        ]
+      },
+      "th_off": {
+        "value": 0.012595906923464214,
+        "sd_formal_scaled": 0.0004485795789519915,
+        "sd_bootstrap": 0.0009913335550363076,
+        "ci95_bootstrap": [
+          0.011031599987430965,
+          0.014125733094128127
+        ]
+      }
+    },
+    "k_note": "k = |bob - P_ring| in camera calibration units L_eff (image geometry); camera metre scale L_eff_m = L_c/k",
+    "camera_metre_scale_L_eff_m": 0.43852487179847544,
+    "damping_selection": {
+      "M0": {
+        "bic": 17346.734569675773,
+        "chi2": 17320.395278880456,
+        "reduced_chi2": 91.64230306285955
+      },
+      "M1": {
+        "bic": 14858.906086758161,
+        "chi2": 14827.298937803782,
+        "reduced_chi2": 78.86861137129671,
+        "gamma": 0.02221880551283274,
+        "gamma_sd_scaled": 0.003951882275948752,
+        "gamma_at_bound": false,
+        "Q_implied": 102.33331321513879
+      },
+      "damping_evidence": {
+        "statistically_identified_BIC_3sigma": true,
+        "bootstrap_identified": false,
+        "bootstrap_M1_gamma": {
+          "sd": 0.012292767165636827,
+          "p2.5": 0.006515221098647437,
+          "p97.5": 0.04920650255768911
+        },
+        "bootstrap_M1_Q_95": [
+          46.20779501947489,
+          348.98646559868723
+        ],
+        "Q_plausible_range": [
+          100.0,
+          6000.0
+        ],
+        "Q_plausible": true,
+        "M1_on_n_mod4_eq0_frames_only": {
+          "gamma": 0.022893500562086933,
+          "gamma_sd_scaled": 0.005199749757561881,
+          "Q": 99.28742091744348,
+          "L_eq": 0.4745126739627885,
+          "n_frames": 25
+        },
+        "adopted": false,
+        "mode": "auto"
+      }
+    },
+    "Q_sensitivity": {
+      "Q=300": {
+        "rms_fit_px": 14.59886984504178,
+        "rms_holdout_px": 28.244557571230644,
+        "phase_end": -0.08331453183962173
+      },
+      "Q=6000": {
+        "rms_fit_px": 13.692006287807503,
+        "rms_holdout_px": 26.930576549670267,
+        "phase_end": -0.08101878170804584
+      }
+    },
+    "reference_fidelity": {
+      "anchor_rms_px": 3.2391517254993194,
+      "R2_rms_fit_px": 13.930570059445273,
+      "R2_pass": false,
+      "R3_rms_holdout_px": 27.269215317616933,
+      "R3_phase_end_cycles": -0.08162722742519025,
+      "R3_pass": false,
+      "supplementary_n_mod4_eq0": {
+        "rms_fit_px": 13.515100058655706,
+        "rms_holdout_px": 25.408532847375064,
+        "n_fit": 45,
+        "n_holdout": 16,
+        "rms_anchor_px": 3.667601660780401
+      },
+      "attribution": "reference defects (measurement v001): non-monotonic amplitude +62%, period wander, cadence offsets, swing asymmetry; passive model not bent to match"
+    },
+    "reduced_chi2": 89.08033139034757,
+    "pivot": "fixed at P_ring (lead decision); free-pivot fits are diagnostics only",
+    "arc_shape_reference_defect": {
+      "source": "solver/arc_shape_check.py -> solver/out/fit_projected/arc_shape.json",
+      "hinge_P_ring_rms_px": 1.2939494088202297,
+      "free_hinge_rms_px": 1.1484949469038384,
+      "max_abs_radial_px_P_ring": 3.750100701386159,
+      "note": "dynamics-free per-frame-theta fit; arc-shape (rotation point) effect ~0.6 px RMS in quadrature, max 3.8 px radial; reference defect"
+    },
+    "anchor_window_evidence": {
+      "file": "solver/out/fit_anchored/anchor_evidence.json",
+      "criterion": "first half-cycle amplitude > previous + 3 sigma (measurement/summary.json, image angle)",
+      "onset": {
+        "half_cycle_index": 5,
+        "t_center_s": 4.3331,
+        "amp_prev_deg": 5.4509,
+        "amp_deg": 5.9312,
+        "increase_sigma": 14.065461943116395
+      },
+      "T_a_s": 4.0,
+      "T_a_sensitivity": {
+        "3.5": {
+          "L_eq": 0.476840387079061,
+          "L_eq_sd_boot": 0.004461146838868639,
+          "rms_anchor_px": 8.057368778499526,
+          "R2_rms_px": 13.8004545561544,
+          "R3_rms_px": 25.489076334232916,
+          "phase_end_cycles": -0.07714913073109345,
+          "M1_Q": 102.16886247732141,
+          "adopted": false
+        },
+        "3.6": {
+          "L_eq": 0.4775076875196568,
+          "L_eq_sd_boot": 0.004481288222239187,
+          "rms_anchor_px": 8.071747804038543,
+          "R2_rms_px": 13.769353362741729,
+          "R3_rms_px": 24.25063984117517,
+          "phase_end_cycles": -0.07274662820126254,
+          "M1_Q": 111.5595668804607,
+          "adopted": false
+        },
+        "4.0": {
+          "L_eq": 0.48296786670735103,
+          "L_eq_sd_boot": 0.006207677170637333,
+          "rms_anchor_px": 8.408393791426711,
+          "R2_rms_px": 14.941884490812996,
+          "R3_rms_px": 16.354084590523357,
+          "phase_end_cycles": -0.0380748083311738,
+          "M1_Q": 52.129305139381536,
+          "adopted": false
+        },
+        "4.5": {
+          "L_eq": 0.47320012541460976,
+          "L_eq_sd_boot": 0.003640424317425386,
+          "rms_anchor_px": 8.965182965564333,
+          "R2_rms_px": 14.901809357501946,
+          "R3_rms_px": 32.611053378524105,
+          "phase_end_cycles": -0.10128460656936245,
+          "M1_Q": 43.98424039688807,
+          "adopted": false
+        }
+      },
+      "damping_decision": "Q = 1000 kept (declared assumption). Under the production geometry (gravity vertical, hinge P_ring) linear damping is NOT robust: not identified for T_a = 3.5/3.6 s (bootstrap 95 % includes 0); identified for T_a = 4.0/4.5 s but Q ~ 44-52 (< 100, implausible) and driven by left/right swing asymmetry. Only if the equilibrium direction is offset by ~+0.7 deg (diagnostic, not adopted) does damping become consistent across windows (Q ~ 100-140).",
+      "conditional_damping_with_equilibrium_offset_DIAGNOSTIC": {
+        "3.6": {
+          "M0_bic": 14262.053703110356,
+          "M1_bic": 13102.89719746473,
+          "gamma": 0.017377096407384447,
+          "gamma_sd_scaled": 0.004491349993808563,
+          "Q": 131.00526001219245,
+          "th_off_rad": 0.011653436605000705,
+          "th_off_deg": 0.667692734289803,
+          "anchor_rms_px_M0": 3.189340134741546,
+          "L_eq": 0.473599622036788
+        },
+        "4.0": {
+          "M0_bic": 17346.734569675835,
+          "M1_bic": 14858.906086758941,
+          "gamma": 0.022218799076415986,
+          "gamma_sd_scaled": 0.003951887620002206,
+          "Q": 102.33334283876276,
+          "th_off_rad": 0.012652697092600597,
+          "th_off_deg": 0.7249461428634615,
+          "anchor_rms_px_M0": 3.3000487613089344,
+          "L_eq": 0.4752012971953684
+        },
+        "4.5": {
+          "M0_bic": 20627.398850276408,
+          "M1_bic": 18864.338898239686,
+          "gamma": 0.016408500442988926,
+          "gamma_sd_scaled": 0.0036735884816987696,
+          "Q": 138.78809107791733,
+          "th_off_rad": 0.013361645836135127,
+          "th_off_deg": 0.7655659137590927,
+          "anchor_rms_px_M0": 3.4487579339260797,
+          "L_eq": 0.47307604479842813
+        }
+      }
+    },
+    "damping_evidence_production_window": {
+      "statistically_identified_BIC_3sigma": true,
+      "bootstrap_identified": false,
+      "bootstrap_M1_gamma": {
+        "sd": 0.012292767165636827,
+        "p2.5": 0.006515221098647437,
+        "p97.5": 0.04920650255768911
+      },
+      "bootstrap_M1_Q_95": [
+        46.20779501947489,
+        348.98646559868723
+      ],
+      "Q_plausible_range": [
+        100.0,
+        6000.0
+      ],
+      "Q_plausible": true,
+      "M1_on_n_mod4_eq0_frames_only": {
+        "gamma": 0.022893500562086933,
+        "gamma_sd_scaled": 0.005199749757561881,
+        "Q": 99.28742091744348,
+        "L_eq": 0.4745126739627885,
+        "n_frames": 25
+      },
+      "adopted": false,
+      "mode": "auto"
+    },
+    "damping_evidence_tilt_fits": {
+      "rule": "adopt fitted Q only if the bootstrapped Q (95 %) stays within [100, 6000] and point estimates agree across T_a 3.6/4.0/4.5 (CHANGELOG 2026-10-25T23:14:43Z)",
+      "per_window": {
+        "3.6": {
+          "M1_gamma": 0.017377108053845736,
+          "M1_gamma_sd_formal_scaled": 0.004491346043622301,
+          "M1_Q": 131.00517207548154,
+          "dBIC_M0_minus_M1": 1159.1565056459003,
+          "boot_gamma": {
+            "sd": 0.012806474825806352,
+            "p2.5": 5.445772540640797e-11,
+            "p97.5": 0.039991273268653524
+          },
+          "boot_Q95": [
+            56.924694932198754,
+            41802903330.59752
+          ],
+          "n_mod4_eq0": {
+            "gamma": 0.018478281639220585,
+            "gamma_sd_scaled": 0.006138432488011348,
+            "Q": 123.15652986460347,
+            "L_eq": 0.4733938733306119,
+            "n_frames": 22
+          },
+          "th_off_rad": 0.011644181327149254,
+          "L_eq_MQ": 0.4735309010500137,
+          "anchor_rms_MQ_px": 3.1417746171046437,
+          "R2_MQ_px": 13.916254696323115,
+          "R3_MQ_px": 30.054019654724186,
+          "phase_MQ": -0.09240375826736405
+        },
+        "4.0": {
+          "M1_gamma": 0.02221880551283274,
+          "M1_gamma_sd_formal_scaled": 0.003951882275948752,
+          "M1_Q": 102.33331321513879,
+          "dBIC_M0_minus_M1": 2487.828482917612,
+          "boot_gamma": {
+            "sd": 0.012292767165636827,
+            "p2.5": 0.006515221098647437,
+            "p97.5": 0.04920650255768911
+          },
+          "boot_Q95": [
+            46.20779501947489,
+            348.98646559868723
+          ],
+          "n_mod4_eq0": {
+            "gamma": 0.022893500562086933,
+            "gamma_sd_scaled": 0.005199749757561881,
+            "Q": 99.28742091744348,
+            "L_eq": 0.4745126739627885,
+            "n_frames": 25
+          },
+          "th_off_rad": 0.012595906923464214,
+          "L_eq_MQ": 0.47510037330783805,
+          "anchor_rms_MQ_px": 3.2391517254993194,
+          "R2_MQ_px": 13.930570059445273,
+          "R3_MQ_px": 27.269215317616933,
+          "phase_MQ": -0.08162722742519025
+        },
+        "4.5": {
+          "M1_gamma": 0.016408499095035063,
+          "M1_gamma_sd_formal_scaled": 0.0036735906828211395,
+          "M1_Q": 138.7881024768086,
+          "dBIC_M0_minus_M1": 1763.059952036092,
+          "boot_gamma": {
+            "sd": 0.010732661329203152,
+            "p2.5": 0.006606219638744415,
+            "p97.5": 0.04237755728439057
+          },
+          "boot_Q95": [
+            53.73845497062603,
+            344.721274560162
+          ],
+          "n_mod4_eq0": {
+            "gamma": 0.013279244462339908,
+            "gamma_sd_scaled": 0.005500056721017779,
+            "Q": 171.58603949604532,
+            "L_eq": 0.47222617072671685,
+            "n_frames": 28
+          },
+          "th_off_rad": 0.013269547628925148,
+          "L_eq_MQ": 0.47302836521765695,
+          "anchor_rms_MQ_px": 3.4034637714734406,
+          "R2_MQ_px": 14.403240916498307,
+          "R3_MQ_px": 30.939720000561437,
+          "phase_MQ": -0.09462107054756147
+        }
+      },
+      "M1_production_candidate_Ta4.0": {
+        "gamma": 0.02221880551283274,
+        "Q": 102.33331321513879,
+        "boot_gamma": {
+          "sd": 0.011243633885311832,
+          "p2.5": 3.3045947314918374e-10,
+          "p97.5": 0.035931265921845694
+        },
+        "boot_Q95": [
+          63.27981843880912,
+          6880492673.255904
+        ],
+        "flags": [
+          "UNIDENTIFIED (relative sd 0.51)"
+        ],
+        "anchor_rms_px": 2.9386301054081487,
+        "R2_px": 16.43197775839554,
+        "R3_px": 31.051444838734824,
+        "phase": -0.08784876240311931
+      },
+      "point_estimates_in_range": true,
+      "point_estimates_consistent": true,
+      "bootstrap_within_range": false,
+      "adopted": false,
+      "decision": "KEEP Q = 1000 (declared assumption): point estimates Q = [131, 102, 139] are consistent and in range, but the moving-block bootstrap puts the 95 % lower bound below 100 in every window (and the upper bound at infinity, i.e. gamma = 0 not excluded, for T_a 3.6 and the 4.0 production bootstrap); the formal 4-6 sigma overstates the evidence because residuals are strongly correlated (reduced chi2 ~80-95)"
+    },
+    "level_tilt_verification": {
+      "beta_rad": 0.012595906923464214,
+      "check1_max_abs_diff": 1.1102230246251565e-16,
+      "check2_blender_euler_vs_Ry_max_abs_diff": 6.395411644710691e-09,
+      "check3_anchor_turning_point_asymmetry": {
+        "data_stand_frame": {
+          "turning_points_deg": [
+            7.608163863775592,
+            -6.23601822907831,
+            7.565770893253203,
+            -5.87520855582536,
+            7.090928067421093,
+            -5.639993340115777
+          ],
+          "right_mean_deg": 7.421620941483295,
+          "left_mean_deg": -5.917073375006482,
+          "asymmetry_right_minus_absleft_deg": 1.5045475664768126
+        },
+        "model_with_tilt_stand_frame": {
+          "turning_points_deg": [
+            7.514444625486856,
+            -6.061992798027794,
+            7.494197789183799,
+            -6.040121931492727,
+            7.47344661751858,
+            -6.018128492236867
+          ],
+          "right_mean_deg": 7.494029677396412,
+          "left_mean_deg": -6.040081073919129,
+          "asymmetry_right_minus_absleft_deg": 1.4539486034772828
+        },
+        "model_without_tilt_stand_frame": {
+          "turning_points_deg": [
+            6.792752319632744,
+            -6.783685103881902,
+            6.7725054833296845,
+            -6.761814237346839,
+            6.7517543116644685,
+            -6.739820798090982
+          ],
+          "right_mean_deg": 6.772337371542299,
+          "left_mean_deg": -6.761773379773241,
+          "asymmetry_right_minus_absleft_deg": 0.010563991769058312
+        }
+      },
+      "anchor_with_tilt": {
+        "mean_u_resid_px": 0.17652594028384944,
+        "rms_px": 3.2391517254993194
+      },
+      "anchor_without_tilt_same_params": {
+        "mean_u_resid_px": -7.348665148511732,
+        "rms_px": 8.11978076517142
+      },
+      "verdict": {
+        "sign_ok": true,
+        "asymmetry_reproduced": true
+      },
+      "file": "solver/out/fit_tilt/Ta_4.0/tilt_check.json"
+    },
+    "level_tilt_fit": {
+      "th_off_rad": 0.012595906923464214,
+      "sd_scaled": 0.0004485795789519915,
+      "convention": "static scene (stand, pivot hardware, table, cameras) rotated by +th_off about world +Y through P (right-hand rule, Blender rotation_euler[1] = +th_off); gravity exactly -Z_world; theta relative to gravity"
+    }
+  },
+  "generator": {
+    "script": "solver/make_params.py",
+    "argv": [
+      "--status",
+      "fitted",
+      "--status-note",
+      "FITTED, ANCHORED on the opening window t in [0, 4.0] s (CHANGELOG 2026-10-25T23:06:55Z; T_a from the pre-set 3-sigma growth-onset rule) WITH a fitted level tilt of the static scene relative to true gravity (CHANGELOG 2026-10-25T23:14:43Z). Passive rigid compound pendulum under true gravity, projected through params/camera.json per-frame cameras in the tilted stand frame, hinge at P_ring. Correct physics runs unchanged to 10 s; motion after T_a is a divergence map. Damping: fitted Q ~100-140 is consistent across windows but its bootstrap 95% interval leaves [100, 6000] -> Q = 1000 declared assumption. Anchor RMS 3.24 px; R2/R3 as declared FAIL (13.9/27.3 px); see fit_provenance.",
+      "--L-eq",
+      "0.47510037330783805",
+      "--sigma-L-eq",
+      "0.002604811846664234",
+      "--L-eq-source",
+      "fitted on anchor window 0-4.0 s with level tilt: projected pixel fit (period through RK4 model, g assumed); sd = moving-block bootstrap (formal-scaled 0.00084); T_a sensitivity 3.6-4.5 s: 0.4730-0.4751 m",
+      "--theta-amp-deg",
+      "6.798047048425182",
+      "--prov-amp",
+      "fitted",
+      "--source-amp",
+      "max |theta| (relative to true gravity) of the fitted model over 0-10 s (informational; used only for T_meas = model period)",
+      "--prov-T",
+      "model-conditioned",
+      "--source-T",
+      "model finite-amplitude period at the fitted L_eq (not a raw measurement; measured opening full periods 1.370/1.396/1.417/1.397 s)",
+      "--ratio",
+      "12.30",
+      "--sigma-ratio",
+      "0.45",
+      "--prov-ratio",
+      "measured",
+      "--source-ratio",
+      "params/geometry.json (measured image ratio), per lead / CHANGELOG 2026-10-25T22:31:55Z item 2",
+      "--Q",
+      "1000",
+      "--prov-Q",
+      "assumed",
+      "--source-Q",
+      "FORMULATION s5 declared assumption. Tilt fits: M1 point estimates Q = 131/102/139 (T_a 3.6/4.0/4.5, consistent, in range) but bootstrap 95% lower bounds 46-63 (< 100) and gamma = 0 not excluded for T_a 3.6 and the 4.0 production bootstrap -> rule not met (solver/out/fit_tilt/damping_evidence.json)",
+      "--theta-init=-0.08447293248409532",
+      "--omega-init",
+      "0.37929871118296804",
+      "--sigma-init",
+      "0.002650872471767581",
+      "--prov-init",
+      "fitted",
+      "--source-init",
+      "anchored tilt fit; relative to TRUE vertical; sd(theta_init)=0.0027 rad, sd(omega_init)=0.012 rad/s (bootstrap)",
+      "--k-Leff",
+      "1.0805488686020446",
+      "--sigma-k-Leff",
+      "0.0002970340729121708",
+      "--source-k-Leff",
+      "anchored tilt fit k = |bob - P_ring| in camera.json units (hinge at P_ring), sd = bootstrap",
+      "--level-tilt",
+      "0.012595906923464214",
+      "--sigma-level-tilt",
+      "0.0009913335550363076",
+      "--source-level-tilt",
+      "anchored projected fit (T_a 4.0 s), sd = moving-block bootstrap (formal-scaled 0.00045); T_a 3.6/4.5: 0.01164/0.01327 rad; sign verified by solver/tilt_check.py (projection reproduces the +1.50 deg right/left asymmetry: model 1.45 deg with tilt, 0.01 deg without)",
+      "--extra-json",
+      "solver/out/fit_tilt/Ta_4.0/params_fit_provenance.json"
+    ],
+    "inputs_sha256": {
+      "solver/make_params.py": "26413761c3f780a557246818c0ac490cb778558878b8793f6b0a1f297d43ec3c",
+      "solver/out/fit_tilt/Ta_4.0/params_fit_provenance.json": "f6f92921804b700c71403de1568ea57078d00e654f3e4a226b2432695e6472a1"
+    },
+    "note": "byte-reproducible: rerun with this argv from ROOT; generation time is in solver/out/make_params_run.json"
+  }
+}

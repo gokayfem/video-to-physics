@@ -1,0 +1,184 @@
+{
+  "label": "ck002 checkpoint pendulum.blend (reopened)",
+  "created_utc": "2026-10-25T23:25:34+00:00",
+  "blender": "5.2.2 LTS",
+  "inputs": {
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/pendulum.blend": "64c4c5bb8a37ceae3c7a59ecc145b74828ee9df89ffefa520371bbc431ea7c66",
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json": "dc20e99c7119379f640eee4fb22b7cb405cc9495b0b659785e1742b37f093ee7",
+    "<CASE_ROOT>/verify/out/ck002/ref_trajectory.csv": "996eca639238389ad15b272bb7ecf38945dc3609a544ddd44f76badc726f4b11",
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/solver/out/trajectory.csv": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba"
+  },
+  "verifier_code_sha256": "fb74e8e745c8cd709ad9a87c7a0e6ef80c8cbcee5f1eef72726281c34b292cd5",
+  "tolerances": {
+    "P5_pivot": 1e-06,
+    "P5_L": 1e-06,
+    "P5_y": 1e-06,
+    "P5_wire": 1e-05,
+    "P6": 1e-05,
+    "P8_blend": 1e-06
+  },
+  "blend_is_dirty_after_load": false,
+  "ref_params_sha256_matches": true,
+  "scene": {
+    "fps": 24,
+    "fps_base": 1.0,
+    "frame_start": 0,
+    "frame_end": 240,
+    "frame_map_old": 100,
+    "frame_map_new": 100,
+    "unit_scale": 1.0,
+    "gravity": [
+      0.0,
+      0.0,
+      -9.8100004196167
+    ],
+    "ok": true
+  },
+  "objects": {
+    "swing": {
+      "name": "PND_Swing",
+      "type": "EMPTY",
+      "rotation_mode": "XYZ",
+      "parent": null
+    },
+    "bob": {
+      "name": "PND_Bob",
+      "how": "name match ['bob']",
+      "is_descendant_of_swing": true
+    },
+    "wire": {
+      "name": "PND_Wire",
+      "how": "name match ['wire', 'suspension', 'string', 'thread', 'rod']"
+    },
+    "pin": {
+      "name": "PND_Pin",
+      "how": "name match ['pin']"
+    },
+    "swing_children": [
+      "PND_Bob",
+      "PND_Wire"
+    ]
+  },
+  "animation": {
+    "has_animation_data": true,
+    "nla_tracks": 0,
+    "nla_strips": [],
+    "drivers": [],
+    "action": "PND_Swing_bake",
+    "fcurves": [
+      {
+        "channel": "rotation_euler[1]",
+        "n_keys": 241,
+        "interpolations": [
+          "BEZIER"
+        ],
+        "handle_types": [
+          "FREE"
+        ],
+        "extrapolation": "CONSTANT",
+        "modifiers": [],
+        "mute": false,
+        "frame_range": [
+          0.0,
+          240.0
+        ]
+      }
+    ]
+  },
+  "motion_is_baked_keyframes": true,
+  "other_animated_objects": [
+    "PND_Cam_Reference"
+  ],
+  "bob_centre_method": "least-squares sphere fit to evaluated world vertices",
+  "bob_sphere_fit": {
+    "radius_m": 0.03852419130074408,
+    "max_rms_residual_m": 1.0891752818012565e-09,
+    "max_sphere_vs_bbox_centre_m": 2.234747545357368e-16,
+    "r_bob_param_m": 0.03852419138826823,
+    "info_rel_radius_blend_vs_params": -2.2719268688575767e-09
+  },
+  "P5_constraints_saved_blend": {
+    "n_samples": 964,
+    "pivot_drift_swing_origin_m": 0.0,
+    "L_c_param_m": 0.4738475540756993,
+    "L_min_m": 0.4738475396744696,
+    "L_max_m": 0.4738475953295337,
+    "max_abs_L_minus_Lc_m": 4.1253834404120227e-08,
+    "max_abs_y_bob_m": 2.8188636620725294e-17,
+    "L_variation_m": 5.565506411286947e-08,
+    "pin_drift_from_frame0_m": 0.0,
+    "pin_origin_world_frame0": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "wire_top_gap_max_m": 1.3657995884130278e-20,
+    "wire_top_target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "wire_bottom_gap_to_bob_surface_max_m": 3.465894336807107e-08,
+    "wire_top_local_variation_m": 2.3498699512356977e-21,
+    "wire_bottom_local_variation_m": 1.6711069443220838e-16,
+    "wire_endpoint_method": "end-ring centroids of evaluated wire vertices projected on pivot->bob axis",
+    "status": "PASS"
+  },
+  "P6_blend_vs_solver": {
+    "max_abs_t_ref_mismatch": 0.0,
+    "n_samples_judged": 961,
+    "max_abs_dtheta_vs_verifier_ref_rad": 4.029804529098735e-07,
+    "t_at_max": 4.645833333333333,
+    "rms_dtheta_vs_ref_rad": 1.7464366624888704e-07,
+    "info_after_clip_end_max_dtheta_rad": 0.012675312622853069,
+    "info_after_clip_end_note": "t > 10 s (frame 240 subframes) depends on F-curve extrapolation; outside the clip, not judged",
+    "max_abs_dtheta_vs_trajectory_rad": 4.029804414051874e-07,
+    "trajectory_samples_compared": 961,
+    "max_abs_dtheta_on_frames_rad": 1.2179503752762777e-08,
+    "max_abs_dtheta_subframes_rad": 4.029804529098735e-07,
+    "status": "PASS"
+  },
+  "keyframe_audit": {
+    "rotation_euler[1]": {
+      "n_keys": 241,
+      "frames_are_integers_0_240": true,
+      "euler_sign_value_equals": "-theta",
+      "max_abs_key_value_vs_ref_rad": 3.7246578599159363e-09,
+      "max_abs_key_value_vs_trajectory_rad": 3.724635128099507e-09,
+      "max_abs_handle_slope_vs_omega_over_24": 3.387385376536767e-07,
+      "handle_x_offsets_frames": [
+        0.3333282470703125,
+        0.33333587646484375
+      ],
+      "theta_key0_vs_theta0_param": 5.626132337788192e-10
+    }
+  },
+  "P8_blend_part": {
+    "theta_blend_frame0_rad": -0.08447293465250173,
+    "theta0_param": -0.08447293248409532,
+    "abs_diff": 2.1684064127613922e-09,
+    "scene": {
+      "fps": 24,
+      "fps_base": 1.0,
+      "frame_start": 0,
+      "frame_end": 240,
+      "frame_map_old": 100,
+      "frame_map_new": 100,
+      "unit_scale": 1.0,
+      "gravity": [
+        0.0,
+        0.0,
+        -9.8100004196167
+      ],
+      "ok": true
+    },
+    "status": "PASS"
+  },
+  "summary": {
+    "P5": "PASS",
+    "P6": "PASS",
+    "P8_blend": "PASS",
+    "motion_is_baked_keyframes": true
+  },
+  "dump": "<CASE_ROOT>/verify/out/ck002/check_blend_ck002.npz"
+}

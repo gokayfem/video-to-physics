@@ -1,0 +1,96 @@
+{
+  "label": "ck002",
+  "created_utc": "2026-10-25T23:23:55+00:00",
+  "inputs": [
+    {
+      "value": 0.0026041666666666665,
+      "file": "verify/out/ck002/prod_runs/conv/run_step_2.604167e-03.csv",
+      "sha256": "654a594155a118159e131f846c05bd4584b72a6c7cba3605c8089c26622ed843"
+    },
+    {
+      "value": 0.0013020833333333333,
+      "file": "verify/out/ck002/prod_runs/conv/run_step_1.302083e-03.csv",
+      "sha256": "51d8f94224ac66c604d4d23990746157b6af5f35bea2a94cdd57b47252d1c88b"
+    },
+    {
+      "value": 0.0006510416666666666,
+      "file": "verify/out/ck002/prod_runs/conv/run_step_6.510417e-04.csv",
+      "sha256": "502875209f6561b3891511baac94de5a9fa71a40504d1bfc405d37bafd96d32c"
+    },
+    {
+      "value": 0.0003255208333333333,
+      "file": "verify/out/ck002/prod_runs/conv/run_step_3.255208e-04.csv",
+      "sha256": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": ".venv/bin/python verify/run_production_at_step.py --params <CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json --solver-root <CASE_ROOT>/verify/out/ck002/ckcopy --h 0.0026041666666666665 --out verify/out/ck002/prod_runs/conv/run_step_2.604167e-03.csv",
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": ".venv/bin/python verify/run_production_at_step.py --params <CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json --solver-root <CASE_ROOT>/verify/out/ck002/ckcopy --h 0.0013020833333333333 --out verify/out/ck002/prod_runs/conv/run_step_1.302083e-03.csv",
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": ".venv/bin/python verify/run_production_at_step.py --params <CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json --solver-root <CASE_ROOT>/verify/out/ck002/ckcopy --h 0.0006510416666666666 --out verify/out/ck002/prod_runs/conv/run_step_6.510417e-04.csv",
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": ".venv/bin/python verify/run_production_at_step.py --params <CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json --solver-root <CASE_ROOT>/verify/out/ck002/ckcopy --h 0.0003255208333333333 --out verify/out/ck002/prod_runs/conv/run_step_3.255208e-04.csv",
+      "returncode": 0,
+      "stderr_tail": ""
+    }
+  ],
+  "verifier_code_sha256": "8cb6344f6d030d3e93387062314f4f49968431954c6bfba5f5c53f6ce9b15649",
+  "P1": {
+    "values": [
+      0.0026041666666666665,
+      0.0013020833333333333,
+      0.0006510416666666666,
+      0.0003255208333333333
+    ],
+    "theta_rad": {
+      "successive_max_diffs": [
+        7.918301361820035e-10,
+        4.949807447598986e-11,
+        3.0940769694606796e-12
+      ],
+      "observed_order": [
+        3.9997466666618733,
+        3.999791412632807
+      ]
+    },
+    "omega_rad_s": {
+      "successive_max_diffs": [
+        3.4687999174443096e-09,
+        2.1682903042496982e-10,
+        1.3553635644369955e-11
+      ],
+      "observed_order": [
+        3.999806795709334,
+        3.9998061276998693
+      ]
+    },
+    "E_J": {
+      "successive_max_diffs": [
+        6.852657330469469e-12,
+        1.5984435997040691e-13,
+        2.6229018956769323e-15
+      ],
+      "observed_order": [
+        5.4219238009875035,
+        5.929360182475039
+      ]
+    },
+    "criterion": "max|theta_{h/2}-theta_{h/4}| < 1e-7 rad and |p_obs - p_theory| <= 0.5 (finest triple)",
+    "e_last_rad": 3.0940769694606796e-12,
+    "p_obs_last": 3.999791412632807,
+    "p_theory": 4.0,
+    "kind": "step",
+    "status": "PASS"
+  }
+}

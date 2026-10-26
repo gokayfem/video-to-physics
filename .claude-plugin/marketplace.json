@@ -1,0 +1,23 @@
+{
+  "name": "video-to-physics",
+  "description": "Turn videos, images or ideas into verified physics reconstructions in Blender with coding agents",
+  "owner": {
+    "name": "gokayfem",
+    "url": "https://github.com/gokayfem"
+  },
+  "plugins": [
+    {
+      "name": "video-to-physics",
+      "source": "./",
+      "description": "Measure a clip, solve and benchmark the real physics, verify it independently, and bake it into the same Blender scene",
+      "category": "development",
+      "tags": [
+        "physics",
+        "simulation",
+        "blender",
+        "verification",
+        "ai-video"
+      ]
+    }
+  ]
+}

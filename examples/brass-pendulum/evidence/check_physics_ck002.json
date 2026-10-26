@@ -1,0 +1,234 @@
+{
+  "label": "ck002",
+  "created_utc": "2026-10-25T23:23:54+00:00",
+  "inputs": {
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json": "dc20e99c7119379f640eee4fb22b7cb405cc9495b0b659785e1742b37f093ee7",
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/solver/out/trajectory.csv": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba",
+    "verify/out/ck002/prod_runs/conservative/trajectory.csv": "215b724628bc3ec3fe8ef006191513b4a7519e029115b4765474f3831500d064",
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/solver/out/trajectory_meta.json": "594b8227ce69cda850227483ccb8204548af253fff6ced92e6dd0efbc3d8f558"
+  },
+  "verifier_code": {
+    "check_physics.py": "496e399535815df828f1f4e3f193d3fe1e28fc0e5078edbcb14d9db7cab8c0a4",
+    "ref_solver.py": "6c704a2382559dae914ccf6e605ea39ef4569d5dbe49ebeb9d733da305d26abc",
+    "vparams.py": "ad707fbef33ec88ad270ed9174f4ccdcefed8d664d3fda2ba21a66c43c2fe79e",
+    "vlib.py": "c3cafa0abc69db97791d29811c0675f9d3fb2f08c77faeb85bc4a2d36b93b1c0"
+  },
+  "model": {
+    "I_P": 0.458281309305573,
+    "mgd": 9.459484046731125,
+    "c_v": 0.0020820914327404363,
+    "k_q": 0.0,
+    "tau_c": 0.0,
+    "theta0": -0.08447293248409532,
+    "omega0": 0.37929871118296804,
+    "g": 9.80665,
+    "L_c": 0.4738475540756993,
+    "m_bob": 2.0356735337958085
+  },
+  "model_provenance": {
+    "params_path": "<CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json",
+    "params_sha256": "dc20e99c7119379f640eee4fb22b7cb405cc9495b0b659785e1742b37f093ee7",
+    "g": "/g",
+    "L_c": "/L_c",
+    "m_bob": "/bob_mass",
+    "r_bob": "/bob_radius",
+    "I_P": "/I_P",
+    "c_v": "/damping/c",
+    "k_q": "/damping/k_q",
+    "tau_c": "/damping/tau_c",
+    "theta0": "/theta_init",
+    "omega0": "/omega_init",
+    "mgd": "verifier: m(m_bob)*g*(L_c)"
+  },
+  "tolerances": {
+    "P2": 1e-06,
+    "P3": 1e-07,
+    "P4_cons": 1e-08,
+    "P4_damped": 1e-07,
+    "P4_growth": 1e-12,
+    "P8_solver": 1e-09,
+    "P8_t": 1e-12
+  },
+  "header": [
+    "t_s",
+    "theta_rad",
+    "omega_rad_s",
+    "alpha_rad_s2",
+    "x_m",
+    "z_m",
+    "KE_J",
+    "PE_J",
+    "E_J",
+    "tension_N",
+    "P_diss_W"
+  ],
+  "missing_columns": [],
+  "trajectory_meta": {
+    "solver_id": "rk4-fixed-step-v1",
+    "params_file": "params/physics.json",
+    "params_sha256": "dc20e99c7119379f640eee4fb22b7cb405cc9495b0b659785e1742b37f093ee7",
+    "params_status": "fitted",
+    "solver_source_files": [
+      "solver/pendulum.py",
+      "solver/run.py"
+    ],
+    "solver_source_sha256": "c444af069a277d346843eb6a60b6f9615d52d18565af6eb4089a12c3f2837841",
+    "trajectory_sha256": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba",
+    "method": "classical RK4, fixed step; output samples are integration nodes",
+    "tolerances": {
+      "h_s": 0.0003255208333333333,
+      "substeps_per_output": 32,
+      "expected_global_error_rad": "< 1e-10 (see solver/out/selfcheck.json)"
+    },
+    "sampling": {
+      "dt_s": 0.010416666666666666,
+      "t_start_s": 0.0,
+      "t_end_s": 10.0,
+      "n_samples": 961,
+      "note": "t = k/96 exactly; frame n of the reference at row 4n"
+    },
+    "derived_model": {
+      "m": 2.0356735337958085,
+      "d": 0.4738475540756993,
+      "I_P": 0.45828130930557304,
+      "L_c": 0.4738475540756993,
+      "m_bob": 2.0356735337958085,
+      "c_v": 0.0020820914327404363,
+      "k_q": 0.0,
+      "tau_c": 0.0,
+      "omega_s": 0.001,
+      "g": 9.80665,
+      "theta0": -0.08447293248409532,
+      "omega0": 0.37929871118296804,
+      "L_eq": 0.4751003733078381
+    },
+    "summary": {
+      "theta_max_abs_rad": 0.11864830370049956,
+      "tension_min_N": 19.822790341692215,
+      "tension_max_N": 20.243462946987197,
+      "E0_J": 0.06669573985821495,
+      "E_end_J": 0.06367259004955057,
+      "W_diss_end_J": 0.0030231498086649034,
+      "energy_balance_max_rel": 1.6551801574906262e-14
+    },
+    "created_utc": "2026-10-25T23:22:34Z"
+  },
+  "meta_params_hash_matches": true,
+  "results": {
+    "P8_initial_conditions_time": {
+      "theta0_param": -0.08447293248409532,
+      "theta0_traj": -0.08447293248409532,
+      "d_theta0": 0.0,
+      "omega0_param": 0.37929871118296804,
+      "omega0_traj": 0.37929871118296804,
+      "d_omega0": 0.0,
+      "n_rows": 961,
+      "t_first": 0.0,
+      "t_last": 10.0,
+      "max_abs_t_minus_n_over_96": 0.0,
+      "max_xz_vs_Lc_sin_cos_m": 0.0,
+      "periods_data_s": [
+        1.3841843118732613,
+        1.3841766779845437,
+        1.3841690921399716,
+        1.3841615540357433,
+        1.384154063369997,
+        1.3841466198427987,
+        1.3841392231561258
+      ],
+      "max_rel_period_data_vs_ref": 4.1744385725905886e-14,
+      "mean_period_rel_data_vs_ref": 3.9745984281580604e-14,
+      "criteria": "dtheta0,domega0<1e-9; |t-n/96|<=1e-12; t from 0 to >=10 s; x,z = L_c(sin,-cos) within 1e-9 m; period vs independent ref < 1e-7 rel",
+      "status": "PASS"
+    },
+    "P2_independent_benchmark": {
+      "max_abs_dtheta_rad": 2.0718507205003123e-13,
+      "t_at_max": 9.864583333333334,
+      "max_abs_domega": 9.076264045893012e-13,
+      "ref_taylor_vs_gl4_max_dtheta": 3.896188927043909e-15,
+      "ref_turning_points": 14,
+      "method": "Taylor-series order 24 (event split at omega=0), cross-checked by Gauss-Legendre s=4",
+      "status": "PASS"
+    },
+    "P4_energy_damped": {
+      "E0_recomputed_J": 0.06669573985821495,
+      "E0_column_J": 0.06669573985821495,
+      "col_KE_vs_recomputed_rel": 2.080760755831862e-16,
+      "col_dPE_vs_recomputed_rel": 0.0,
+      "col_PE_offset_J": 0.0,
+      "col_E_vs_KE_plus_PE_rel": 2.080760755831862e-16,
+      "col_Pdiss_vs_recomputed_rel_per_s": 0.0,
+      "columns_consistent_with_recomputation": true,
+      "max_forward_dEdt_column_over_E0": -1.6764346566948617e-06,
+      "max_per_sample_increment_over_E0": -1.746286100723864e-08,
+      "no_growth_reading": "CHANGELOG 2026-10-25T22:31:55Z: E(t_k+1)-E(t_k) <= 1e-12*E0 per 1/96 s sample, damped AND conservative",
+      "no_growth_ok": true,
+      "max_analytic_dEdt_over_E0": -7.443996314295503e-09,
+      "balance_residual_column_E_eventaware_int_rel": 1.4877439404197812e-14,
+      "balance_residual_recomputed_E_rel": 1.480916444189708e-14,
+      "dissipated_fraction_at_end": 0.04532747991237912,
+      "balance_residual_pure_columns_simpson_rel": 4.4401662022022916e-10,
+      "simpson_vs_boole_quadrature_rel": 4.4531693516518297e-10,
+      "status": "PASS"
+    },
+    "P4_energy_conservative": {
+      "E0_recomputed_J": 0.06669573985821495,
+      "E0_column_J": 0.06669573985821495,
+      "col_KE_vs_recomputed_rel": 2.080760755831862e-16,
+      "col_dPE_vs_recomputed_rel": 0.0,
+      "col_PE_offset_J": 0.0,
+      "col_E_vs_KE_plus_PE_rel": 2.080760755831862e-16,
+      "col_Pdiss_vs_recomputed_rel_per_s": 0.0,
+      "columns_consistent_with_recomputation": true,
+      "max_forward_dEdt_column_over_E0": 1.4781724409429127e-12,
+      "max_per_sample_increment_over_E0": 1.5397629593155777e-14,
+      "no_growth_reading": "CHANGELOG 2026-10-25T22:31:55Z: E(t_k+1)-E(t_k) <= 1e-12*E0 per 1/96 s sample, damped AND conservative",
+      "no_growth_ok": true,
+      "max_analytic_dEdt_over_E0": 1.5687648646244095e-15,
+      "drift_column_rel": 2.7049889825814205e-14,
+      "drift_recomputed_rel": 2.684181375023102e-14,
+      "status": "PASS"
+    },
+    "P3_finite_amplitude_period": {
+      "amplitude_rad": 0.11881898098111801,
+      "T_exact_ellipk_s": 1.384189551447696,
+      "T_exact_agm_s": 1.384189551447696,
+      "T_small_angle_s": 1.382968271183876,
+      "n_periods": 7,
+      "periods_s": [
+        1.3841895514477511,
+        1.3841895514477516,
+        1.3841895514477511,
+        1.3841895514477507,
+        1.3841895514477507,
+        1.3841895514477507,
+        1.3841895514477507
+      ],
+      "max_rel_err": 4.0190073491430667e-14,
+      "mean_rel_err": 3.952393967665557e-14,
+      "conservative_traj_theta0_err": 0.0,
+      "conservative_traj_vs_closed_form_max_dtheta": 2.1176192310096154e-13,
+      "status": "PASS",
+      "info_damped_first_period_vs_elliptic_at_first_amplitude_rel": -1.2580374837423136e-06
+    },
+    "P7_tension": {
+      "recomputed_min_N": 19.822790341692215,
+      "recomputed_max_N": 20.243462946987197,
+      "ref_min_N": 19.822790341692215,
+      "column_min_N": 19.822790341692215,
+      "column_max_N": 20.243462946987197,
+      "column_vs_recomputed_max_rel": 0.0,
+      "formula": "T_bob = m_bob (g cos th + L_c om^2)",
+      "column_matches_recomputation": true,
+      "status": "PASS"
+    }
+  },
+  "summary": {
+    "P8_initial_conditions_time": "PASS",
+    "P2_independent_benchmark": "PASS",
+    "P4_energy_damped": "PASS",
+    "P4_energy_conservative": "PASS",
+    "P3_finite_amplitude_period": "PASS",
+    "P7_tension": "PASS"
+  }
+}

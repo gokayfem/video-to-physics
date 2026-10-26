@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "declared_utc": "{{DATE}}",
+  "declared_before": "any measurement result, fit, solver production run or render existed for this case",
+  "note": "Tolerances are fixed before data and never relaxed after a failure. Case-specific checks may be added by the lead before production. Remove checks that do not apply and say why in the audit.",
+  "anchor_rule": {
+    "applies": true,
+    "jump": "first half-cycle (or event) whose amplitude/period changes by > 3 sigma from the previous one",
+    "drift": "cumulative amplitude or period trend > 3 sigma relative to the first two cycles",
+    "per_mode_windows": "only for modes shown to be dynamically decoupled; disclosed as a deviation",
+    "anchored_choices": ["{{ANCHORED_CHOICE}}"]
+  },
+  "physics_validation": {
+    "P1_convergence": ">= 3 levels in space and time; observed order within 0.5 of theory (or reported spread if non-monotone); finest-level difference below the case tolerance for every reported scalar and for the trajectory/field max norm",
+    "P2_independent_benchmark": "verifier's solver (different method, no shared code) vs production at identical parameters: state difference < 1e-6 (ODE) or key scalars within 2 % (field solvers); event times within 1e-6 s",
+    "P3_analytic_limit": "closed form or published benchmark in its regime: < 1e-7 relative (ODE), <= 0.5 % (structures), inside the published band (CFD)",
+    "P4_budget": "conservative drift |dE|/E0 < 1e-8; dissipation non-negative and non-decreasing; balance residual < declared fraction; mass/tracer budget within declared %; divergence below declared norm",
+    "P5_constraints_saved_blend": "reopened saved .blend at frames + 4 subframes: fixed anchors < 1e-6 m; declared lengths/attachments < 1e-6 m (1e-5 m visual); no interpenetration",
+    "P6_blend_vs_solver": "evaluated transforms or mesh vs solver at frames + 4 subframes: < 1e-5 m / rad",
+    "P7_forces": "tension >= 0, normal force >= 0 in contact, friction inside the cone if declared",
+    "P8_initial_conditions_time": "initial state equals params; frame n <-> t = n/fps exactly; no time scaling",
+    "P9_control_response": "parameter changes through the real build path change the dynamics as the equations predict, each from its own equilibrium",
+    "P10_repeatability": "two clean rebuilds: identical keys, caches and evaluated transforms",
+    "L1_logistics": "every moving prop has a visible cause; carried props <= {{MAX_PROP_SPEED_M_S}} m/s; no teleports, appearances or visibility toggles; counts consistent with the load at every time"
+  },
+  "benchmarks": [
+    {"id": "B1", "quantity": "{{QUANTITY}}", "target": "{{VALUE}}", "source": "{{SOURCE}}", "tolerance_rel": 0.005}
+  ],
+  "reference_fidelity": {
+    "note": "Reported separately; a generated reference is not ground truth. Skip for input kind 'none'.",
+    "R1_tracking": "per-frame uncertainty from two independent methods",
+    "R2_anchor": "projected model vs track RMS inside the anchor window <= max(2 px, 3 sigma)",
+    "R3_divergence": "after the anchor window: divergence map with named defects (not pass/fail)",
+    "R4_camera": "static landmark reprojection RMS <= 2 px (<= 0.1 px for our own first frame)",
+    "R5_render_track": "tracked feature in the final render vs model projection RMS <= 1 px"
+  },
+  "visual_review": {
+    "V1": "no shape change, sliding attachments, interpenetration, flicker or popping at turning points and contacts",
+    "V2": "all visible parts present; materials match by region metrics and 2-D luma profiles",
+    "V3": "side-by-side at identical t, no retiming; static silhouette IoU >= 0.9",
+    "V4": "observed vs hypothesis vs untested separated in the report",
+    "V5": "clean rebuild from the checkpoint reproduces it; manifest verifies"
+  }
+}

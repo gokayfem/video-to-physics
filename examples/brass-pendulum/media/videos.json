@@ -1,0 +1,18 @@
+[
+ {
+  "role": "reconstruction",
+  "file": "v004_reconstruction_ck003_1920x1088.mp4",
+  "source": "01-brass-pendulum/review/visuals/v004_reconstruction_ck003_1920x1088.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff792/KvfaQqpImbD8ArgPS3bil_v004_reconstruction_ck003_1920x1088.mp4",
+  "bytes": 4941821,
+  "sha256": "3c160f8a1870af481aca2fd4c10c570efc4b175b915cdff33a982053b4be916e"
+ },
+ {
+  "role": "side_by_side",
+  "file": "v004_sbs_ck003_final_f000-240.mp4",
+  "source": "01-brass-pendulum/review/visuals/v004_sbs_ck003_final_f000-240.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff792/5mLxPMLYaKqfNXoHIQw77_v004_sbs_ck003_final_f000-240.mp4",
+  "bytes": 2252308,
+  "sha256": "da58d4f3832a636b5f6bb504e0969e8bb7d2a55eb32ac02e5cfabf8b67f09963"
+ }
+]

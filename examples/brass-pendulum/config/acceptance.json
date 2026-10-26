@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "declared_utc": "2026-10-25T22:09:18Z",
+  "declared_before": "any measurement result, fit, or final render existed",
+  "note": "Tolerances are fixed here. Changing one later requires a written reason in CHANGELOG and must not be done merely because a check failed.",
+  "physics_validation": {
+    "P1_convergence": {"what": "theta(t), omega(t), E(t) over 0-10 s at >=3 step sizes (or tolerance levels) of the production integrator", "tol": "max|theta_h/2 - theta_h/4| < 1e-7 rad; observed convergence order within 0.5 of the theoretical order", "why": "1e-7 rad is ~1e-5 px of bob motion at the reference scale; far below any visible or measurement effect"},
+    "P2_independent_benchmark": {"what": "independently written solver (verifier, different method, no imports from solver/) vs production trajectory at identical params", "tol": "max|dtheta| < 1e-6 rad over 0-10 s", "why": "two independent high-accuracy integrations must agree far below measurement noise"},
+    "P3_finite_amplitude_period": {"what": "conservative case period vs exact elliptic-integral period 4*sqrt(I_eff/(m g d))*K(sin(theta0/2)) (or the formula valid for the declared model) and the small-angle limit as theta0 -> 0", "tol": "relative error < 1e-7", "regime": "exact for an undamped rigid pendulum about a fixed frictionless axis; small-angle formula only as theta0 -> 0"},
+    "P4_energy": {"what": "conservative case total energy drift; damped case energy balance E(t) - E(0) + integral(P_diss dt)", "tol": "|drift|/E0 < 1e-8 (conservative); |balance residual|/E0 < 1e-7 (damped); dE/dt <= 1e-12*E0 at all samples (no growth)"},
+    "P5_constraints_saved_blend": {"what": "reopened saved .blend, evaluated world transforms: pivot position, pivot-to-bob-centre length, out-of-plane coordinate, wire endpoints coincide with pin and bob attachment", "tol": "pivot drift < 1e-6 m; |L(t) - L_c| < 1e-6 m; |y_bob| < 1e-6 m; wire endpoint gaps < 1e-5 m", "why": "float32 transform precision ~1e-7 m at this scale"},
+    "P6_blend_vs_solver": {"what": "evaluated bob position from the reopened .blend at every frame and 4 subframes per frame vs validated solver", "tol": "max angular error < 1e-5 rad", "why": "cubic Hermite interpolation error estimate ~5e-7 rad at 24 fps; 1e-5 rad is < 0.01 px"},
+    "P7_tension": {"what": "suspension tension from solver over the clip", "tol": "T(t) > 0 at all samples (wire stays taut), reported min/max"},
+    "P8_initial_conditions_time": {"what": "theta(0), omega(0) in solver, bake and .blend equal params; frame n at t=n/24 exactly; no time scaling", "tol": "|delta| < 1e-9 rad (solver), < 1e-6 rad (blend, float32)"},
+    "P9_control_response": {"what": "changed L (x4), amplitude (2 and 15 deg), damping (x10) re-run through the real build path", "tol": "periods and decay envelopes match the formulas of P3 / linear damping theory within 1e-4 relative (or the regime-appropriate formula)"},
+    "P10_repeatability": {"what": "two clean rebuilds from inputs", "tol": "identical keyframe arrays (bitwise) and identical evaluated bob positions"}
+  },
+  "reference_fidelity": {
+    "note": "Reported separately from physics validation. The AI reference is not ground truth; failing these does not license nonphysical fixes.",
+    "R1_tracking_uncertainty": "report per-frame bob-centre uncertainty sigma_px from the measurement method",
+    "R2_fit_residual": {"what": "projected model bob centre vs tracked bob centre, fit segment t < 7.5 s", "target": "RMS <= max(2 px, 3*sigma_px)"},
+    "R3_heldout": {"what": "prediction on held-out t >= 7.5 s without refit", "target": "RMS <= max(3 px, 3*sigma_px); phase error at t=10 s < 0.05 cycle"},
+    "R4_camera": {"what": "static landmark reprojection after camera calibration", "target": "RMS <= 2 px"},
+    "R5_render_track": {"what": "bob centre tracked in the final render vs tracked in the reference, same method", "target": "RMS <= 3 px"}
+  },
+  "visual_review": {
+    "V1": "No geometry shape change, attachment sliding, length change, flicker, or popping in dense strips at turning points and zero crossings",
+    "V2": "Stand, base, arm, pin, wire and bob present with readable construction; materials read as walnut, steel and polished brass",
+    "V3": "Side-by-side at identical physical times, no retiming; static stand silhouette IoU >= 0.9 vs reference mask (reported)",
+    "V4": "Reviewer distinguishes observed problems, hypotheses and untested claims"
+  }
+}

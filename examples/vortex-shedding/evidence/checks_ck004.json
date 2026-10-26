@@ -1,0 +1,217 @@
+{
+ "outdir": "../checkpoints/ck004/solver/out",
+ "keys": [
+  "u",
+  "v",
+  "omega",
+  "x",
+  "y",
+  "t",
+  "ts_t",
+  "ts_Cd",
+  "ts_Cl",
+  "ts_probe_v",
+  "probe_xy",
+  "solid_mask",
+  "note"
+ ],
+ "n_frames": 241,
+ "n_dye": 241,
+ "all_passed": true,
+ "results": [
+  {
+   "check": "divergence_rms_over_vorticity_rms",
+   "passed": true,
+   "value": 0.011725174263119698,
+   "tol": 0.05,
+   "note": "max|div| = 0.131 1/s, rms|omega| = 0.556 1/s (central diff, 1 mm grid, ring of 3 dx excluded)"
+  },
+  {
+   "check": "noslip_max_speed_over_U",
+   "passed": true,
+   "value": {
+    "cylinder_interior": 0.0,
+    "walls": NaN
+   },
+   "tol": 0.05,
+   "note": "solid-core points r < R - 2 mm and grid rows on y = +-W/2 (if present)"
+  },
+  {
+   "check": "St_Cl_vs_probe",
+   "passed": true,
+   "value": {
+    "St_Cl": 0.18960603015075345,
+    "St_Cl_fft": 0.18894472361809012,
+    "St_probe": 0.18970050251256246,
+    "rel": 0.0004982561036370927
+   },
+   "tol": 0.02,
+   "note": ""
+  },
+  {
+   "check": "St_Cl_vs_field_v(5D wake)",
+   "passed": true,
+   "value": {
+    "St_field": 0.18998524221105492,
+    "rel": 0.0019999999999998365
+   },
+   "tol": 0.05,
+   "note": "periodogram of centreline v at xc+5D (window ~3 cycles: 5 % tolerance)"
+  },
+  {
+   "check": "St_vs_reference",
+   "passed": true,
+   "value": {
+    "St": 0.18960603015075345,
+    "St_ref": 0.19082156772152645,
+    "rel": 0.006370021928270098
+   },
+   "tol": 0.02,
+   "note": ""
+  },
+  {
+   "check": "Cd_mean_vs_reference",
+   "passed": true,
+   "value": {
+    "Cd": 1.364197281208741,
+    "Cd_ref": 1.3684730393228433,
+    "rel": 0.0031244737683819835
+   },
+   "tol": 0.05,
+   "note": ""
+  },
+  {
+   "check": "Cl_amp_vs_reference",
+   "passed": true,
+   "value": {
+    "Cl_amp": 0.5076929117576895,
+    "ref": 0.4994453739659673,
+    "rel": 0.01651339309889015,
+    "Cl_max_raw_spike": 0.09762162552270881
+   },
+   "tol": 0.1,
+   "note": "Cl low-passed at 2.5 f_shed (raw spikes reported separately)"
+  },
+  {
+   "check": "wake_KE_periodic_no_drift",
+   "passed": true,
+   "value": {
+    "rel_drift": -0.0010884403018280864,
+    "period_means": [
+     3.6014912438986357e-06,
+     3.5975733680970734e-06
+    ]
+   },
+   "tol": 0.03,
+   "note": "fluctuation KE (about the window mean) over x in [xc+D, xc+16D]; first vs last whole shedding period"
+  },
+  {
+   "check": "vortex_convection_speed_over_U",
+   "passed": true,
+   "value": 0.9247213824732904,
+   "tol": [
+    0.82,
+    0.93
+   ],
+   "note": "centreline v phase speed, 12 pairs, LS fit dx = c*lag"
+  },
+  {
+   "check": "tracer_bounds",
+   "passed": true,
+   "value": {
+    "min": 0.0,
+    "max": 1.0
+   },
+   "tol": [
+    -0.02,
+    1.02
+   ],
+   "note": ""
+  },
+  {
+   "check": "no_dye_upstream_of_needles",
+   "passed": true,
+   "value": {
+    "upstream_extent_m": 0.0008749999999999869,
+    "max_c_beyond_tol": 0
+   },
+   "tol": 0.003,
+   "note": "extent of c > 0.02 upstream of the needle tips must be <= 3.0 mm (source radius + ~2 solver cells)"
+  },
+  {
+   "check": "dye_front_speed_le_max_velocity",
+   "passed": true,
+   "value": {
+    "front_speed_max": 0.018000000000000016,
+    "umax": 0.021226242184638977,
+    "ratio": 0.848006907837237
+   },
+   "tol": "<= 1.05 umax",
+   "note": "6-frame differences"
+  },
+  {
+   "check": "tracer_mass_budget_linear",
+   "passed": true,
+   "value": {
+    "max_dev_frac": [
+     0.008027387018240956,
+     0.0002588525588023124,
+     0.0002665571580620017
+    ]
+   },
+   "tol": 0.05,
+   "note": "I(t) = mass(t) + cumulative outflow must be linear (constant needle sources); max deviation / total injected"
+  },
+  {
+   "check": "dye_advected_by_velocity_scale",
+   "passed": true,
+   "value": {
+    "best_scale": 0.9987805315576086,
+    "err_by_scale": {
+     "0.5": 0.3003,
+     "0.75": 0.2285,
+     "0.9": 0.1304,
+     "1.0": 0.0262,
+     "1.1": 0.1356,
+     "1.25": 0.2413,
+     "1.5": 0.321,
+     "2.0": 0.3831
+    },
+    "err_no_motion": 0.37860050797462463,
+    "n_points": 115956,
+    "n_pairs": 8
+   },
+   "tol": [
+    0.85,
+    1.15
+   ],
+   "note": "moving dye points (|dc|>0.2 over the lag) advected RK2 over 8 frames with s*(u,v); best s should be 1"
+  }
+ ],
+ "reference": {
+  "St": 0.19082156772152645,
+  "Cd_mean": 1.3684730393228433,
+  "Cl_amp": 0.4994453739659673,
+  "normalisation": "U_ref",
+  "approach_normalised": {
+   "St": 0.19381194370135374,
+   "Cd_mean": 1.4116999543030402,
+   "Cl_amp": 0.5152217042971535
+  },
+  "U_in_calibration": {
+   "method": "empty-channel run (same mesh/solver, lambda D/U = 0.0041123): u(x_cyl, 0) = 0.97171 U at U_in 0.90139 U -> U_in = 0.92763 U; check run gives u(x_cyl,0) = 0.99898 U (-0.10 %)",
+   "files": [
+    "ref_empty_cal1.npz",
+    "ref_empty_cal2.npz"
+   ]
+  },
+  "U_approach_over_U_ref": 0.9845707342761333,
+  "source": "ref_prod_M1c.npz",
+  "setup": "production channel scaled by D: W = 12 D, inlet 26 D upstream (plug U_in = 0.92763 U), outlet 34 D, lambda D/U = 0.0041123 (B decision), Re = 150, U = centreline approach speed (B def.)",
+  "vs_B": {
+   "St": -0.0013273090257634238,
+   "Cd_mean": -0.02885565119744121,
+   "Cl_amp": -0.10028259058797219
+  }
+ }
+}

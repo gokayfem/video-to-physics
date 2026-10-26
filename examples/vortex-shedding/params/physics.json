@@ -1,0 +1,96 @@
+{
+ "D_m": {
+  "value": 0.01,
+  "tag": "declared"
+ },
+ "U_ref_m_s": {
+  "value": 0.015,
+  "tag": "declared (B: dye-plane centreline at x_cyl)"
+ },
+ "nu_m2_s": {
+  "value": 1e-06,
+  "tag": "assumed"
+ },
+ "rho_kg_m3": {
+  "value": 998.0,
+  "tag": "assumed"
+ },
+ "Re": {
+  "value": 150,
+  "tag": "derived"
+ },
+ "U_in_plug_m_s": {
+  "value": 0.013874,
+  "tag": "derived (solver empty-channel calibration: B value 0.01352 gave 0.9745 U at x_cyl; rescaled)"
+ },
+ "lambda_floor_1_s": {
+  "value": 0.00617,
+  "tag": "derived (B: (pi^2/4) nu/h^2)"
+ },
+ "channel_half_width_m": {
+  "value": 0.06,
+  "tag": "declared"
+ },
+ "cylinder_center_m": {
+  "value": [
+   -0.04,
+   0.0
+  ],
+  "tag": "declared"
+ },
+ "needle_tips": {
+  "value": {
+   "x": -0.093,
+   "y": [
+    -0.024,
+    -0.016,
+    -0.008,
+    0,
+    0.008,
+    0.016,
+    0.024
+   ]
+  },
+  "tag": "declared"
+ },
+ "source_radius_m": {
+  "value": 0.00035,
+  "tag": "declared (B: needle OD/2)"
+ },
+ "t_release_s": {
+  "value": -3.8750000000000004,
+  "tag": "derived (Lagrangian particle front of outer streaks at x_cyl+0.6D at t=0)"
+ },
+ "phase_phi0_rad": {
+  "value": 5.225212492978728,
+  "tag": "fitted to measurement: lower-side vortex at 0.75 s (the only free choice)"
+ },
+ "St": {
+  "value": 0.1906447861458769,
+  "tag": "derived (solver)"
+ },
+ "Cd_mean": {
+  "value": 1.3868489254843517,
+  "tag": "derived (solver)"
+ },
+ "Cl_amp": {
+  "value": 0.5124107499999999,
+  "tag": "derived (solver)"
+ },
+ "f_shed_Hz": {
+  "value": 0.2859671792188153,
+  "tag": "derived (solver)"
+ },
+ "finest_dx_m": {
+  "value": 0.00029296875,
+  "tag": "numerical"
+ },
+ "dye_model": {
+  "value": "v004 mass-conserving Gaussian streaks: sig^2 = sig0^2/lam^2 + 2 D_m age + sig_aa^2, c = sig_e0/(lam sig), sig0 = 0.47 mm, D_m = 1e-9 m^2/s",
+  "tag": "declared (lead v002/v004); sig0 derived (matches v003 frame 0)"
+ },
+ "window_t0_solver_nd": {
+  "value": 262.125,
+  "tag": "derived (whole periods after the anchored window; Gamma+ at 0.75 s)"
+ }
+}

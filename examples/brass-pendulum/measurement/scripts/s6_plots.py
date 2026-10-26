@@ -1,0 +1,88 @@
+"""Stage 6a: diagnostic plots -> measurement/plots/*.png (labelled v001, draft)."""
+import numpy as np, os, sys, csv, json, collections, pickle
+sys.path.insert(0, os.path.dirname(__file__))
+from common import *
+import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+from scipy.signal import savgol_filter
+VER = "v001"; TAG = f"{VER} | reference measurement – draft | clip 01 brass pendulum"
+OUT = os.path.join(MEAS, "plots"); os.makedirs(OUT, exist_ok=True)
+A = np.load(os.path.join(CACHE, "analysis.npz")); Bz = np.load(os.path.join(CACHE, "bob_raw.npz"))
+S = json.load(open(os.path.join(MEAS, "summary.json")))
+t = np.arange(241) / 24; cA = Bz["cA"]; cS = A["cS"]; sig = A["sig"]; th = A["theta"]; sth = A["sth"]; qD = A["qD"]
+def lab(fig, title):
+    fig.suptitle(title, fontsize=11, x=0.01, ha="left"); fig.text(0.99, 0.005, TAG, ha="right", va="bottom", fontsize=7, color="#555")
+def damped(p, tt):
+    c0, c1, Am, g, om, ph = p; return c0 + c1 * tt + Am * np.exp(-g * tt) * np.cos(om * tt + ph)
+# 1 u(t), v(t)
+fig, ax = plt.subplots(2, 1, figsize=(12, 6.5), sharex=True)
+ax[0].plot(t, cA[:, 0], ".-", ms=3, lw=0.6, label="u raw (method A, observed)"); ax[0].plot(t, cS[:, 0], ".-", ms=2, lw=0.5, alpha=0.7, label="u stabilized to frame-0 geometry")
+ax[0].plot(t, Bz["cB"][:, 0] - np.median(Bz["cB"][:, 0] - cA[:, 0]), "x", ms=2, alpha=0.5, label="u method B (offset-corrected)")
+ax[0].set_ylabel("u [px]"); ax[0].legend(fontsize=8, ncol=3)
+ax[1].plot(t, cA[:, 1], ".-", ms=3, lw=0.6, label="v raw (observed)"); ax[1].plot(t, cS[:, 1], ".-", ms=2, lw=0.5, alpha=0.7, label="v stabilized")
+ax[1].set_ylabel("v [px]"); ax[1].set_xlabel("t = n/24 [s]"); ax[1].legend(fontsize=8); ax[1].invert_yaxis()
+lab(fig, "Bob centre u(t), v(t). Raw v drifts ~+23 px over the clip from the camera zoom/dolly; stabilized removes it"); fig.savefig(os.path.join(OUT, f"{VER}_bob_uv_t.png"), dpi=110); plt.close(fig)
+# 2 angle with fit + residual
+fig, ax = plt.subplots(2, 1, figsize=(12, 6.5), sharex=True, gridspec_kw=dict(height_ratios=[2, 1]))
+ax[0].errorbar(t, th, sth, fmt=".", ms=3, lw=0.5, label="image angle pivot->bob (observed)")
+tt = np.linspace(0, 10, 2000); ax[0].plot(tt, damped(qD, tt), "-", lw=0.8, label="damped-sine fit (fitted, g=%.3f/s: NEGATIVE = growth)" % qD[3])
+pk = A["peaks"]; ax[0].plot(pk[:, 1], pk[:, 3] + qD[0] + qD[1] * pk[:, 1], "kv", ms=5, label="turning points (local fit)")
+ax[0].set_ylabel("angle [deg, image plane]"); ax[0].legend(fontsize=8)
+ax[1].plot(t, A["resD"], ".-", ms=3, lw=0.5); ax[1].axhline(0, color="k", lw=0.5); ax[1].set_ylabel("resid [deg]"); ax[1].set_xlabel("t [s]")
+lab(fig, "Image-plane angle and damped-sine fit: residuals are dominated by amplitude modulation and the 4-frame cadence, not noise"); fig.savefig(os.path.join(OUT, f"{VER}_angle_t_fit.png"), dpi=110); plt.close(fig)
+# 3 amplitude per half-cycle + period per cycle
+fig, ax = plt.subplots(1, 2, figsize=(12, 4.5))
+for p in pk: ax[0].errorbar(p[1], abs(p[3]), p[4], fmt="o" if p[3] > 0 else "s", color="C0" if p[3] > 0 else "C3", ms=4)
+h = S["amplitude"]["half_cycle_peak_to_peak_half_deg"]; ax[0].errorbar([x["t_s"] for x in h], [x["amp_deg"] for x in h], [x["sd_deg"] for x in h], fmt="k.-", lw=0.8, label="half peak-to-peak")
+ax[0].set_xlabel("t [s]"); ax[0].set_ylabel("|turning-point angle - offset| [deg]"); ax[0].legend(["half peak-to-peak", "+ peaks (o) / - peaks (s)"], fontsize=8)
+ax[0].set_title("amplitude: shrinks to t~3.6 s, GROWS to t~7.1 s, shrinks again", fontsize=9)
+zc = A["zc"]; fp = np.array(S["period"]["zero_crossings"]["full_periods_s"])
+ax[1].errorbar(0.5 * (zc[:-2, 0] + zc[2:, 0]), fp, np.hypot(zc[:-2, 1], zc[2:, 1]), fmt="o-", ms=4)
+ax[1].axhline(S["period"]["zero_crossings"]["period_s"], color="k", lw=0.6, ls="--", label="mean %.4f s" % S["period"]["zero_crossings"]["period_s"])
+ax[1].set_xlabel("t [s] (mid of cycle)"); ax[1].set_ylabel("full period from zero crossings [s]"); ax[1].legend(fontsize=8)
+ax[1].set_title("period per cycle varies 1.357-1.434 s (sd 0.026 s >> timing sd ~0.002 s)", fontsize=9)
+lab(fig, "Amplitude per half-cycle and cycle-by-cycle period (observed)"); fig.tight_layout(rect=(0, 0.02, 1, 0.94)); fig.savefig(os.path.join(OUT, f"{VER}_amplitude_period.png"), dpi=110); plt.close(fig)
+# 4 tracking residuals / uncertainty
+fig, ax = plt.subplots(2, 1, figsize=(12, 5.5), sharex=True)
+d = A["dAB"]; ax[0].plot(t, d[:, 0], ".-", ms=2, lw=0.5, label="u: B - A"); ax[0].plot(t, d[:, 1], ".-", ms=2, lw=0.5, label="v: B - A"); ax[0].set_ylabel("method disagreement [px]"); ax[0].legend(fontsize=8)
+ax[1].plot(t, sig[:, 0], label="sigma_u"); ax[1].plot(t, sig[:, 1], label="sigma_v"); ax[1].set_ylabel("per-frame sigma [px]"); ax[1].set_xlabel("t [s]"); ax[1].legend(fontsize=8)
+lab(fig, "Bob tracking: independent-method disagreement (A edge circle fit vs B annulus ZNCC) and the per-frame sigma"); fig.savefig(os.path.join(OUT, f"{VER}_bob_track_residuals.png"), dpi=110); plt.close(fig)
+# 5 cadence
+du = np.diff(cS[:, 0]); sm = savgol_filter(cS[:, 0], 13, 3, deriv=1); vm = 0.5 * (sm[1:] + sm[:-1]); n = np.arange(1, 241)
+ok = np.abs(vm) > 0.4 * np.abs(vm).max()
+fig, ax = plt.subplots(1, 2, figsize=(12, 4.5))
+ax[0].plot(t[1:], du, ".-", ms=3, lw=0.5, label="frame step du (n-1 -> n)"); ax[0].plot(t[1:], vm, "-", lw=0.8, label="smooth velocity (SG 13,3)")
+ax[0].plot(t[1:][n % 4 == 0], du[n % 4 == 0], "r.", ms=5, label="steps into frames n = 4k"); ax[0].set_xlim(0, 3); ax[0].set_xlabel("t [s]"); ax[0].set_ylabel("px / frame"); ax[0].legend(fontsize=8)
+for k in range(4): ax[1].hist(du[ok & (n % 4 == k)] / vm[ok & (n % 4 == k)], bins=20, alpha=0.6, label="n mod 4 = %d" % k)
+ax[1].set_xlabel("step / smooth velocity (fast-motion frames)"); ax[1].legend(fontsize=8)
+lab(fig, "Temporal cadence defect: the step into every frame n=4k is ~1.58x the local velocity, others ~0.81x (observed)"); fig.tight_layout(rect=(0, 0.02, 1, 0.94)); fig.savefig(os.path.join(OUT, f"{VER}_cadence_4frame.png"), dpi=110); plt.close(fig)
+# 6 landmarks + drift
+D = collections.defaultdict(list)
+for r in csv.DictReader(open(os.path.join(MEAS, "static_landmarks.csv"))): D[r["landmark"]].append(r)
+fig, ax = plt.subplots(2, 2, figsize=(13, 8))
+for k in D:
+    U = np.array([float(r["u_px"]) for r in D[k]]); V = np.array([float(r["v_px"]) for r in D[k]])
+    ax[0, 0].plot(t, U - U[0], lw=0.8, label=k); ax[0, 1].plot(t, V - V[0], lw=0.8)
+    ru = np.array([float(r["resid_u_after_drift_px"]) for r in D[k]]); rv = np.array([float(r["resid_v_after_drift_px"]) for r in D[k]])
+    ax[1, 0].plot(t, np.hypot(ru, rv), lw=0.6)
+ax[0, 0].set_ylabel("du from frame 0 [px]"); ax[0, 1].set_ylabel("dv from frame 0 [px]"); ax[0, 0].legend(fontsize=6, ncol=2)
+ax[1, 0].set_ylabel("|residual after drift homography| [px]"); ax[1, 0].set_xlabel("t [s]")
+ax[1, 1].plot(t, A["simp"][:, 0], label="similarity scale"); ax2 = ax[1, 1].twinx(); ax2.plot(t, A["simp"][:, 1], "C1", lw=0.6, label="rotation [deg]")
+ax[1, 1].set_ylabel("scale vs frame 0"); ax2.set_ylabel("rotation [deg]", color="C1"); ax[1, 1].set_xlabel("t [s]")
+lab(fig, "Static landmarks: raw motion (top), residual after per-frame homography (bottom-left), drift scale/rotation (bottom-right)"); fig.tight_layout(rect=(0, 0.02, 1, 0.95)); fig.savefig(os.path.join(OUT, f"{VER}_landmark_motion_drift.png"), dpi=110); plt.close(fig)
+# 7 wire straightness and radius
+Su = list(csv.DictReader(open(os.path.join(MEAS, "suspension.csv"))))
+sag = np.array([float(r["sagitta_quadfit_px"]) for r in Su]); ssd = np.array([float(r["sigma_sagitta_px"]) for r in Su])
+fig, ax = plt.subplots(1, 3, figsize=(14, 4.5))
+ax[0].errorbar(th - qD[0], sag, ssd, fmt=".", ms=3); ax[0].set_xlabel("image angle - offset [deg]"); ax[0].set_ylabel("wire sagitta (quadratic fit) [px]"); ax[0].axhline(0, color="k", lw=0.5)
+ax[0].set_title("wire bows in proportion to angle (corr %.2f)" % np.corrcoef(sag, th)[0, 1], fontsize=9)
+ax[1].plot(cS[:, 0], Bz["radA"] / A["simp"][:, 0], ".", ms=3, label="A radius / drift scale"); ax[1].plot(cS[:, 0], Bz["cB"][:, 3] * Bz["radA"][0] / A["simp"][:, 0], ".", ms=2, alpha=0.6, label="B best scale x R0 / drift scale")
+ax[1].set_xlabel("u stabilized [px]"); ax[1].set_ylabel("apparent bob radius [px]"); ax[1].legend(fontsize=8); ax[1].set_title("bob looks ~5% larger at image-right extreme", fontsize=9)
+ax[2].plot(th - qD[0], A["lenp"] / A["simp"][:, 0], ".", ms=3); ax[2].set_xlabel("image angle - offset [deg]"); ax[2].set_ylabel("pivot->bob centre / drift scale [px]")
+ax[2].set_title("apparent pendulum length vs angle", fontsize=9)
+lab(fig, "Wire curvature, apparent bob size and apparent length vs swing position (observed image quantities)"); fig.tight_layout(rect=(0, 0.02, 1, 0.94)); fig.savefig(os.path.join(OUT, f"{VER}_wire_radius_length.png"), dpi=110); plt.close(fig)
+# 8 trajectory in image (stabilized)
+fig, ax = plt.subplots(figsize=(10, 4.5))
+sc = ax.scatter(cS[:, 0], cS[:, 1], c=t, s=8, cmap="viridis"); plt.colorbar(sc, label="t [s]")
+ax.invert_yaxis(); ax.set_aspect("equal"); ax.set_xlabel("u stabilized [px]"); ax.set_ylabel("v stabilized [px]")
+lab(fig, "Bob centre path in frame-0 geometry (observed): asymmetric arc, right extreme lower in image"); fig.savefig(os.path.join(OUT, f"{VER}_bob_path_stab.png"), dpi=110); plt.close(fig)
+print(sorted(os.listdir(OUT)))

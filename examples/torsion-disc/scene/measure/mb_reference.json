@@ -1,0 +1,2793 @@
+{
+ "method": "Motion-blur evidence from the reference (scene role C): width of the engraved mark (luma dip FWHM, px) vs its",
+ "n": 344,
+ "fit_quadrature": {
+  "w0_px": 5.941,
+  "shutter_frames": 0.0
+ },
+ "fit_linear": {
+  "intercept_px": 5.782,
+  "slope_px_per_px_speed": 0.011
+ },
+ "binned": [
+  {
+   "speed_px": "0-2",
+   "n": 109,
+   "fwhm_median": 6.26
+  },
+  {
+   "speed_px": "2-4",
+   "n": 62,
+   "fwhm_median": 6.54
+  },
+  {
+   "speed_px": "4-6",
+   "n": 66,
+   "fwhm_median": 5.95
+  },
+  {
+   "speed_px": "6-9",
+   "n": 69,
+   "fwhm_median": 5.8
+  },
+  {
+   "speed_px": "9-15",
+   "n": 38,
+   "fwhm_median": 5.75
+  }
+ ],
+ "rows": [
+  {
+   "frame": 70,
+   "v": 602,
+   "u": 992.35,
+   "speed_px_per_frame": 5.229,
+   "fwhm_px": 4.681,
+   "depth": 116.2
+  },
+  {
+   "frame": 70,
+   "v": 606,
+   "u": 992.5,
+   "speed_px_per_frame": 4.936,
+   "fwhm_px": 4.688,
+   "depth": 121.8
+  },
+  {
+   "frame": 70,
+   "v": 610,
+   "u": 992.5,
+   "speed_px_per_frame": 4.541,
+   "fwhm_px": 4.98,
+   "depth": 110.7
+  },
+  {
+   "frame": 70,
+   "v": 614,
+   "u": 992.58,
+   "speed_px_per_frame": 4.466,
+   "fwhm_px": 4.839,
+   "depth": 115.9
+  },
+  {
+   "frame": 70,
+   "v": 618,
+   "u": 992.6,
+   "speed_px_per_frame": 4.267,
+   "fwhm_px": 4.786,
+   "depth": 113.3
+  },
+  {
+   "frame": 70,
+   "v": 622,
+   "u": 992.53,
+   "speed_px_per_frame": 4.033,
+   "fwhm_px": 4.99,
+   "depth": 111.2
+  },
+  {
+   "frame": 70,
+   "v": 626,
+   "u": 992.54,
+   "speed_px_per_frame": 4.094,
+   "fwhm_px": 5.552,
+   "depth": 101.7
+  },
+  {
+   "frame": 70,
+   "v": 630,
+   "u": 992.0,
+   "speed_px_per_frame": 3.704,
+   "fwhm_px": 5.972,
+   "depth": 105.7
+  },
+  {
+   "frame": 70,
+   "v": 634,
+   "u": 991.82,
+   "speed_px_per_frame": 3.588,
+   "fwhm_px": 6.718,
+   "depth": 107.1
+  },
+  {
+   "frame": 70,
+   "v": 638,
+   "u": 991.77,
+   "speed_px_per_frame": 4.877,
+   "fwhm_px": 6.669,
+   "depth": 105.9
+  },
+  {
+   "frame": 70,
+   "v": 664,
+   "u": 991.93,
+   "speed_px_per_frame": 1.961,
+   "fwhm_px": 6.26,
+   "depth": 86.2
+  },
+  {
+   "frame": 70,
+   "v": 668,
+   "u": 991.99,
+   "speed_px_per_frame": 1.593,
+   "fwhm_px": 6.228,
+   "depth": 98.5
+  },
+  {
+   "frame": 70,
+   "v": 672,
+   "u": 991.91,
+   "speed_px_per_frame": 1.509,
+   "fwhm_px": 6.459,
+   "depth": 123.8
+  },
+  {
+   "frame": 70,
+   "v": 676,
+   "u": 991.94,
+   "speed_px_per_frame": 1.165,
+   "fwhm_px": 6.612,
+   "depth": 140.4
+  },
+  {
+   "frame": 70,
+   "v": 680,
+   "u": 991.91,
+   "speed_px_per_frame": 0.836,
+   "fwhm_px": 6.684,
+   "depth": 142.2
+  },
+  {
+   "frame": 70,
+   "v": 684,
+   "u": 991.96,
+   "speed_px_per_frame": 0.474,
+   "fwhm_px": 6.708,
+   "depth": 146.5
+  },
+  {
+   "frame": 70,
+   "v": 688,
+   "u": 991.85,
+   "speed_px_per_frame": 1.688,
+   "fwhm_px": 6.758,
+   "depth": 141.2
+  },
+  {
+   "frame": 70,
+   "v": 692,
+   "u": 991.83,
+   "speed_px_per_frame": 1.885,
+   "fwhm_px": 6.782,
+   "depth": 141.0
+  },
+  {
+   "frame": 70,
+   "v": 696,
+   "u": 991.86,
+   "speed_px_per_frame": 1.742,
+   "fwhm_px": 6.791,
+   "depth": 141.5
+  },
+  {
+   "frame": 70,
+   "v": 700,
+   "u": 991.89,
+   "speed_px_per_frame": 1.642,
+   "fwhm_px": 6.827,
+   "depth": 150.1
+  },
+  {
+   "frame": 70,
+   "v": 704,
+   "u": 991.94,
+   "speed_px_per_frame": 0.574,
+   "fwhm_px": 6.819,
+   "depth": 145.7
+  },
+  {
+   "frame": 70,
+   "v": 708,
+   "u": 991.95,
+   "speed_px_per_frame": 2.918,
+   "fwhm_px": 6.806,
+   "depth": 154.0
+  },
+  {
+   "frame": 70,
+   "v": 712,
+   "u": 991.99,
+   "speed_px_per_frame": 0.699,
+   "fwhm_px": 6.911,
+   "depth": 153.2
+  },
+  {
+   "frame": 70,
+   "v": 716,
+   "u": 991.98,
+   "speed_px_per_frame": 1.558,
+   "fwhm_px": 6.946,
+   "depth": 155.9
+  },
+  {
+   "frame": 70,
+   "v": 720,
+   "u": 991.93,
+   "speed_px_per_frame": 3.705,
+   "fwhm_px": 6.987,
+   "depth": 148.8
+  },
+  {
+   "frame": 70,
+   "v": 724,
+   "u": 991.86,
+   "speed_px_per_frame": 2.069,
+   "fwhm_px": 6.913,
+   "depth": 153.7
+  },
+  {
+   "frame": 70,
+   "v": 728,
+   "u": 991.87,
+   "speed_px_per_frame": 0.377,
+   "fwhm_px": 6.971,
+   "depth": 155.7
+  },
+  {
+   "frame": 70,
+   "v": 732,
+   "u": 991.86,
+   "speed_px_per_frame": 2.746,
+   "fwhm_px": 6.965,
+   "depth": 160.7
+  },
+  {
+   "frame": 70,
+   "v": 736,
+   "u": 987.87,
+   "speed_px_per_frame": 1.129,
+   "fwhm_px": 6.966,
+   "depth": 158.8
+  },
+  {
+   "frame": 70,
+   "v": 740,
+   "u": 991.78,
+   "speed_px_per_frame": 1.341,
+   "fwhm_px": 6.939,
+   "depth": 163.0
+  },
+  {
+   "frame": 70,
+   "v": 744,
+   "u": 987.94,
+   "speed_px_per_frame": 3.268,
+   "fwhm_px": 6.792,
+   "depth": 156.7
+  },
+  {
+   "frame": 70,
+   "v": 748,
+   "u": 991.59,
+   "speed_px_per_frame": 3.479,
+   "fwhm_px": 7.026,
+   "depth": 157.6
+  },
+  {
+   "frame": 70,
+   "v": 752,
+   "u": 988.09,
+   "speed_px_per_frame": 2.242,
+   "fwhm_px": 6.838,
+   "depth": 154.8
+  },
+  {
+   "frame": 70,
+   "v": 756,
+   "u": 990.76,
+   "speed_px_per_frame": 3.807,
+   "fwhm_px": 5.971,
+   "depth": 229.8
+  },
+  {
+   "frame": 70,
+   "v": 760,
+   "u": 989.5,
+   "speed_px_per_frame": 3.75,
+   "fwhm_px": 4.882,
+   "depth": 73.2
+  },
+  {
+   "frame": 71,
+   "v": 602,
+   "u": 997.62,
+   "speed_px_per_frame": 5.618,
+   "fwhm_px": 5.265,
+   "depth": 114.0
+  },
+  {
+   "frame": 71,
+   "v": 606,
+   "u": 997.5,
+   "speed_px_per_frame": 4.861,
+   "fwhm_px": 5.55,
+   "depth": 111.7
+  },
+  {
+   "frame": 71,
+   "v": 610,
+   "u": 997.17,
+   "speed_px_per_frame": 4.5,
+   "fwhm_px": 5.543,
+   "depth": 113.7
+  },
+  {
+   "frame": 71,
+   "v": 614,
+   "u": 997.12,
+   "speed_px_per_frame": 4.635,
+   "fwhm_px": 5.556,
+   "depth": 113.9
+  },
+  {
+   "frame": 71,
+   "v": 618,
+   "u": 997.03,
+   "speed_px_per_frame": 4.323,
+   "fwhm_px": 5.433,
+   "depth": 110.8
+  },
+  {
+   "frame": 71,
+   "v": 622,
+   "u": 996.64,
+   "speed_px_per_frame": 4.03,
+   "fwhm_px": 5.546,
+   "depth": 110.2
+  },
+  {
+   "frame": 71,
+   "v": 626,
+   "u": 996.6,
+   "speed_px_per_frame": 4.003,
+   "fwhm_px": 5.656,
+   "depth": 103.4
+  },
+  {
+   "frame": 71,
+   "v": 630,
+   "u": 995.98,
+   "speed_px_per_frame": 3.902,
+   "fwhm_px": 5.809,
+   "depth": 105.3
+  },
+  {
+   "frame": 71,
+   "v": 634,
+   "u": 995.62,
+   "speed_px_per_frame": 3.485,
+   "fwhm_px": 6.241,
+   "depth": 102.9
+  },
+  {
+   "frame": 71,
+   "v": 638,
+   "u": 995.03,
+   "speed_px_per_frame": 3.065,
+   "fwhm_px": 7.073,
+   "depth": 100.1
+  },
+  {
+   "frame": 71,
+   "v": 664,
+   "u": 993.85,
+   "speed_px_per_frame": 1.946,
+   "fwhm_px": 6.086,
+   "depth": 86.2
+  },
+  {
+   "frame": 71,
+   "v": 668,
+   "u": 993.77,
+   "speed_px_per_frame": 1.736,
+   "fwhm_px": 5.935,
+   "depth": 106.4
+  },
+  {
+   "frame": 71,
+   "v": 672,
+   "u": 993.61,
+   "speed_px_per_frame": 1.512,
+   "fwhm_px": 6.189,
+   "depth": 121.2
+  },
+  {
+   "frame": 71,
+   "v": 676,
+   "u": 993.17,
+   "speed_px_per_frame": 1.243,
+   "fwhm_px": 6.437,
+   "depth": 134.7
+  },
+  {
+   "frame": 71,
+   "v": 680,
+   "u": 992.79,
+   "speed_px_per_frame": 0.884,
+   "fwhm_px": 6.396,
+   "depth": 147.4
+  },
+  {
+   "frame": 71,
+   "v": 684,
+   "u": 992.6,
+   "speed_px_per_frame": 0.456,
+   "fwhm_px": 6.306,
+   "depth": 148.7
+  },
+  {
+   "frame": 71,
+   "v": 688,
+   "u": 988.36,
+   "speed_px_per_frame": 0.384,
+   "fwhm_px": 6.507,
+   "depth": 138.5
+  },
+  {
+   "frame": 71,
+   "v": 692,
+   "u": 988.11,
+   "speed_px_per_frame": 0.011,
+   "fwhm_px": 6.585,
+   "depth": 145.3
+  },
+  {
+   "frame": 71,
+   "v": 696,
+   "u": 991.69,
+   "speed_px_per_frame": 0.152,
+   "fwhm_px": 6.787,
+   "depth": 141.6
+  },
+  {
+   "frame": 71,
+   "v": 700,
+   "u": 991.66,
+   "speed_px_per_frame": 0.569,
+   "fwhm_px": 6.646,
+   "depth": 152.9
+  },
+  {
+   "frame": 71,
+   "v": 704,
+   "u": 991.54,
+   "speed_px_per_frame": 2.787,
+   "fwhm_px": 6.583,
+   "depth": 142.2
+  },
+  {
+   "frame": 71,
+   "v": 708,
+   "u": 987.14,
+   "speed_px_per_frame": 1.073,
+   "fwhm_px": 6.67,
+   "depth": 150.5
+  },
+  {
+   "frame": 71,
+   "v": 712,
+   "u": 990.64,
+   "speed_px_per_frame": 1.349,
+   "fwhm_px": 6.763,
+   "depth": 146.7
+  },
+  {
+   "frame": 71,
+   "v": 716,
+   "u": 990.51,
+   "speed_px_per_frame": 1.689,
+   "fwhm_px": 6.716,
+   "depth": 149.3
+  },
+  {
+   "frame": 71,
+   "v": 720,
+   "u": 986.26,
+   "speed_px_per_frame": 1.941,
+   "fwhm_px": 6.737,
+   "depth": 151.8
+  },
+  {
+   "frame": 71,
+   "v": 724,
+   "u": 989.75,
+   "speed_px_per_frame": 2.126,
+   "fwhm_px": 6.697,
+   "depth": 161.7
+  },
+  {
+   "frame": 71,
+   "v": 728,
+   "u": 989.6,
+   "speed_px_per_frame": 2.518,
+   "fwhm_px": 6.693,
+   "depth": 162.2
+  },
+  {
+   "frame": 71,
+   "v": 732,
+   "u": 989.11,
+   "speed_px_per_frame": 2.908,
+   "fwhm_px": 6.68,
+   "depth": 162.3
+  },
+  {
+   "frame": 71,
+   "v": 736,
+   "u": 988.86,
+   "speed_px_per_frame": 1.124,
+   "fwhm_px": 6.937,
+   "depth": 162.3
+  },
+  {
+   "frame": 71,
+   "v": 740,
+   "u": 988.62,
+   "speed_px_per_frame": 3.339,
+   "fwhm_px": 6.852,
+   "depth": 164.9
+  },
+  {
+   "frame": 71,
+   "v": 744,
+   "u": 988.43,
+   "speed_px_per_frame": 1.7,
+   "fwhm_px": 6.726,
+   "depth": 156.2
+  },
+  {
+   "frame": 71,
+   "v": 748,
+   "u": 988.17,
+   "speed_px_per_frame": 3.797,
+   "fwhm_px": 6.873,
+   "depth": 163.3
+  },
+  {
+   "frame": 71,
+   "v": 752,
+   "u": 987.6,
+   "speed_px_per_frame": 2.615,
+   "fwhm_px": 6.806,
+   "depth": 167.6
+  },
+  {
+   "frame": 71,
+   "v": 756,
+   "u": 987.35,
+   "speed_px_per_frame": 3.914,
+   "fwhm_px": 6.205,
+   "depth": 225.8
+  },
+  {
+   "frame": 71,
+   "v": 760,
+   "u": 986.0,
+   "speed_px_per_frame": 3.938,
+   "fwhm_px": 5.093,
+   "depth": 70.9
+  },
+  {
+   "frame": 72,
+   "v": 602,
+   "u": 1003.59,
+   "speed_px_per_frame": 8.438,
+   "fwhm_px": 5.269,
+   "depth": 121.0
+  },
+  {
+   "frame": 72,
+   "v": 606,
+   "u": 1002.22,
+   "speed_px_per_frame": 7.833,
+   "fwhm_px": 5.489,
+   "depth": 117.1
+  },
+  {
+   "frame": 72,
+   "v": 610,
+   "u": 1001.5,
+   "speed_px_per_frame": 7.631,
+   "fwhm_px": 5.513,
+   "depth": 111.6
+  },
+  {
+   "frame": 72,
+   "v": 614,
+   "u": 1001.85,
+   "speed_px_per_frame": 6.743,
+   "fwhm_px": 5.472,
+   "depth": 114.6
+  },
+  {
+   "frame": 72,
+   "v": 618,
+   "u": 1001.25,
+   "speed_px_per_frame": 6.433,
+   "fwhm_px": 5.253,
+   "depth": 112.5
+  },
+  {
+   "frame": 72,
+   "v": 622,
+   "u": 1000.59,
+   "speed_px_per_frame": 6.071,
+   "fwhm_px": 5.224,
+   "depth": 110.7
+  },
+  {
+   "frame": 72,
+   "v": 626,
+   "u": 1000.55,
+   "speed_px_per_frame": 5.603,
+   "fwhm_px": 5.511,
+   "depth": 103.0
+  },
+  {
+   "frame": 72,
+   "v": 630,
+   "u": 999.8,
+   "speed_px_per_frame": 5.512,
+   "fwhm_px": 5.634,
+   "depth": 106.2
+  },
+  {
+   "frame": 72,
+   "v": 634,
+   "u": 998.79,
+   "speed_px_per_frame": 4.816,
+   "fwhm_px": 6.338,
+   "depth": 102.1
+  },
+  {
+   "frame": 72,
+   "v": 638,
+   "u": 997.9,
+   "speed_px_per_frame": 4.541,
+   "fwhm_px": 6.608,
+   "depth": 98.7
+  },
+  {
+   "frame": 72,
+   "v": 664,
+   "u": 995.82,
+   "speed_px_per_frame": 2.449,
+   "fwhm_px": 5.689,
+   "depth": 88.9
+  },
+  {
+   "frame": 72,
+   "v": 668,
+   "u": 995.47,
+   "speed_px_per_frame": 2.056,
+   "fwhm_px": 5.869,
+   "depth": 97.7
+  },
+  {
+   "frame": 72,
+   "v": 672,
+   "u": 994.93,
+   "speed_px_per_frame": 1.637,
+   "fwhm_px": 6.232,
+   "depth": 128.2
+  },
+  {
+   "frame": 72,
+   "v": 676,
+   "u": 994.42,
+   "speed_px_per_frame": 1.377,
+   "fwhm_px": 6.241,
+   "depth": 138.4
+  },
+  {
+   "frame": 72,
+   "v": 680,
+   "u": 993.68,
+   "speed_px_per_frame": 0.988,
+   "fwhm_px": 6.237,
+   "depth": 144.7
+  },
+  {
+   "frame": 72,
+   "v": 684,
+   "u": 992.87,
+   "speed_px_per_frame": 0.531,
+   "fwhm_px": 6.501,
+   "depth": 140.2
+  },
+  {
+   "frame": 72,
+   "v": 688,
+   "u": 992.62,
+   "speed_px_per_frame": 2.136,
+   "fwhm_px": 6.444,
+   "depth": 145.8
+  },
+  {
+   "frame": 72,
+   "v": 692,
+   "u": 991.86,
+   "speed_px_per_frame": 1.8,
+   "fwhm_px": 6.611,
+   "depth": 151.9
+  },
+  {
+   "frame": 72,
+   "v": 696,
+   "u": 991.56,
+   "speed_px_per_frame": 0.573,
+   "fwhm_px": 6.548,
+   "depth": 151.3
+  },
+  {
+   "frame": 72,
+   "v": 700,
+   "u": 990.75,
+   "speed_px_per_frame": 1.13,
+   "fwhm_px": 6.854,
+   "depth": 137.9
+  },
+  {
+   "frame": 72,
+   "v": 704,
+   "u": 986.36,
+   "speed_px_per_frame": 1.69,
+   "fwhm_px": 6.754,
+   "depth": 143.1
+  },
+  {
+   "frame": 72,
+   "v": 708,
+   "u": 989.81,
+   "speed_px_per_frame": 0.039,
+   "fwhm_px": 6.573,
+   "depth": 157.0
+  },
+  {
+   "frame": 72,
+   "v": 712,
+   "u": 989.29,
+   "speed_px_per_frame": 2.387,
+   "fwhm_px": 6.504,
+   "depth": 155.0
+  },
+  {
+   "frame": 72,
+   "v": 716,
+   "u": 988.6,
+   "speed_px_per_frame": 2.878,
+   "fwhm_px": 6.501,
+   "depth": 160.1
+  },
+  {
+   "frame": 72,
+   "v": 720,
+   "u": 988.04,
+   "speed_px_per_frame": 1.26,
+   "fwhm_px": 6.684,
+   "depth": 161.3
+  },
+  {
+   "frame": 72,
+   "v": 724,
+   "u": 987.61,
+   "speed_px_per_frame": 3.512,
+   "fwhm_px": 6.604,
+   "depth": 166.5
+  },
+  {
+   "frame": 72,
+   "v": 728,
+   "u": 986.83,
+   "speed_px_per_frame": 3.984,
+   "fwhm_px": 6.814,
+   "depth": 165.5
+  },
+  {
+   "frame": 72,
+   "v": 732,
+   "u": 986.04,
+   "speed_px_per_frame": 4.291,
+   "fwhm_px": 6.58,
+   "depth": 165.9
+  },
+  {
+   "frame": 72,
+   "v": 736,
+   "u": 985.62,
+   "speed_px_per_frame": 4.606,
+   "fwhm_px": 6.722,
+   "depth": 166.1
+  },
+  {
+   "frame": 72,
+   "v": 740,
+   "u": 985.1,
+   "speed_px_per_frame": 5.33,
+   "fwhm_px": 6.701,
+   "depth": 167.2
+  },
+  {
+   "frame": 72,
+   "v": 744,
+   "u": 984.54,
+   "speed_px_per_frame": 5.781,
+   "fwhm_px": 6.673,
+   "depth": 164.7
+  },
+  {
+   "frame": 72,
+   "v": 748,
+   "u": 984.0,
+   "speed_px_per_frame": 6.172,
+   "fwhm_px": 6.721,
+   "depth": 165.2
+  },
+  {
+   "frame": 72,
+   "v": 752,
+   "u": 982.86,
+   "speed_px_per_frame": 6.521,
+   "fwhm_px": 6.489,
+   "depth": 162.2
+  },
+  {
+   "frame": 72,
+   "v": 756,
+   "u": 982.94,
+   "speed_px_per_frame": 7.801,
+   "fwhm_px": 5.969,
+   "depth": 208.9
+  },
+  {
+   "frame": 72,
+   "v": 760,
+   "u": 981.62,
+   "speed_px_per_frame": 6.2,
+   "fwhm_px": 4.968,
+   "depth": 66.8
+  },
+  {
+   "frame": 73,
+   "v": 602,
+   "u": 1014.5,
+   "speed_px_per_frame": 8.623,
+   "fwhm_px": 5.794,
+   "depth": 114.0
+  },
+  {
+   "frame": 73,
+   "v": 606,
+   "u": 1013.17,
+   "speed_px_per_frame": 8.583,
+   "fwhm_px": 5.865,
+   "depth": 118.2
+  },
+  {
+   "frame": 73,
+   "v": 610,
+   "u": 1012.43,
+   "speed_px_per_frame": 8.208,
+   "fwhm_px": 5.585,
+   "depth": 121.5
+  },
+  {
+   "frame": 73,
+   "v": 614,
+   "u": 1010.61,
+   "speed_px_per_frame": 7.257,
+   "fwhm_px": 5.808,
+   "depth": 118.4
+  },
+  {
+   "frame": 73,
+   "v": 618,
+   "u": 1009.9,
+   "speed_px_per_frame": 6.482,
+   "fwhm_px": 5.47,
+   "depth": 113.6
+  },
+  {
+   "frame": 73,
+   "v": 622,
+   "u": 1008.79,
+   "speed_px_per_frame": 6.205,
+   "fwhm_px": 5.182,
+   "depth": 110.7
+  },
+  {
+   "frame": 73,
+   "v": 626,
+   "u": 1007.81,
+   "speed_px_per_frame": 6.02,
+   "fwhm_px": 5.16,
+   "depth": 102.4
+  },
+  {
+   "frame": 73,
+   "v": 630,
+   "u": 1007.0,
+   "speed_px_per_frame": 5.387,
+   "fwhm_px": 5.606,
+   "depth": 98.2
+  },
+  {
+   "frame": 73,
+   "v": 634,
+   "u": 1005.25,
+   "speed_px_per_frame": 4.92,
+   "fwhm_px": 5.536,
+   "depth": 105.1
+  },
+  {
+   "frame": 73,
+   "v": 638,
+   "u": 1004.12,
+   "speed_px_per_frame": 4.943,
+   "fwhm_px": 5.571,
+   "depth": 104.4
+  },
+  {
+   "frame": 73,
+   "v": 664,
+   "u": 998.75,
+   "speed_px_per_frame": 2.163,
+   "fwhm_px": 6.091,
+   "depth": 72.9
+  },
+  {
+   "frame": 73,
+   "v": 668,
+   "u": 997.88,
+   "speed_px_per_frame": 1.732,
+   "fwhm_px": 6.367,
+   "depth": 101.2
+  },
+  {
+   "frame": 73,
+   "v": 672,
+   "u": 996.88,
+   "speed_px_per_frame": 1.47,
+   "fwhm_px": 6.22,
+   "depth": 122.9
+  },
+  {
+   "frame": 73,
+   "v": 676,
+   "u": 995.93,
+   "speed_px_per_frame": 1.124,
+   "fwhm_px": 6.517,
+   "depth": 137.2
+  },
+  {
+   "frame": 73,
+   "v": 680,
+   "u": 994.77,
+   "speed_px_per_frame": 0.738,
+   "fwhm_px": 6.6,
+   "depth": 147.4
+  },
+  {
+   "frame": 73,
+   "v": 684,
+   "u": 993.66,
+   "speed_px_per_frame": 0.463,
+   "fwhm_px": 6.525,
+   "depth": 143.0
+  },
+  {
+   "frame": 73,
+   "v": 688,
+   "u": 992.63,
+   "speed_px_per_frame": 0.028,
+   "fwhm_px": 6.685,
+   "depth": 145.6
+  },
+  {
+   "frame": 73,
+   "v": 692,
+   "u": 991.72,
+   "speed_px_per_frame": 0.165,
+   "fwhm_px": 6.648,
+   "depth": 151.0
+  },
+  {
+   "frame": 73,
+   "v": 696,
+   "u": 990.55,
+   "speed_px_per_frame": 0.94,
+   "fwhm_px": 6.866,
+   "depth": 136.5
+  },
+  {
+   "frame": 73,
+   "v": 700,
+   "u": 989.4,
+   "speed_px_per_frame": 1.243,
+   "fwhm_px": 6.411,
+   "depth": 134.4
+  },
+  {
+   "frame": 73,
+   "v": 704,
+   "u": 988.16,
+   "speed_px_per_frame": 0.135,
+   "fwhm_px": 6.828,
+   "depth": 144.7
+  },
+  {
+   "frame": 73,
+   "v": 708,
+   "u": 987.06,
+   "speed_px_per_frame": 2.228,
+   "fwhm_px": 6.738,
+   "depth": 152.2
+  },
+  {
+   "frame": 73,
+   "v": 712,
+   "u": 985.87,
+   "speed_px_per_frame": 2.748,
+   "fwhm_px": 6.731,
+   "depth": 162.8
+  },
+  {
+   "frame": 73,
+   "v": 716,
+   "u": 984.76,
+   "speed_px_per_frame": 3.046,
+   "fwhm_px": 6.594,
+   "depth": 160.2
+  },
+  {
+   "frame": 73,
+   "v": 720,
+   "u": 983.74,
+   "speed_px_per_frame": 3.557,
+   "fwhm_px": 6.772,
+   "depth": 159.2
+  },
+  {
+   "frame": 73,
+   "v": 724,
+   "u": 982.72,
+   "speed_px_per_frame": 3.95,
+   "fwhm_px": 6.795,
+   "depth": 156.9
+  },
+  {
+   "frame": 73,
+   "v": 728,
+   "u": 981.64,
+   "speed_px_per_frame": 4.304,
+   "fwhm_px": 6.605,
+   "depth": 163.7
+  },
+  {
+   "frame": 73,
+   "v": 732,
+   "u": 980.53,
+   "speed_px_per_frame": 4.66,
+   "fwhm_px": 6.57,
+   "depth": 165.0
+  },
+  {
+   "frame": 73,
+   "v": 736,
+   "u": 979.65,
+   "speed_px_per_frame": 5.093,
+   "fwhm_px": 6.478,
+   "depth": 175.4
+  },
+  {
+   "frame": 73,
+   "v": 740,
+   "u": 977.96,
+   "speed_px_per_frame": 5.712,
+   "fwhm_px": 6.375,
+   "depth": 169.2
+  },
+  {
+   "frame": 73,
+   "v": 744,
+   "u": 976.87,
+   "speed_px_per_frame": 6.113,
+   "fwhm_px": 6.37,
+   "depth": 169.3
+  },
+  {
+   "frame": 73,
+   "v": 748,
+   "u": 975.82,
+   "speed_px_per_frame": 6.239,
+   "fwhm_px": 6.228,
+   "depth": 170.9
+  },
+  {
+   "frame": 73,
+   "v": 752,
+   "u": 974.56,
+   "speed_px_per_frame": 6.49,
+   "fwhm_px": 6.321,
+   "depth": 170.2
+  },
+  {
+   "frame": 73,
+   "v": 756,
+   "u": 971.75,
+   "speed_px_per_frame": 6.833,
+   "fwhm_px": 6.874,
+   "depth": 81.2
+  },
+  {
+   "frame": 73,
+   "v": 760,
+   "u": 973.6,
+   "speed_px_per_frame": 6.277,
+   "fwhm_px": 5.478,
+   "depth": 62.4
+  },
+  {
+   "frame": 74,
+   "v": 602,
+   "u": 1020.83,
+   "speed_px_per_frame": 5.981,
+   "fwhm_px": 5.61,
+   "depth": 119.3
+  },
+  {
+   "frame": 74,
+   "v": 606,
+   "u": 1019.39,
+   "speed_px_per_frame": 5.833,
+   "fwhm_px": 5.348,
+   "depth": 111.4
+  },
+  {
+   "frame": 74,
+   "v": 610,
+   "u": 1017.92,
+   "speed_px_per_frame": 5.286,
+   "fwhm_px": 5.514,
+   "depth": 113.3
+  },
+  {
+   "frame": 74,
+   "v": 614,
+   "u": 1016.37,
+   "speed_px_per_frame": 4.944,
+   "fwhm_px": 5.7,
+   "depth": 118.1
+  },
+  {
+   "frame": 74,
+   "v": 618,
+   "u": 1014.21,
+   "speed_px_per_frame": 4.738,
+   "fwhm_px": 5.976,
+   "depth": 112.3
+  },
+  {
+   "frame": 74,
+   "v": 622,
+   "u": 1013.0,
+   "speed_px_per_frame": 4.263,
+   "fwhm_px": 6.025,
+   "depth": 106.9
+  },
+  {
+   "frame": 74,
+   "v": 626,
+   "u": 1012.59,
+   "speed_px_per_frame": 4.432,
+   "fwhm_px": 5.546,
+   "depth": 108.1
+  },
+  {
+   "frame": 74,
+   "v": 630,
+   "u": 1010.58,
+   "speed_px_per_frame": 3.781,
+   "fwhm_px": 5.637,
+   "depth": 99.7
+  },
+  {
+   "frame": 74,
+   "v": 634,
+   "u": 1008.62,
+   "speed_px_per_frame": 3.625,
+   "fwhm_px": 5.576,
+   "depth": 100.9
+  },
+  {
+   "frame": 74,
+   "v": 638,
+   "u": 1007.79,
+   "speed_px_per_frame": 3.303,
+   "fwhm_px": 5.492,
+   "depth": 108.1
+  },
+  {
+   "frame": 74,
+   "v": 664,
+   "u": 1000.15,
+   "speed_px_per_frame": 0.669,
+   "fwhm_px": 5.99,
+   "depth": 57.9
+  },
+  {
+   "frame": 74,
+   "v": 668,
+   "u": 998.93,
+   "speed_px_per_frame": 0.913,
+   "fwhm_px": 6.45,
+   "depth": 93.9
+  },
+  {
+   "frame": 74,
+   "v": 672,
+   "u": 997.87,
+   "speed_px_per_frame": 0.831,
+   "fwhm_px": 6.474,
+   "depth": 120.7
+  },
+  {
+   "frame": 74,
+   "v": 676,
+   "u": 996.67,
+   "speed_px_per_frame": 0.409,
+   "fwhm_px": 6.583,
+   "depth": 136.2
+  },
+  {
+   "frame": 74,
+   "v": 680,
+   "u": 995.15,
+   "speed_px_per_frame": 0.141,
+   "fwhm_px": 6.864,
+   "depth": 140.2
+  },
+  {
+   "frame": 74,
+   "v": 684,
+   "u": 993.8,
+   "speed_px_per_frame": 0.224,
+   "fwhm_px": 6.805,
+   "depth": 141.1
+  },
+  {
+   "frame": 74,
+   "v": 688,
+   "u": 992.57,
+   "speed_px_per_frame": 0.452,
+   "fwhm_px": 6.962,
+   "depth": 136.8
+  },
+  {
+   "frame": 74,
+   "v": 692,
+   "u": 991.53,
+   "speed_px_per_frame": 0.892,
+   "fwhm_px": 7.026,
+   "depth": 143.5
+  },
+  {
+   "frame": 74,
+   "v": 696,
+   "u": 989.68,
+   "speed_px_per_frame": 1.202,
+   "fwhm_px": 6.659,
+   "depth": 142.1
+  },
+  {
+   "frame": 74,
+   "v": 700,
+   "u": 988.26,
+   "speed_px_per_frame": 1.501,
+   "fwhm_px": 6.733,
+   "depth": 143.1
+  },
+  {
+   "frame": 74,
+   "v": 704,
+   "u": 986.63,
+   "speed_px_per_frame": 1.704,
+   "fwhm_px": 6.968,
+   "depth": 144.4
+  },
+  {
+   "frame": 74,
+   "v": 708,
+   "u": 985.35,
+   "speed_px_per_frame": 2.071,
+   "fwhm_px": 6.936,
+   "depth": 146.2
+  },
+  {
+   "frame": 74,
+   "v": 712,
+   "u": 983.8,
+   "speed_px_per_frame": 2.416,
+   "fwhm_px": 6.91,
+   "depth": 154.7
+  },
+  {
+   "frame": 74,
+   "v": 716,
+   "u": 982.51,
+   "speed_px_per_frame": 2.589,
+   "fwhm_px": 6.612,
+   "depth": 151.2
+  },
+  {
+   "frame": 74,
+   "v": 720,
+   "u": 980.93,
+   "speed_px_per_frame": 3.014,
+   "fwhm_px": 6.693,
+   "depth": 160.9
+  },
+  {
+   "frame": 74,
+   "v": 724,
+   "u": 979.71,
+   "speed_px_per_frame": 3.303,
+   "fwhm_px": 6.728,
+   "depth": 171.9
+  },
+  {
+   "frame": 74,
+   "v": 728,
+   "u": 978.23,
+   "speed_px_per_frame": 3.618,
+   "fwhm_px": 6.812,
+   "depth": 169.8
+  },
+  {
+   "frame": 74,
+   "v": 732,
+   "u": 976.72,
+   "speed_px_per_frame": 4.002,
+   "fwhm_px": 6.592,
+   "depth": 173.8
+  },
+  {
+   "frame": 74,
+   "v": 736,
+   "u": 975.44,
+   "speed_px_per_frame": 4.29,
+   "fwhm_px": 6.496,
+   "depth": 166.4
+  },
+  {
+   "frame": 74,
+   "v": 740,
+   "u": 973.68,
+   "speed_px_per_frame": 4.446,
+   "fwhm_px": 6.032,
+   "depth": 173.8
+  },
+  {
+   "frame": 74,
+   "v": 744,
+   "u": 972.32,
+   "speed_px_per_frame": 4.643,
+   "fwhm_px": 6.194,
+   "depth": 170.2
+  },
+  {
+   "frame": 74,
+   "v": 748,
+   "u": 971.52,
+   "speed_px_per_frame": 4.992,
+   "fwhm_px": 6.104,
+   "depth": 167.7
+  },
+  {
+   "frame": 74,
+   "v": 752,
+   "u": 970,
+   "speed_px_per_frame": 4.94,
+   "fwhm_px": 6.469,
+   "depth": 179.9
+  },
+  {
+   "frame": 74,
+   "v": 756,
+   "u": 970,
+   "speed_px_per_frame": 3.898,
+   "fwhm_px": 7.051,
+   "depth": 78.8
+  },
+  {
+   "frame": 74,
+   "v": 760,
+   "u": 970,
+   "speed_px_per_frame": 5.008,
+   "fwhm_px": 5.931,
+   "depth": 58.7
+  },
+  {
+   "frame": 174,
+   "v": 600,
+   "u": 1005.07,
+   "speed_px_per_frame": 2.694,
+   "fwhm_px": 2.557,
+   "depth": 103.5
+  },
+  {
+   "frame": 174,
+   "v": 604,
+   "u": 1005.62,
+   "speed_px_per_frame": 1.994,
+   "fwhm_px": 2.602,
+   "depth": 90.9
+  },
+  {
+   "frame": 174,
+   "v": 608,
+   "u": 1005.82,
+   "speed_px_per_frame": 1.4,
+   "fwhm_px": 2.465,
+   "depth": 102.2
+  },
+  {
+   "frame": 174,
+   "v": 612,
+   "u": 1005.94,
+   "speed_px_per_frame": 0.925,
+   "fwhm_px": 2.116,
+   "depth": 104.1
+  },
+  {
+   "frame": 174,
+   "v": 616,
+   "u": 1006.04,
+   "speed_px_per_frame": 0.558,
+   "fwhm_px": 3.123,
+   "depth": 98.4
+  },
+  {
+   "frame": 174,
+   "v": 620,
+   "u": 1006.11,
+   "speed_px_per_frame": 0.127,
+   "fwhm_px": 2.23,
+   "depth": 89.9
+  },
+  {
+   "frame": 174,
+   "v": 624,
+   "u": 1006.21,
+   "speed_px_per_frame": 0.22,
+   "fwhm_px": 2.187,
+   "depth": 76.8
+  },
+  {
+   "frame": 174,
+   "v": 628,
+   "u": 1010.21,
+   "speed_px_per_frame": 0.626,
+   "fwhm_px": 2.286,
+   "depth": 68.4
+  },
+  {
+   "frame": 174,
+   "v": 632,
+   "u": 1010.22,
+   "speed_px_per_frame": 0.692,
+   "fwhm_px": 2.444,
+   "depth": 85.4
+  },
+  {
+   "frame": 174,
+   "v": 636,
+   "u": 1010.29,
+   "speed_px_per_frame": 0.425,
+   "fwhm_px": 2.745,
+   "depth": 94.3
+  },
+  {
+   "frame": 174,
+   "v": 662,
+   "u": 1012.74,
+   "speed_px_per_frame": 3.786,
+   "fwhm_px": 4.029,
+   "depth": 41.0
+  },
+  {
+   "frame": 174,
+   "v": 666,
+   "u": 1011.5,
+   "speed_px_per_frame": 4.115,
+   "fwhm_px": 4.578,
+   "depth": 57.2
+  },
+  {
+   "frame": 174,
+   "v": 670,
+   "u": 1012.25,
+   "speed_px_per_frame": 3.918,
+   "fwhm_px": 5.148,
+   "depth": 85.1
+  },
+  {
+   "frame": 174,
+   "v": 674,
+   "u": 1013.97,
+   "speed_px_per_frame": 4.729,
+   "fwhm_px": 5.783,
+   "depth": 94.2
+  },
+  {
+   "frame": 174,
+   "v": 678,
+   "u": 1014.17,
+   "speed_px_per_frame": 5.056,
+   "fwhm_px": 6.055,
+   "depth": 102.4
+  },
+  {
+   "frame": 174,
+   "v": 682,
+   "u": 1013.41,
+   "speed_px_per_frame": 5.25,
+   "fwhm_px": 6.167,
+   "depth": 101.5
+  },
+  {
+   "frame": 174,
+   "v": 686,
+   "u": 1014.5,
+   "speed_px_per_frame": 5.719,
+   "fwhm_px": 6.171,
+   "depth": 103.6
+  },
+  {
+   "frame": 174,
+   "v": 690,
+   "u": 1014.38,
+   "speed_px_per_frame": 5.857,
+   "fwhm_px": 6.339,
+   "depth": 105.7
+  },
+  {
+   "frame": 174,
+   "v": 694,
+   "u": 1014.5,
+   "speed_px_per_frame": 5.651,
+   "fwhm_px": 6.494,
+   "depth": 106.7
+  },
+  {
+   "frame": 174,
+   "v": 698,
+   "u": 1015.39,
+   "speed_px_per_frame": 6.039,
+   "fwhm_px": 6.27,
+   "depth": 111.9
+  },
+  {
+   "frame": 174,
+   "v": 702,
+   "u": 1015.76,
+   "speed_px_per_frame": 6.504,
+   "fwhm_px": 6.034,
+   "depth": 112.7
+  },
+  {
+   "frame": 174,
+   "v": 706,
+   "u": 1016.43,
+   "speed_px_per_frame": 7.021,
+   "fwhm_px": 5.988,
+   "depth": 112.3
+  },
+  {
+   "frame": 174,
+   "v": 710,
+   "u": 1016.75,
+   "speed_px_per_frame": 7.189,
+   "fwhm_px": 6.092,
+   "depth": 113.8
+  },
+  {
+   "frame": 174,
+   "v": 714,
+   "u": 1017.42,
+   "speed_px_per_frame": 7.326,
+   "fwhm_px": 6.017,
+   "depth": 117.3
+  },
+  {
+   "frame": 174,
+   "v": 718,
+   "u": 1017.86,
+   "speed_px_per_frame": 7.818,
+   "fwhm_px": 6.002,
+   "depth": 120.2
+  },
+  {
+   "frame": 174,
+   "v": 722,
+   "u": 1018.3,
+   "speed_px_per_frame": 8.104,
+   "fwhm_px": 5.539,
+   "depth": 123.1
+  },
+  {
+   "frame": 174,
+   "v": 726,
+   "u": 1018.69,
+   "speed_px_per_frame": 8.471,
+   "fwhm_px": 5.781,
+   "depth": 126.4
+  },
+  {
+   "frame": 174,
+   "v": 730,
+   "u": 1019.44,
+   "speed_px_per_frame": 8.767,
+   "fwhm_px": 5.688,
+   "depth": 128.6
+  },
+  {
+   "frame": 174,
+   "v": 734,
+   "u": 1019.74,
+   "speed_px_per_frame": 8.974,
+   "fwhm_px": 5.541,
+   "depth": 130.2
+  },
+  {
+   "frame": 174,
+   "v": 738,
+   "u": 1020.22,
+   "speed_px_per_frame": 9.389,
+   "fwhm_px": 5.548,
+   "depth": 130.4
+  },
+  {
+   "frame": 174,
+   "v": 742,
+   "u": 1020.39,
+   "speed_px_per_frame": 9.759,
+   "fwhm_px": 6.088,
+   "depth": 131.9
+  },
+  {
+   "frame": 174,
+   "v": 746,
+   "u": 1020.9,
+   "speed_px_per_frame": 10.583,
+   "fwhm_px": 3.5,
+   "depth": 125.0
+  },
+  {
+   "frame": 174,
+   "v": 750,
+   "u": 1020.88,
+   "speed_px_per_frame": 10.6,
+   "fwhm_px": 5.755,
+   "depth": 61.2
+  },
+  {
+   "frame": 174,
+   "v": 754,
+   "u": 1021.3,
+   "speed_px_per_frame": 10.411,
+   "fwhm_px": 6.147,
+   "depth": 63.4
+  },
+  {
+   "frame": 174,
+   "v": 758,
+   "u": 1021.5,
+   "speed_px_per_frame": 10.348,
+   "fwhm_px": 6.824,
+   "depth": 65.7
+  },
+  {
+   "frame": 175,
+   "v": 600,
+   "u": 1007.59,
+   "speed_px_per_frame": 1.83,
+   "fwhm_px": 2.594,
+   "depth": 88.4
+  },
+  {
+   "frame": 175,
+   "v": 604,
+   "u": 1007.6,
+   "speed_px_per_frame": 1.219,
+   "fwhm_px": 2.967,
+   "depth": 86.5
+  },
+  {
+   "frame": 175,
+   "v": 608,
+   "u": 1007.41,
+   "speed_px_per_frame": 1.11,
+   "fwhm_px": 3.188,
+   "depth": 93.3
+  },
+  {
+   "frame": 175,
+   "v": 612,
+   "u": 1007.43,
+   "speed_px_per_frame": 0.972,
+   "fwhm_px": 3.352,
+   "depth": 96.5
+  },
+  {
+   "frame": 175,
+   "v": 616,
+   "u": 1007.39,
+   "speed_px_per_frame": 0.73,
+   "fwhm_px": 3.296,
+   "depth": 101.2
+  },
+  {
+   "frame": 175,
+   "v": 620,
+   "u": 1007.39,
+   "speed_px_per_frame": 0.471,
+   "fwhm_px": 3.324,
+   "depth": 107.7
+  },
+  {
+   "frame": 175,
+   "v": 624,
+   "u": 1007.36,
+   "speed_px_per_frame": 0.346,
+   "fwhm_px": 3.396,
+   "depth": 109.1
+  },
+  {
+   "frame": 175,
+   "v": 628,
+   "u": 1007.39,
+   "speed_px_per_frame": 1.7,
+   "fwhm_px": 3.711,
+   "depth": 110.7
+  },
+  {
+   "frame": 175,
+   "v": 632,
+   "u": 1007.5,
+   "speed_px_per_frame": 1.859,
+   "fwhm_px": 3.907,
+   "depth": 101.2
+  },
+  {
+   "frame": 175,
+   "v": 636,
+   "u": 1008.21,
+   "speed_px_per_frame": 1.897,
+   "fwhm_px": 3.689,
+   "depth": 103.6
+  },
+  {
+   "frame": 175,
+   "v": 662,
+   "u": 1008.93,
+   "speed_px_per_frame": 3.911,
+   "fwhm_px": 3.52,
+   "depth": 39.1
+  },
+  {
+   "frame": 175,
+   "v": 666,
+   "u": 1008.73,
+   "speed_px_per_frame": 3.467,
+   "fwhm_px": 4.241,
+   "depth": 55.5
+  },
+  {
+   "frame": 175,
+   "v": 670,
+   "u": 1008.42,
+   "speed_px_per_frame": 4.062,
+   "fwhm_px": 5.242,
+   "depth": 80.4
+  },
+  {
+   "frame": 175,
+   "v": 674,
+   "u": 1008.17,
+   "speed_px_per_frame": 5.283,
+   "fwhm_px": 5.929,
+   "depth": 85.6
+  },
+  {
+   "frame": 175,
+   "v": 678,
+   "u": 1008.39,
+   "speed_px_per_frame": 5.44,
+   "fwhm_px": 6.175,
+   "depth": 93.5
+  },
+  {
+   "frame": 175,
+   "v": 682,
+   "u": 1009.0,
+   "speed_px_per_frame": 5.205,
+   "fwhm_px": 6.28,
+   "depth": 97.7
+  },
+  {
+   "frame": 175,
+   "v": 686,
+   "u": 1008.44,
+   "speed_px_per_frame": 5.75,
+   "fwhm_px": 6.217,
+   "depth": 101.2
+  },
+  {
+   "frame": 175,
+   "v": 690,
+   "u": 1008.94,
+   "speed_px_per_frame": 5.961,
+   "fwhm_px": 6.358,
+   "depth": 103.3
+  },
+  {
+   "frame": 175,
+   "v": 694,
+   "u": 1009.12,
+   "speed_px_per_frame": 5.9,
+   "fwhm_px": 6.234,
+   "depth": 108.5
+  },
+  {
+   "frame": 175,
+   "v": 698,
+   "u": 1009.19,
+   "speed_px_per_frame": 6.444,
+   "fwhm_px": 6.205,
+   "depth": 110.4
+  },
+  {
+   "frame": 175,
+   "v": 702,
+   "u": 1009.21,
+   "speed_px_per_frame": 6.663,
+   "fwhm_px": 6.073,
+   "depth": 109.5
+  },
+  {
+   "frame": 175,
+   "v": 706,
+   "u": 1009.62,
+   "speed_px_per_frame": 6.967,
+   "fwhm_px": 5.8,
+   "depth": 113.2
+  },
+  {
+   "frame": 175,
+   "v": 710,
+   "u": 1009.9,
+   "speed_px_per_frame": 7.188,
+   "fwhm_px": 5.528,
+   "depth": 122.1
+  },
+  {
+   "frame": 175,
+   "v": 714,
+   "u": 1010.08,
+   "speed_px_per_frame": 7.569,
+   "fwhm_px": 5.541,
+   "depth": 125.8
+  },
+  {
+   "frame": 175,
+   "v": 718,
+   "u": 1010.12,
+   "speed_px_per_frame": 7.957,
+   "fwhm_px": 5.566,
+   "depth": 123.1
+  },
+  {
+   "frame": 175,
+   "v": 722,
+   "u": 1010.21,
+   "speed_px_per_frame": 8.175,
+   "fwhm_px": 5.499,
+   "depth": 124.7
+  },
+  {
+   "frame": 175,
+   "v": 726,
+   "u": 1010.31,
+   "speed_px_per_frame": 8.504,
+   "fwhm_px": 5.518,
+   "depth": 129.4
+  },
+  {
+   "frame": 175,
+   "v": 730,
+   "u": 1010.5,
+   "speed_px_per_frame": 8.945,
+   "fwhm_px": 5.376,
+   "depth": 125.9
+  },
+  {
+   "frame": 175,
+   "v": 734,
+   "u": 1010.55,
+   "speed_px_per_frame": 9.279,
+   "fwhm_px": 5.508,
+   "depth": 126.1
+  },
+  {
+   "frame": 175,
+   "v": 738,
+   "u": 1010.72,
+   "speed_px_per_frame": 9.657,
+   "fwhm_px": 5.581,
+   "depth": 129.4
+  },
+  {
+   "frame": 175,
+   "v": 742,
+   "u": 1010.5,
+   "speed_px_per_frame": 9.786,
+   "fwhm_px": 6.389,
+   "depth": 121.4
+  },
+  {
+   "frame": 175,
+   "v": 746,
+   "u": 1010.83,
+   "speed_px_per_frame": 10.407,
+   "fwhm_px": 6.376,
+   "depth": 43.7
+  },
+  {
+   "frame": 175,
+   "v": 750,
+   "u": 1010.8,
+   "speed_px_per_frame": 10.188,
+   "fwhm_px": 5.489,
+   "depth": 63.9
+  },
+  {
+   "frame": 175,
+   "v": 754,
+   "u": 1010.9,
+   "speed_px_per_frame": 10.337,
+   "fwhm_px": 5.702,
+   "depth": 63.8
+  },
+  {
+   "frame": 175,
+   "v": 758,
+   "u": 1011.17,
+   "speed_px_per_frame": 10.45,
+   "fwhm_px": 7.037,
+   "depth": 68.4
+  },
+  {
+   "frame": 176,
+   "v": 600,
+   "u": 1008.73,
+   "speed_px_per_frame": 1.88,
+   "fwhm_px": 4.853,
+   "depth": 118.5
+  },
+  {
+   "frame": 176,
+   "v": 604,
+   "u": 1008.06,
+   "speed_px_per_frame": 1.332,
+   "fwhm_px": 5.107,
+   "depth": 120.2
+  },
+  {
+   "frame": 176,
+   "v": 608,
+   "u": 1008.05,
+   "speed_px_per_frame": 1.127,
+   "fwhm_px": 5.22,
+   "depth": 106.8
+  },
+  {
+   "frame": 176,
+   "v": 612,
+   "u": 1007.89,
+   "speed_px_per_frame": 0.624,
+   "fwhm_px": 5.062,
+   "depth": 100.4
+  },
+  {
+   "frame": 176,
+   "v": 616,
+   "u": 1007.5,
+   "speed_px_per_frame": 0.221,
+   "fwhm_px": 6.029,
+   "depth": 98.2
+  },
+  {
+   "frame": 176,
+   "v": 620,
+   "u": 1007.05,
+   "speed_px_per_frame": 0.467,
+   "fwhm_px": 6.019,
+   "depth": 102.9
+  },
+  {
+   "frame": 176,
+   "v": 624,
+   "u": 1006.9,
+   "speed_px_per_frame": 0.932,
+   "fwhm_px": 5.705,
+   "depth": 99.7
+  },
+  {
+   "frame": 176,
+   "v": 628,
+   "u": 1006.81,
+   "speed_px_per_frame": 1.599,
+   "fwhm_px": 5.431,
+   "depth": 98.9
+  },
+  {
+   "frame": 176,
+   "v": 632,
+   "u": 1006.5,
+   "speed_px_per_frame": 2.2,
+   "fwhm_px": 5.213,
+   "depth": 96.1
+  },
+  {
+   "frame": 176,
+   "v": 636,
+   "u": 1006.5,
+   "speed_px_per_frame": 2.701,
+   "fwhm_px": 4.789,
+   "depth": 95.6
+  },
+  {
+   "frame": 176,
+   "v": 662,
+   "u": 1004.92,
+   "speed_px_per_frame": 6.36,
+   "fwhm_px": 3.769,
+   "depth": 37.5
+  },
+  {
+   "frame": 176,
+   "v": 666,
+   "u": 1004.57,
+   "speed_px_per_frame": 6.664,
+   "fwhm_px": 4.146,
+   "depth": 54.7
+  },
+  {
+   "frame": 176,
+   "v": 670,
+   "u": 1004.12,
+   "speed_px_per_frame": 6.562,
+   "fwhm_px": 5.134,
+   "depth": 80.2
+  },
+  {
+   "frame": 176,
+   "v": 674,
+   "u": 1003.4,
+   "speed_px_per_frame": 6.881,
+   "fwhm_px": 5.712,
+   "depth": 86.7
+  },
+  {
+   "frame": 176,
+   "v": 678,
+   "u": 1003.29,
+   "speed_px_per_frame": 7.294,
+   "fwhm_px": 5.798,
+   "depth": 95.6
+  },
+  {
+   "frame": 176,
+   "v": 682,
+   "u": 1003.0,
+   "speed_px_per_frame": 8.287,
+   "fwhm_px": 5.986,
+   "depth": 97.9
+  },
+  {
+   "frame": 176,
+   "v": 686,
+   "u": 1003.0,
+   "speed_px_per_frame": 8.089,
+   "fwhm_px": 6.017,
+   "depth": 100.8
+  },
+  {
+   "frame": 176,
+   "v": 690,
+   "u": 1002.45,
+   "speed_px_per_frame": 8.535,
+   "fwhm_px": 6.002,
+   "depth": 99.7
+  },
+  {
+   "frame": 176,
+   "v": 694,
+   "u": 1002.7,
+   "speed_px_per_frame": 8.658,
+   "fwhm_px": 6.119,
+   "depth": 104.7
+  },
+  {
+   "frame": 176,
+   "v": 698,
+   "u": 1002.5,
+   "speed_px_per_frame": 9.594,
+   "fwhm_px": 6.102,
+   "depth": 106.7
+  },
+  {
+   "frame": 176,
+   "v": 702,
+   "u": 1002.44,
+   "speed_px_per_frame": 9.607,
+   "fwhm_px": 5.774,
+   "depth": 108.6
+  },
+  {
+   "frame": 176,
+   "v": 706,
+   "u": 1002.5,
+   "speed_px_per_frame": 9.812,
+   "fwhm_px": 5.686,
+   "depth": 112.7
+  },
+  {
+   "frame": 176,
+   "v": 710,
+   "u": 1002.38,
+   "speed_px_per_frame": 9.95,
+   "fwhm_px": 5.478,
+   "depth": 115.4
+  },
+  {
+   "frame": 176,
+   "v": 714,
+   "u": 1002.28,
+   "speed_px_per_frame": 10.042,
+   "fwhm_px": 5.606,
+   "depth": 121.6
+  },
+  {
+   "frame": 176,
+   "v": 718,
+   "u": 1001.95,
+   "speed_px_per_frame": 10.562,
+   "fwhm_px": 5.353,
+   "depth": 120.4
+  },
+  {
+   "frame": 176,
+   "v": 722,
+   "u": 1001.95,
+   "speed_px_per_frame": 10.607,
+   "fwhm_px": 5.792,
+   "depth": 123.1
+  },
+  {
+   "frame": 176,
+   "v": 726,
+   "u": 1001.68,
+   "speed_px_per_frame": 10.654,
+   "fwhm_px": 5.383,
+   "depth": 129.0
+  },
+  {
+   "frame": 176,
+   "v": 730,
+   "u": 1001.55,
+   "speed_px_per_frame": 10.75,
+   "fwhm_px": 5.797,
+   "depth": 120.2
+  },
+  {
+   "frame": 176,
+   "v": 734,
+   "u": 1001.18,
+   "speed_px_per_frame": 10.776,
+   "fwhm_px": 5.446,
+   "depth": 124.6
+  },
+  {
+   "frame": 176,
+   "v": 738,
+   "u": 1000.91,
+   "speed_px_per_frame": 11.361,
+   "fwhm_px": 5.879,
+   "depth": 139.7
+  },
+  {
+   "frame": 176,
+   "v": 742,
+   "u": 1000.82,
+   "speed_px_per_frame": 3.25,
+   "fwhm_px": 4.602,
+   "depth": 106.6
+  },
+  {
+   "frame": 176,
+   "v": 746,
+   "u": 1000.08,
+   "speed_px_per_frame": 3.667,
+   "fwhm_px": 6.075,
+   "depth": 57.2
+  },
+  {
+   "frame": 176,
+   "v": 750,
+   "u": 1000.5,
+   "speed_px_per_frame": 11.4,
+   "fwhm_px": 5.979,
+   "depth": 59.2
+  },
+  {
+   "frame": 176,
+   "v": 754,
+   "u": 1000.62,
+   "speed_px_per_frame": 0.7,
+   "fwhm_px": 6.171,
+   "depth": 61.4
+  },
+  {
+   "frame": 176,
+   "v": 758,
+   "u": 1000.6,
+   "speed_px_per_frame": 0.417,
+   "fwhm_px": 7.357,
+   "depth": 61.8
+  },
+  {
+   "frame": 177,
+   "v": 600,
+   "u": 1011.35,
+   "speed_px_per_frame": 2.015,
+   "fwhm_px": 4.876,
+   "depth": 120.1
+  },
+  {
+   "frame": 177,
+   "v": 604,
+   "u": 1010.26,
+   "speed_px_per_frame": 1.741,
+   "fwhm_px": 5.094,
+   "depth": 124.6
+  },
+  {
+   "frame": 177,
+   "v": 608,
+   "u": 1009.67,
+   "speed_px_per_frame": 1.11,
+   "fwhm_px": 5.398,
+   "depth": 112.5
+  },
+  {
+   "frame": 177,
+   "v": 612,
+   "u": 1008.68,
+   "speed_px_per_frame": 0.501,
+   "fwhm_px": 4.759,
+   "depth": 94.8
+  },
+  {
+   "frame": 177,
+   "v": 616,
+   "u": 1007.83,
+   "speed_px_per_frame": 0.16,
+   "fwhm_px": 4.496,
+   "depth": 98.5
+  },
+  {
+   "frame": 177,
+   "v": 620,
+   "u": 1006.45,
+   "speed_px_per_frame": 0.632,
+   "fwhm_px": 4.893,
+   "depth": 90.5
+  },
+  {
+   "frame": 177,
+   "v": 624,
+   "u": 1005.5,
+   "speed_px_per_frame": 1.2,
+   "fwhm_px": 5.385,
+   "depth": 92.2
+  },
+  {
+   "frame": 177,
+   "v": 628,
+   "u": 1004.19,
+   "speed_px_per_frame": 1.721,
+   "fwhm_px": 5.337,
+   "depth": 102.3
+  },
+  {
+   "frame": 177,
+   "v": 632,
+   "u": 1003.1,
+   "speed_px_per_frame": 2.222,
+   "fwhm_px": 5.373,
+   "depth": 100.2
+  },
+  {
+   "frame": 177,
+   "v": 636,
+   "u": 1002.81,
+   "speed_px_per_frame": 2.735,
+   "fwhm_px": 5.449,
+   "depth": 90.1
+  },
+  {
+   "frame": 177,
+   "v": 662,
+   "u": 996.21,
+   "speed_px_per_frame": 6.237,
+   "fwhm_px": 4.137,
+   "depth": 43.4
+  },
+  {
+   "frame": 177,
+   "v": 666,
+   "u": 995.4,
+   "speed_px_per_frame": 6.533,
+   "fwhm_px": 4.954,
+   "depth": 84.2
+  },
+  {
+   "frame": 177,
+   "v": 670,
+   "u": 995.3,
+   "speed_px_per_frame": 6.195,
+   "fwhm_px": 5.439,
+   "depth": 98.9
+  },
+  {
+   "frame": 177,
+   "v": 674,
+   "u": 994.4,
+   "speed_px_per_frame": 7.031,
+   "fwhm_px": 5.729,
+   "depth": 98.8
+  },
+  {
+   "frame": 177,
+   "v": 678,
+   "u": 993.8,
+   "speed_px_per_frame": 7.393,
+   "fwhm_px": 6.232,
+   "depth": 102.6
+  },
+  {
+   "frame": 177,
+   "v": 682,
+   "u": 992.43,
+   "speed_px_per_frame": 7.818,
+   "fwhm_px": 6.132,
+   "depth": 99.2
+  },
+  {
+   "frame": 177,
+   "v": 686,
+   "u": 992.26,
+   "speed_px_per_frame": 8.25,
+   "fwhm_px": 5.944,
+   "depth": 110.8
+  },
+  {
+   "frame": 177,
+   "v": 690,
+   "u": 991.88,
+   "speed_px_per_frame": 8.284,
+   "fwhm_px": 6.202,
+   "depth": 101.9
+  },
+  {
+   "frame": 177,
+   "v": 694,
+   "u": 991.8,
+   "speed_px_per_frame": 9.25,
+   "fwhm_px": 6.118,
+   "depth": 110.2
+  },
+  {
+   "frame": 177,
+   "v": 698,
+   "u": 990.5,
+   "speed_px_per_frame": 8.95,
+   "fwhm_px": 6.296,
+   "depth": 109.0
+  },
+  {
+   "frame": 177,
+   "v": 702,
+   "u": 989.57,
+   "speed_px_per_frame": 8.692,
+   "fwhm_px": 6.042,
+   "depth": 115.6
+  },
+  {
+   "frame": 177,
+   "v": 706,
+   "u": 989.12,
+   "speed_px_per_frame": 9.483,
+   "fwhm_px": 6.124,
+   "depth": 119.2
+  },
+  {
+   "frame": 177,
+   "v": 710,
+   "u": 988.3,
+   "speed_px_per_frame": 9.382,
+   "fwhm_px": 5.755,
+   "depth": 122.9
+  },
+  {
+   "frame": 177,
+   "v": 714,
+   "u": 987.79,
+   "speed_px_per_frame": 9.41,
+   "fwhm_px": 5.476,
+   "depth": 129.8
+  },
+  {
+   "frame": 177,
+   "v": 718,
+   "u": 986.78,
+   "speed_px_per_frame": 9.464,
+   "fwhm_px": 5.24,
+   "depth": 127.8
+  },
+  {
+   "frame": 177,
+   "v": 722,
+   "u": 986.17,
+   "speed_px_per_frame": 9.933,
+   "fwhm_px": 5.49,
+   "depth": 131.3
+  },
+  {
+   "frame": 177,
+   "v": 726,
+   "u": 985.83,
+   "speed_px_per_frame": 9.665,
+   "fwhm_px": 5.274,
+   "depth": 133.4
+  },
+  {
+   "frame": 177,
+   "v": 730,
+   "u": 985.17,
+   "speed_px_per_frame": 10.207,
+   "fwhm_px": 5.826,
+   "depth": 121.3
+  },
+  {
+   "frame": 177,
+   "v": 734,
+   "u": 984.09,
+   "speed_px_per_frame": 10.201,
+   "fwhm_px": 5.367,
+   "depth": 136.9
+  },
+  {
+   "frame": 177,
+   "v": 738,
+   "u": 983.18,
+   "speed_px_per_frame": 10.507,
+   "fwhm_px": 5.421,
+   "depth": 132.0
+  },
+  {
+   "frame": 177,
+   "v": 746,
+   "u": 981.43,
+   "speed_px_per_frame": 10.212,
+   "fwhm_px": 6.297,
+   "depth": 57.7
+  },
+  {
+   "frame": 177,
+   "v": 750,
+   "u": 981.7,
+   "speed_px_per_frame": 10.0,
+   "fwhm_px": 6.153,
+   "depth": 56.6
+  },
+  {
+   "frame": 177,
+   "v": 754,
+   "u": 981.2,
+   "speed_px_per_frame": 10.083,
+   "fwhm_px": 6.343,
+   "depth": 61.2
+  },
+  {
+   "frame": 177,
+   "v": 758,
+   "u": 979.2,
+   "speed_px_per_frame": 6.0,
+   "fwhm_px": 7.201,
+   "depth": 14.5
+  },
+  {
+   "frame": 178,
+   "v": 600,
+   "u": 1012.76,
+   "speed_px_per_frame": 1.348,
+   "fwhm_px": 5.369,
+   "depth": 129.7
+  },
+  {
+   "frame": 178,
+   "v": 604,
+   "u": 1011.54,
+   "speed_px_per_frame": 1.138,
+   "fwhm_px": 5.57,
+   "depth": 122.4
+  },
+  {
+   "frame": 178,
+   "v": 608,
+   "u": 1010.26,
+   "speed_px_per_frame": 0.689,
+   "fwhm_px": 5.469,
+   "depth": 115.6
+  },
+  {
+   "frame": 178,
+   "v": 612,
+   "u": 1008.89,
+   "speed_px_per_frame": 0.347,
+   "fwhm_px": 5.207,
+   "depth": 105.5
+  },
+  {
+   "frame": 178,
+   "v": 616,
+   "u": 1007.82,
+   "speed_px_per_frame": 0.196,
+   "fwhm_px": 4.757,
+   "depth": 106.3
+  },
+  {
+   "frame": 178,
+   "v": 620,
+   "u": 1005.79,
+   "speed_px_per_frame": 0.426,
+   "fwhm_px": 5.136,
+   "depth": 93.6
+  },
+  {
+   "frame": 178,
+   "v": 624,
+   "u": 1004.5,
+   "speed_px_per_frame": 0.769,
+   "fwhm_px": 5.435,
+   "depth": 92.8
+  },
+  {
+   "frame": 178,
+   "v": 628,
+   "u": 1003.37,
+   "speed_px_per_frame": 0.96,
+   "fwhm_px": 5.086,
+   "depth": 97.6
+  },
+  {
+   "frame": 178,
+   "v": 632,
+   "u": 1002.06,
+   "speed_px_per_frame": 0.65,
+   "fwhm_px": 5.689,
+   "depth": 89.8
+  },
+  {
+   "frame": 178,
+   "v": 636,
+   "u": 1001.03,
+   "speed_px_per_frame": 1.27,
+   "fwhm_px": 5.049,
+   "depth": 92.6
+  },
+  {
+   "frame": 178,
+   "v": 662,
+   "u": 992.44,
+   "speed_px_per_frame": 3.237,
+   "fwhm_px": 4.035,
+   "depth": 54.5
+  },
+  {
+   "frame": 178,
+   "v": 666,
+   "u": 991.5,
+   "speed_px_per_frame": 3.502,
+   "fwhm_px": 5.259,
+   "depth": 91.7
+  },
+  {
+   "frame": 178,
+   "v": 670,
+   "u": 991.74,
+   "speed_px_per_frame": 4.058,
+   "fwhm_px": 5.692,
+   "depth": 106.7
+  },
+  {
+   "frame": 178,
+   "v": 674,
+   "u": 989.34,
+   "speed_px_per_frame": 4.279,
+   "fwhm_px": 5.931,
+   "depth": 104.6
+  },
+  {
+   "frame": 178,
+   "v": 678,
+   "u": 988.5,
+   "speed_px_per_frame": 4.704,
+   "fwhm_px": 6.092,
+   "depth": 100.7
+  },
+  {
+   "frame": 178,
+   "v": 682,
+   "u": 987.36,
+   "speed_px_per_frame": 3.921,
+   "fwhm_px": 5.699,
+   "depth": 106.2
+  },
+  {
+   "frame": 178,
+   "v": 686,
+   "u": 986.5,
+   "speed_px_per_frame": 4.243,
+   "fwhm_px": 5.91,
+   "depth": 105.2
+  },
+  {
+   "frame": 178,
+   "v": 690,
+   "u": 985.88,
+   "speed_px_per_frame": 5.833,
+   "fwhm_px": 6.147,
+   "depth": 110.9
+  },
+  {
+   "frame": 178,
+   "v": 694,
+   "u": 984.5,
+   "speed_px_per_frame": 5.377,
+   "fwhm_px": 6.061,
+   "depth": 110.7
+  },
+  {
+   "frame": 178,
+   "v": 698,
+   "u": 984.1,
+   "speed_px_per_frame": 5.29,
+   "fwhm_px": 6.221,
+   "depth": 117.7
+  },
+  {
+   "frame": 178,
+   "v": 702,
+   "u": 983.62,
+   "speed_px_per_frame": 5.997,
+   "fwhm_px": 5.763,
+   "depth": 124.6
+  },
+  {
+   "frame": 178,
+   "v": 706,
+   "u": 982.03,
+   "speed_px_per_frame": 6.37,
+   "fwhm_px": 6.0,
+   "depth": 124.9
+  },
+  {
+   "frame": 178,
+   "v": 710,
+   "u": 981.24,
+   "speed_px_per_frame": 6.555,
+   "fwhm_px": 5.944,
+   "depth": 130.1
+  },
+  {
+   "frame": 178,
+   "v": 714,
+   "u": 980.18,
+   "speed_px_per_frame": 7.018,
+   "fwhm_px": 5.44,
+   "depth": 137.0
+  },
+  {
+   "frame": 178,
+   "v": 718,
+   "u": 979,
+   "speed_px_per_frame": 7.042,
+   "fwhm_px": 5.428,
+   "depth": 129.1
+  },
+  {
+   "frame": 178,
+   "v": 722,
+   "u": 979,
+   "speed_px_per_frame": 7.14,
+   "fwhm_px": 6.023,
+   "depth": 119.7
+  },
+  {
+   "frame": 178,
+   "v": 726,
+   "u": 979,
+   "speed_px_per_frame": 8.34,
+   "fwhm_px": 6.654,
+   "depth": 97.5
+  },
+  {
+   "frame": 178,
+   "v": 730,
+   "u": 979,
+   "speed_px_per_frame": 7.73,
+   "fwhm_px": 7.849,
+   "depth": 65.5
+  },
+  {
+   "frame": 178,
+   "v": 734,
+   "u": 979,
+   "speed_px_per_frame": 8.118,
+   "fwhm_px": 8.742,
+   "depth": 44.2
+  },
+  {
+   "frame": 178,
+   "v": 746,
+   "u": 1024.17,
+   "speed_px_per_frame": 3.0,
+   "fwhm_px": 9.615,
+   "depth": 12.4
+  }
+ ]
+}

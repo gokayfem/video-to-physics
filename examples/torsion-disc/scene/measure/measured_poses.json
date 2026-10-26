@@ -1,0 +1,493 @@
+{
+ "note": "Reference-measured TEST poses of the disc for look/blockout renders (scene role C; NOT physics).",
+ "frames": {
+  "0": {
+   "psi_deg": 3.87,
+   "offset_D": [
+    -0.01593,
+    -0.01483
+   ],
+   "kink_deg": 27.0
+  },
+  "4": {
+   "psi_deg": 4.15,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 25.0
+  },
+  "8": {
+   "psi_deg": 8.81,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 25.0
+  },
+  "12": {
+   "psi_deg": 6.49,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 23.5
+  },
+  "16": {
+   "psi_deg": -2.88,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 26.5
+  },
+  "20": {
+   "psi_deg": -13.99,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 24.5
+  },
+  "24": {
+   "psi_deg": -19.19,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 20.0
+  },
+  "28": {
+   "psi_deg": -21.33,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 17.0
+  },
+  "32": {
+   "psi_deg": -23.6,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 20.5
+  },
+  "36": {
+   "psi_deg": -26.52,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 22.0
+  },
+  "40": {
+   "psi_deg": -79.28,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 3.0
+  },
+  "44": {
+   "psi_deg": -45.73,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 17.0
+  },
+  "48": {
+   "psi_deg": -49.82,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 14.0
+  },
+  "52": {
+   "psi_deg": -54.29,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 11.0
+  },
+  "56": {
+   "psi_deg": -59.02,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 10.0
+  },
+  "60": {
+   "psi_deg": -64.83,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 11.5
+  },
+  "64": {
+   "psi_deg": -71.79,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 8.5
+  },
+  "68": {
+   "psi_deg": -78.38,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 5.0
+  },
+  "72": {
+   "psi_deg": -83.9,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 0.0
+  },
+  "76": {
+   "psi_deg": 89.48,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 5.0
+  },
+  "80": {
+   "psi_deg": 81.62,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 7.0
+  },
+  "84": {
+   "psi_deg": 73.69,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 10.5
+  },
+  "88": {
+   "psi_deg": 70.01,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 10.0
+  },
+  "92": {
+   "psi_deg": 65.24,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 12.0
+  },
+  "96": {
+   "psi_deg": 58.56,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 16.0
+  },
+  "100": {
+   "psi_deg": 50.66,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 20.5
+  },
+  "104": {
+   "psi_deg": 87.85,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 17.5
+  },
+  "108": {
+   "psi_deg": 26.36,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 26.5
+  },
+  "112": {
+   "psi_deg": 24.07,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 18.0
+  },
+  "116": {
+   "psi_deg": 21.23,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 17.5
+  },
+  "120": {
+   "psi_deg": 16.77,
+   "offset_D": [
+    0.0319,
+    -0.00037
+   ],
+   "kink_deg": 22.5
+  },
+  "124": {
+   "psi_deg": -80.73,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 5.0
+  },
+  "128": {
+   "psi_deg": -1.66,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 27.0
+  },
+  "132": {
+   "psi_deg": -14.12,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 22.5
+  },
+  "136": {
+   "psi_deg": -83.62,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 6.5
+  },
+  "140": {
+   "psi_deg": -30.71,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 18.5
+  },
+  "144": {
+   "psi_deg": -82.69,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 1.0
+  },
+  "148": {
+   "psi_deg": -39.1,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 16.0
+  },
+  "152": {
+   "psi_deg": -45.75,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 18.0
+  },
+  "156": {
+   "psi_deg": -56.63,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 16.5
+  },
+  "160": {
+   "psi_deg": -66.6,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 12.0
+  },
+  "164": {
+   "psi_deg": -73.31,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 8.5
+  },
+  "168": {
+   "psi_deg": -79.14,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 6.0
+  },
+  "172": {
+   "psi_deg": -85.29,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 2.5
+  },
+  "176": {
+   "psi_deg": 87.64,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 0.5
+  },
+  "180": {
+   "psi_deg": 81.52,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 2.0
+  },
+  "184": {
+   "psi_deg": 76.2,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 4.0
+  },
+  "188": {
+   "psi_deg": 70.46,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 9.0
+  },
+  "192": {
+   "psi_deg": 63.55,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 14.0
+  },
+  "196": {
+   "psi_deg": 55.79,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 16.0
+  },
+  "200": {
+   "psi_deg": 46.29,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 16.0
+  },
+  "204": {
+   "psi_deg": 41.9,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 18.5
+  },
+  "208": {
+   "psi_deg": 40.03,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 15.0
+  },
+  "212": {
+   "psi_deg": 37.13,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 17.5
+  },
+  "216": {
+   "psi_deg": 30.26,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 19.5
+  },
+  "220": {
+   "psi_deg": 18.9,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 25.0
+  },
+  "224": {
+   "psi_deg": 11.71,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 23.5
+  },
+  "228": {
+   "psi_deg": 6.75,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 20.5
+  },
+  "232": {
+   "psi_deg": 5.77,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 17.5
+  },
+  "236": {
+   "psi_deg": 2.91,
+   "offset_D": [
+    0.0,
+    0.0
+   ],
+   "kink_deg": 20.5
+  },
+  "240": {
+   "psi_deg": -2.48,
+   "offset_D": [
+    0.0241,
+    -0.00101
+   ],
+   "kink_deg": 30.5
+  }
+ }
+}

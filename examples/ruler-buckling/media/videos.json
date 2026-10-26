@@ -1,0 +1,26 @@
+[
+ {
+  "role": "reconstruction",
+  "file": "final_ck002_1920x1088.mp4",
+  "source": "batch2/01-ruler-buckling/review/final_ck002_1920x1088.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff793/URFZU7ItJ7ntuy-_ql84Y_final_ck002_1920x1088.mp4",
+  "bytes": 889570,
+  "sha256": "c688b0e16ae03184067bbf5ebbd0be9739e2b674e309b5bbe1fb1a42f1216fd4"
+ },
+ {
+  "role": "side_by_side",
+  "file": "ck002_sbs.mp4",
+  "source": "batch2/01-ruler-buckling/review/visuals/ck002_sbs.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff793/5inSNa0rtNA8ZzBomv91__ck002_sbs.mp4",
+  "bytes": 1516788,
+  "sha256": "4c695e1a578b25bca1a099e5aa6a8f4dace4ee4c32ed4cdaa06791a030dcde4c"
+ },
+ {
+  "role": "ai_reference",
+  "file": "reference.mp4",
+  "source": "batch2/01-ruler-buckling/reference/reference.mp4",
+  "url": "https://v3b.fal.media/files/b/0aaff793/v6jgKggwsoxK2USHdd3xf_reference.mp4",
+  "bytes": 5686409,
+  "sha256": "0c5b9b3beb8decf024f1e2b1eefaad06e12d25b0f195913c924f80bf16dfeef0"
+ }
+]

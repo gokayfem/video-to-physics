@@ -1,0 +1,5 @@
+{"unit": "D (disc diameter = 1; camera.json unit)",
+ "R_cam": 0.5, "t_cam": 0.031,
+ "source": "R = 0.5 D by definition of the camera unit (params/camera.json scale.unit); thickness 0.031 D from the measurement silhouette pose fit (measurement/analysis.json thickness_D; scene geometry v001 has 0.0243 +- 0.0009 D, weak) ; rho brass, G, E steel assumed",
+ "provenance": {"R_cam": "definition (unit D)", "t_cam": "measured (measurement silhouette pose fit, 0.031 D)", "rho": "assumed (brass 8500 kg/m^3)",
+                "G_shear": "assumed (steel 79.3 GPa)", "E_young": "assumed (steel 200 GPa)"}}

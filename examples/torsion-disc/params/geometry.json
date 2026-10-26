@@ -1,0 +1,297 @@
+{
+ "version": "v002",
+ "owner": "scene role C",
+ "generated_utc": "2026-10-26T07:34:54Z",
+ "unit": "D = disc diameter (camera role's unit). Metres = value x D_m.",
+ "D_m_assumed": {
+  "value": 0.1,
+  "provenance": "assumed: prompt 'about ten centimetres across'; build.py prefers physics.json geometry_m.disc_radius x 2 (same assumption) when present"
+ },
+ "world": "origin A (wire exit at the clamp collet bottom), X along the crossbar (image right), Y away from the camera, Z up",
+ "ratios": {
+  "disc_diameter": {
+   "value": 1.0,
+   "provenance": "unit"
+  },
+  "disc_thickness": {
+   "value": 0.031,
+   "provenance": "camera role (lead message 2026-10-26: rim thickness 0.031 D through the camera of record); scene-role cross-check: rim band 21 px at ~620 px/D, ~19 deg elevation, frame 240 -> ~0.035 D; silhouette fit 0.044 D (confounded with disc tilt)"
+  },
+  "disc_edge_radius": {
+   "value": 0.004,
+   "provenance": "assumed (bright rim highlight ~2 px)"
+  },
+  "wire_length_A_to_disc_top": {
+   "value": 0.86161,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.00394,
+   "note": "A = wire exit at the clamp collet bottom"
+  },
+  "wire_radius": {
+   "value": 0.0014,
+   "provenance": "measured: wire FWHM ~1.5-2 px at ~560 px/D (frames 0/120/240, rows v 260-540)",
+   "note": "the AI draws the wire very faint; physical wire d from dynamics is reported separately"
+  },
+  "mark_width": {
+   "value": 0.01,
+   "provenance": "VR03-08: visual review measured FWHM 0.010 D at 100 %; scene-role luma-dip FWHM 5.9-6.4 px at 508-573 px/D (camera of record, frames 70-74/174-178) = 0.011 D incl. ~1-2 px AI/JPEG blur; shader groove (flat core, walls 30 %) renders FWHM ~0.9 x width"
+  },
+  "mark_depth": {
+   "value": 0.0015,
+   "provenance": "assumed (shader bump only)"
+  },
+  "mark_kind": "full diameter, straight (scene/measure/mark_analysis.json: diameter in every sampled frame; kink mostly < 4 deg, up to ~10-20 deg in a few frames = AI inconsistency, not modelled)",
+  "span_inner": {
+   "value": 1.65332,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.00546,
+   "note": "clear span between the posts' inner faces"
+  },
+  "frame_centre_x": {
+   "value": -0.00138,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.0026,
+   "note": "frame centre X relative to A"
+  },
+  "post_width_x": {
+   "value": 0.19841,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.00327
+  },
+  "post_depth_y": {
+   "value": 0.2177,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.01905
+  },
+  "post_top_z": {
+   "value": 0.24485,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.00424,
+   "note": "post tops flush with the crossbar top"
+  },
+  "bar_height_z": {
+   "value": 0.20111,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.00365
+  },
+  "bar_depth_y": {
+   "value": 0.2177,
+   "provenance": "assumed = post depth (top faces of bar and posts read as one plane)"
+  },
+  "foot_top_z": {
+   "value": -1.42629,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.00926
+  },
+  "foot_height": {
+   "value": 0.15,
+   "provenance": "measured ~0.146 D (frame-0 left-foot back end, 73 px at ~500 px/D); same stock as the posts"
+  },
+  "foot_width_x": {
+   "value": 0.21467,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.01879
+  },
+  "foot_front_y": {
+   "value": -0.78516,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.02425
+  },
+  "foot_back_y": {
+   "value": 0.69205,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.02673
+  },
+  "wood_edge_radius": {
+   "value": 0.006,
+   "provenance": "assumed (soft arrises, 2-3 px)"
+  },
+  "clamp_width_x": {
+   "value": 0.22033,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.00555
+  },
+  "clamp_depth_y": {
+   "value": 0.2597,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240) (front face y; symmetric about the bar)",
+   "sigma": 0.02822
+  },
+  "clamp_top_z": {
+   "value": 0.2656,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.00523
+  },
+  "clamp_bottom_z": {
+   "value": 0.01934,
+   "provenance": "fitted through the CAMERA OF RECORD (scene/measure/fit_geometry.py --camera-of-record, params/camera.json sha256 84f7deb3b469..., frames 0/120/240)",
+   "sigma": 0.00552,
+   "note": "collet height = clamp_bottom_z (A at the collet bottom)"
+  },
+  "clamp_sheet": {
+   "value": 0.014,
+   "provenance": "assumed (bent-sheet edge ~8 px wide on the side flange, frame 0)"
+  },
+  "clamp_bend_radius": {
+   "value": 0.02,
+   "provenance": "measured roughly: rounded top-front bend ~10 px"
+  },
+  "clamp_top_screw_radius": {
+   "value": 0.036,
+   "provenance": "measured px on 3.5x zooms, frame 120 (scene/measure/zoom.py); px/D 575 at the clamp: head diameter 41 px"
+  },
+  "clamp_top_screw_height": {
+   "value": 0.03,
+   "provenance": "measured px on 3.5x zooms, frame 120 (scene/measure/zoom.py); px/D 575 at the clamp: head height 17 px"
+  },
+  "clamp_top_screw_y": {
+   "value": 0.07,
+   "provenance": "measured px on 3.5x zooms, frame 120 (scene/measure/zoom.py); px/D 575 at the clamp: two heads, one behind the other, |y| ~ 0.07 D"
+  },
+  "clamp_front_screw_radius": {
+   "value": 0.022,
+   "provenance": "measured: button head ~28 px (head 0.048 D) at 578 px/D, frame 240 (v014 review: 0.029 read too large incl. washer)"
+  },
+  "clamp_front_screw_z_above_bottom": {
+   "value": 0.042,
+   "provenance": "measured px on 3.5x zooms, frame 120 (scene/measure/zoom.py); px/D 575 at the clamp: centre 24 px above the clamp bottom"
+  },
+  "clamp_front_screw_height": {
+   "value": 0.006,
+   "provenance": "VR03-06 v002: flatter button head (assumed)"
+  },
+  "collet_radius": {
+   "value": 0.037,
+   "provenance": "measured px on 3.5x zooms, frame 120 (scene/measure/zoom.py); px/D 575 at the clamp: 43 px wide"
+  },
+  "clamp_front_washer_radius": {
+   "value": 0.031,
+   "provenance": "VR03-06: chrome washer under the front button screw, ~36 px wide at 578 px/D (frame 240 zoom)"
+  },
+  "clamp_front_washer_height": {
+   "value": 0.004,
+   "provenance": "assumed"
+  },
+  "clamp_front_socket_radius": {
+   "value": 0.009,
+   "provenance": "VR03-06: hex socket ~10 px across flats at 578 px/D (frame 240 zoom)"
+  },
+  "table_z": {
+   "value": -1.57629,
+   "provenance": "derived: foot_top_z - foot_height"
+  },
+  "_camref_fit_residuals_px": "scene/measure/fit_geometry_camref.json residuals_px (upper frame/clamp <= 3 px, feet <= 7 px, disc silhouette rms 3-6 px)"
+ },
+ "camera_approx": {
+  "status": "APPROXIMATE scene-role cameras (joint fit, robust loss); used only until params/camera.json + camera/project.py (camera of record) exist",
+  "frames": {
+   "0": {
+    "R_world_to_cv": [
+     [
+      0.95627042,
+      0.292483929,
+      0.000186255
+     ],
+     [
+      0.087623126,
+      -0.285874406,
+      -0.954252593
+     ],
+     [
+      -0.279050302,
+      0.912539849,
+      -0.299001594
+     ]
+    ],
+    "C_D": [
+     1.462303,
+     -4.925197,
+     0.944405
+    ],
+    "f_px": 2852.778721299974,
+    "principal_point_px": [
+     960.0,
+     544.0
+    ],
+    "disc_offset_D": [
+     -0.0377,
+     -0.0004
+    ]
+   },
+   "120": {
+    "R_world_to_cv": [
+     [
+      0.988990684,
+      0.147526351,
+      -0.011550021
+     ],
+     [
+      0.034105514,
+      -0.303195504,
+      -0.952317857
+     ],
+     [
+      -0.143993893,
+      0.941439569,
+      -0.30488899
+     ]
+    ],
+    "C_D": [
+     0.677371,
+     -4.976058,
+     0.942354
+    ],
+    "f_px": 2793.3514431391527,
+    "principal_point_px": [
+     960.0,
+     544.0
+    ],
+    "disc_offset_D": [
+     0.00584,
+     0.00478
+    ]
+   },
+   "240": {
+    "R_world_to_cv": [
+     [
+      0.99845304,
+      0.054394144,
+      -0.011524041
+     ],
+     [
+      0.005664119,
+      -0.305686801,
+      -0.952115275
+     ],
+     [
+      -0.055312243,
+      0.950577118,
+      -0.30552201
+     ]
+    ],
+    "C_D": [
+     0.175707,
+     -5.029641,
+     0.929355
+    ],
+    "f_px": 2770.0086757345807,
+    "principal_point_px": [
+     960.0,
+     544.0
+    ],
+    "disc_offset_D": [
+     0.00323,
+     -0.01631
+    ]
+   }
+  },
+  "between_keys": "rotation slerp, centre and f linear between frames 0/120/240",
+  "fit_rms_normalised": 1.7135055471908383
+ },
+ "residual_note": "the AI frame is not perfectly rigid over the camera orbit: feet / back-corner landmarks disagree by up to ~30 px at frame 240 (fit_geometry.json residuals_px); upper frame and clamp <= ~6 px",
+ "inputs_sha256": {
+  "fit_geometry.json": "180ec7c211f9587c5823c959f44ba1139fe854c0a6b69fc6473f4fc6b6e20b27",
+  "fit_geometry_camref.json": "ee46d9125781ab5f924ece469506384c4bfe3dfee167e11a0202496748290842",
+  "landmarks.json": "1439ea64d63d76f777fa491ff1c3226d5b6ae42b9dd08d584aebbacd51009a21",
+  "mb_reference.json": "ead658f8acf9f7f6313872a7dcd9ac214d96d94c428ccaacda0bbc384b39e60c"
+ }
+}

@@ -1,0 +1,366 @@
+{
+  "inputs": {
+    "verify/out/check_blend_ck002_rebuild1.npz": "99c61c73571a5ef68abf154ff926a3f1e2e5656dc0371c2283c74542b6da8307",
+    "verify/out/check_blend_ck002_rebuild2.npz": "99c61c73571a5ef68abf154ff926a3f1e2e5656dc0371c2283c74542b6da8307"
+  },
+  "arrays": {
+    "TOR_Cam_Reference|location[0]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[0]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[0]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[0]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[0]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[1]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[1]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[1]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[1]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[1]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[2]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[2]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[2]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[2]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|location[2]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[0]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[0]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[0]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[0]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[0]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[1]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[1]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[1]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[1]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[1]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[2]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[2]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[2]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[2]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Cam_Reference|rotation_euler[2]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[0]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[0]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[0]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[0]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[0]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[1]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[1]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[1]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[1]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[1]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[2]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[2]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[2]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[2]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|location[2]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[0]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[0]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[0]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[0]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[0]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[1]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[1]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[1]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[1]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[1]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[2]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[2]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[2]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[2]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[2]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[3]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[3]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[3]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[3]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_Disc|rotation_quaternion[3]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[0]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[0]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[0]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[0]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[0]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[1]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[1]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[1]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[1]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[1]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[2]|co": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[2]|hl": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[2]|hr": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[2]|htypes": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "TOR_WireEnd|location[2]|interp": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "anchor": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "attach": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "disc_matrix": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "in_clip": {
+      "bitwise_identical": true,
+      "judged": false
+    },
+    "mark_local": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "t": {
+      "bitwise_identical": true,
+      "judged": false
+    },
+    "topology": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "wire_bottom": {
+      "bitwise_identical": true,
+      "judged": true
+    },
+    "wire_top": {
+      "bitwise_identical": true,
+      "judged": true
+    }
+  },
+  "criterion": "keyframe arrays and evaluated disc_matrix, attach, wire_top, wire_bottom, mark_local, topology, anchor bitwise identical",
+  "status": "PASS"
+}

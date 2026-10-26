@@ -1,0 +1,49 @@
+{
+ "P_eff_Win": [
+  -0.0028745242496278703,
+  0.0,
+  -0.225070734596437
+ ],
+ "n_frames": 241,
+ "PH_length_Win": {
+  "mean": 0.7872931541342781,
+  "sd": 0.0018169362339740273,
+  "f000": 0.7847585581426954,
+  "f120": 0.7891040175065769,
+  "f240": 0.7888794591117719
+ },
+ "coil_top_along_axis_from_P_Win": {
+  "mean": -0.012058319459154419,
+  "sd": 0.0019971964231653015
+ },
+ "open_length_Win": {
+  "mean": 0.48798241481221555,
+  "sd": 0.012232237804263637,
+  "n": 241
+ },
+ "tight_length_Win": {
+  "mean": 0.19887811228023983,
+  "sd": 0.01365514590208217
+ },
+ "bottom_hardware_Win": {
+  "mean": 0.1124909465009772,
+  "sd": 0.0015319623670045077
+ },
+ "open_pitch_px_median": 29.0625,
+ "open_gaps_median": 11.0,
+ "H_xz_Win": {
+  "f000": [
+   -0.1009,
+   -1.00368
+  ],
+  "f120": [
+   -0.08702,
+   -1.00968
+  ],
+  "f240": [
+   0.05499,
+   -1.01183
+  ]
+ },
+ "method": "Spring layout through the camera of record (scene role): measurement/spring_track.csv + ring_track.csv per frame ->\n3D points on the plane y = 0 (load_camera(frame=n)). Writes scene/measure/spring_layout.json.\nPer frame: coil top T (axis_u_at_top, v_top), coil bottom B, dense (tight) section start D = T + s_dense_start along the\nimage axis, eye centre E (ring track), hinge H = E + (R_e - r_e) * unit(T - E) (eye inner top, approximately along\nthe spring axis). P_eff from camera.json key_points."
+}

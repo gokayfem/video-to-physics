@@ -1,0 +1,1 @@
+{"motion_blur": {"enabled": false, "shutter": 0.0, "upper_bound": 0.2, "evidence": "scene/visuals/v008_motion_blur_evidence.png: reference mark width independent of speed (0-14 px/frame)"}}

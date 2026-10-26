@@ -1,0 +1,489 @@
+{
+ "role": "reference measurement",
+ "created_utc": "2026-10-25T22:25:58Z",
+ "reference": {
+  "path": "<REFERENCE_DIR>/01-brass-pendulum.mp4",
+  "sha256": "ced22d105d7bf9e93d7c152fab02b62e077cbe54162056114201c50b61f56bae",
+  "frames_decoded": 241,
+  "fps": 24.0,
+  "time_convention": "t = n/24 s, n 0-based; verified 241 frames decoded (OpenCV), ffprobe count 241, GOP: 8 I / 64 P / 169 B"
+ },
+ "units": "pixels in the contract pixel convention; angles in degrees (image-plane only) unless *_rad",
+ "camera_drift": {
+  "verdict": "GENUINE FRAMING DRIFT (camera move): smooth, monotonic zoom-in/dolly-in over the whole clip; not a static camera",
+  "similarity_scale_end": 1.03271,
+  "similarity_rot_end_deg": -0.0049,
+  "displacement_end_px": {
+   "pivot": [
+    4.13,
+    -0.83
+   ],
+   "bob_rest_region_(1090,835)": [
+    2.86,
+    22.94
+   ],
+   "base_front_left_corner": [
+    -16.1,
+    25.31
+   ]
+  },
+  "model": "per-frame 8-dof homography frame0->frame n, ECC on static mask, init chained KLT; camera_drift.csv",
+  "landmark_residual_after_homography_rms_px": 0.771,
+  "ecc_cc_min": 0.9888
+ },
+ "pivot": {
+  "definition": "wire departure point at the bottom of the wire loop on the steel pin (tracked landmark wire_departure)",
+  "frame0_px": [
+   1086.69,
+   125.01
+  ],
+  "frame240_px": [
+   1090.64,
+   124.56
+  ],
+  "residual_motion_after_drift_rms_px": 0.669,
+  "swing_correlated_motion_pp_px": 0.51,
+  "alt_upper_wire_lines_intersection_frame0_px": [
+   1086.88,
+   144.47
+  ],
+  "alt_intersection_line_rms_px": 0.352,
+  "alt_full_wire_lines_intersection_frame0_px": [
+   1087.51,
+   171.15
+  ],
+  "loop_ring_rocks_with_swing": false
+ },
+ "bob": {
+  "method": "A radial luma edge + robust geometric circle fit (free radius); B annulus multi-scale ZNCC; per-frame sigma = sqrt(fit_cov + local-RMS(A-B)^2/2)",
+  "A_minus_B_rms_px": [
+   0.51,
+   0.343
+  ],
+  "A_minus_B_max_px": [
+   3.07,
+   0.87
+  ],
+  "sigma_median_px": [
+   0.291,
+   0.243
+  ],
+  "sigma_max_px": [
+   0.91,
+   0.489
+  ],
+  "jitter_vs_local_cubic_px": [
+   2.782,
+   0.304
+  ],
+  "radius_px_range": [
+   55.25,
+   60.19
+  ],
+  "radius_over_drift_scale_vs_u_stab_slope_px_per_px": 0.01978,
+  "radius_over_drift_scale_at_mean_u": 56.595,
+  "radius_note": "apparent radius grows ~5% from the left to the right turning point (both methods: A circle radius, B best template scale); consistent with the swing having a depth component toward the camera on the image-right side (inference) - the camera specialist should use it",
+  "ellipse_minor_over_major_range": [
+   0.942,
+   0.995
+  ],
+  "max_framediff_u_stab_px": 33.73,
+  "max_abs_second_diff_u_stab_px": 18.01,
+  "u_raw_range": [
+   982.12,
+   1202.09
+  ],
+  "v_raw_range": [
+   826.92,
+   856.82
+  ],
+  "stab_v_vs_u_quadratic": [
+   -0.001184,
+   0.0589016,
+   833.1303087
+  ],
+  "stab_arc_apparent_radius_of_curvature_px": -422.3,
+  "normalized_radius_max_framediff_px": 1.706,
+  "normalized_pivot_to_bob_max_framediff_px": 2.949
+ },
+ "angle_image": {
+  "definition": "atan2(u_bob-u_pivot, v_bob-v_pivot) in the same raw frame; NOT a world angle",
+  "sigma_median_deg": 0.0464,
+  "pivot_to_bob_px_range": [
+   704.05,
+   732.31
+  ]
+ },
+ "period": {
+  "damped_sine_fit_angle": {
+   "model": "theta = c0 + c1 t + A exp(-g t) cos(w t + phi), weighted by sigma, all 241 frames",
+   "c0_deg": 0.209,
+   "c0_sd": 0.1022,
+   "c1_deg_per_s": 0.02322,
+   "c1_sd": 0.01757,
+   "A_deg": -5.5949,
+   "A_sd": 0.1375,
+   "g_per_s": -0.03139,
+   "g_sd": 0.00386,
+   "omega_rad_s": 4.48588,
+   "omega_sd": 0.00367,
+   "period_s": 1.40066,
+   "period_sd_s": 0.00115,
+   "phi_rad": 0.9342,
+   "phi_sd": 0.0228,
+   "reduced_chi2": 291.008,
+   "rms_resid_deg": 0.8242
+  },
+  "undamped_sine_fit_angle": {
+   "A_deg": -6.5966,
+   "A_sd": 0.0851,
+   "period_s": 1.40009,
+   "period_sd_s": 0.0013,
+   "rms_resid_deg": 0.9467,
+   "reduced_chi2": 375.576
+  },
+  "fit_t_lt_7p5_predict_rest": {
+   "period_s": 1.388,
+   "g_per_s": -0.07258,
+   "heldout_rms_deg": 2.4784
+  },
+  "zero_crossings": {
+   "n": 15,
+   "half_period_s": 0.70199,
+   "period_s": 1.40399,
+   "period_sd_s": 0.0033,
+   "times_s": [
+    0.1723,
+    0.8507,
+    1.542,
+    2.2462,
+    2.9585,
+    3.6432,
+    4.3156,
+    5.0062,
+    5.7149,
+    6.4112,
+    7.1419,
+    7.8347,
+    8.5607,
+    9.2622,
+    9.995
+   ],
+   "sigma_s": [
+    0.0018,
+    0.002,
+    0.0022,
+    0.0021,
+    0.0011,
+    0.0012,
+    0.001,
+    0.0019,
+    0.0017,
+    0.0022,
+    0.0012,
+    0.0023,
+    0.0018,
+    0.0018,
+    0.0011
+   ],
+   "full_periods_s": [
+    1.3697,
+    1.3955,
+    1.4165,
+    1.397,
+    1.3572,
+    1.363,
+    1.3993,
+    1.405,
+    1.427,
+    1.4236,
+    1.4188,
+    1.4275,
+    1.4343
+   ],
+   "full_period_std_s": 0.0257,
+   "resid_rms_s": 0.0245
+  },
+  "stab_u_px_fit": {
+   "A_px": 69.705,
+   "A_sd": 1.572,
+   "g_per_s": -0.02609,
+   "g_sd": 0.00339,
+   "period_s": 1.40073,
+   "period_sd_s": 0.001,
+   "rms_px": 10.474
+  },
+  "raw_u_px_fit": {
+   "A_px": 69.846,
+   "A_sd": 1.607,
+   "g_per_s": -0.02937,
+   "g_sd": 0.00344,
+   "period_s": 1.4009,
+   "period_sd_s": 0.00102,
+   "rms_px": 10.79
+  },
+  "full_period_linear_trend_s_per_s": [
+   0.00643,
+   0.00208
+  ]
+ },
+ "amplitude": {
+  "turning_points": [
+   {
+    "frame": 13,
+    "t_s": 0.5221,
+    "t_sd": 0.005,
+    "angle_minus_offset_deg": 5.8617,
+    "sd_deg": 0.0504
+   },
+   {
+    "frame": 29,
+    "t_s": 1.2038,
+    "t_sd": 0.0042,
+    "angle_minus_offset_deg": -5.6706,
+    "sd_deg": 0.0422
+   },
+   {
+    "frame": 46,
+    "t_s": 1.8925,
+    "t_sd": 0.0035,
+    "angle_minus_offset_deg": 5.7845,
+    "sd_deg": 0.0354
+   },
+   {
+    "frame": 62,
+    "t_s": 2.5955,
+    "t_sd": 0.0047,
+    "angle_minus_offset_deg": -5.4825,
+    "sd_deg": 0.0455
+   },
+   {
+    "frame": 79,
+    "t_s": 3.2894,
+    "t_sd": 0.0039,
+    "angle_minus_offset_deg": 5.5014,
+    "sd_deg": 0.0377
+   },
+   {
+    "frame": 96,
+    "t_s": 3.9872,
+    "t_sd": 0.0023,
+    "angle_minus_offset_deg": -5.4004,
+    "sd_deg": 0.0223
+   },
+   {
+    "frame": 112,
+    "t_s": 4.679,
+    "t_sd": 0.0041,
+    "angle_minus_offset_deg": 6.462,
+    "sd_deg": 0.0474
+   },
+   {
+    "frame": 129,
+    "t_s": 5.3785,
+    "t_sd": 0.0031,
+    "angle_minus_offset_deg": -6.9889,
+    "sd_deg": 0.0375
+   },
+   {
+    "frame": 146,
+    "t_s": 6.0712,
+    "t_sd": 0.0041,
+    "angle_minus_offset_deg": 7.838,
+    "sd_deg": 0.0533
+   },
+   {
+    "frame": 163,
+    "t_s": 6.7709,
+    "t_sd": 0.0039,
+    "angle_minus_offset_deg": -9.1058,
+    "sd_deg": 0.0637
+   },
+   {
+    "frame": 179,
+    "t_s": 7.4837,
+    "t_sd": 0.0037,
+    "angle_minus_offset_deg": 8.58,
+    "sd_deg": 0.0556
+   },
+   {
+    "frame": 197,
+    "t_s": 8.196,
+    "t_sd": 0.0031,
+    "angle_minus_offset_deg": -7.2339,
+    "sd_deg": 0.0397
+   },
+   {
+    "frame": 214,
+    "t_s": 8.8967,
+    "t_sd": 0.005,
+    "angle_minus_offset_deg": 6.4815,
+    "sd_deg": 0.0563
+   },
+   {
+    "frame": 231,
+    "t_s": 9.6221,
+    "t_sd": 0.0055,
+    "angle_minus_offset_deg": -6.4872,
+    "sd_deg": 0.0615
+   }
+  ],
+  "half_cycle_peak_to_peak_half_deg": [
+   {
+    "t_s": 0.8629,
+    "amp_deg": 5.7661,
+    "sd_deg": 0.0329
+   },
+   {
+    "t_s": 1.5481,
+    "amp_deg": 5.7276,
+    "sd_deg": 0.0275
+   },
+   {
+    "t_s": 2.244,
+    "amp_deg": 5.6335,
+    "sd_deg": 0.0288
+   },
+   {
+    "t_s": 2.9424,
+    "amp_deg": 5.4919,
+    "sd_deg": 0.0295
+   },
+   {
+    "t_s": 3.6383,
+    "amp_deg": 5.4509,
+    "sd_deg": 0.0219
+   },
+   {
+    "t_s": 4.3331,
+    "amp_deg": 5.9312,
+    "sd_deg": 0.0262
+   },
+   {
+    "t_s": 5.0287,
+    "amp_deg": 6.7255,
+    "sd_deg": 0.0302
+   },
+   {
+    "t_s": 5.7249,
+    "amp_deg": 7.4135,
+    "sd_deg": 0.0326
+   },
+   {
+    "t_s": 6.4211,
+    "amp_deg": 8.4719,
+    "sd_deg": 0.0415
+   },
+   {
+    "t_s": 7.1273,
+    "amp_deg": 8.8429,
+    "sd_deg": 0.0423
+   },
+   {
+    "t_s": 7.8399,
+    "amp_deg": 7.9069,
+    "sd_deg": 0.0342
+   },
+   {
+    "t_s": 8.5463,
+    "amp_deg": 6.8577,
+    "sd_deg": 0.0344
+   },
+   {
+    "t_s": 9.2594,
+    "amp_deg": 6.4843,
+    "sd_deg": 0.0417
+   }
+  ],
+  "p2p_amp_linear_trend_deg_per_s": 0.30156,
+  "p2p_amp_linear_trend_sd": 0.08831,
+  "log_decay_rate_positive_peaks_per_s": [
+   0.04601,
+   0.01864
+  ],
+  "log_decay_rate_negative_peaks_per_s": [
+   0.04945,
+   0.02434
+  ]
+ },
+ "phase_t0": {
+  "angle_minus_offset_deg_fit": -3.3259,
+  "angular_velocity_deg_s_fit": 20.078,
+  "phase_cycles_cos": 0.1487,
+  "u_velocity_t0_px_s": 185.6,
+  "max_u_speed_px_s": 611.5
+ },
+ "suspension": {
+  "sagitta_px_range": [
+   -4.936,
+   4.708
+  ],
+  "sagitta_sd_median_px": 0.031,
+  "max_dev_px_range": [
+   0.413,
+   4.517
+  ],
+  "corr_sagitta_vs_angle": 0.939,
+  "sagitta_vs_angle_slope_px_per_deg": 0.5255,
+  "wire_length_px_range": [
+   648.38,
+   673.16
+  ],
+  "pivot_to_bobcentre_over_drift_scale_range": [
+   696.45,
+   711.61
+  ],
+  "control_static_edges": {
+   "stand_left_edge": {
+    "sagitta_abs_max_px": 0.356,
+    "max_dev_max_px": 0.588
+   },
+   "stand_right_edge": {
+    "sagitta_abs_max_px": 0.445,
+    "max_dev_max_px": 0.875
+   }
+  },
+  "verdict": "CURVED in the image whenever the bob is away from centre: quadratic sagitta from -4.9 to +4.7 px over ~650 px of wire (formal sd ~0.03 px), correlated with the swing angle (r=0.94, 0.53 px/deg); near zero crossings within ~1-2 px of straight. Control: static stand edges of similar length measured the same way are straight to <=0.45 px, so lens distortion does not explain it. A straight 3D wire projects to a straight image line (pinhole), so the bowing is an image-content property of the AI clip."
+ },
+ "cadence_defect": {
+  "finding": "4-frame generator cadence: the bob step into every frame n = 4k is ~1.58x the local velocity, the other three steps ~0.80-0.84x. Present in every GOP although the H.264 P-frame grid shifts (P at n mod 4 = 0,2,3,1 in different GOPs), so it is generator-native, not encoder.",
+  "apparent_time_offset_frames_by_n_mod_4": [
+   0.2768,
+   0.1125,
+   -0.0937,
+   -0.2956
+  ],
+  "sd_frames": [
+   0.0183,
+   0.0188,
+   0.0187,
+   0.0186
+  ],
+  "equivalent_peak_position_error_px": 7.2,
+  "angle_rms_resid_windowed_sine_without_with_offsets_deg": [
+   0.2439,
+   0.1467
+  ],
+  "u_stab_rms_resid_windowed_sine_without_with_offsets_px": [
+   3.2287,
+   2.0692
+  ],
+  "note": "diagnostic only; must not be used to retime the simulation (contract). Expect R2/R3 residual floors of a few px at peak speed from this alone."
+ },
+ "verdicts": {
+  "camera": "NOT static. Smooth monotonic zoom-in/dolly-in: similarity scale 1.0000 -> 1.0327 nearly linear in t, rotation < 0.05 deg, pivot moves (+4.1,-0.8) px, base corners ~25-30 px. A per-frame homography explains all static landmarks to 0.77 px RMS (residual grows to ~1-1.5 px late in the clip: small parallax / non-planarity). camera_drift.csv.",
+  "pivot": "Fixed relative to the stand: wire departure point residual after drift 0.67 px RMS; swing-correlated motion <=0.5 px peak-to-peak; the loop on the pin does not visibly rock.",
+  "wire": "CURVED in the image whenever the bob is away from centre: quadratic sagitta from -4.9 to +4.7 px over ~650 px of wire (formal sd ~0.03 px), correlated with the swing angle (r=0.94, 0.53 px/deg); near zero crossings within ~1-2 px of straight. Control: static stand edges of similar length measured the same way are straight to <=0.45 px, so lens distortion does not explain it. A straight 3D wire projects to a straight image line (pinhole), so the bowing is an image-content property of the AI clip.",
+  "amplitude": "NOT monotonic decay. Half peak-to-peak image angle 5.77 deg (t=0.86 s) -> 5.45 (t=3.64) -> GROWS to 8.84 (t=7.13) -> 6.48 (t=9.26); per-point sd 0.02-0.04 deg. Net growth over the clip; non-physical for a passive pendulum (reference defect). Camera drift (similarity, rot<0.05 deg) cannot create this because the image angle is similarity-invariant; stabilized-u amplitude shows the same pattern.",
+  "period": "Image-space period 1.404 +- 0.003 s (zero crossings), 1.4007 +- 0.0012 s (damped-sine fit, formal; model inadequate, reduced chi2 291). Cycle-to-cycle 1.357-1.434 s (sd 0.026 s, >> timing sd 0.002 s): period itself is not constant. Eyeball 1.25 s was wrong.",
+  "phase_t0": "Not at a turning point at t=0: bob is at about -3.3 deg (image angle minus offset, ~57% of amplitude) on the image-left side moving right at ~20 deg/s; first turning point (right) at t=0.522 s; the preceding left turning point extrapolates to t~-0.20 s. Not released from rest at t=0.",
+  "bob_shape": "Silhouette is near-circular: ellipse minor/major 0.94-0.995 (median ~0.977, not correlated with speed, r=-0.02, so not motion blur; cause not determined). Apparent radius varies smoothly 55.3-60.2 px, ~5% larger at the image-right extreme (both methods); max frame-to-frame change of drift-normalized radius 1.71 px, of drift-normalized pivot-to-bob distance 2.95 px (largest at fast frames, cadence)."
+ },
+ "frame_quality": {
+  "codec": "H.264 yuv420p, 5.96 Mbit/s, GOPs of ~30 frames with I/P/B (8 I, 64 P, 169 B)",
+  "chroma": "4:2:0 plus compression makes chroma blocky at 8-16 px; all geometry uses full-resolution luma only",
+  "motion_blur": "visible horizontal blur on the bob's left/right rim near mid-swing (e.g. frames 20-21, 36); top/bottom rims stay sharp; a circle-fit centre is unbiased for symmetric blur; fitted ellipse ratio shows no measurable speed dependence",
+  "wire": "twisted two-strand look, ~5 px wide, dark on light wall; centroid of the dark band is used (darkest pixel alternates between strands)",
+  "highlight": "specular highlight and reflections move inside the bob and are excluded (edge-only fit A; annulus-only template B)"
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "role": "F visual + reproducibility review", "checkpoint": "ck002", "date_utc": "2026-10-26",
+ "inputs": ["review/ck002_preview (Cycles 50%, post.py)", "review/ck002_raw", "firstframe/frame0.png", "reference/reference.mp4", "checkpoints/ck002"],
+ "verdict": "PASS for look with 1 major + 5 minor; no blockers. Reproducible (state JSON byte-identical).",
+ "findings": [
+  {"id": "F1", "severity": "major", "owner": "scene D (C to confirm dye near cylinder at t=0)", "frames": [0, 24, 60],
+   "what": "Frame-0 mismatch at cylinder base: frame0.png shows a bright magenta ring hugging the cylinder base; ck002 f0 has only a small magenta blob at the stagnation point. The ring builds up in the render by ~f24-60, so it visibly appears during the first ~2 s (frame 0 is not 'kept').",
+   "evidence": "visual_review/visuals/ck002_cylinder_base.jpg, visual_review/visuals/ck002_frame0_match.jpg (|diff|x8 brightest around the base)",
+   "fix": "D: confirm whether the ring is dye (sheet z=0.013) or a contact-line/meniscus highlight in frame0; if dye, C checks why the Lagrangian release (t_rel -3.85 s) has not wrapped the centre streak around the cylinder by t=0 (source radius/boundary-layer seeding); if look, D adds it as a declared static base-meniscus element."},
+  {"id": "F2", "severity": "minor", "owner": "scene D", "frames": [0],
+   "what": "Streak tips at the cylinder are crisp in ck002, soft/feathered (~10-20 px fade) in frame0. Streak ROI MAD 5.2 DN (whole frame 2.29 DN; ref f0 vs frame0 6.09 DN for scale).",
+   "evidence": "visual_review/visuals/ck002_frame0_match.jpg", "fix": "Optional: alpha feather of the dye front over <=1 mm (look only, declared). Physics front position unchanged."},
+  {"id": "F3", "severity": "minor", "owner": "scene D", "frames": "all",
+   "what": "post.py grain is a frozen pattern: high-pass temporal std on the static table 0.007 DN vs reference 0.40 DN; residual correlation f10/f200 0.999 vs ref 0.34. Reads as a dirty-lens texture in a locked-off shot (subtle at sigma 1.6).",
+   "evidence": "visual_review/visuals/ck002_temporal_motion.jpg, visual_review/ck002_metrics_temporal.json", "fix": "seed = post.seed + frame index (still deterministic)."},
+  {"id": "F4", "severity": "minor", "owner": "scene D", "frames": "0-47",
+   "what": "Water-surface micro-ripple motion barely visible: high-pass temporal std in dye-free water 0.26 DN vs ref 1.15 DN (ref value inflated by AI shimmer + camera drift). Wall highlights move; open water looks static.",
+   "evidence": "visual_review/visuals/ck002_temporal_motion.jpg", "fix": "Optional: raise water_ripple_strength 0.025 -> ~0.04 or add slow second octave; keep translation at U (declared look)."},
+  {"id": "F5", "severity": "minor", "owner": "scene D (final render settings)", "frames": "all",
+   "what": "Static upstream streaks flicker slightly: mean |dI/dframe| 0.52 DN on streak pixels (raw 0.53, so render noise not post) vs ref 0.17; per-frame mean V on streaks 161.2-164.1 (std 0.79). Not visible at 8-bit in playback.",
+   "evidence": "visual_review/ck002_metrics_temporal.json", "fix": "Final render: more samples / denoiser with fixed seed; no change needed for preview."},
+  {"id": "F6", "severity": "minor (info, no action)", "owner": "none", "frames": [120, 240],
+   "what": "Wake dye crisper and more saturated than reference: S 115.6 vs 88.3, V 158 vs 128, low-sat fraction 0.15 vs 0.50, off-palette hue 0.04 vs 0.28 (f240). No muddy/white blending (bright-white fraction 0.000 vs 0.004). Colour groups balanced (Y/C/M 0.32/0.32/0.32) vs ref yellow-dominant 0.44/0.16/0.12. This follows the corrected physics (Sc~1000, conserved colour budget) and is NOT a defect; the ref's halo/mixing is the AI's non-conserved colour budget.",
+   "evidence": "visual_review/visuals/ck002_wake_look.jpg, visual_review/ck002_metrics_wake.json", "fix": "none (optional <=0.3 mm soft halo if lead wants closer look)."}
+ ],
+ "passes": {
+  "upstream_streak_match_frame0": "vertical FWHM at full-res columns 560/640/720: ck002 7-10 px vs frame0 8-11 px (~10% narrower), saturation within +-10/255, V +0..+20 brighter; hues identical (19-21, 98-99, 165-166). evidence visual_review/ck002_streak_widths.json",
+  "camera_stability": "max phase-correlation shift vs f0 over f0-240: 0.24 px (half-res) - locked; ref drift up to 5.9 px is an AI defect not to imitate",
+  "occlusion": "cylinder occludes dye correctly at all inspected frames (0,24,60,120,240); dye stays inside channel walls; needles visible over streaks",
+  "streak_continuity": "no breaks/aliasing seen in wake at 50%; thin filaments near vortex cores ~1 px at 50% preview - re-check aliasing at full res",
+  "static_vs_moving": "only dye, wall highlights and faint ripple move; nothing static that should move except grain (F3)",
+  "refraction": "not separately quantified; streak geometry at frame 0 coincides with frame0 within streak width"
+ },
+ "reproducibility": {
+  "manifest": "shasum -a 256 -c MANIFEST.sha256 run inside checkpoints/ck002: 271/271 OK (note: run from ROOT, src_snapshot/* paths fail - paths are relative to ck002)",
+  "rebuild": "with_render_lock.sh blender -b --factory-startup --python scene/build_anim.py -- --dye-dir <ROOT>/checkpoints/ck002/solver/out/dye: exit 0, BUILD_ANIM_OK",
+  "state_json": "byte-identical to ck002 (sha256 5b8325e2...c9b3d9c)",
+  "blend": "binary differs (rebuild 13cdd58e... vs ck002 c5e298e7...) - expected, Blender .blend saves are not byte-deterministic; state export identical",
+  "restore": "scene/out/vortex_anim.blend, vortex_anim_state.json and vortex_anim.blend1 (overwritten by Blender save backup) restored from visual_review/backup and hash-verified",
+  "log": "visual_review/repro_build.log, visual_review/repro_vortex_anim_state.json"
+ },
+ "visuals": ["visual_review/visuals/ck002_frame0_match.jpg", "visual_review/visuals/ck002_cylinder_base.jpg", "visual_review/visuals/ck002_wake_look.jpg", "visual_review/visuals/ck002_temporal_motion.jpg"]
+}

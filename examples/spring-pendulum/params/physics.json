@@ -1,0 +1,526 @@
+{
+  "schema": "physics/FORMULATION.md s7 (clip 02 v1)",
+  "owner": "physics+dynamics (role B)",
+  "status": "fitted",
+  "status_note": "FITTED on 0-7.5 s (CHANGELOG rule: no >3 sigma growth -> T_a = 10 s, last 2.5 s held out). Passive elastic pendulum + hinged rigid weight (in-phase double pendulum), swing pivot P = spring top coil on the fixed S-hook (P_eff, 0.225 W_in below A; lead decision), projected through params/camera.json per-frame cameras. Scale model-conditioned from the swing frequency (g assumed). Geometry from params/geometry.json (scene geometry v003, role C: b_c 0.209616 W_in). k from the coil formula (declared assumption, G 79.3 GPa, 21 active turns), axial and rocking modes start at rest. Q = 500 declared (damping not identifiable: AI amplitude grows 1-4 s then decays). Fit-window RMS 6.72 px (R2 target 3.24 px: FAIL; AI period wander 7.5 % and AI weight rocking 1.3x the physical in-phase tilt), hold-out 15.5 px.",
+  "generated_by": "solver/make_params.py (mapping: solver/model_build.py)",
+  "model_id": "elastic_pendulum_hinged_body_v1",
+  "body": "rigid",
+  "model_equation": "T = 1/2 m|X'|^2 + 1/2 I_perp|n'|^2 + 1/2 (m_s/3)|H'|^2;  V = 1/2 k(|H|-L0)^2 + m g X_z + m_s g H_z/2;  H = X - b n (lower hook = hinge), A = origin; Rayleigh D = 1/2 c_s (s_hat.H')^2 + 1/2 c_x|X'|^2 + 1/2 c_r|n'|^2",
+  "primary": {
+    "ell": {
+      "value": 0.3280064043575786,
+      "unit": "m",
+      "provenance": "fitted",
+      "sigma": 0.0008831619169591964
+    },
+    "Lcam": {
+      "value": 0.7873339816963251,
+      "unit": "camera units",
+      "provenance": "fitted",
+      "sigma": 0.0004643427607892824
+    },
+    "bcam": {
+      "value": 0.18006611188376714,
+      "unit": "camera units",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "rax": {
+      "value": 1.7823246569353834,
+      "unit": "-",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "phi0": {
+      "value": -0.1451804871961998,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": 0.0032361499652426404
+    },
+    "psi0": {
+      "value": -0.1790365020921416,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "de0": {
+      "value": 0.0,
+      "unit": "m",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "phid0": {
+      "value": 0.05247655057011448,
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "sigma": 0.01850650827702553
+    },
+    "psid0": {
+      "value": -0.004038069139209572,
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "ded0": {
+      "value": 0.0,
+      "unit": "m/s",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "gamma_sw": {
+      "value": 0.005467882533760789,
+      "unit": "1/s",
+      "provenance": "assumed",
+      "sigma": null
+    },
+    "gamma_ax": {
+      "value": 0.009745541861148174,
+      "unit": "1/s",
+      "provenance": "assumed",
+      "sigma": null
+    },
+    "beta": {
+      "value": 0.0,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "phiy0": {
+      "value": 0.0,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "psiy0": {
+      "value": 0.0,
+      "unit": "rad",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "phidy0": {
+      "value": 0.0,
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "psidy0": {
+      "value": 0.0,
+      "unit": "rad/s",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "pz": {
+      "value": 0.225071,
+      "unit": "camera units",
+      "provenance": "fitted",
+      "sigma": null
+    },
+    "px": {
+      "value": -0.002875,
+      "unit": "camera units",
+      "provenance": "fitted",
+      "sigma": null
+    }
+  },
+  "parameters": {
+    "g": {
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "provenance": "assumed",
+      "source": "CONTRACT v1 standard gravity",
+      "range": [
+        9.78,
+        9.832
+      ]
+    },
+    "ell_eq": {
+      "value": 0.3280064043575786,
+      "unit": "m",
+      "provenance": "model-conditioned",
+      "sigma": 0.0008831619169591964,
+      "definition": "equilibrium |A H| = L0 + (m + m_s/2) g / k; set by the swing frequency with g assumed"
+    },
+    "omega_axial": {
+      "value": 15.849406755759501,
+      "unit": "rad/s",
+      "provenance": "model-conditioned",
+      "definition": "sqrt(k/(m + m_s/3)) = rax sqrt(g/ell)"
+    },
+    "k": {
+      "value": 1336.3177289194673,
+      "unit": "N/m",
+      "provenance": "model-conditioned",
+      "derivation": "(m + m_s/3) omega_axial^2 (scales with the assumed mass)"
+    },
+    "L0": {
+      "value": 0.28863131467225306,
+      "unit": "m",
+      "provenance": "model-conditioned",
+      "derivation": "ell - (m + m_s/2) g / k (effective free length incl. hooks and coil preload)"
+    },
+    "m": {
+      "value": 5.2279636638986124,
+      "unit": "kg",
+      "provenance": "assumed",
+      "derivation": "rho pi r^2 h, rho = 7900.0 (steel assumed); unidentifiable from kinematics"
+    },
+    "m_s": {
+      "value": 0.2750828386295483,
+      "unit": "kg",
+      "provenance": "assumed",
+      "derivation": "rho_s pi d^2/4 * pi D N, d = 0.0039286 m, D = 0.043819 m, N = 21.0"
+    },
+    "b": {
+      "value": 0.08732684229846588,
+      "unit": "m",
+      "provenance": "measured (camera units) / model-conditioned scale",
+      "derivation": "hinge H -> CoM = b_cam (measured, role C) / camera_units_per_m; CoM = cylinder centre (eye-ring mass neglected)"
+    },
+    "I_perp": {
+      "value": 0.007663048950887799,
+      "unit": "kg m^2",
+      "provenance": "model-conditioned",
+      "derivation": "m (3 r^2 + h^2) / 12"
+    },
+    "damping": {
+      "law": "Rayleigh: axial dashpot c_s on the spring rate, linear drag c_x on the CoM, rotational drag c_r on n'",
+      "gamma_swing": {
+        "value": 0.005467882533760789,
+        "unit": "1/s",
+        "provenance": "assumed",
+        "source": "Q = 500 for swing and axial (declared; range 100-5000). M1 in the fit window: gamma_sw at the 0 bound, bootstrap 95% includes 0 -> not identified (solver/out/fit/prod_Ta7.5/fit_projected.json model_selection)",
+        "Q_swing": 444.52523297073293
+      },
+      "gamma_axial": {
+        "value": 0.009745541861148174,
+        "unit": "1/s",
+        "provenance": "assumed",
+        "source": "Q = 500 for swing and axial (declared; range 100-5000). M1 in the fit window: gamma_sw at the 0 bound, bootstrap 95% includes 0 -> not identified (solver/out/fit/prod_Ta7.5/fit_projected.json model_selection)"
+      },
+      "gamma_rock": {
+        "value": 0.5,
+        "unit": "1/s",
+        "provenance": "assumed",
+        "source": "ring-on-hook rubbing; nominal, not observable"
+      },
+      "c_x": {
+        "value": 0.05717178240993457,
+        "unit": "N s/m",
+        "provenance": "derived",
+        "derivation": "2 m gamma_swing"
+      },
+      "c_s": {
+        "value": 0.04651411593966826,
+        "unit": "N s/m",
+        "provenance": "derived",
+        "derivation": "max(0, 2 (m + m_s/3) gamma_axial - c_x)",
+        "clipped": false
+      },
+      "c_r": {
+        "value": 0.007663048950887799,
+        "unit": "N m s",
+        "provenance": "derived",
+        "derivation": "2 I_perp gamma_rock"
+      },
+      "note": "never negative; no drives"
+    }
+  },
+  "geometry_m": {
+    "provenance": {
+      "r_cam": "measured",
+      "h_cam": "measured",
+      "b_cam": "measured",
+      "e_cam": "measured",
+      "spring_d_cam": "measured (approx, 6.5 px wire)",
+      "spring_D_cam": "measured",
+      "spring_turns": "counted",
+      "rho": "assumed",
+      "rho_spring": "assumed",
+      "G_shear": "assumed (spring steel 79.3 GPa)",
+      "gamma_rock": "assumed"
+    },
+    "b_mode": "measured",
+    "ell_eq": 0.3280064043575786,
+    "ell_eq_definition": "equilibrium |P - H|, P = swing pivot (spring top coil P_eff), H = hinge (eye inner top)",
+    "cylinder_radius": 0.04407085975968204,
+    "cylinder_height": 0.10845574210025244,
+    "H_to_cylinder_centre": 0.08732684229846588,
+    "spring_wire_d": 0.003928574740833396,
+    "spring_coil_D": 0.04381923100639855,
+    "spring_turns": 21.0,
+    "camera_units": {
+      "unit": "W_in (= S)",
+      "r_cam": 0.105786,
+      "h_cam": 0.260333,
+      "b_cam": 0.209616,
+      "e_cam": 0.030897,
+      "spring_d_cam": 0.00943,
+      "spring_D_cam": 0.105182
+    },
+    "H_to_eye_centre": 0.012871810579801638,
+    "pivot_world_m": [
+      -0.0011977362014735965,
+      0.0,
+      -0.09376545551369177
+    ],
+    "camera_units_per_m": 2.4003616125678056,
+    "S_m": 0.4166038961647292,
+    "k_mode": "coil_formula",
+    "ratios_source": "MEASURED by role C (params/geometry.json, scene geometry v003 = scene/NOTES.md Update 3, thicker eye wire; camera-of-record refit: weight_radius, weight_height, derived.H_to_cylinder_centre, eye_ring_radius - eye_wire_radius, 2*spring_wire_radius, 2*coil_mean_radius (centreline), active turns = 11 open + 10 tight; the 2 static hook turns are part of the fixed S-hook); rho steel, G_shear, gamma_rock assumed",
+    "note": "metric lengths are model-conditioned (scale from the swing frequency with assumed g)"
+  },
+  "S_m": {
+    "value": 0.4166038961647292,
+    "unit": "m per W_in (= S, clear span between the posts)",
+    "provenance": "model-conditioned",
+    "derivation": "Lcam / ell inverse: swing frequency + assumed g; scene/build.py gauge"
+  },
+  "pivot_world_m": {
+    "value": [
+      -0.0011977362014735965,
+      0.0,
+      -0.09376545551369177
+    ],
+    "unit": "m",
+    "provenance": "measured (camera units, P_eff) x model-conditioned scale",
+    "definition": "swing pivot P (spring top coil on the fixed S-hook), world frame with A at the origin; trajectory positions (X, H) are world = P + solver state"
+  },
+  "camera_scale": {
+    "camera_units_per_m": 2.4003616125678056,
+    "provenance": "fitted",
+    "definition": "camera.json length units per metre = Lcam / ell; scene metres = camera units / this"
+  },
+  "level_tilt_rad": {
+    "value": 0.0,
+    "unit": "rad",
+    "provenance": "assumed (0)",
+    "sigma": null,
+    "convention": "static scene (frame, crossbar, S-hook, table, backdrop, cameras) rotated by +beta about world +Y through the pivot P (Blender: parent empty at A, rotation_euler = (0, +beta, 0)); gravity exactly -Z_world; the solver state and the baked VSP_Weight/VSP_HookLower transforms are in the gravity frame"
+  },
+  "initial_state": {
+    "X0": {
+      "value": [
+        -0.06071836745632558,
+        0.0,
+        -0.41045367479340034
+      ],
+      "unit": "m",
+      "provenance": "fitted"
+    },
+    "V0": {
+      "value": [
+        0.021788841068826312,
+        0.0,
+        -0.003224834325442496
+      ],
+      "unit": "m/s",
+      "provenance": "fitted"
+    },
+    "n0": {
+      "value": [
+        -0.15258485508341044,
+        0.0,
+        -0.9882903733211078
+      ],
+      "unit": "-",
+      "provenance": "fitted"
+    },
+    "u0": {
+      "value": [
+        0.05472084765355939,
+        0.0,
+        -0.008448501406728627
+      ],
+      "unit": "1/s",
+      "provenance": "fitted"
+    },
+    "spin_omega3": {
+      "value": 0.0,
+      "unit": "rad/s",
+      "provenance": "assumed",
+      "note": "released without twist; conserved for the axisymmetric hinged body"
+    }
+  },
+  "derived": {
+    "static_tension_N": 52.61763042429456,
+    "static_stretch_m": 0.039375089685325534,
+    "ell_eq_m": 0.3280064043575786,
+    "H_eq": [
+      0.0,
+      0.0,
+      -0.3280064043575786
+    ],
+    "X_eq": [
+      0.0,
+      0.0,
+      -0.4153332466560445
+    ],
+    "omega_axial_rad_s": 15.849406755759501,
+    "f_axial_Hz": 2.522511430253205,
+    "omega_lateral_rad_s": [
+      4.861223514353233,
+      26.156984782732632
+    ],
+    "f_lateral_Hz": [
+      0.7736877517838723,
+      4.163013424551385
+    ],
+    "ratio_axial_over_swing": 3.2603740002825616
+  },
+  "integrator": {
+    "solver_id": "rk4-fixed-step-elastic-pendulum-v2-projected",
+    "method": "classical RK4, fixed step dividing each output interval exactly",
+    "h_s": 0.0003255208333333333,
+    "t_end_s": 10.0,
+    "output_dt_s": 0.010416666666666666
+  },
+  "fit_provenance": {
+    "fit_json": "solver/out/fit/prod_Ta7.5/fit_projected.json",
+    "production_fit": "MQ (Q = 500 declared assumption for swing and axial)",
+    "t_anchor_s": 7.5,
+    "metrics": {
+      "rms_anchor_px": 6.724227663008255,
+      "rms_after_anchor_px": 15.459340782192477,
+      "per_point": {
+        "ring": {
+          "rms_anchor_px": 5.066847086935816,
+          "rms_anchor_u_v_px": [
+            4.915489032519671,
+            1.2291895596565967
+          ],
+          "rms_after_px": 13.622809500524765
+        },
+        "wctr": {
+          "rms_anchor_px": 8.04720671572074,
+          "rms_anchor_u_v_px": [
+            7.994863687463946,
+            0.9163463015756667
+          ],
+          "rms_after_px": 17.09975134767553
+        }
+      },
+      "median_sigma_px": 1.0816132429705472,
+      "R2_anchor_target_px": 3.2448397289116415,
+      "supplementary_n_mod4_eq0": {
+        "rms_anchor_px": 6.812620075187774,
+        "rms_after_px": 13.682810499231573
+      },
+      "R2_anchor_pass": false
+    },
+    "flags": {
+      "ell": [],
+      "Lcam": [],
+      "phi0": [],
+      "phid0": []
+    },
+    "model_selection": {
+      "MQ": {
+        "bic": 55214.84183132024,
+        "chi2": 55188.5026657507,
+        "Q_fixed": 500.0
+      },
+      "M1": {
+        "bic": 53524.04850049404,
+        "chi2": 53484.539752139724,
+        "gamma_sw": 6.385136129535939e-19,
+        "gamma_ax": 0.10884712953096112,
+        "sd_scaled": {
+          "gamma_sw": 0.0025238671667886527,
+          "gamma_ax": 0.21180493323355556
+        },
+        "at_bound": {
+          "gamma_sw": true,
+          "gamma_ax": false
+        }
+      },
+      "damping_evidence": {
+        "bootstrap_M1": {
+          "gamma_sw_derived": {
+            "sd": 0.00462714157344164,
+            "p2.5": 1.552983260523724e-31,
+            "p97.5": 0.013858111556077676
+          },
+          "gamma_ax_derived": {
+            "sd": 0.26501885499247024,
+            "p2.5": 0.0013141367084906776,
+            "p97.5": 0.7868594682159317
+          }
+        },
+        "Q_swing_M1": 3.806315223900297e+18,
+        "Q_plausible_range": [
+          100.0,
+          5000.0
+        ],
+        "identified_rule": false,
+        "mode": "auto"
+      }
+    },
+    "inputs": {
+      "tracks": "solver/out/tracks_for_fit.csv",
+      "tracks_sha256": "c5387651a7d3c248abe44e4983c60e39fd73a529e7d89e9e067c31ff758f7319",
+      "points": [
+        "ring",
+        "wctr"
+      ],
+      "camera": "camera/project.py load_camera(frame, kind='reference') on params/camera.json",
+      "camera_json_sha256": "df3399540dea8342d1c4f68833faf22b5afc3655f7efb9b47168ae927fb2fc21",
+      "geometry": {
+        "unit": "W_in (= S)",
+        "r_cam": 0.105786,
+        "h_cam": 0.260333,
+        "b_cam": 0.209616,
+        "e_cam": 0.030897,
+        "spring_d_cam": 0.00943,
+        "spring_D_cam": 0.105182,
+        "spring_turns": 21.0,
+        "b_mode": "measured",
+        "k_mode": "coil_formula",
+        "G_shear": 79300000000.0,
+        "rho": 7900.0,
+        "rho_spring": 7850.0,
+        "gamma_rock": 0.5,
+        "source": "MEASURED by role C (params/geometry.json, scene geometry v003 = scene/NOTES.md Update 3, thicker eye wire; camera-of-record refit: weight_radius, weight_height, derived.H_to_cylinder_centre, eye_ring_radius - eye_wire_radius, 2*spring_wire_radius, 2*coil_mean_radius (centreline), active turns = 11 open + 10 tight; the 2 static hook turns are part of the fixed S-hook); rho steel, G_shear, gamma_rock assumed",
+        "provenance": {
+          "r_cam": "measured",
+          "h_cam": "measured",
+          "b_cam": "measured",
+          "e_cam": "measured",
+          "spring_d_cam": "measured (approx, 6.5 px wire)",
+          "spring_D_cam": "measured",
+          "spring_turns": "counted",
+          "rho": "assumed",
+          "rho_spring": "assumed",
+          "G_shear": "assumed (spring steel 79.3 GPa)",
+          "gamma_rock": "assumed"
+        },
+        "axial_rest": true,
+        "rock_rest": true
+      },
+      "h_fit_s": 0.0013020833333333333
+    },
+    "reduced_chi2": 76.65069814687597
+  },
+  "generator": {
+    "script": "solver/make_params.py",
+    "argv": [
+      "--status",
+      "fitted",
+      "--fit-json",
+      "solver/out/fit/prod_Ta7.5/fit_projected.json",
+      "--status-note",
+      "FITTED on 0-7.5 s (CHANGELOG rule: no >3 sigma growth -> T_a = 10 s, last 2.5 s held out). Passive elastic pendulum + hinged rigid weight (in-phase double pendulum), swing pivot P = spring top coil on the fixed S-hook (P_eff, 0.225 W_in below A; lead decision), projected through params/camera.json per-frame cameras. Scale model-conditioned from the swing frequency (g assumed). Geometry from params/geometry.json (scene geometry v003, role C: b_c 0.209616 W_in). k from the coil formula (declared assumption, G 79.3 GPa, 21 active turns), axial and rocking modes start at rest. Q = 500 declared (damping not identifiable: AI amplitude grows 1-4 s then decays). Fit-window RMS 6.72 px (R2 target 3.24 px: FAIL; AI period wander 7.5 % and AI weight rocking 1.3x the physical in-phase tilt), hold-out 15.5 px.",
+      "--prov-damping",
+      "assumed",
+      "--source-damping",
+      "Q = 500 for swing and axial (declared; range 100-5000). M1 in the fit window: gamma_sw at the 0 bound, bootstrap 95% includes 0 -> not identified (solver/out/fit/prod_Ta7.5/fit_projected.json model_selection)"
+    ],
+    "inputs_sha256": {
+      "solver/make_params.py": "8e4f05858a110213b5aecbd8a41e26b20ac89d5ce50c377b97a005b6a74e6aef",
+      "solver/model_build.py": "9fdfa19e50b3771fcdbd41474240a4d4c70e9bdce6b9b0288688da81980d6f20",
+      "solver/spring_pendulum.py": "77fc4e2c35866ecd27f0dd07755e3eed90b706541a05e69ec380264177cae756",
+      "solver/out/fit/prod_Ta7.5/fit_projected.json": "021e1c378146b1160313c8722b4cde73f8a4b1028323bb7dd311b4e135cceb84"
+    },
+    "note": "byte-reproducible: rerun with this argv from ROOT"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "declared_utc": "2026-10-26T03:09:31Z",
+  "declared_before": "any measurement result, fit, or final render existed for this clip",
+  "note": "Generic Video-to-Physics acceptance derived from clip 01. Clip-specific checks may be ADDED by the lead before fitting; tolerances are never relaxed after a failure.",
+  "physics_validation": {
+    "P1_convergence": "production integrator at >=3 resolutions: max difference between the two finest < 1e-7 (rad or m as appropriate) over 0-10 s; observed order within 0.5 of theory (or within the documented order for event/contact solvers)",
+    "P2_independent_benchmark": "verifier's independently written solver (different method, no imports from solver/) vs production at identical params: max state difference < 1e-6 (rad / m); contact event times within 1e-6 s",
+    "P3_analytic_limit": "an exact or asymptotic analytic result valid for this mechanism (e.g. linear-oscillator period, elliptic period, rolling acceleration a=g sin(b)/(1+I/mr^2), restitution height ratio e^2) matched to < 1e-7 relative in its regime of validity",
+    "P4_energy": "conservative-case drift |dE|/E0 < 1e-8; damped/contact energy balance residual < 1e-7 E0 (per declared dissipation terms); no per-sample energy increase > 1e-12 E0 except where an external work term is declared",
+    "P5_constraints_saved_blend": "reopened saved .blend evaluated at frames + 4 subframes: fixed anchors drift < 1e-6 m; declared constraints (lengths, attachments, rolling contact, non-penetration) hold to < 1e-6 m (1e-5 m for visual attachments)",
+    "P6_blend_vs_solver": "evaluated Blender transforms vs validated solver at frames and 4 subframes per frame: < 1e-5 rad / 1e-5 m",
+    "P7_forces": "constraint/contact forces physically admissible (tension >= 0, normal force >= 0 in contact, friction within cone if declared)",
+    "P8_initial_conditions_time": "initial state equals params; frame n <-> t=n/24 exactly; no time scaling",
+    "P9_control_response": "parameter changes run through the real build path change the dynamics as the equations predict (relative error < 1e-4 or regime-appropriate)",
+    "P10_repeatability": "two clean rebuilds: identical keyframe arrays and evaluated transforms"
+  },
+  "reference_fidelity": {
+    "note": "Reported separately; the AI reference is not ground truth.",
+    "R1": "per-frame tracking uncertainty from two independent methods",
+    "R2_anchor": "projected model vs track RMS inside the opening anchor window: target <= max(2 px, 3 sigma)",
+    "R3_divergence": "after the anchor window: reported as a divergence map with named AI defects (not a pass/fail target)",
+    "R4_camera": "static landmark reprojection RMS <= 2 px",
+    "R5_render_track": "tracked object in the final render vs model projection RMS <= 1 px (render reproduces the simulation)"
+  },
+  "visual_review": {
+    "V1": "no shape change, attachment sliding, interpenetration, flicker or popping in dense strips at turning points/contacts",
+    "V2": "all visible parts present and readable; materials match the reference by region metrics",
+    "V3": "side-by-side at identical physical times, no retiming; static silhouette IoU >= 0.9",
+    "V4": "observed vs hypothesis vs untested are separated"
+  }
+}

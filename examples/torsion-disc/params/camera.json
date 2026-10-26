@@ -1,0 +1,485 @@
+{
+ "schema": "sim03-camera/v1",
+ "owner": "Measure+Camera (A)",
+ "status": "draft v001: frame-0 vanishing-point calibration + disc-gauge placement + per-frame measured drift",
+ "created_utc": "2026-10-26T04:39:58Z",
+ "conventions": {
+  "world": "config/coordinates.md: origin A = where the torsion wire leaves the black clamp; X along the crossbar toward image right; Y horizontal away from the camera; Z up (gravity -Z assumed)",
+  "pixels": "CONTRACT: origin top-left corner of top-left pixel, pixel centres at +0.5, 1920x1088",
+  "R_world_to_cv": "OpenCV camera axes (x right, y down, z forward): Xc = R (X - C)",
+  "blender": "camera matrix_world rotation = R^T diag(1,-1,-1); sensor_fit HORIZONTAL, sensor 36 mm; shift_x = -(cx-960)/1920, shift_y = (cy-544)/1920",
+  "utility": "camera/project.py: load_camera(frame=n) (camera of record), load_camera(kind='locked'|'top_ortho'|'overview'), project, ray, intersect_plane, blender_camera_settings"
+ },
+ "scale": {
+  "unit": "D = disc diameter = 1 (declared gauge; the disc fit uses top-face radius 0.5)",
+  "metres_per_unit": null,
+  "metres_per_unit_source": "not set: model-conditioned (prompt intent ~0.10 m disc; the torsion period does not fix length without an assumed wire stiffness)"
+ },
+ "reference_camera": {
+  "description": "camera of record: per-frame measured pose (orbit) with constant intrinsics; frame-0 values listed here, all frames in camera/drift.csv / project.load_camera(frame=n)",
+  "reference_frame": 0,
+  "intrinsics": {
+   "resolution": [
+    1920,
+    1088
+   ],
+   "pixel_aspect": 1.0,
+   "f_px": 2602.0,
+   "cx_px": 960.0,
+   "cy_px": 544.0,
+   "focal_mm_36mm_sensor": 48.7875,
+   "hfov_deg": 40.50277239561377,
+   "principal_point_assumption": "image centre (frame-0 free-principal-point VP variant: |f| 2265 px, pp (1061, 456): poorly determined)",
+   "lens_distortion": "none (assumed)"
+  },
+  "extrinsics": {
+   "R_world_to_cv": [
+    [
+     0.9622431156085985,
+     0.27217124802439546,
+     0.0033163553338029115
+    ],
+    [
+     0.07145141348034564,
+     -0.24081753268286937,
+     -0.9679367807166932
+    ],
+    [
+     -0.26264592510739193,
+     0.9316274618651912,
+     -0.25117203332199267
+    ]
+   ],
+   "C_world": [
+    1.2394264505251555,
+    -4.49498605327644,
+    0.5597672195218377
+   ],
+   "distance_to_A": 4.696213036635188,
+   "view_pitch_deg": -14.55376315446725,
+   "view_yaw_deg_from_+Y_toward_+X": -15.74371840402242,
+   "roll_deg": -0.1675346030245066
+  },
+  "blender_frame0": {
+   "location": [
+    1.2394264505251555,
+    -4.49498605327644,
+    0.5597672195218377
+   ],
+   "rotation_matrix": [
+    [
+     0.9622431156085985,
+     -0.07145141348034564,
+     0.26264592510739193
+    ],
+    [
+     0.27217124802439546,
+     0.24081753268286937,
+     -0.9316274618651912
+    ],
+    [
+     0.0033163553338029115,
+     0.9679367807166932,
+     0.25117203332199267
+    ]
+   ],
+   "sensor_width_mm": 36.0,
+   "sensor_fit": "HORIZONTAL",
+   "shift_x": -0.0,
+   "shift_y": 0.0,
+   "type": "PERSP",
+   "lens_mm": 48.7875,
+   "per_frame": "lens_mm, shift_x/y, roll from camera/drift.csv (or project.load_camera(frame=n) + blender_camera_settings)"
+  }
+ },
+ "drift": {
+  "verdict": "REAL and LARGE (not a locked camera): the camera ORBITS about a vertical axis through the stand, azimuth +15.4 -> -7.9 deg (-23.3 deg in 10 s), distance to A 4.696 -> 4.651 D, elevation 6.8..7.4 deg, roll -0.30..-0.15 deg; a single static-mask homography cannot represent it (parallax: H-vs-similarity residual 34 px median)",
+  "model": "per-frame pose: R_n from the vanishing points of the frame edges (constant f), C_n from a bundle adjustment of 7 identity-stable frame edges + the wire-top pixel (image of A); gauge |C_0 - A| from the disc diameter",
+  "azimuth_deg_frame0_240": [
+   15.41541287499833,
+   -7.877498017693846
+  ],
+  "elevation_deg_range": [
+   6.805649155592348,
+   7.414744369253113
+  ],
+  "distance_to_A_frame0_240_min_max": [
+   4.696213036635188,
+   4.651154112230525,
+   4.6498520451906575,
+   4.696213036635188
+  ],
+  "roll_deg_range": [
+   -0.29689564007192243,
+   -0.1542117427257772
+  ],
+  "zoom": "not separately identifiable: f is held constant (2602 px). Free per-frame VP focal length is stable 2630-2690 px over frames 0-140 and diverges later (yaw -> 0 makes the X vanishing point degenerate); the bundle prefers 2547-2602 px. Systematic f range ~2550-2690 px (+-3 %)",
+  "homography_diagnostic": "measurement/cache/H_ecc.npy, H_chain.npy; similarity fit camera/out/drift_fit.json (H vs similarity 34 px median: not a zoom/pan)",
+  "per_frame_table": "camera/drift.csv (C, rotvec, f, pp, Blender location/lens/shift per frame; rotation matrix via project.load_camera)",
+  "bundle": {
+   "cost": 6354.007186201006,
+   "chi2nu": 4.350569795413219,
+   "n_obs": 3658,
+   "all_rms_px": 0.5591627766308247,
+   "dist_to_A_range": [
+    4.645595079091295,
+    4.698534438680791
+   ],
+   "azimuth_deg_range": [
+    -7.954681783848225,
+    15.41332647959991
+   ],
+   "elevation_deg_range": [
+    6.743534336438435,
+    7.4725561163281
+   ],
+   "azimuth_deg_frame0_240": [
+    15.41332647959991,
+    -7.954681783848225
+   ],
+   "dist_frame0_240": [
+    4.695908754496435,
+    4.645595079091295
+   ],
+   "smoothed": true,
+   "r4_median_px": 0.5695723489216304,
+   "r4_max_px": 0.9048186288823572
+  }
+ },
+ "locked_cameras": {
+  "locked_reference": {
+   "description": "frame-0 camera held for all frames (drift-free diagnostic)",
+   "blender": {
+    "location": [
+     1.2394264505251555,
+     -4.49498605327644,
+     0.5597672195218377
+    ],
+    "rotation_matrix": [
+     [
+      0.9622431156085985,
+      -0.07145141348034564,
+      0.26264592510739193
+     ],
+     [
+      0.27217124802439546,
+      0.24081753268286937,
+      -0.9316274618651912
+     ],
+     [
+      0.0033163553338029115,
+      0.9679367807166932,
+      0.25117203332199267
+     ]
+    ],
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "HORIZONTAL",
+    "shift_x": -0.0,
+    "shift_y": 0.0,
+    "type": "PERSP",
+    "lens_mm": 48.7875
+   }
+  },
+  "top_ortho": {
+   "description": "orthographic, straight down onto the mean disc centre (image right = +X, image up = +Y); ortho_scale 1.6 D",
+   "cv": {
+    "type": "ORTHO",
+    "R_world_to_cv": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      -1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      -1.0
+     ]
+    ],
+    "C": [
+     0.013773970929570254,
+     -0.013817423061845394,
+     5.142509523014886
+    ],
+    "ortho_scale": 1.6
+   },
+   "blender": {
+    "location": [
+     0.013773970929570254,
+     -0.013817423061845394,
+     5.142509523014886
+    ],
+    "rotation_matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "HORIZONTAL",
+    "shift_x": -0.0,
+    "shift_y": 0.0,
+    "type": "ORTHO",
+    "ortho_scale": 1.6
+   }
+  },
+  "overview": {
+   "description": "locked 3/4 overview from front-left above the crossbar (opposite side to the reference camera), f = 2000 px",
+   "cv": {
+    "type": "PERSP",
+    "R_world_to_cv": [
+     [
+      0.8087360843031886,
+      -0.5881716976750462,
+      0.0
+     ],
+     [
+      -0.21003833583462145,
+      -0.2888027117726045,
+      -0.934064714649158
+     ],
+     [
+      0.5493904289535528,
+      0.7554118398111351,
+      -0.3571037788198093
+     ]
+    ],
+    "C": [
+     -3.993113014535215,
+     -5.506908711530922,
+     2.171254761507443
+    ],
+    "f_px": 2000.0
+   },
+   "blender": {
+    "location": [
+     -3.993113014535215,
+     -5.506908711530922,
+     2.171254761507443
+    ],
+    "rotation_matrix": [
+     [
+      0.8087360843031886,
+      0.21003833583462145,
+      -0.5493904289535528
+     ],
+     [
+      -0.5881716976750462,
+      0.2888027117726045,
+      -0.7554118398111351
+     ],
+     [
+      0.0,
+      0.934064714649158,
+      0.3571037788198093
+     ]
+    ],
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "HORIZONTAL",
+    "shift_x": -0.0,
+    "shift_y": 0.0,
+    "type": "PERSP",
+    "lens_mm": 37.5
+   }
+  }
+ },
+ "key_points": {
+  "A_world": [
+   0,
+   0,
+   0
+  ],
+  "A_image_frame0_px": [
+   976.169619059491,
+   192.1985286071219
+  ],
+  "mean_disc_rotation_centre_world": [
+   0.013773970929570254,
+   -0.013817423061845394,
+   -0.8574904769851136
+  ],
+  "wire_length_A_to_disc_top_face_mean_D": 0.8574904769851137,
+  "A_horizontal_miss_at_frame0_D": [
+   0.03677569710036077,
+   0.010130022113357562
+  ],
+  "A_note": "A on the frame-0 ray through the wire-top (clamp exit) pixel, at the depth where it lies vertically above the frame-0 disc rotation centre [asm]; the bundle then keeps A on the wire-top ray in every frame (residual in camera/drift.csv)"
+ },
+ "frame_geometry_inferred": {
+  "units": "D",
+  "frame0_planes": {
+   "crossbar_front_face_y": -0.10071320865648477,
+   "crossbar_top_z": 0.24140805769058626,
+   "crossbar_bottom_z": 0.039981640377616735,
+   "crossbar_depth_assumed_eq_height": 0.20142641731296954,
+   "post_front_corner_x": {
+    "zL_outer": -1.0313703607764797,
+    "zL_frontinner": -0.8379837818446932,
+    "zR_front": 0.827535709751059,
+    "zR_outer": 1.0351934019423026
+   }
+  },
+  "bundle_lines": {
+   "xbar_top_a": {
+    "point": [
+     0.0006689711185290314,
+     -0.06352036637032817,
+     0.23912267025284437
+    ],
+    "direction": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "xbar_top_b": {
+    "point": [
+     -0.0001188817737167687,
+     -0.1136697859828503,
+     0.24130718567391976
+    ],
+    "direction": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "xbar_bot_a": {
+    "point": [
+     8.279459436498355e-05,
+     -0.08492412186738262,
+     0.03938336198720638
+    ],
+    "direction": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "xbar_bot_b": {
+    "point": [
+     9.205738984797067e-06,
+     -0.09868767914104669,
+     0.038617337278649674
+    ],
+    "direction": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "zL_outer": {
+    "point": [
+     -1.030362913795302,
+     -0.09960819677817881,
+     -0.0045540913867820505
+    ],
+    "direction": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "zL_frontinner": {
+    "point": [
+     -0.8332530236925483,
+     -0.10534931401414599,
+     -0.0018562836169950035
+    ],
+    "direction": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "zL_back": {
+    "point": [
+     -0.8321941694246964,
+     0.11721971260649501,
+     0.0013225666220994829
+    ],
+    "direction": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   }
+  },
+  "assumptions": "frame0_planes: crossbar/post front faces flush, crossbar square section (initial); bundle_lines: triangulated through the orbit (point + direction per edge). The AI frame is not perfectly rigid: crossbar edge depth differs left/right of the clamp by up to 0.05 D"
+ },
+ "fit_quality": {
+  "vp_edge_rms_px_frame0": 0.5374385021727621,
+  "bundle_edge_endpoint_rms_px_all": 0.5591627766308247,
+  "R4_target_px": 2.0,
+  "per_frame_reprojection": "camera/out/reprojection_by_frame.json"
+ },
+ "uncertainty": {
+  "f_px_sd_formal": 4.275095863097193,
+  "f_px_jackknife_sd": 58.08439286505277,
+  "f_px_jackknife_range": [
+   2601.2969922540187,
+   2673.494677397487
+  ],
+  "pitch_range_deg": [
+   -14.858832393826358,
+   -14.507908676251313
+  ],
+  "yaw_range_deg": [
+   -16.07139610397542,
+   -15.67250157312367
+  ],
+  "free_pp_variant": {
+   "f_px": -2264.5705093749093,
+   "cx": 1061.2157125817175,
+   "cy": 455.5229515959886,
+   "view_pitch_deg": 12.514246135117462,
+   "view_yaw_deg_from_Y": 13.489198143022985,
+   "edge_rms_px": 0.5308309370493511
+  }
+ },
+ "provenance": {
+  "reference_sha256": "c640e5ce848f7a86c0c6d6a2156aa4d89c022c51ba164b5b119bef16b0a2045c",
+  "inputs": {
+   "camera/out/edges_f000.json": "554452dd5d8c632d6b8db9920b072291ad9d888378534571f7252673d795451a",
+   "camera/out/calib_per_frame_fixf.json": "0c64f48dc45c69b2549285765907c60225d4e3fb1e044dc2b1856d4e7050bec6",
+   "camera/out/camera_poses.json": "6a038d1bb3867a7a52012e01b57c1f82223864733d3842ce9a7a64a4cf7b6596",
+   "camera/out/locate.json": "c2cec7fa4d25bee9de877e016e519abf6dddea5a236d34eff714065f7a656f7c",
+   "measurement/cache/edges_track.json": "8f4bd189c6d043a166f3a203364291fea9683642fff7d20f44d35177edf62fc6",
+   "measurement/wire_track.csv": "4554e0e715e8f53a7145f327598e1e0444a218d4bbd8adc929444e61e06a58aa"
+  },
+  "code": {
+   "camera/calibrate.py": "cfee9b2b03077b1ffcfb0515c1bcfafd1ce6645524d3cad35fb38f751a719911",
+   "camera/edges.py": "007ad1f4a10878e4275871cfbcb559772c0596a5a907f54821840f903a73e4d7",
+   "camera/calib_variants.py": "fae8164892196c05d845e2b4626774c89bae98103b8d7be79e2ba7e0449b5abe",
+   "camera/calib_per_frame.py": "e071996c87007225f2592f1c46bd7d769dc172231bd64d65b6ce2800ee5d1846",
+   "camera/pose_bundle.py": "a4ba5351832a1ed29054ea287fbda251fd586826322e0fc4e5388637188af9ce",
+   "camera/locate.py": "e354b46de184459722662fa0adc7b348d7a26d44366f3618f9f3b749d931feb3",
+   "camera/project.py": "d2b2c8c8f2313c08ac3a1434db93db8a0b0ce9953e60c7d753d6e089a6587516",
+   "camera/write_params.py": "8d6aad12d8915bbf7997856733dfc1884826bce46dea42a213739a36170e2879",
+   "measurement/scripts/s1d_edges_track.py": "58723509ea7f2ea3a982f300986b8f1116a4ab88b8ace980d60db4e0b37cbfaf",
+   "measurement/scripts/s1_drift.py": "d9b6c0650362dc246223a87e273bca1647d848b440922f86dba12a6ae1d5bb4f"
+  },
+  "classes": {
+   "R_n": "measured (vanishing points; assumptions: pinhole, centred principal point, orthogonal rectilinear frame, constant f)",
+   "C_n": "measured (bundle) + gauge (disc diameter = 1 at frame 0, A vertically above the frame-0 disc centre)",
+   "orbit": "measured",
+   "metres": "model-conditioned (not set)"
+  }
+ }
+}

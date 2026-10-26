@@ -1,0 +1,400 @@
+{
+  "created_utc": "2026-10-26T02:22:58+00:00",
+  "tag": "ck002",
+  "base_params": {
+    "<CASE_ROOT>/verify/out/ck002/ckcopy/params/physics.json": "962fc5363a6e77baaabf22d70ead098b8ac8deedd7afea0113a2c618a47fe4c3"
+  },
+  "solver_cmd_template": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && {py} solver/run.py --params {params} --out {outdir}",
+  "bake_cmd_template": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && <CASE_ROOT>/tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python scene/build.py -- --out {blend} --physics {params} --bake {traj} --look",
+  "tolerance": {
+    "rel": 0.0001,
+    "pos_m": 1e-06
+  },
+  "verifier_code_sha256": "9af22debbbbbdc0633b5a981cb63e1a2c240b6f4aca35634f22e28c4ca82e92d",
+  "variants": {
+    "base": {
+      "edits": {},
+      "runs": {
+        "axial": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/base/axial/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/base/axial/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/base/axial",
+          "rc": 0,
+          "stderr_tail": "",
+          "omega_pred": 15.849403759571802,
+          "omega_fit": 15.849403759478262,
+          "rel_omega": 5.901723554302407e-12,
+          "gamma_pred": 0.009745541861148174,
+          "gamma_fit": 0.009745541861185196,
+          "rel_gamma": 3.798961145662361e-12,
+          "period_fit_s": 0.3964303895925495,
+          "fit_rms": 4.878126100705821e-16,
+          "status": "PASS"
+        },
+        "swing": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/base/swing/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/base/swing/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/base/swing",
+          "rc": 0,
+          "stderr_tail": "",
+          "omega_pred": 4.861223514353239,
+          "omega_fit": 4.8612432051319034,
+          "rel_omega": 4.050580806769233e-06,
+          "gamma_pred": null,
+          "gamma_fit": 0.009894484354904254,
+          "rel_gamma": null,
+          "period_fit_s": 1.2925058554047597,
+          "fit_rms": 2.5917201492176727e-09,
+          "status": "PASS"
+        },
+        "production_ic": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/base/production_ic/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/base/production_ic/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/base/production_ic",
+          "rc": 0,
+          "variant_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/make_variant.py --params params/physics.json  --out <CASE_ROOT>/verify/out/controls/ck002/base/production_ic/physics.json",
+          "stderr_tail": "",
+          "ic_rule_check": {
+            "edits_applied_max_rel": 0.0,
+            "unedited_params_max_rel_change": 0.0,
+            "phi0_base": -0.1451804871961998,
+            "phi0_variant": -0.1451804871961998,
+            "phid0_base": 0.05247655057011448,
+            "phid0_variant": 0.05247655057011448,
+            "psi_over_phi": 1.0551227113303105,
+            "kappa_verifier": 1.0551227113303108,
+            "rel_kappa": 2.220446049250313e-16,
+            "spring_rate0_m_s": 1.3010426069826053e-18,
+            "ell0_m": 0.32759576668949586,
+            "ell_eq_variant_m": 0.3280064043575786,
+            "tension0_N": 52.068888028273456,
+            "consistent": true
+          },
+          "max_pos_diff_vs_verifier_m": 3.6519731254485083e-13,
+          "status": "PASS",
+          "bake_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && <CASE_ROOT>/tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/base/production_ic/variant.blend --physics <CASE_ROOT>/verify/out/controls/ck002/base/production_ic/physics.json --bake <CASE_ROOT>/verify/out/controls/ck002/base/production_ic/trajectory.csv --look",
+          "bake_rc": 0,
+          "blend_summary": {
+            "P5": "PASS",
+            "P6": "PASS",
+            "P8_blend": "PASS",
+            "motion_is_baked_keyframes": true
+          }
+        }
+      },
+      "status": "PASS"
+    },
+    "k_x4": {
+      "edits": {
+        "k": 5345.270915677869
+      },
+      "runs": {
+        "axial": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/k_x4/axial/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/k_x4/axial/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/k_x4/axial",
+          "rc": 0,
+          "stderr_tail": "",
+          "omega_pred": 31.698812013425258,
+          "omega_fit": 31.698812010430643,
+          "rel_omega": 9.44708755667989e-11,
+          "gamma_pred": 0.009745541861148174,
+          "gamma_fit": 0.009745541882348926,
+          "rel_gamma": 2.1754309464938615e-09,
+          "period_fit_s": 0.19821516671072956,
+          "fit_rms": 4.3361598248517545e-16,
+          "status": "PASS",
+          "period_ratio_meas": 0.4999999291539046,
+          "period_ratio_pred": 0.49999992910962004
+        },
+        "nominal_ic_diagnostic": {
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/k_x4/nominal_ic/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/k_x4/nominal_ic",
+          "rc": 1,
+          "raised": [
+            "SpringCompressionError"
+          ],
+          "stderr_tail": "lations/02-vertical-spring/verify/out/ck002/ckcopy/solver/spring_pendulum.py\", line 297, in integrate\n    raise SpringCompressionError(f\"spring compressed (tension {Tn.min():.4g} N < 0) at t = {t_now:.6f} s: \"\nspring_pendulum.SpringCompressionError: spring compressed (tension -1.127 N < 0) at t = 0.060547 s: a hooked spring cannot push; re-equilibrate the initial state (model_build.reequilibrate)\n",
+          "verifier_min_tension_first_0p5s_N": -101.52726309826703
+        },
+        "production_ic": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/k_x4/production_ic/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/k_x4/production_ic/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/k_x4/production_ic",
+          "rc": 0,
+          "variant_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/make_variant.py --params params/physics.json --set k=x4 --out <CASE_ROOT>/verify/out/controls/ck002/k_x4/production_ic/physics.json",
+          "stderr_tail": "",
+          "ic_rule_check": {
+            "k": [
+              5345.270915677869,
+              5345.270915677869
+            ],
+            "edits_applied_max_rel": 0.0,
+            "unedited_params_max_rel_change": 0.0,
+            "phi0_base": -0.1451804871961998,
+            "phi0_variant": -0.14518048719619983,
+            "phid0_base": 0.05247655057011448,
+            "phid0_variant": 0.05247655057011448,
+            "psi_over_phi": 1.0587860546643533,
+            "kappa_verifier": 1.0587860546643535,
+            "rel_kappa": 2.220446049250313e-16,
+            "spring_rate0_m_s": 8.673617379884035e-19,
+            "ell0_m": 0.29837234674324203,
+            "ell_eq_variant_m": 0.29847508709358445,
+            "tension0_N": 52.06845541774273,
+            "consistent": true
+          },
+          "max_pos_diff_vs_verifier_m": 5.670163826728564e-13,
+          "status": "PASS",
+          "bake_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && <CASE_ROOT>/tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/k_x4/production_ic/variant.blend --physics <CASE_ROOT>/verify/out/controls/ck002/k_x4/production_ic/physics.json --bake <CASE_ROOT>/verify/out/controls/ck002/k_x4/production_ic/trajectory.csv --look",
+          "bake_rc": 0,
+          "blend_summary": {
+            "P5": "PASS",
+            "P6": "PASS",
+            "P8_blend": "PASS",
+            "motion_is_baked_keyframes": true
+          }
+        }
+      },
+      "status": "PASS"
+    },
+    "M_x4": {
+      "edits": {
+        "M": 20.91185465559445,
+        "I_c": [
+          [
+            0.030652195803551194,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.030652195803551194,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.030652195803551194
+          ]
+        ]
+      },
+      "runs": {
+        "axial": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/M_x4/axial/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/M_x4/axial/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/M_x4/axial",
+          "rc": 0,
+          "stderr_tail": "",
+          "omega_pred": 7.976428982491726,
+          "omega_fit": 7.976428982488662,
+          "rel_omega": 3.8402614421784165e-13,
+          "gamma_pred": 0.0024682947312809306,
+          "gamma_fit": 0.002468294731144712,
+          "rel_gamma": 5.518741019727713e-11,
+          "period_fit_s": 0.7877190809287716,
+          "fit_rms": 7.795425046668541e-16,
+          "status": "PASS",
+          "period_ratio_meas": 1.9870300098294382,
+          "period_ratio_pred": 1.9870300098404021
+        },
+        "nominal_ic_diagnostic": {
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/M_x4/nominal_ic/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/M_x4/nominal_ic",
+          "rc": 0,
+          "raised": [],
+          "stderr_tail": "",
+          "nonfinite_rows": 0,
+          "verifier_min_tension_first_0p5s_N": 52.068888028273456
+        },
+        "production_ic": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/M_x4/production_ic/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/M_x4/production_ic/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/M_x4/production_ic",
+          "rc": 0,
+          "variant_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/make_variant.py --params params/physics.json --set m=x4 --set I_perp=x4 --out <CASE_ROOT>/verify/out/controls/ck002/M_x4/production_ic/physics.json",
+          "stderr_tail": "",
+          "ic_rule_check": {
+            "M": [
+              20.91185465559445,
+              20.91185465559445
+            ],
+            "I_perp": [
+              0.030652195803551194,
+              0.030652195803551194
+            ],
+            "edits_applied_max_rel": 0.0,
+            "unedited_params_max_rel_change": 0.0,
+            "phi0_base": -0.1451804871961998,
+            "phi0_variant": -0.1451804871961998,
+            "phid0_base": 0.05247655057011448,
+            "phid0_variant": 0.052476550570114466,
+            "psi_over_phi": 1.0355999597603787,
+            "kappa_verifier": 1.0355999597603787,
+            "rel_kappa": 0.0,
+            "spring_rate0_m_s": 2.168404344971009e-18,
+            "ell0_m": 0.4414977058225707,
+            "ell_eq_variant_m": 0.4431036048699749,
+            "tension0_N": 204.27806865010743,
+            "consistent": true
+          },
+          "max_pos_diff_vs_verifier_m": 3.758726663581973e-13,
+          "status": "PASS",
+          "bake_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && <CASE_ROOT>/tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/M_x4/production_ic/variant.blend --physics <CASE_ROOT>/verify/out/controls/ck002/M_x4/production_ic/physics.json --bake <CASE_ROOT>/verify/out/controls/ck002/M_x4/production_ic/trajectory.csv --look",
+          "bake_rc": 0,
+          "blend_summary": {
+            "P5": "PASS",
+            "P6": "PASS",
+            "P8_blend": "PASS",
+            "motion_is_baked_keyframes": true
+          }
+        }
+      },
+      "status": "PASS"
+    },
+    "L0_plus50": {
+      "edits": {
+        "L0": 0.4329469720083796
+      },
+      "runs": {
+        "swing": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/L0_plus50/swing/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/swing/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/swing",
+          "rc": 0,
+          "stderr_tail": "",
+          "omega_pred": 4.195892703433036,
+          "omega_fit": 4.195900373308251,
+          "rel_omega": 1.827948366894816e-06,
+          "gamma_pred": null,
+          "gamma_fit": 0.007843891396710061,
+          "rel_gamma": null,
+          "period_fit_s": 1.4974581730179686,
+          "fit_rms": 2.113397912233819e-09,
+          "status": "PASS",
+          "period_ratio_meas": 1.1585697401340023,
+          "period_ratio_pred": 1.1585671650697447
+        },
+        "nominal_ic_diagnostic": {
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/nominal_ic/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/nominal_ic",
+          "rc": 1,
+          "raised": [
+            "SpringCompressionError"
+          ],
+          "stderr_tail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<CASE_ROOT>/verify/out/ck002/ckcopy/solver/spring_pendulum.py\", line 266, in integrate\n    raise SpringCompressionError(f\"spring compressed at t = 0 (tension {T0.min():.4g} N)\")\nspring_pendulum.SpringCompressionError: spring compressed at t = 0 (tension -140.8 N)\n",
+          "verifier_min_tension_first_0p5s_N": -140.78268343065918
+        },
+        "production_ic": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/L0_plus50/production_ic/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/production_ic/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/production_ic",
+          "rc": 0,
+          "variant_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/make_variant.py --params params/physics.json --set L0=x1.5 --out <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/production_ic/physics.json",
+          "stderr_tail": "",
+          "ic_rule_check": {
+            "L0": [
+              0.4329469720083796,
+              0.4329469720083796
+            ],
+            "edits_applied_max_rel": 0.0,
+            "unedited_params_max_rel_change": 0.0,
+            "phi0_base": -0.1451804871961998,
+            "phi0_variant": -0.14518048719619983,
+            "phid0_base": 0.05247655057011448,
+            "phid0_variant": 0.05247655057011446,
+            "psi_over_phi": 1.042861622304908,
+            "kappa_verifier": 1.0428616223049083,
+            "rel_kappa": 2.220446049250313e-16,
+            "spring_rate0_m_s": 2.168404344971009e-18,
+            "ell0_m": 0.47191300606755093,
+            "ell_eq_variant_m": 0.47232206169370516,
+            "tension0_N": 52.071002138950426,
+            "consistent": true
+          },
+          "max_pos_diff_vs_verifier_m": 2.389602899660393e-13,
+          "status": "PASS",
+          "bake_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && <CASE_ROOT>/tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/production_ic/variant.blend --physics <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/production_ic/physics.json --bake <CASE_ROOT>/verify/out/controls/ck002/L0_plus50/production_ic/trajectory.csv --look",
+          "bake_rc": 0,
+          "blend_summary": {
+            "P5": "PASS",
+            "P6": "PASS",
+            "P8_blend": "PASS",
+            "motion_is_baked_keyframes": true
+          }
+        }
+      },
+      "status": "PASS"
+    },
+    "damping_x10": {
+      "edits": {
+        "c_v": 0.5717178240993457,
+        "c_a": 0.4651411593966826,
+        "c_r": 0.07663048950887799
+      },
+      "runs": {
+        "axial": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/damping_x10/axial/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/damping_x10/axial/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/damping_x10/axial",
+          "rc": 0,
+          "stderr_tail": "",
+          "omega_pred": 15.849107134185767,
+          "omega_fit": 15.849107134092232,
+          "rel_omega": 5.901501509697482e-12,
+          "gamma_pred": 0.09745541861148173,
+          "gamma_fit": 0.09745541860902512,
+          "rel_gamma": 2.5207502751811717e-11,
+          "period_fit_s": 0.3964378090210606,
+          "fit_rms": 4.987547673940066e-16,
+          "status": "PASS",
+          "period_ratio_meas": 1.0000187155896871,
+          "period_ratio_pred": 1.0000187155896874
+        },
+        "nominal_ic_diagnostic": {
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/damping_x10/nominal_ic/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/damping_x10/nominal_ic",
+          "rc": 0,
+          "raised": [],
+          "stderr_tail": "",
+          "nonfinite_rows": 0,
+          "verifier_min_tension_first_0p5s_N": 52.06882593061249
+        },
+        "production_ic": {
+          "params": "<CASE_ROOT>/verify/out/controls/ck002/damping_x10/production_ic/physics.json",
+          "cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/run.py --params <CASE_ROOT>/verify/out/controls/ck002/damping_x10/production_ic/physics.json --out <CASE_ROOT>/verify/out/controls/ck002/damping_x10/production_ic",
+          "rc": 0,
+          "variant_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && python3 solver/make_variant.py --params params/physics.json --set c_s=x10 --set c_x=x10 --set c_r=x10 --out <CASE_ROOT>/verify/out/controls/ck002/damping_x10/production_ic/physics.json",
+          "stderr_tail": "",
+          "ic_rule_check": {
+            "c_v": [
+              0.5717178240993457,
+              0.5717178240993457
+            ],
+            "c_a": [
+              0.4651411593966826,
+              0.4651411593966826
+            ],
+            "c_r": [
+              0.07663048950887799,
+              0.07663048950887799
+            ],
+            "edits_applied_max_rel": 0.0,
+            "unedited_params_max_rel_change": 0.0,
+            "phi0_base": -0.1451804871961998,
+            "phi0_variant": -0.1451804871961998,
+            "phid0_base": 0.05247655057011448,
+            "phid0_variant": 0.05247655057011448,
+            "psi_over_phi": 1.0551227113303105,
+            "kappa_verifier": 1.0551227113303108,
+            "rel_kappa": 2.220446049250313e-16,
+            "spring_rate0_m_s": 1.3010426069826053e-18,
+            "ell0_m": 0.32759576668949586,
+            "ell_eq_variant_m": 0.3280064043575786,
+            "tension0_N": 52.068888028273456,
+            "consistent": true
+          },
+          "max_pos_diff_vs_verifier_m": 1.4815974356371182e-13,
+          "status": "PASS",
+          "bake_cmd": "cd <CASE_ROOT>/verify/out/ck002/ckcopy && <CASE_ROOT>/tools/with_render_lock.sh /opt/homebrew/bin/blender -b --factory-startup --python scene/build.py -- --out <CASE_ROOT>/verify/out/controls/ck002/damping_x10/production_ic/variant.blend --physics <CASE_ROOT>/verify/out/controls/ck002/damping_x10/production_ic/physics.json --bake <CASE_ROOT>/verify/out/controls/ck002/damping_x10/production_ic/trajectory.csv --look",
+          "bake_rc": 0,
+          "blend_summary": {
+            "P5": "PASS",
+            "P6": "PASS",
+            "P8_blend": "PASS",
+            "motion_is_baked_keyframes": true
+          }
+        }
+      },
+      "status": "PASS"
+    }
+  },
+  "status": "PASS",
+  "through_bake": true
+}

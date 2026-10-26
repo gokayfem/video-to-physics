@@ -1,0 +1,13 @@
+{
+  "title": "{{TITLE}} — corrected physics",
+  "status": "ckNNN · physics verified (k/n independent audit) · awaiting human visual approval",
+  "summary_md": "What the reference shows (measured): the main defects, with numbers.\n\nCorrected physics: the model, the declared and assumed inputs, what was anchored, the result.\n\nVerification: independent reference agreement, bake vs solver, negative controls k/n. Assumed: the sensitive assumption and its effect. Our additions: props or mechanisms not in the reference.",
+  "items": [
+    {"label": "Final side-by-side (ckNNN)", "path": "visuals/ckNNN_sbs.mp4", "caption": "Reference | corrected physics | 50/50 blend; true fps, no retiming."},
+    {"label": "Final render", "path": "final_ckNNN.mp4", "caption": "Engine, samples, resolution, motion blur."},
+    {"label": "Solver: behaviour", "path": "../solver/visuals/vNNN_timeseries.png", "caption": "Key quantities over time with the energy or mass budget."},
+    {"label": "Solver: convergence", "path": "../solver/visuals/vNNN_convergence.png", "caption": "Three levels, observed order."},
+    {"label": "Verifier: audit", "path": "../verify/visuals/ckNNN_audit.png", "caption": "Every check with tolerance and PASS/FAIL; negative controls."},
+    {"label": "Measurement: divergence map", "path": "../measurement/visuals/divergence.png", "caption": "Reference vs corrected physics after the anchor window; named defects."}
+  ]
+}

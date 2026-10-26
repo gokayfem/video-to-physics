@@ -1,0 +1,774 @@
+{
+ "baseline": {
+  "failed_checks": [],
+  "target": null,
+  "caught": null,
+  "results": {
+   "divergence_rms_over_vorticity_rms": {
+    "passed": true,
+    "value": 5.654849815073248e-07
+   },
+   "noslip_max_speed_over_U": {
+    "passed": true,
+    "value": {
+     "cylinder_interior": 0.0,
+     "walls": 0.02532410629404088
+    }
+   },
+   "St_Cl_vs_probe": {
+    "passed": true,
+    "value": {
+     "St_Cl": 0.18994338994339402,
+     "St_Cl_fft": 0.19147519147519554,
+     "St_probe": 0.1886030636030676,
+     "rel": 0.007056451612903435
+    }
+   },
+   "St_Cl_vs_field_v(5D wake)": {
+    "passed": true,
+    "value": {
+     "St_field": 0.19108305028305436,
+     "rel": 0.005999999999999885
+    }
+   },
+   "St_vs_reference": {
+    "passed": true,
+    "value": {
+     "St": 0.18994338994339402,
+     "St_ref": 0.19,
+     "rel": 0.00029794766634727576
+    }
+   },
+   "Cd_mean_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cd": 1.4111528763862304,
+     "Cd_ref": 1.41,
+     "rel": 0.0008176428271138419
+    }
+   },
+   "Cl_amp_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cl_amp": 0.5519947131608685,
+     "ref": 0.55,
+     "rel": 0.003626751201578929,
+     "Cl_max_raw_spike": 0.09734971257655523
+    }
+   },
+   "wake_KE_periodic_no_drift": {
+    "passed": true,
+    "value": {
+     "rel_drift": -0.000741000403650105,
+     "period_means": [
+      4.4236855956114596e-07,
+      4.4204088567312283e-07
+     ]
+    }
+   },
+   "vortex_convection_speed_over_U": {
+    "passed": true,
+    "value": 0.8747509608123382
+   },
+   "tracer_bounds": {
+    "passed": true,
+    "value": {
+     "min": 0.0,
+     "max": 1.0
+    }
+   },
+   "no_dye_upstream_of_needles": {
+    "passed": true,
+    "value": {
+     "upstream_extent_m": 0.0009999999999999731,
+     "max_c_beyond_tol": 0
+    }
+   },
+   "dye_front_speed_le_max_velocity": {
+    "passed": true,
+    "value": {
+     "front_speed_max": 0.027999999999999803,
+     "umax": 0.033192381262779236,
+     "ratio": 0.8435670757794655
+    }
+   },
+   "tracer_mass_budget_linear": {
+    "passed": true,
+    "value": {
+     "max_dev_frac": [
+      9.399230973562567e-05,
+      0.0026796599157156457,
+      0.002458636657105108
+     ]
+    }
+   },
+   "dye_advected_by_velocity_scale": {
+    "passed": true,
+    "value": {
+     "best_scale": 1.0001140322186841,
+     "err_by_scale": {
+      "0.5": 0.0898,
+      "0.75": 0.0465,
+      "0.9": 0.0202,
+      "1.0": 0.0068,
+      "1.1": 0.0201,
+      "1.25": 0.0426,
+      "1.5": 0.0741,
+      "2.0": 0.1088
+     },
+     "err_no_motion": 0.14933738112449646,
+     "n_points": 2364,
+     "n_pairs": 8
+    }
+   }
+  }
+ },
+ "st10": {
+  "failed_checks": [
+   "St_Cl_vs_field_v(5D wake)",
+   "St_vs_reference"
+  ],
+  "target": [
+   "St_vs_reference",
+   "St_Cl_vs_field_v(5D wake)"
+  ],
+  "caught": true,
+  "results": {
+   "divergence_rms_over_vorticity_rms": {
+    "passed": true,
+    "value": 5.654849815073248e-07
+   },
+   "noslip_max_speed_over_U": {
+    "passed": true,
+    "value": {
+     "cylinder_interior": 0.0,
+     "walls": 0.02532410629404088
+    }
+   },
+   "St_Cl_vs_probe": {
+    "passed": true,
+    "value": {
+     "St_Cl": 0.20770895770896214,
+     "St_Cl_fft": 0.20812520812521257,
+     "St_probe": 0.20885364635365078,
+     "rel": 0.00551102204408804
+    }
+   },
+   "St_Cl_vs_field_v(5D wake)": {
+    "passed": false,
+    "value": {
+     "St_field": 0.19109224109224518,
+     "rel": 0.07999999999999995
+    }
+   },
+   "St_vs_reference": {
+    "passed": false,
+    "value": {
+     "St": 0.20770895770896214,
+     "St_ref": 0.19,
+     "rel": 0.09320504057348493
+    }
+   },
+   "Cd_mean_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cd": 1.4108218043857306,
+     "Cd_ref": 1.41,
+     "rel": 0.0005828399898798945
+    }
+   },
+   "Cl_amp_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cl_amp": 0.5541247716688344,
+     "ref": 0.55,
+     "rel": 0.007499584852426188,
+     "Cl_max_raw_spike": 0.3754417006324329
+    }
+   },
+   "wake_KE_periodic_no_drift": {
+    "passed": true,
+    "value": {
+     "rel_drift": 0.009836864657700062,
+     "period_means": [
+      4.380852658414369e-07,
+      4.3795714077532466e-07,
+      4.424084067977674e-07
+     ]
+    }
+   },
+   "vortex_convection_speed_over_U": {
+    "passed": true,
+    "value": 0.8747509608123382
+   },
+   "tracer_bounds": {
+    "passed": true,
+    "value": {
+     "min": 0.0,
+     "max": 1.0
+    }
+   },
+   "no_dye_upstream_of_needles": {
+    "passed": true,
+    "value": {
+     "upstream_extent_m": 0.0009999999999999731,
+     "max_c_beyond_tol": 2.3695417481555256e-17
+    }
+   },
+   "dye_front_speed_le_max_velocity": {
+    "passed": true,
+    "value": {
+     "front_speed_max": 0.027999999999999803,
+     "umax": 0.033192381262779236,
+     "ratio": 0.8435670757794655
+    }
+   },
+   "tracer_mass_budget_linear": {
+    "passed": true,
+    "value": {
+     "max_dev_frac": [
+      9.921655855465323e-05,
+      0.002685454929215287,
+      0.00245983658242401
+     ]
+    }
+   },
+   "dye_advected_by_velocity_scale": {
+    "passed": true,
+    "value": {
+     "best_scale": 1.000113475546714,
+     "err_by_scale": {
+      "0.5": 0.0898,
+      "0.75": 0.0465,
+      "0.9": 0.0202,
+      "1.0": 0.0068,
+      "1.1": 0.0201,
+      "1.25": 0.0426,
+      "1.5": 0.0741,
+      "2.0": 0.1088
+     },
+     "err_no_motion": 0.14933715760707855,
+     "n_points": 2364,
+     "n_pairs": 8
+    }
+   }
+  }
+ },
+ "dye15": {
+  "failed_checks": [
+   "dye_front_speed_le_max_velocity",
+   "dye_advected_by_velocity_scale"
+  ],
+  "target": [
+   "dye_advected_by_velocity_scale"
+  ],
+  "caught": true,
+  "results": {
+   "divergence_rms_over_vorticity_rms": {
+    "passed": true,
+    "value": 5.654849815073248e-07
+   },
+   "noslip_max_speed_over_U": {
+    "passed": true,
+    "value": {
+     "cylinder_interior": 0.0,
+     "walls": 0.02532410629404088
+    }
+   },
+   "St_Cl_vs_probe": {
+    "passed": true,
+    "value": {
+     "St_Cl": 0.18994338994339402,
+     "St_Cl_fft": 0.19147519147519554,
+     "St_probe": 0.1886030636030676,
+     "rel": 0.007056451612903435
+    }
+   },
+   "St_Cl_vs_field_v(5D wake)": {
+    "passed": true,
+    "value": {
+     "St_field": 0.19108305028305436,
+     "rel": 0.005999999999999885
+    }
+   },
+   "St_vs_reference": {
+    "passed": true,
+    "value": {
+     "St": 0.18994338994339402,
+     "St_ref": 0.19,
+     "rel": 0.00029794766634727576
+    }
+   },
+   "Cd_mean_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cd": 1.4111528763862304,
+     "Cd_ref": 1.41,
+     "rel": 0.0008176428271138419
+    }
+   },
+   "Cl_amp_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cl_amp": 0.5519947131608685,
+     "ref": 0.55,
+     "rel": 0.003626751201578929,
+     "Cl_max_raw_spike": 0.09734971257655523
+    }
+   },
+   "wake_KE_periodic_no_drift": {
+    "passed": true,
+    "value": {
+     "rel_drift": -0.000741000403650105,
+     "period_means": [
+      4.4236855956114596e-07,
+      4.4204088567312283e-07
+     ]
+    }
+   },
+   "vortex_convection_speed_over_U": {
+    "passed": true,
+    "value": 0.8747509608123382
+   },
+   "tracer_bounds": {
+    "passed": true,
+    "value": {
+     "min": 0.0,
+     "max": 1.0
+    }
+   },
+   "no_dye_upstream_of_needles": {
+    "passed": true,
+    "value": {
+     "upstream_extent_m": 0.0009999999999999731,
+     "max_c_beyond_tol": 2.3695417481555256e-17
+    }
+   },
+   "dye_front_speed_le_max_velocity": {
+    "passed": false,
+    "value": {
+     "front_speed_max": 0.038000000000000034,
+     "umax": 0.033192381262779236,
+     "ratio": 1.144841031414998
+    }
+   },
+   "tracer_mass_budget_linear": {
+    "passed": true,
+    "value": {
+     "max_dev_frac": [
+      0.00015035954575485873,
+      0.020001532076468202,
+      0.01936412006152631
+     ]
+    }
+   },
+   "dye_advected_by_velocity_scale": {
+    "passed": false,
+    "value": {
+     "best_scale": 1.5669691942100645,
+     "err_by_scale": {
+      "0.5": 0.1204,
+      "0.75": 0.0986,
+      "0.9": 0.0838,
+      "1.0": 0.0725,
+      "1.1": 0.06,
+      "1.25": 0.0391,
+      "1.5": 0.005,
+      "2.0": 0.07
+     },
+     "err_no_motion": 0.15017542243003845,
+     "n_points": 804,
+     "n_pairs": 8
+    }
+   }
+  }
+ },
+ "diverge": {
+  "failed_checks": [
+   "divergence_rms_over_vorticity_rms"
+  ],
+  "target": [
+   "divergence_rms_over_vorticity_rms"
+  ],
+  "caught": true,
+  "results": {
+   "divergence_rms_over_vorticity_rms": {
+    "passed": false,
+    "value": 1.3461636304855347
+   },
+   "noslip_max_speed_over_U": {
+    "passed": true,
+    "value": {
+     "cylinder_interior": 0.0,
+     "walls": 0.03285584195206563
+    }
+   },
+   "St_Cl_vs_probe": {
+    "passed": true,
+    "value": {
+     "St_Cl": 0.18994338994339402,
+     "St_Cl_fft": 0.19147519147519554,
+     "St_probe": 0.1886030636030676,
+     "rel": 0.007056451612903435
+    }
+   },
+   "St_Cl_vs_field_v(5D wake)": {
+    "passed": true,
+    "value": {
+     "St_field": 0.19108305028305436,
+     "rel": 0.005999999999999885
+    }
+   },
+   "St_vs_reference": {
+    "passed": true,
+    "value": {
+     "St": 0.18994338994339402,
+     "St_ref": 0.19,
+     "rel": 0.00029794766634727576
+    }
+   },
+   "Cd_mean_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cd": 1.4111528763862304,
+     "Cd_ref": 1.41,
+     "rel": 0.0008176428271138419
+    }
+   },
+   "Cl_amp_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cl_amp": 0.5519947131608685,
+     "ref": 0.55,
+     "rel": 0.003626751201578929,
+     "Cl_max_raw_spike": 0.09734971257655523
+    }
+   },
+   "wake_KE_periodic_no_drift": {
+    "passed": true,
+    "value": {
+     "rel_drift": -0.0008087416063062847,
+     "period_means": [
+      4.461817582068761e-07,
+      4.4582105829249485e-07
+     ]
+    }
+   },
+   "vortex_convection_speed_over_U": {
+    "passed": true,
+    "value": 0.8747509608123382
+   },
+   "tracer_bounds": {
+    "passed": true,
+    "value": {
+     "min": 0.0,
+     "max": 1.0
+    }
+   },
+   "no_dye_upstream_of_needles": {
+    "passed": true,
+    "value": {
+     "upstream_extent_m": 0.0009999999999999731,
+     "max_c_beyond_tol": 2.3695417481555256e-17
+    }
+   },
+   "dye_front_speed_le_max_velocity": {
+    "passed": true,
+    "value": {
+     "front_speed_max": 0.03200000000000003,
+     "umax": 0.036716803908348083,
+     "ratio": 0.8715355530366404
+    }
+   },
+   "tracer_mass_budget_linear": {
+    "passed": true,
+    "value": {
+     "max_dev_frac": [
+      0.006512619227299084,
+      0.007925355804913898,
+      0.00780805164211969
+     ]
+    }
+   },
+   "dye_advected_by_velocity_scale": {
+    "passed": true,
+    "value": {
+     "best_scale": 0.99974613732061,
+     "err_by_scale": {
+      "0.5": 0.0825,
+      "0.75": 0.0422,
+      "0.9": 0.0182,
+      "1.0": 0.0065,
+      "1.1": 0.0183,
+      "1.25": 0.0385,
+      "1.5": 0.0682,
+      "2.0": 0.1092
+     },
+     "err_no_motion": 0.14310427010059357,
+     "n_points": 3224,
+     "n_pairs": 8
+    }
+   }
+  }
+ },
+ "upstream": {
+  "failed_checks": [
+   "vortex_convection_speed_over_U"
+  ],
+  "target": [
+   "vortex_convection_speed_over_U"
+  ],
+  "caught": true,
+  "results": {
+   "divergence_rms_over_vorticity_rms": {
+    "passed": true,
+    "value": 5.644793077408394e-07
+   },
+   "noslip_max_speed_over_U": {
+    "passed": true,
+    "value": {
+     "cylinder_interior": 0.0,
+     "walls": 0.02532410629404088
+    }
+   },
+   "St_Cl_vs_probe": {
+    "passed": true,
+    "value": {
+     "St_Cl": 0.18994338994339402,
+     "St_Cl_fft": 0.19147519147519554,
+     "St_probe": 0.1886030636030676,
+     "rel": 0.007056451612903435
+    }
+   },
+   "St_Cl_vs_field_v(5D wake)": {
+    "passed": true,
+    "value": {
+     "St_field": 0.19212773892774307,
+     "rel": 0.011500000000000095
+    }
+   },
+   "St_vs_reference": {
+    "passed": true,
+    "value": {
+     "St": 0.18994338994339402,
+     "St_ref": 0.19,
+     "rel": 0.00029794766634727576
+    }
+   },
+   "Cd_mean_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cd": 1.4111528763862304,
+     "Cd_ref": 1.41,
+     "rel": 0.0008176428271138419
+    }
+   },
+   "Cl_amp_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cl_amp": 0.5519947131608685,
+     "ref": 0.55,
+     "rel": 0.003626751201578929,
+     "Cl_max_raw_spike": 0.09734971257655523
+    }
+   },
+   "wake_KE_periodic_no_drift": {
+    "passed": true,
+    "value": {
+     "rel_drift": 0.0010517260525375605,
+     "period_means": [
+      4.943848352922942e-07,
+      4.949050662617083e-07
+     ]
+    }
+   },
+   "vortex_convection_speed_over_U": {
+    "passed": false,
+    "value": -0.8741987277548994
+   },
+   "tracer_bounds": {
+    "passed": true,
+    "value": {
+     "min": 0.0,
+     "max": 1.0
+    }
+   },
+   "no_dye_upstream_of_needles": {
+    "passed": true,
+    "value": {
+     "upstream_extent_m": 0.0009999999999999731,
+     "max_c_beyond_tol": 2.3695417481555256e-17
+    }
+   },
+   "dye_front_speed_le_max_velocity": {
+    "passed": true,
+    "value": {
+     "front_speed_max": 0.026000000000000023,
+     "umax": 0.033192381262779236,
+     "ratio": 0.783312284652367
+    }
+   },
+   "tracer_mass_budget_linear": {
+    "passed": true,
+    "value": {
+     "max_dev_frac": [
+      3.0161121654791826e-05,
+      0.004540473753942361,
+      0.003899226456620702
+     ]
+    }
+   },
+   "dye_advected_by_velocity_scale": {
+    "passed": true,
+    "value": {
+     "best_scale": 0.9974031418328432,
+     "err_by_scale": {
+      "0.5": 0.1109,
+      "0.75": 0.0604,
+      "0.9": 0.0244,
+      "1.0": 0.0024,
+      "1.1": 0.0268,
+      "1.25": 0.0629,
+      "1.5": 0.1134,
+      "2.0": 0.1695
+     },
+     "err_no_motion": 0.17001086473464966,
+     "n_points": 1016,
+     "n_pairs": 8
+    }
+   }
+  }
+ },
+ "energy": {
+  "failed_checks": [
+   "wake_KE_periodic_no_drift"
+  ],
+  "target": [
+   "wake_KE_periodic_no_drift"
+  ],
+  "caught": true,
+  "results": {
+   "divergence_rms_over_vorticity_rms": {
+    "passed": true,
+    "value": 4.926107521896483e-07
+   },
+   "noslip_max_speed_over_U": {
+    "passed": true,
+    "value": {
+     "cylinder_interior": 0.0,
+     "walls": 0.02532410629404088
+    }
+   },
+   "St_Cl_vs_probe": {
+    "passed": true,
+    "value": {
+     "St_Cl": 0.18994338994339402,
+     "St_Cl_fft": 0.19147519147519554,
+     "St_probe": 0.1886030636030676,
+     "rel": 0.007056451612903435
+    }
+   },
+   "St_Cl_vs_field_v(5D wake)": {
+    "passed": true,
+    "value": {
+     "St_field": 0.19089310689311098,
+     "rel": 0.004999999999999952
+    }
+   },
+   "St_vs_reference": {
+    "passed": true,
+    "value": {
+     "St": 0.18994338994339402,
+     "St_ref": 0.19,
+     "rel": 0.00029794766634727576
+    }
+   },
+   "Cd_mean_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cd": 1.4111528763862304,
+     "Cd_ref": 1.41,
+     "rel": 0.0008176428271138419
+    }
+   },
+   "Cl_amp_vs_reference": {
+    "passed": true,
+    "value": {
+     "Cl_amp": 0.5519947131608685,
+     "ref": 0.55,
+     "rel": 0.003626751201578929,
+     "Cl_max_raw_spike": 0.09734971257655523
+    }
+   },
+   "wake_KE_periodic_no_drift": {
+    "passed": false,
+    "value": {
+     "rel_drift": 0.3391513228416443,
+     "period_means": [
+      5.461159844344365e-07,
+      7.69153700730385e-07
+     ]
+    }
+   },
+   "vortex_convection_speed_over_U": {
+    "passed": true,
+    "value": 0.8746608425268567
+   },
+   "tracer_bounds": {
+    "passed": true,
+    "value": {
+     "min": 0.0,
+     "max": 1.0
+    }
+   },
+   "no_dye_upstream_of_needles": {
+    "passed": true,
+    "value": {
+     "upstream_extent_m": 0.0009999999999999731,
+     "max_c_beyond_tol": 2.3695417481555256e-17
+    }
+   },
+   "dye_front_speed_le_max_velocity": {
+    "passed": true,
+    "value": {
+     "front_speed_max": 0.027999999999999803,
+     "umax": 0.033192381262779236,
+     "ratio": 0.8435670757794655
+    }
+   },
+   "tracer_mass_budget_linear": {
+    "passed": true,
+    "value": {
+     "max_dev_frac": [
+      0.0001301089527715575,
+      0.0025268060933644463,
+      0.002279012381336103
+     ]
+    }
+   },
+   "dye_advected_by_velocity_scale": {
+    "passed": true,
+    "value": {
+     "best_scale": 1.0002045279270264,
+     "err_by_scale": {
+      "0.5": 0.0908,
+      "0.75": 0.0472,
+      "0.9": 0.0211,
+      "1.0": 0.008,
+      "1.1": 0.021,
+      "1.25": 0.043,
+      "1.5": 0.0736,
+      "2.0": 0.1072
+     },
+     "err_no_motion": 0.14842399954795837,
+     "n_points": 2624,
+     "n_pairs": 8
+    }
+   }
+  }
+ },
+ "_verdict": {
+  "baseline_clean": true,
+  "all_controls_caught": true
+ }
+}

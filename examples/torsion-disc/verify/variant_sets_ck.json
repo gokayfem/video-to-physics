@@ -1,0 +1,3 @@
+{"_note": "P9 variant sets for the dynamics make_variant interface (solver/make_variant.py --set <Model attr>=xK), probed via --help and dry runs; I x4 is realised as m x4 at fixed geometry (I_z, I_perp x4)",
+ "kappa_x4": ["--set kappa=x4"], "I_x4": ["--set m=x4"], "L_plus50": ["--set ell=x1.5"],
+ "damping_x10": ["--set c_t=x10", "--set c_x=x10", "--set c_r=x10"]}

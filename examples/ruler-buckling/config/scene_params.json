@@ -1,0 +1,579 @@
+{
+  "_doc": "Batch-2 concept A (ruler buckling) first-frame scene. SI units: metres, kg, Pa. 1 Blender unit = 1 m, Z up, bench top at z=0. Ruler broad face normal = +-Y; camera on -Y looking +Y. Read by scene/build.py and scene/make_textures.py.",
+  "units": {
+    "length": "m",
+    "blender_unit_m": 1.0,
+    "up": "+Z"
+  },
+  "bench": {
+    "top_z_m": 0.0,
+    "x_min_m": -1.2,
+    "x_max_m": 1.2,
+    "y_min_m": -1.2,
+    "y_max_m": 0.55,
+    "thickness_m": 0.05
+  },
+  "backdrop": {
+    "wall_y_m": 0.56,
+    "cove_radius_m": 0.12,
+    "height_m": 1.5,
+    "width_m": 6.0,
+    "style": "pegboard",
+    "z_min_m": -0.3,
+    "hole_pitch_m": 0.0254,
+    "hole_radius_m": 0.0035
+  },
+  "vise": {
+    "center_xy_m": [
+      0.0,
+      0.0
+    ],
+    "jaw_top_z_m": 0.095,
+    "jaw_width_x_m": 0.1,
+    "jaw_height_m": 0.032,
+    "jaw_depth_y_m": 0.014,
+    "body_width_x_m": 0.08,
+    "base": {
+      "size_m": [
+        0.15,
+        0.12,
+        0.018
+      ]
+    },
+    "screw_diameter_m": 0.016,
+    "handle_diameter_m": 0.01,
+    "handle_length_m": 0.18,
+    "front_screws": {
+      "count": 2,
+      "x_offsets_m": [
+        -0.03,
+        0.03
+      ],
+      "z_below_top_m": 0.012,
+      "head_diameter_m": 0.008,
+      "head_height_m": 0.003
+    }
+  },
+  "ruler": {
+    "length_m": 0.3,
+    "width_m": 0.025,
+    "thickness_m": 0.0005,
+    "clamped_length_m": 0.02,
+    "free_length_m": 0.28,
+    "bottom_z_m": 0.075,
+    "top_z_m": 0.375,
+    "center_xy_m": [
+      0.0,
+      0.0
+    ],
+    "mesh_segments_length": 300,
+    "mesh_segments_width": 10,
+    "markings": {
+      "tick_pitch_m": 0.005,
+      "tick_line_width_m": 0.00018,
+      "tick_len_5mm_m": 0.0045,
+      "tick_len_10mm_m": 0.0065,
+      "numbers_every_m": 0.01,
+      "number_height_m": 0.0053,
+      "zero_at": "bottom end (clamped)",
+      "numbers_unit": "cm",
+      "edge": "-X (left) edge, front (-Y) face; mirrored set on back face",
+      "_doc": "only 5 mm ticks (short) and 10 mm ticks (long) + cm numbers; 1 mm ticks dropped to avoid moire (2.5 px pitch)",
+      "numbers_max_cm": 28,
+      "enabled": false
+    },
+    "material_fea": {
+      "name": "AISI 301/304 stainless (assumed)",
+      "E_Pa": 193000000000.0,
+      "nu": 0.29,
+      "rho_kg_m3": 7900.0
+    },
+    "finish": "satin / brushed along length (anisotropic GGX in Cycles), not mirror"
+  },
+  "platform": {
+    "material": "6061 aluminium, bead-blasted (assumed)",
+    "plate_size_m": [
+      0.025,
+      0.025,
+      0.003
+    ],
+    "tab_size_m": [
+      0.025,
+      0.002,
+      0.012
+    ],
+    "tab_side": "front (-Y) face of ruler",
+    "screws": {
+      "count": 2,
+      "head_diameter_m": 0.0045,
+      "head_height_m": 0.0012,
+      "z_from_top_m": 0.006,
+      "x_offsets_m": [
+        -0.0075,
+        0.0075
+      ]
+    },
+    "mass_kg_est": 0.01394,
+    "_doc": "Horizontal plate centred on the ruler top end (plate bottom at ruler top); a vertical tab hangs on the front face, held by two pan-head screws.",
+    "peg": {
+      "diameter_m": 0.004,
+      "height_m": 0.04,
+      "material": "stainless steel",
+      "_doc": "central peg on the platform plate top, for stacking slotted weights; 40 mm (lead 2026-10-26: 7 weights = 31.5 mm stay on the peg)"
+    },
+    "mass_note": "tip body 13.94 g incl. 40 mm peg (solver/out/meta.json v001)"
+  },
+  "grid_card": {
+    "y_center_m": 0.15,
+    "width_m": 0.6,
+    "height_m": 0.46,
+    "thickness_m": 0.002,
+    "bottom_z_m": 0.0,
+    "x_center_m": 0.0,
+    "grid_pitch_m": 0.01,
+    "line_width_m": 0.0005,
+    "major_every": 5,
+    "major_line_width_m": 0.0009,
+    "grid_origin": "lines at x=0 (ruler centre line) and z=0 (bench top), every 10 mm",
+    "margin_m": 0.01,
+    "paper_albedo": 0.82,
+    "_stand_x_m": [
+      -0.2,
+      0.2
+    ],
+    "enabled": false
+  },
+  "materials": {
+    "bench": {
+      "wood": true,
+      "dark": [
+        0.16,
+        0.075,
+        0.03
+      ],
+      "light": [
+        0.46,
+        0.26,
+        0.11
+      ],
+      "roughness": 0.55,
+      "grain_scale": 5.0
+    },
+    "backdrop": {
+      "base_color": [
+        0.55,
+        0.2,
+        0.07
+      ],
+      "roughness": 0.7,
+      "hole_color": [
+        0.01,
+        0.008,
+        0.006
+      ]
+    },
+    "cast_iron": {
+      "base_color": [
+        0.02,
+        0.22,
+        0.22
+      ],
+      "roughness": 0.32,
+      "metallic": 0.0,
+      "specular_ior_level": 0.5,
+      "_doc": "vintage teal enamel over cast iron, chips show bare iron"
+    },
+    "jaw_steel": {
+      "base_color": [
+        0.22,
+        0.22,
+        0.22
+      ],
+      "roughness": 0.45,
+      "metallic": 1.0
+    },
+    "ruler": {
+      "base_color": [
+        0.62,
+        0.62,
+        0.61
+      ],
+      "roughness": 0.3,
+      "anisotropic": 0.6,
+      "metallic": 1.0,
+      "ink_color": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "ink_roughness": 0.55
+    },
+    "aluminium": {
+      "base_color": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "roughness": 0.5,
+      "metallic": 1.0
+    },
+    "screw": {
+      "base_color": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "roughness": 0.3,
+      "metallic": 1.0
+    },
+    "brass": {
+      "base_color": [
+        0.86,
+        0.63,
+        0.33
+      ],
+      "roughness": 0.28,
+      "metallic": 1.0
+    },
+    "card": {
+      "ink_color": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "roughness": 0.8
+    }
+  },
+  "camera": {
+    "lens_mm": 60.0,
+    "sensor_width_mm": 36.0,
+    "sensor_fit": "HORIZONTAL",
+    "resolution_px": [
+      1920,
+      1088
+    ],
+    "shift": [
+      0.0,
+      0.0
+    ],
+    "target_m": [
+      0.06,
+      0.0,
+      0.17
+    ],
+    "distance_m": 1.62,
+    "pitch_down_deg": 20.0,
+    "clip_start_m": 0.1,
+    "clip_end_m": 20.0,
+    "_doc": "orbit: loc = target + d*(sin(az)cos(p), -cos(az)cos(p), sin(p)); rot_euler = (90deg - p, 0, az). az>0: camera front-right (+X,-Y).",
+    "dof": {
+      "use": true,
+      "f_stop": 4.0,
+      "focus": "depth of strip mid-point (0,0,0.225)",
+      "blades": 7
+    },
+    "azimuth_deg": 40.0
+  },
+  "lights": {
+    "key": {
+      "type": "AREA",
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "loc_m": [
+        -0.9,
+        -0.8,
+        1.0
+      ],
+      "target_m": [
+        0.0,
+        0.0,
+        0.15
+      ],
+      "energy_W": 75.0,
+      "color": [
+        1.0,
+        0.8,
+        0.58
+      ]
+    },
+    "fill": {
+      "type": "AREA",
+      "size_m": [
+        1.2,
+        1.2
+      ],
+      "loc_m": [
+        1.3,
+        -0.9,
+        0.5
+      ],
+      "target_m": [
+        0.0,
+        0.0,
+        0.2
+      ],
+      "energy_W": 18.0,
+      "color": [
+        0.8,
+        0.88,
+        1.0
+      ]
+    },
+    "top": {
+      "type": "AREA",
+      "size_m": [
+        0.8,
+        0.5
+      ],
+      "loc_m": [
+        0.2,
+        -0.2,
+        1.4
+      ],
+      "target_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "energy_W": 12.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "back": {
+      "type": "AREA",
+      "size_m": [
+        1.2,
+        0.6
+      ],
+      "loc_m": [
+        0.5,
+        0.0,
+        1.2
+      ],
+      "target_m": [
+        -0.2,
+        0.56,
+        0.3
+      ],
+      "energy_W": 30.0,
+      "color": [
+        1.0,
+        0.85,
+        0.65
+      ],
+      "_doc": "backdrop wash, light-linked to backdrop + card only"
+    },
+    "world_strength": 0.04,
+    "ruler_reflect": {
+      "type": "AREA",
+      "size_m": [
+        1.4,
+        1.0
+      ],
+      "loc_m": [
+        -1.1,
+        -1.2,
+        0.45
+      ],
+      "target_m": [
+        0.0,
+        0.0,
+        0.22
+      ],
+      "energy_W": 3.0,
+      "color": [
+        1.0,
+        0.99,
+        0.97
+      ],
+      "_doc": "large soft card behind/above the camera, light-linked to the ruler + platform only: gives the satin steel face its soft even sheen so the black ticks read"
+    },
+    "rim": {
+      "type": "AREA",
+      "size_m": [
+        0.25,
+        0.6
+      ],
+      "loc_m": [
+        -0.45,
+        0.42,
+        0.55
+      ],
+      "target_m": [
+        0.0,
+        0.0,
+        0.22
+      ],
+      "energy_W": 40.0,
+      "color": [
+        0.55,
+        0.72,
+        1.0
+      ],
+      "_doc": "cool rim from back-left (opposite camera)"
+    }
+  },
+  "render": {
+    "engine": "CYCLES",
+    "samples": 192,
+    "denoise": true,
+    "view_transform": "AgX",
+    "look": "AgX - Base Contrast",
+    "exposure": -1.1,
+    "device": "GPU"
+  },
+  "slotted_weights": {
+    "_doc": "standard lab slotted masses (brass), stacked neatly beside the vise; slot = radial cut from the centre hole to the rim so a weight slides onto the platform peg",
+    "count": 12,
+    "mass_each_kg": 0.02,
+    "mass_note": "nominal 20 g (declared; brass \u00d825x4.5 mm with hole+slot is ~17 g at rho 8500 -> treat 0.020 kg as the load value)",
+    "outer_diameter_m": 0.025,
+    "thickness_m": 0.0045,
+    "hole_diameter_m": 0.0055,
+    "slot_width_m": 0.005,
+    "stack_center_xy_m": [
+      0.18,
+      -0.06
+    ],
+    "slot_azimuth_deg": -60.0,
+    "jitter_xy_m": 0.0003,
+    "jitter_rot_deg": 4.0,
+    "seed": 7,
+    "buckling_note": "solver v001: n_cr = 6.22 weights -> supercritical while the 7th weight is seated (t_supercritical 4.66 s, |Y_top| 10 mm at 5.05 s)",
+    "transfer_note": "7 of 12 weights transferred (seated 1.0,1.6,...,4.6 s); bench stack 12 -> 5 (lead decision)"
+  },
+  "style": {
+    "photoreal": true,
+    "variant": "workshop_34",
+    "_doc": "user: 3/4 view, colourful textured maker's workshop; no lines/measurements. Physics objects/dimensions unchanged."
+  },
+  "post": {
+    "vignette_corner_gain": 0.9,
+    "grain_sigma_8bit": 1.6,
+    "seed": 11,
+    "_doc": "scene/post.py: raw render scene/out/frame0_raw.png -> firstframe/frame0.png; geometry unchanged"
+  },
+  "props": [
+    {
+      "name": "screwdriver_red",
+      "kind": "cyl",
+      "r": 0.012,
+      "len": 0.11,
+      "loc": [
+        0.12,
+        0.53,
+        0.3
+      ],
+      "color": [
+        0.6,
+        0.03,
+        0.02
+      ]
+    },
+    {
+      "name": "screwdriver_blade",
+      "kind": "cyl",
+      "r": 0.003,
+      "len": 0.1,
+      "loc": [
+        0.12,
+        0.53,
+        0.195
+      ],
+      "color": [
+        0.6,
+        0.6,
+        0.6
+      ],
+      "metal": true
+    },
+    {
+      "name": "mallet_head_yellow",
+      "kind": "box",
+      "size": [
+        0.11,
+        0.04,
+        0.045
+      ],
+      "loc": [
+        0.26,
+        0.53,
+        0.36
+      ],
+      "color": [
+        0.85,
+        0.55,
+        0.02
+      ]
+    },
+    {
+      "name": "mallet_handle",
+      "kind": "cyl",
+      "r": 0.008,
+      "len": 0.22,
+      "loc": [
+        0.26,
+        0.53,
+        0.23
+      ],
+      "color": [
+        0.5,
+        0.3,
+        0.15
+      ]
+    },
+    {
+      "name": "cord_coil_blue",
+      "kind": "torus",
+      "R": 0.07,
+      "r": 0.009,
+      "loc": [
+        -1.05,
+        0.52,
+        0.3
+      ],
+      "color": [
+        0.03,
+        0.15,
+        0.6
+      ]
+    },
+    {
+      "name": "cord_coil_green",
+      "kind": "torus",
+      "R": 0.055,
+      "r": 0.008,
+      "loc": [
+        -0.98,
+        0.515,
+        0.26
+      ],
+      "color": [
+        0.15,
+        0.45,
+        0.08
+      ]
+    },
+    {
+      "name": "jar_amber",
+      "kind": "cyl_z",
+      "r": 0.04,
+      "len": 0.1,
+      "loc": [
+        -0.95,
+        0.36,
+        0.05
+      ],
+      "color": [
+        0.7,
+        0.35,
+        0.05
+      ]
+    }
+  ]
+}

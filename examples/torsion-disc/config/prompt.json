@@ -1,0 +1,14 @@
+{
+ "endpoint": "blackforestlabs/flux-3-max/text-to-video",
+ "note": "Text-to-video request that produced the AI reference clip (the prompt asked for the physics; the clip did not deliver it).",
+ "concept_prompt": "A thin flat polished brass disc, about ten centimetres across, hangs perfectly horizontal from a single thin vertical steel torsion wire attached at the exact centre of its top face; the wire rises to a fixed black-steel clamp on an overhead walnut crossbar supported by two walnut posts. A single permanent dark engraved radial line runs from the centre of the disc to its rim. Elevated three-quarter view so the top face, the radial line, the whole wire and the clamp are visible. At the start the disc is twisted a few degrees and released: it rotates gently back and forth about the vertical wire axis, a few degrees clockwise then counterclockwise, each turn slightly smaller. The disc stays level and centred, it does not swing sideways or bob up and down, the wire keeps the same length.",
+ "input": {
+  "prompt": "A thin flat polished brass disc, about ten centimetres across, hangs perfectly horizontal from a single thin vertical steel torsion wire attached at the exact centre of its top face; the wire rises to a fixed black-steel clamp on an overhead walnut crossbar supported by two walnut posts. A single permanent dark engraved radial line runs from the centre of the disc to its rim. Elevated three-quarter view so the top face, the radial line, the whole wire and the clamp are visible. At the start the disc is twisted a few degrees and released: it rotates gently back and forth about the vertical wire axis, a few degrees clockwise then counterclockwise, each turn slightly smaller. The disc stays level and centred, it does not swing sideways or bob up and down, the wire keeps the same length. One uninterrupted ten-second real-time shot from a locked-off tripod camera: no cuts, no orbit, no zoom, no pan, no camera shake, no slow motion, no speed ramp. Real-time gravity and natural motion speed. Photoreal macro product photography of a quiet physics study on a tabletop: soft diffuse studio key light, gentle fill, stable exposure, steady shadows, moderate contrast, warm neutral palette, plain softly graduated warm grey backdrop. Deep depth of field so every moving part, pivot, anchor and contact surface stays sharp and fully inside the frame for the entire shot. All objects are rigid, solid and keep exactly the same shape, size, count and material from first to last frame. No hands, no people, no new objects appearing, no morphing, no wind, no liquid, no smoke, no text, no labels, no logos, no watermark, no captions, no graphics.",
+  "duration": 10,
+  "resolution": "1080p",
+  "aspect_ratio": "16:9",
+  "reasoning_level": "high",
+  "generate_audio": false,
+  "seed": 902603
+ }
+}

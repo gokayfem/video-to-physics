@@ -1,0 +1,148 @@
+{
+  "label": "ck002",
+  "inputs_sha256": {
+    "solver/out/trajectory.csv": "8ff8bb053a9a093d2f9ca97e842c890452a350491a7bf0ec06c1c98f044649ba",
+    "params/physics.json": "dc20e99c7119379f640eee4fb22b7cb405cc9495b0b659785e1742b37f093ee7",
+    "params/camera.json": "3eee32766ac1449483b25ea64faddbfaaba44aa31cae6d7a6a5b4154ae2a55c1",
+    "camera/project.py": "2d65216b1730e31937d2d23be49ee165b8a49375cd2d094d603bc0ffb636545e",
+    "measurement/bob_track.csv": "a903842122cab76126ce4ad2a7ea81b491512ac8068f78d6dec50a35110f493b",
+    "solver/out/fit_tilt/Ta_4.0/fit_projected.json": "0cc9d241af86bb4d06f7c45896ea4d0a4dc2821b70fe816ad614fd10a125f2c8"
+  },
+  "tilt_applied_rad": 0.012595906923464214,
+  "gauge_cam_over_phys_Leff": 1.0013412460367321,
+  "camera_L_eff_m": 0.4391130415447836,
+  "physics_L_eff_m": 0.43852487179847544,
+  "method": "theta at trajectory rows 4n; bob = L_c(sin,0,-cos); project.load_camera(frame=n, kind) per frame; residual = |model - track(method A)|",
+  "fit_window_claimed": "ANCHOR t <= 4.0 s (frames 0..96)",
+  "holdout_claimed": "t >= 7.5 s (frames 180..240)",
+  "verifier": {
+    "reference": {
+      "rms_fit_px": 13.930570060678646,
+      "rms_holdout_px": 27.269215336846507,
+      "rms_fit_u_v_px": [
+        13.701062023784822,
+        2.5182695717253107
+      ],
+      "rms_holdout_u_v_px": [
+        27.05579746932673,
+        3.4049858129041124
+      ],
+      "rms_anchor_px": 3.2391517256722495,
+      "anchor_t_s": 4.0,
+      "rms_anchor_u_v_px": [
+        3.161944731473968,
+        0.7030002966069979
+      ],
+      "rms_all_px": 18.252625254152118,
+      "max_abs_px": 46.57530387490738,
+      "max_abs_px_definition": "max over frames of max(|du|,|dv|) (matches fit_projected.json usage)",
+      "max_euclid_px": 46.62669194614779,
+      "frame_of_max": 183,
+      "rms_fit_mod4_px": 13.51510005778957,
+      "rms_holdout_mod4_px": 25.40853286559294,
+      "mean_du_fit_px": 0.7953264526058194,
+      "mean_dv_fit_px": 0.9246310609658085,
+      "mean_du_anchor_px": 0.176525939567545,
+      "mean_dv_anchor_px": -0.20052267424296835,
+      "rms_anchor_after_removing_mean_px": 3.2281160375209184
+    },
+    "locked": {
+      "rms_fit_px": 14.941184623773838,
+      "rms_holdout_px": 28.342322868885883,
+      "rms_fit_u_v_px": [
+        13.803742965648317,
+        5.718013474976284
+      ],
+      "rms_holdout_u_v_px": [
+        27.163932536576738,
+        8.087523400428553
+      ],
+      "rms_anchor_px": 8.228571910946346,
+      "anchor_t_s": 4.0,
+      "rms_anchor_u_v_px": [
+        3.5479361853387754,
+        7.424388494575088
+      ],
+      "rms_all_px": 19.23684470842171,
+      "max_abs_px": 47.79520628465593,
+      "max_abs_px_definition": "max over frames of max(|du|,|dv|) (matches fit_projected.json usage)",
+      "max_euclid_px": 47.79521863117784,
+      "frame_of_max": 183,
+      "rms_fit_mod4_px": 14.588624759969791,
+      "rms_holdout_mod4_px": 26.513418701967062,
+      "mean_du_fit_px": 1.2052300067082082,
+      "mean_dv_fit_px": 4.021472074172052,
+      "mean_du_anchor_px": 1.2790103472679615,
+      "mean_dv_anchor_px": 6.9669401941151605,
+      "rms_anchor_after_removing_mean_px": 4.187513887358381
+    }
+  },
+  "comparison_with_fit_projected_json": {
+    "rms_fit_px": {
+      "verifier": 13.930570060678646,
+      "claimed": 13.930570059445273,
+      "abs_diff": 1.2333725152302577e-09,
+      "rel_diff": 8.853711728717092e-11
+    },
+    "rms_holdout_px": {
+      "verifier": 27.269215336846507,
+      "claimed": 27.269215317616933,
+      "abs_diff": 1.922957437727746e-08,
+      "rel_diff": 7.051752004339647e-10
+    },
+    "max_abs_px": {
+      "verifier": 46.57530387490738,
+      "claimed": 46.575303844740574,
+      "abs_diff": 3.0166802389430813e-08,
+      "rel_diff": 6.476995295616808e-10
+    },
+    "locked_rms_fit_px": {
+      "verifier": 14.941184623773838,
+      "claimed": 14.941184622700215,
+      "abs_diff": 1.0736229683061538e-09
+    },
+    "locked_rms_holdout_px": {
+      "verifier": 28.342322868885883,
+      "claimed": 28.342322850681914,
+      "abs_diff": 1.8203969887053972e-08
+    },
+    "rms_anchor_px": {
+      "verifier": 3.2391517256722495,
+      "claimed": 3.2391517254993194,
+      "abs_diff": 1.7293011467245378e-10
+    },
+    "locked_rms_anchor_px": {
+      "verifier": 8.228571910946346,
+      "claimed": 8.228571910935386,
+      "abs_diff": 1.0960121699099545e-11
+    }
+  },
+  "claims_reproduced_within_0p05px": true,
+  "reference_fidelity": {
+    "median_sigma_px": 0.40548736108539807,
+    "R2_target_px": 2,
+    "R3_target_px": 3,
+    "R2_pass": false,
+    "R3_rms_pass": false,
+    "note": "R2/R3 are reference-fidelity targets, reported not judged as physics (acceptance.json); expected FAIL per CHANGELOG 22:33:36Z"
+  },
+  "derived_param_consistency": {
+    "L_c_vs_L_eq_formula": 0.0,
+    "r_vs_Lc_over_ratio": 0.0,
+    "m_vs_rho_volume_rel": 0.0,
+    "I_P_vs_formula_rel": 0.0,
+    "L_eq_vs_I_over_mLc_rel": 0.0,
+    "c_vs_I_w0_over_Q_rel": 2.220446049250313e-16,
+    "L_eff_m_vs_Lc_over_k_rel": 0.0,
+    "fit_params_equal_physics": {
+      "L_eq": true,
+      "theta0": true,
+      "omega0": true,
+      "k": true
+    },
+    "camera_json_sha256_used_by_fit": "3eee32766ac1449483b25ea64faddbfaaba44aa31cae6d7a6a5b4154ae2a55c1",
+    "camera_json_sha256_in_checkpoint": "3eee32766ac1449483b25ea64faddbfaaba44aa31cae6d7a6a5b4154ae2a55c1",
+    "camera_json_L_eff_m": 0.4391130415447836,
+    "physics_L_eff_m": 0.43852487179847544
+  }
+}

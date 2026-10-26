@@ -1,0 +1,77 @@
+{
+  "title": "Video 2 Physics",
+  "subtitle": "Keep the scene. Replace the physics.",
+  "fps": 24,
+  "size": [
+    1920,
+    1080
+  ],
+  "note": "Segment config example for `v2p.py release CONFIG.json OUT.mp4 [--draft]`. Paths are relative to this file. Use only real project outputs. Frame 0 is the title over the hero split: a finished thumbnail, never black. `accent_text` is the word drawn in the accent colour in the title.",
+  "segments": [
+    {
+      "type": "title",
+      "seconds": 4.0,
+      "hero": {
+        "ai": "examples/<case>/reference/reference.mp4",
+        "physics": "examples/<case>/review/final_ckNNN.mp4",
+        "t": 6.0
+      }
+    },
+    {
+      "type": "full",
+      "seconds": 5.0,
+      "clip": "examples/<case>/reference/reference.mp4",
+      "t0": 0.0,
+      "label": "AI video",
+      "caption": "<what the reference does wrong, measured>"
+    },
+    {
+      "type": "split",
+      "seconds": 6.0,
+      "ai": "examples/<case>/reference/reference.mp4",
+      "physics": "examples/<case>/review/final_ckNNN.mp4",
+      "t0": 3.0,
+      "left": "AI video.",
+      "right": "Physics.",
+      "pills": [
+        "<measured defect>",
+        "<physics result>"
+      ]
+    },
+    {
+      "type": "stat",
+      "seconds": 3.0,
+      "value": 14,
+      "format": "{:.0f}/14",
+      "label": "independent checks passed",
+      "sub": "own solver, no shared code"
+    },
+    {
+      "type": "cards",
+      "seconds": 5.0,
+      "heading": "How it was made",
+      "cards": [
+        {
+          "image": "examples/<case>/measurement/visuals/tracks.png",
+          "text": "Measure the clip"
+        },
+        {
+          "image": "examples/<case>/solver/visuals/convergence.png",
+          "text": "Solve and converge"
+        },
+        {
+          "image": "examples/<case>/verify/visuals/audit.png",
+          "text": "Verify independently"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "seconds": 5.0,
+      "hero": "examples/<case>/review/final_ckNNN.mp4",
+      "t": 9.0,
+      "line": "github.com/gokayfem/video-to-physics"
+    }
+  ],
+  "accent_text": "2"
+}
